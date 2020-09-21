@@ -22,4 +22,4 @@ Finally, the proposed approximation algorithm for the Minimum Dominating Set pro
 
 $$|approxDS| \leq ln(|V|)OPT_{DS}.$$
 
-_Course: CSCI 532 - Algorithms. Instructor: Sean Yaw_
+_Course: CSCI 532 - Algorithms. Instructor: Sean Yaw. Spring 2020._
