@@ -1,9 +1,15 @@
 ---
 layout: post
-title: You're up and running!
+title: 'Minimum Dominating Set problem: Approximation Algorithm'
+published: true
 ---
 
-Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).
+The Minimum Dominating Set problem is: Given a graph, find the smallest subset of the vertices such that each remaining vertex has a neighbor in the selected subset. Find an approximation algorithm for the Minimum Dominating Set problem.
+
+## Solution:
+
+Let $G=(V,E), k$ be the input of the Dominating Set (DS) problem. Then, we consider $U=V$ and the set $S$ such that each $S_i \in S$ is the set of nodes adjacent to vertex $v_i \in V$. Fig. \ref{fig:dom} shows an example of this translation. 
+
 
 ![_config.yml]({{ site.baseurl }}/images/config.png)
 
