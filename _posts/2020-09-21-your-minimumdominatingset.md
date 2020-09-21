@@ -5,10 +5,10 @@ The Minimum Dominating Set problem is: Given a graph, find the smallest subset o
 
 ## Solution:
 
-Let $G=(V,E), k$ be the input of the Dominating Set (DS) problem. Then, we consider $U=V$ and the set $S$ such that each $S_i \in S$ is the set of nodes adjacent to vertex $v_i \in V$. Fig. \ref{fig:dom} shows an example of this translation. 
+Let $G=(V,E), k$ be the input of the Dominating Set (DS) problem. Then, we consider $U=V$ and the set $S$ such that each $S_i \in S$ is the set of nodes adjacent to vertex $v_i \in V$. Fig. [fig2](2) shows an example of this translation. 
 
 
-![_config.yml]({{ site.baseurl }}/images/config.png)
+![fig2]({{ site.baseurl }}/images/minDomSet.jpg)
 
 The easiest way to make your first post is to edit this one. Go into /_posts/ and update the Hello World markdown file. For more instructions head over to the [Jekyll Now repository](https://github.com/barryclark/jekyll-now) on GitHub.
 
