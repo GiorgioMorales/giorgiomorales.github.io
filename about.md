@@ -2,14 +2,15 @@
 layout: page
 title: About
 permalink: /about/
+published: true
 ---
 
-Some information about you!
+I am a second-year PhD student in computer science at Montana State University and a current member of the Numerical Intelligent Systems Laboratory (NISL). I received my BSc degree in mechatronic engineering from National University of Engineering, Lima, Peru. My research interests are: Deep Learning, Explainable Machine Learning, Automated Machine Learning, and Computer Vision.
 
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+https://www.cs.montana.edu/~moralesluna/
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[giorgiol.moralesluna@student.montana.edu](mailto:giorgiol.moralesluna@student.montana.edu)
