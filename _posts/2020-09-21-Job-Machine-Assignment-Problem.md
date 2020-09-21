@@ -28,15 +28,15 @@ Consider $ALG$ is the time of the longest running machine obtained by the algori
       
 _**Prove that the algorithm will be optimal if $n \leq p$.**_
  
- ## Solution:
+## Solution:
  
  If there are more machines than jobs, then during each iteration the smallest current $T_m$ is zero, which means that each job will be assigned to one separate machine; therefore $ALG$ will be equal to the time of longest job $t_{max}$, which is also the optimal solution $OPT$.
  
 _**Consider an instance with $p$ machines and $n=p(p-1) + 1$ jobs, where the first $n-1$ jobs require time $tj= 1$ and the last job requires $tn=p$. What is $ALG$? What is $OPT$? What can you conclude about the algorithm?**_
  
- ## Solution:
+## Solution:
   
- ![figure]({{ site.baseurl }}/images/chedule.jpg)
+ ![figure]({{ site.baseurl }}/images/schedule.jpg)
  
  According to the proposed algorithm, each incoming job will be assigned to the machine with the smallest time. Given that the first $n-1$ jobs have a time of 1, they will be assigned to the $p$ machines as shown in the Figure of the left ($p$ machines with $p-1$ time each one). Then, the last job will be assigned to the first machine and $ALG=2p-1$. However, if we had received the last job before, as shown in the Figure of the right, we would have had $p$ machines with $p$ time each one ($OPT=p$). From this, we conclude that the proposed algorithm is sensitive to the incoming order, it would be better if we receive the heaviest jobs first.
  
