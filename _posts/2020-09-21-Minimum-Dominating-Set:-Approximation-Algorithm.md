@@ -12,7 +12,7 @@ Let $G=(V,E), k$ be the input of the Dominating Set (DS) problem. Then, we consi
 
 Now, we need to prove:
 
-$G$ has a $k$-Dominating Set $\iff$ $\Bar{G}$ has a $(k)$ -Set Cover.
+$G$ has a $k$-Dominating Set $\iff$ $\bar{G}$ has a $(k)$ -Set Cover.
     
 $\Rightarrow{}$ Suppose $G$ has a $k$-DS $Q$. It means the each vertex in $V$ has at least one neighbor in $Q$. Each node $q_i \in Q$ corresponds to one subset $s_i \in S$. The set of subsets corresponding to $Q$ in $S$ is called $C$ (|$Q=$|$C$|$=k$). Then, the union of all the subsets $c_i \in C$ should be equal to the universe $U$; otherwise, it would mean that there is at least one node in $V$ that is not connected to at least one node in $Q$. Therefore, $C$ is a $k$-Set Cover.    
     
