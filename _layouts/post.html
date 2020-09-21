@@ -1,5 +1,6 @@
 ---
 layout: default
+published: true
 ---
 
 <article class="post">
@@ -15,3 +16,19 @@ layout: default
 
   {% include disqus.html %}
 </article>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript">
+        MathJax.Hub.Config({
+        	extensions: ["tex2jax.js"],
+          	jax: ["input/TeX", "HTML-CSS"],
+          	tex2jax: {
+              	inlineMath: [ ['$', '$'], ["\\(","\\)"] ],
+              	displayMath: [ ['$$', '$$'], ["\\[","\\]"] ],
+              	processEscapes: true
+            },
+          "HTML-CSS": { availableFonts: ["LaTeX"] } 
+        });
+</script>
+                                                                                                   
