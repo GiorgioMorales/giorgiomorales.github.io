@@ -5,7 +5,7 @@ Suppose we have $p$ machines and $n$ jobs. Each job has a time it takes to compl
   
   Consider the following algorithm: For each job, assign it to the machine with the smallest current $T_m$.
   
-- Show that the algorithm is a 2-approximation algorithm.
+_**1. Show that the algorithm is a 2-approximation algorithm.**_
 
 ## Solution:
 
@@ -26,13 +26,13 @@ Consider $ALG$ is the time of the longest running machine obtained by the algori
       $$ T_{m_x} \leq 2OPT $$
       $$ ALG \leq 2OPT $$
       
-- Prove that the algorithm will be optimal if $n \leq p$.
+_**Prove that the algorithm will be optimal if $n \leq p$.**_
  
  ## Solution:
  
  If there are more machines than jobs, then during each iteration the smallest current $T_m$ is zero, which means that each job will be assigned to one separate machine; therefore $ALG$ will be equal to the time of longest job $t_{max}$, which is also the optimal solution $OPT$.
  
-- Consider an instance with $p$ machines and $n=p(p-1) + 1$ jobs, where the first $n-1$ jobs require time $t_j= 1$ and the last job requires $t_n=p$. What is ALG? What is OPT? What can you conclude about the algorithm?
+_**Consider an instance with $p$ machines and $n=p(p-1) + 1$ jobs, where the first $n-1$ jobs require time $tj= 1$ and the last job requires $tn=p$. What is $ALG$? What is $OPT$? What can you conclude about the algorithm?**_
  
  ## Solution:
   
