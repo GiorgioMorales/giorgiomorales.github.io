@@ -21,3 +21,5 @@ $\Leftarrow{}$ Suppose $U$ has a $(k)$-Set Cover $C$. It means that the union of
 Finally, the proposed approximation algorithm for the Minimum Dominating Set problem is as follows: Translate the problem into a Minimum Set Cover problem, apply the approximation algorithm we know for this problem ($\| approxSC \|$$ \leq ln(\| V \|)OPT_{SC}$, where $OPT_{SC}$ is the minimum SC). Then, we translate back the $approxSC$ solution into the set of nodes $approxDS$ which represents the approximation of the minimum dominating Set. Given that the size of the minimum dominating set is the same as that of the minimum set cover ($OPT_{DS} = OPT_{SC}$) we conclude that:
 
 $$|approxDS| \leq ln(|V|)OPT_{DS}.$$
+
+Course: CSCI 532 - Algorithms. Instructor: Sean Yaw
