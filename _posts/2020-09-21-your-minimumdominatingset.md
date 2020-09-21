@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 The Minimum Dominating Set problem is: Given a graph, find the smallest subset of the vertices such that each remaining vertex has a neighbor in the selected subset. Find an approximation algorithm for the Minimum Dominating Set problem.
 
@@ -11,4 +11,3 @@ Let $G=(V,E), k$ be the input of the Dominating Set (DS) problem. Then, we consi
 ![fig2]({{ site.baseurl }}/images/minDomSet.jpg)
 
 The easiest way to make your first post is to edit this one. Go into /_posts/ and update the Hello World markdown file. For more instructions head over to the [Jekyll Now repository](https://github.com/barryclark/jekyll-now) on GitHub.
-
