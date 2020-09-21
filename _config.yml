@@ -18,7 +18,7 @@ avatar: https://www.cs.montana.edu/~moralesluna/images/gweb.png
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble:
-  email:
+  email: giorgiol.moralesluna@student.montana.edu
   facebook:
   flickr:
   github: GiorgioMorales
@@ -28,7 +28,7 @@ footer-links:
   rss: # just type anything here for a working RSS icon
   twitter: 
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
-  youtube: channel/<https://www.youtube.com/channel/UC18khRo25TddVciLLmS5nww?view_as=subscriber> or user/<Giorgio Morales>
+  youtube: # channel/<https://www.youtube.com/channel/UC18khRo25TddVciLLmS5nww?view_as=subscriber> or user/<Giorgio Morales>
   googleplus: # anything in your profile username that comes after plus.google.com/
 
 
