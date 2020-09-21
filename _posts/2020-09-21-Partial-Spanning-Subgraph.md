@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 The Partial Spanning Subgraph (PSS) problem is:  Given a graph $G= (V; E)$ with non-negative edge weights and a subset of the vertices $T \in V$,  and a minimal weight connected subgraph that contains all of $T$ (and may or may not include other vertices from $V \setminus T$). 
 
