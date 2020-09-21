@@ -18,12 +18,15 @@ Consider $ALG$ is the time of the longest running machine obtained by the algori
   However, the sum of times of all $p$ machines is equal to the sum of times of the $n$ jobs:
   
   $$ T_{m_x} - t_{n_y} \leq \frac{1}{p} \sum^m_{j=1} T_j = \frac{1}{p} \sum^n_{i=1} t_i$$
+  
       $$ T_{m_x} - t_{n_y} \leq \frac{1}{p} \sum^n_{i=1} t_i \leq OPT$$
   
   We also note that $t_{n_y} \leq OPT$ because the time of the longest running machine should be greater or equal than the time of any job. Therefore, after scheduling the last job $n_y$ we will have:
   
   $$T_{m_x} - t_{n_y} + t_{n_y}\leq OPT + OPT $$
+  
       $$ T_{m_x} \leq 2OPT $$
+      
       $$ ALG \leq 2OPT $$
       
       
