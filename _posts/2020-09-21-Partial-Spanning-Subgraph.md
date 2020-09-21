@@ -18,3 +18,4 @@ In addition, we consider the triangle inequality, as we did with the Travelling 
 The route $R_{G'}$ is a Hamiltonian cycle because each node is visited exactly once. If we remove a single edge of this cycle, it becomes a spanning tree. The cost of this spanning tree is still lower than $2OPT$. This condition holds for any spanning tree in $G'$; therefore, the cost of the minimum spanning, $MST_{G'}$, tree obtained by the proposed algorithm \textbf{is at most 2 times the cost of an optimal PSS: $cost(MST_{G'})\leq 2OPT$}.
 
 
+_Course: CSCI 532 - Algorithms. Instructor: Sean Yaw. Spring 2020._
