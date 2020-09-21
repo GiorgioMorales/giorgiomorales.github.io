@@ -9,7 +9,7 @@ I am a second-year PhD student in computer science at Montana State University a
 
 ### More Information
 
-https://www.cs.montana.edu/~moralesluna/
+[https://www.cs.montana.edu/~moralesluna/](https://www.cs.montana.edu/~moralesluna/)
 
 ### Contact me
 
