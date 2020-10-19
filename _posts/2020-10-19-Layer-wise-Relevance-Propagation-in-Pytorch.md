@@ -23,6 +23,10 @@ train_y = np.array(hdf5_file["train_labels"][...])
 for n in range(0, train_x.shape[0]):
 	img2[n, :, :, int(i / 2)] = (xt[:, :, i] + xt[:, :, i + 1]) / 2.
 train_x = img2
+# Reshape as a 4-D TENSOR (because we will use 3-D convolutions)
+trainx = np.reshape(trainx, (trainx.shape[0], trainx.shape[1], trainx.shape[2], trainx.shape[3], 1))
+# Permute according to Pytorch's order
+trainx = trainx.transpose((0, 4, 3, 1, 2))
 {% endhighlight %}
 
 s
