@@ -29,7 +29,19 @@ trainx = np.reshape(trainx, (trainx.shape[0], trainx.shape[1], trainx.shape[2], 
 trainx = trainx.transpose((0, 4, 3, 1, 2))
 {% endhighlight %}
 
-s
+Finally, we will select a subset of 18 salient bands from the whole spectrum. How did we come up with these band indexes? I will probably explain it in a future post/paper. Stay tuned!
+
+{% highlight python %}
+indexes = [0, 1, 3, 11, 23, 33, 50, 68, 76, 82, 106, 128, 132, 136, 139, 143, 144, 146]
+# Select bands from original image
+temp = np.zeros((train_x.shape[0], train_x.shape[1], train_x.shape[2], nbands))
+for nb in range(0, nbands):
+	temp[:, :, :, nb] = train_x[:, :, :, indexes[nb]]
+train_x = temp.astype(np.float32)
+# Apply Band normalization
+for n in range(train_x.shape[3]):
+	train_x[:, :, :, n] = (train_x[:, :, :, n] - np.mean(train_x[:, :, :, n])) / (np.std(train_x[:, :, :, n]))
+{% endhighlight %}
 
 ## Network architecture
 
