@@ -141,7 +141,7 @@ Non-trainable params: 0
 
 ## LRP function
 
-Now we are ready to start writing our LRP function. It will take as arguments the trained model (here I'm assuming that we already trained the network), the individual datacube we want to analyze, and a string that denotes the type of device we are using. 
+Now we are ready to start writing our LRP function. It will take as arguments the trained model (here I'm assuming that we already trained the network), the individual datacube we want to analyze, and a string that denotes the type of device we are using. This section is based on the [implementation](http://heatmapping.org/tutorial/) of the "Layer-Wise Relevance Propagation: An Overview" paper by [Montavon et. al (2019)](https://link.springer.com/chapter/10.1007%2F978-3-030-28954-6_10) with some modifications so that we can use our own Hyper3DNetLite network.
 
 The first step is to extract the layers from our model. In the previous section, we used $\texttt{nn.Sequential}$ layers to combine the convolutional and ReLU layers, and to simplify the structure of the Hyper3DNetLite class; however, here we will only take into account those layers that have useful weights and biases, so we will ignore the $\texttt{nn.Sequential}$ modules. Once we extracted all the useful modules from our trained network, we will propagate the input data $X$ hrough the network as follows:
 
@@ -174,7 +174,8 @@ Now we calculate the relevance of the last layer. We will do this by simply taki
     T = np.abs(np.array(T)) * 0
     T[index] = 1
     T = torch.FloatTensor(T)
-    R = [T.data] * L + [(A[-1].cpu() * T).data + 1e-6]
+    # Create the list of relevances with (L + 1) elements and assign the value of the last one 
+    R = [None] * L + [(A[-1].cpu() * T).data + 1e-6]
 {% endhighlight %}
 
 
