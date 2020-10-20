@@ -182,4 +182,4 @@ The next step is to propagate the relevance distribution of our last layer throu
 
 $R_j = \sum_k \frac{z_{jk}}{\sum_j z_{jk}} R_k,$
 
-where $z_{jk}$ represents how much the neuron/unit $j$ contributed to make neuron/unit $k$ relevant.
+where $z_{jk}$ represents how much the neuron/unit $j$ contributed to make neuron/unit $k$ relevant. We may consider that the relevance is distributed proportionally to the contribution of each input to the neuron activation. Considering that in our network (where each convolution layer is followed by a ReLU rectifier) the relation between the activation of the units $j$ and $k$ of consecutive layers is as follows: $a_k = \texttt{max}(0, \sum_{0,j}a_jw_k)$
