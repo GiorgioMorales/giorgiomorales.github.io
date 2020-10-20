@@ -115,9 +115,18 @@ The first step is to extract the layers of our module. In the previous section, 
 
 {% highlight python %}
 def LRP_individual(model, X, device):
-	# Get the list of layers of the network
+    # Get the list of layers of the network
     layers = [module for module in model.modules() if not isinstance(module, torch.nn.Sequential)][1:]
     # Propagate the input
     L = len(layers)
-    A = [X] + [X] * L
+    A = [X] + [X] * L # Create a list to store the activation produced by each layer
+    for layer in range(L):
+        # After the 4th layer, we should reshape the tensor
+        if layer == 4:
+            A[layer] = reshape(A[layer], (A[layer].shape[0], A[layer].shape[2] * 16,
+                                          A[layer].shape[3], A[layer].shape[4]))
+        elif layer == 17:
+            A[layer] = reshape(A[layer], (A[layer].shape[0], A[layer].shape[1]))
+
+        A[layer + 1] = layers[layer].forward(A[layer])
 {% endhighlight %}
