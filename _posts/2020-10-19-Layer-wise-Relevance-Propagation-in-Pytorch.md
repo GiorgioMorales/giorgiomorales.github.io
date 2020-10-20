@@ -151,7 +151,7 @@ def LRP_individual(model, X, device):
     L = len(layers)
     A = [X] + [X] * L # Create a list to store the activation produced by each layer
     for layer in range(L):
-        # After the 4th layer, we should reshape the tensor
+        # After the 4th and 17th layers, we should reshape the tensor
         if layer == 4:
             A[layer] = reshape(A[layer], (A[layer].shape[0], A[layer].shape[2] * 16,
                                           A[layer].shape[3], A[layer].shape[4]))
@@ -161,7 +161,9 @@ def LRP_individual(model, X, device):
         A[layer + 1] = layers[layer].forward(A[layer])
 {% endhighlight %}
 
-Note that we are applying two reshaping operations before the 4th and 17th layers. This corresponds to the reshaping operation we applied in the $\texttt{Hyper3DNetLite.forward()}$ method of the previous section (this allows to reshape from 4-D to 3-D tensors, and from 3-D to 1-D tensors, respectively)
+Note that we are applying two reshaping operations before the 4th and 17th layers. This corresponds to the reshaping operation we applied in the $\texttt{Hyper3DNetLite.forward()}$ method of the previous section (this allows to reshape from 4-D to 3-D tensors, and from 3-D to 1-D tensors, respectively). 
+
+Now we calculate the relevance of the last layer. We will do this by simply taking the greatest value of the last activation. In this example, we are working with a multi-class classification problem, so, taking in mind that the last fully-connected layer has as many neurons/units as classes we have, each value of the last activation vector is related to the confidence of the classification
 
 
 
