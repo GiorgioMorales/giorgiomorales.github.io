@@ -178,9 +178,11 @@ Now we calculate the relevance of the last layer. We will do this by simply taki
     R = [None] * L + [(A[-1].cpu() * T).data + 1e-6]
 {% endhighlight %}
 
-The next step is to propagate the relevance distribution of our last layer through the network. Before doing it, let's discuss how to use the propagation rules. First, we should recall that the relevance is conservative, which means that the sum of values of the relevance matrix of a layer should be the same as that of the relevance matrix of the following layer: $\sum_j R_j = \sum_k R_k$, where $j$ represents the indexes of the neurons/units of the first layer and $k$ the indexes of the neurons/units of the following layer. Then, the relevance flow can be described by the following equation:
+The next step is to propagate the relevance distribution of our last layer through the network. Before doing it, let's discuss how to use the propagation rules. First, we should recall that the relevance is conservative, which means that the sum of values of the relevance matrix of a layer should be the same as that of the relevance matrix of the following layer: $\sum_j R_j = \sum_k R_k$, where $j$ represents the indexes of the neurons/units of the first layer and $k$ represents the indexes of the neurons/units of the following layer. Then, the relevance flow can be described by the following equation:
 
-$R_j = \sum_k \frac{z_{jk}}{\sum_j z_{jk}} R_k$ 
+| $R_j = \sum_k \frac{z_{jk}}{\sum_j z_{jk}} R_k,$ |
+
+where $z_{jk}$ represents how much the neuron/unit $j$ contributed to make neuron/unit $k$ relevant.
 
 
 
