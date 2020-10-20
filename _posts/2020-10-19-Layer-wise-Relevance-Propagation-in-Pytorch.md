@@ -110,7 +110,7 @@ class Hyper3DNetLite(nn.Module, ABC):
 
 Now we are ready to start writing our LRP function. It will take as arguments the trained model (here I'm assuming that we already trained the network), the individual datacube we want to analyze, and a string that denotes the type of device we are using. 
 
-The first step is to extract the layers of our module. In this specific case, I used 'nn.Sequential' layers to combine the convolutional and the ReLU layers and to simplify the structure of the Hyper3DNetLite class; however, we only to take into account those layers that have weights and biases, therefore:
+The first step is to extract the layers of our module. In the previous section, we used $\texttt{nn.Sequential}$ layers to combine the convolutional and ReLU layers, and to simplify the structure of the Hyper3DNetLite class; however, here we will only to take into account those layers that have weights and biases, so we will ignore the $\texttt{nn.Sequential}$ modules. Once we extracted all the useful modules from our trained network, we will propagate the input data $X$ hrough the network as follows:
 
 {% highlight python %}
 def LRP_individual(model, X, device):
