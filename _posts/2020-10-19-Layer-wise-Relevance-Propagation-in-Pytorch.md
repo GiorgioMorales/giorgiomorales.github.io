@@ -70,14 +70,14 @@ class Hyper3DNetLite(nn.Module, ABC):
                                          nn.Conv2d(in_channels=16 * img_shape[1], 
                                          out_channels=320, kernel_size=1, 
                                          padding=0), nn.ReLU())
-        self.sepconv2 = nn.Sequential(nn.Conv2d(in_channels=320, out_channels=320,
-                                                kernel_size=3, padding=1, stride=2, groups=320), nn.ReLU(),
+        self.sepconv2 = nn.Sequential(nn.Conv2d(in_channels=320, out_channels=320, kernel_size=3,
+                                         padding=1, stride=2, groups=320), nn.ReLU(),
                                       nn.Conv2d(in_channels=320, out_channels=256,
-                                                kernel_size=1, padding=0), nn.ReLU())
-        self.sepconv3 = nn.Sequential(nn.Conv2d(in_channels=256, out_channels=256,
-                                                kernel_size=3, padding=1, stride=2, groups=256), nn.ReLU(),
+                                         kernel_size=1, padding=0), nn.ReLU())
+        self.sepconv3 = nn.Sequential(nn.Conv2d(in_channels=256, out_channels=256, kernel_size=3,
+                                         padding=1, stride=2, groups=256), nn.ReLU(),
                                       nn.Conv2d(in_channels=256, out_channels=256,
-                                                kernel_size=1, padding=0), nn.ReLU())
+                                         kernel_size=1, padding=0), nn.ReLU())
         self.average = nn.AvgPool2d(kernel_size=7)
 
         if classes == 2:
