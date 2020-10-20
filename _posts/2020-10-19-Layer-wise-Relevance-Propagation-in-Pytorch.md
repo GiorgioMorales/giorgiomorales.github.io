@@ -3,7 +3,7 @@ published: true
 ---
 Being able to interpret a classifier's decision has become crucial lately. This ability allows us not only to ensure that a Convolutional Neural Network -for example- has learned the patterns that we expected, but also to discover patterns that were not obvious at first glance. Most of the works related to Layer-wise Relevance Propagation (LRP) so far have been applied to image classification tasks; in that case, we are interested in finding the pixel positions that were more relevant for a given classification result. For example, the following image highlights the most relevant pixels to obtain a prediction of the class "cat":
 
-![figure]({{ site.baseurl }}/images/catLRP.jpg=70%)*Figure 1: Relevance is backpropagated from the top layer down to the input, where $\{R_p\}$ denotes the pixel-wise relevance scores, that can be visualized as a heatmap. Source: [Montavon et. al (2016)](https://doi.org/10.1016/j.patcog.2016.11.008)*
+![figure]({{ site.baseurl }}/images/catLRP.jpg=200x)*Figure 1: Relevance is backpropagated from the top layer down to the input, where $\{R_p\}$ denotes the pixel-wise relevance scores, that can be visualized as a heatmap. Source: [Montavon et. al (2016)](https://doi.org/10.1016/j.patcog.2016.11.008)*
 &nbsp;
 &nbsp;
 
@@ -163,7 +163,7 @@ def LRP_individual(model, X, device):
 
 Note that we are applying two reshaping operations before the 4th and 17th layers. This corresponds to the reshaping operation we applied in the $\texttt{Hyper3DNetLite.forward()}$ method of the previous section (this allows to reshape from 4-D to 3-D tensors, and from 3-D to 1-D tensors, respectively). 
 
-Now we calculate the relevance of the last layer. We will do this by simply taking the greatest value of the last activation. In this example, we are working with a multi-class classification problem, so, taking in mind that the last fully-connected layer has as many neurons/units as classes we have, each value of the last activation vector is related to the confidence of the classification
+Now we calculate the relevance of the last layer. We will do this by simply taking the greatest value of the last activation. In this example, we are working with a multi-class classification problem, so, taking in mind that the last fully-connected layer has as many neurons/units as classes we have, each value of the last activation vector is related to the confidence that the corresponding unit represents the correct class (e.g. if the resulting A[-1] vector has three elements and the second one is the greatest, it means that the network predicted that the input image correponds to the second class). We will assume that the classification of the network is correct and we will mask the A[-1] vector conserving only the greatest value, as we will show below. The intuition behind this is that we will propagate the relevance backwards asking "which parts of the image are responsible for the activation of the $i$-th output unit" or "which parts of the image are more relevant when the network classifies it as the $i$-th class".   
 
 
 
