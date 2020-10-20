@@ -161,7 +161,7 @@ def LRP_individual(model, X, device):
         A[layer + 1] = layers[layer].forward(A[layer])
 {% endhighlight %}
 
-Note that we are applying two reshaping operations before the 4th and 17th layers. This corresponds to the reshaping operation we applied in the $\texttt{Hyper3DNetLite.forward}$ method of the previous section (this allows to reshape from 4-D to 3-D tensors, and from 3-D to 1-D tensors, respectively)
+Note that we are applying two reshaping operations before the 4th and 17th layers. This corresponds to the reshaping operation we applied in the $\texttt{Hyper3DNetLite.forward()}$ method of the previous section (this allows to reshape from 4-D to 3-D tensors, and from 3-D to 1-D tensors, respectively)
 
 
 
