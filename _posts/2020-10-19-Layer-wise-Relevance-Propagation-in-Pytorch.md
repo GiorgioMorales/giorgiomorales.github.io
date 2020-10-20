@@ -45,7 +45,7 @@ for n in range(train_x.shape[3]):
 
 ## Network architecture
 
-The network used in this work is called Hypr3DNetLite as it is proposed as a reduced version of the [Hyper3DNet network](https://doi.org/10.1117/1.JRS.14.036519), which is a 3D-2D CNN architecture specifically designed to solve HSI classification problems using a reduced number of trainable parameters. Here you have the network written in Pytorch. Note that every convolutional layer is followed by a ReLU rectifier and that I am not using Batch Normalization layers in order to ensure that every convolutio
+The network used in this work is called Hypr3DNetLite as it is proposed as a reduced version of the [Hyper3DNet network](https://doi.org/10.1117/1.JRS.14.036519), which is a 3D-2D CNN architecture specifically designed to solve HSI classification problems using a reduced number of trainable parameters. Here you have the network written in Pytorch. Note that every convolutional layer is followed by a ReLU rectifier and that I am not using Batch Normalization layers in order to ensure that every convolution layer outputs positive values.
 
 {% highlight python %}
 from abc import ABC
@@ -60,14 +60,16 @@ class Hyper3DNetLite(nn.Module, ABC):
         self.classes = classes
         self.img_shape = img_shape
 
-        self.conv_layer1 = nn.Sequential(nn.Conv3d(in_channels=img_shape[0], out_channels=16, kernel_size=3, padding=1),
-                                         nn.ReLU())
-        self.conv_layer2 = nn.Sequential(nn.Conv3d(in_channels=16, out_channels=16, kernel_size=3, padding=1),
-                                         nn.ReLU())
-        self.sepconv1 = nn.Sequential(nn.Conv2d(in_channels=16 * img_shape[1], out_channels=16 * img_shape[1],
-                                                kernel_size=5, padding=2, groups=16 * img_shape[1]), nn.ReLU(),
-                                      nn.Conv2d(in_channels=16 * img_shape[1], out_channels=320,
-                                                kernel_size=1, padding=0), nn.ReLU())
+        self.conv_layer1 = nn.Sequential(nn.Conv3d(in_channels=img_shape[0], out_channels=16, 
+                                         kernel_size=3, padding=1), nn.ReLU())
+        self.conv_layer2 = nn.Sequential(nn.Conv3d(in_channels=16, out_channels=16, 
+                                         kernel_size=3, padding=1), nn.ReLU())
+        self.sepconv1 = nn.Sequential(nn.Conv2d(in_channels=16 * img_shape[1],
+                                         out_channels=16 * img_shape[1], kernel_size=5, 
+                                         padding=2, groups=16 * img_shape[1]), nn.ReLU(),
+                                         nn.Conv2d(in_channels=16 * img_shape[1], 
+                                         out_channels=320, kernel_size=1, 
+                                         padding=0), nn.ReLU())
         self.sepconv2 = nn.Sequential(nn.Conv2d(in_channels=320, out_channels=320,
                                                 kernel_size=3, padding=1, stride=2, groups=320), nn.ReLU(),
                                       nn.Conv2d(in_channels=320, out_channels=256,
@@ -104,10 +106,17 @@ class Hyper3DNetLite(nn.Module, ABC):
         return x
 {% endhighlight %}
 
-## 
+## LRP function
 
+Now we are ready to start writing our LRP function. It will take as arguments the trained model (here I'm assuming that we already trained the network), the individual datacube we want to analyze, and a string that denotes the type of device we are using. 
 
+The first step is to extract the layers of our module. In this specific case, I used 'nn.Sequential' layers to combine the convolutional and the ReLU layers and to simplify the structure of the Hyper3DNetLite class; however, we only to take into account those layers that have weights and biases, therefore:
 
 {% highlight python %}
-x = ('a', 1, False)
+def LRP_individual(model, X, device):
+	# Get the list of layers of the network
+    layers = [module for module in model.modules() if not isinstance(module, torch.nn.Sequential)][1:]
+    # Propagate the input
+    L = len(layers)
+    A = [X] + [X] * L
 {% endhighlight %}
