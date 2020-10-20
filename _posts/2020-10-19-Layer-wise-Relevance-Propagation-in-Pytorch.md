@@ -192,9 +192,4 @@ $$R_j = \sum_k \frac{a_j \rho(w_{jk})}{\epsilon + \sum_{0,j} a_j\rho(w_{jk})} R_
 
 where $\rho(\theta)$ is a function that transforms the weights and biases $\theta$ of the lower layer. Using this template, we are able to define other propagation rules that overcome the limitations of the LRP-0 rule (which are affected by noisy or contradictory decisions), such as the epsilon rule (**LRP-$\epsilon$**), where $\rho(\theta) = \theta$, and $\epsilon$ is a small positive term that absorbs weak and negative factors, producing less noisy results. Furthermore, we can use the gamma rule (**LRP-$\gamma$**), where $\rho(\theta) = \theta + \gamma\theta^+$, and $\theta^+=\texttt{max}(0,\theta)$, so that the $\gamma$ parameter controls how much importance the positive contributions have. In our case, we will consider $\epsilon = 0.25 * \texttt{sign}(\sum_{0,j} a_jw_{jk})$ and $\gamma=0.25$. Also, we will add a small factor, $1e-09$, to the denominator in order to avoid numeric inconsistencies.
 
-
-
-
-
-
-
+IN CONSTRUCTION...
