@@ -40,7 +40,8 @@ for nb in range(0, nbands):
 train_x = temp.astype(np.float32)
 # Apply Band normalization
 for n in range(train_x.shape[3]):
-	train_x[:, :, :, n] = (train_x[:, :, :, n] - np.mean(train_x[:, :, :, n])) / (np.std(train_x[:, :, :, n]))
+	train_x[:, :, :, n] = (train_x[:, :, :, n] - np.mean(train_x[:, :, :, n])) / 
+    					  (np.std(train_x[:, :, :, n]))
 {% endhighlight %}
 
 ## Network architecture
