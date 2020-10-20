@@ -107,11 +107,41 @@ class Hyper3DNetLite(nn.Module, ABC):
         return x
 {% endhighlight %}
 
+Here you have a summary of the network architecture:
+
+{% highlight python %}
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv3d-1        [-1, 16, 6, 25, 25]             448
+              ReLU-2        [-1, 16, 6, 25, 25]               0
+            Conv3d-3        [-1, 16, 6, 25, 25]           6,928
+              ReLU-4        [-1, 16, 6, 25, 25]               0
+            Conv2d-5           [-1, 96, 25, 25]           2,496
+              ReLU-6           [-1, 96, 25, 25]               0
+            Conv2d-7          [-1, 320, 25, 25]          31,040
+              ReLU-8          [-1, 320, 25, 25]               0
+            Conv2d-9          [-1, 320, 13, 13]           3,200
+             ReLU-10          [-1, 320, 13, 13]               0
+           Conv2d-11          [-1, 256, 13, 13]          82,176
+             ReLU-12          [-1, 256, 13, 13]               0
+           Conv2d-13            [-1, 256, 7, 7]           2,560
+             ReLU-14            [-1, 256, 7, 7]               0
+           Conv2d-15            [-1, 256, 7, 7]          65,792
+             ReLU-16            [-1, 256, 7, 7]               0
+        AvgPool2d-17            [-1, 256, 1, 1]               0
+           Linear-18                    [-1, 3]             771
+================================================================
+Total params: 195,411
+Trainable params: 195,411
+Non-trainable params: 0
+{% endhighlight %}
+
 ## LRP function
 
 Now we are ready to start writing our LRP function. It will take as arguments the trained model (here I'm assuming that we already trained the network), the individual datacube we want to analyze, and a string that denotes the type of device we are using. 
 
-The first step is to extract the layers of our module. In the previous section, we used $\texttt{nn.Sequential}$ layers to combine the convolutional and ReLU layers, and to simplify the structure of the Hyper3DNetLite class; however, here we will only to take into account those layers that have weights and biases, so we will ignore the $\texttt{nn.Sequential}$ modules. Once we extracted all the useful modules from our trained network, we will propagate the input data $X$ hrough the network as follows:
+The first step is to extract the layers from our model. In the previous section, we used $\texttt{nn.Sequential}$ layers to combine the convolutional and ReLU layers, and to simplify the structure of the Hyper3DNetLite class; however, here we will only take into account those layers that have useful weights and biases, so we will ignore the $\texttt{nn.Sequential}$ modules. Once we extracted all the useful modules from our trained network, we will propagate the input data $X$ hrough the network as follows:
 
 {% highlight python %}
 def LRP_individual(model, X, device):
@@ -130,3 +160,12 @@ def LRP_individual(model, X, device):
 
         A[layer + 1] = layers[layer].forward(A[layer])
 {% endhighlight %}
+
+Note that we are applying two reshaping operations before the 4th and 17th layers. This corresponds to the reshaping operation we applied in the $\texttt{Hyper3DNetLite.forward}$ method of the previous section (this allows to reshape from 4-D to 3-D tensors, and from 3-D to 1-D tensors, respectively)
+
+
+
+
+
+
+
