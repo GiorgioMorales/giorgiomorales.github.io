@@ -180,6 +180,6 @@ Now we calculate the relevance of the last layer. We will do this by simply taki
 
 The next step is to propagate the relevance distribution of our last layer through the network. Before doing it, let's discuss how to use the propagation rules. First, we should recall that the relevance is conservative, which means that the sum of values of the relevance matrix of a layer should be the same as that of the relevance matrix of the following layer: $\sum_j R_j = \sum_k R_k$, where $j$ represents the indexes of the neurons/units of the first layer and $k$ represents the indexes of the neurons/units of the following layer. Then, the relevance flow can be described by the following equation:
 
- | $R_j = \sum_k \frac{z_{jk}}{\sum_j z_{jk}} R_k,$ | 
+$$R_j = \sum_k \frac{z_{jk}}{\sum_j z_{jk}} R_k,$$ 
 
 where $z_{jk}$ represents how much the neuron/unit $j$ contributed to make neuron/unit $k$ relevant. We may consider that the relevance is distributed proportionally to the contribution of each input to the neuron activation. Considering that in our network (where each convolution layer is followed by a ReLU rectifier) the relation between the activation of the units $j$ and $k$ of consecutive layers is as follows: $a_k = \texttt{max}(0, \sum_{0,j}a_jw_k)$
