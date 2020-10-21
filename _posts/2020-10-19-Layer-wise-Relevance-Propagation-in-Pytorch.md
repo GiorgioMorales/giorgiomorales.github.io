@@ -220,14 +220,14 @@ Thus, we start propagating the relevance of the last layer as follows:
                 rho = lambda p: p
 
             A[layer] = A[layer].data.requires_grad_(True)
-            # Step 1: Transform the weights of the layer and passes the activation from the previous layer
+            # Step 1: Transform the weights of the layer and executes a forward pass
             z = newlayer(layers[layer], rho).forward(A[layer]) + 1e-9
-            # Step 2: Element-wise division between the relevance of the next layer and the denominator z
+            # Step 2: Element-wise division between the relevance of the next layer and the denominator
             s = (R[layer + 1].to(device) / z).data
             # Step 3: 
             (z * s).sum().backward()
-            c = A[layer].grad  										   # step 3
-            R[layer] = (A[layer] * c).cpu().data  					   # step 4
+            c = A[layer].grad  										   
+            R[layer] = (A[layer] * c).cpu().data  					   
 
             if layer == 17:
                 R[layer] = reshape(R[layer], (R[layer].shape[0], R[layer].shape[1], 1, 1))
