@@ -203,7 +203,7 @@ Notice that in the case of CNNs, it is not convenient to express the last equati
 
 $$R_j = a_j [\nabla\sum_k z_k(a) \cdot s_k]_{j},$$ 
 
-Thus, we start propagating the relevance of the last layer as follows:
+Thus, we start propagating the relevance of the last layer:
 
 {% highlight python %}
     # LRP_individual function continuation...
@@ -237,6 +237,7 @@ Thus, we start propagating the relevance of the last layer as follows:
         else:
             R[layer] = R[layer + 1]
 {% endhighlight %}
+
 
 
 IN CONSTRUCTION...
