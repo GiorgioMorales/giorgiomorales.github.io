@@ -201,7 +201,7 @@ $$R_j = a_j \sum_k \rho(w_{jk}) \cdot s_k,$$
 
 Notice that in the case of CNNs, it is not convenient to express the last equation in terms of the weights $w_{jk}$ so, instead, we will use a gradient computation as follows:
 
-$$R_j = a_j [\nabla\sum_k z_k(a) \dot s_k]_{j},$$ 
+$$R_j = a_j [\nabla\sum_k z_k(a) \cdot s_k]_{j},$$ 
 
 Thus, we start propagating the relevance of the last layer as follows:
 
@@ -224,11 +224,12 @@ Thus, we start propagating the relevance of the last layer as follows:
             z = newlayer(layers[layer], rho).forward(A[layer]) + 1e-9
             # Step 2: Element-wise division between the relevance of the next layer and the denominator
             s = (R[layer + 1].to(device) / z).data
-            # Step 3: 
+            # Step 3: Calculate the gradient and multiply it by the activation layer
             (z * s).sum().backward()
             c = A[layer].grad  										   
-            R[layer] = (A[layer] * c).cpu().data  					   
-
+            R[layer] = (A[layer] * c).cpu().data  
+            
+            # Before going back, reshape the relevances of layers 4 and 17 back to their original form  
             if layer == 17:
                 R[layer] = reshape(R[layer], (R[layer].shape[0], R[layer].shape[1], 1, 1))
             elif layer == 4:
