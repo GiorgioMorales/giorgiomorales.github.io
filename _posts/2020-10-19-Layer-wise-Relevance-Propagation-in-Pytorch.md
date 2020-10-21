@@ -236,6 +236,9 @@ Thus, we start propagating the relevance of the last layer:
                 R[layer] = reshape(R[layer], (R[layer].shape[0], 16, int(R[layer].shape[1] / 16), 								   R[layer].shape[2], R[layer].shape[3]))
         else:
             R[layer] = R[layer + 1]
+    
+    # Return the relevance of the input layer
+    return R[0]
 
 
 def newlayer(layer, g):
@@ -259,8 +262,23 @@ model.load_state_dict(torch.load(filepath))
 
 # Set the model in evaluation mode 
 self.model.eval()
-LRP(model, from_numpy(trainx[0]).float().to("cpu"), device="cpu")
+Rel = LRP(model, from_numpy(trainx[0]).float().to("cpu"), device="cpu")
+
+# Plot the relevance
+minv = np.min(np.min(np.min(R[0].data.numpy(), axis=3), axis=3), axis=2)  # Get the minimum relevance 
+maxv = np.max(np.max(np.max(R[0].data.numpy(), axis=3), axis=3), axis=2)  # Get the maximum relevance
+fig, axs = plt.subplots(3, 6)
+count = 0
+for i in range(3):
+    for j in range(6):
+        im = axs[i, j].imshow(R[0].data.numpy()[0, 0, count, :, :], vmin=minv, vmax=maxv)
+        count += 1
+fig.subplots_adjust(right=0.8)
+cbar_ax = fig.add_axes([0.85, 0.15, 0.05, 0.7])
+fig.colorbar(im, cax=cbar_ax)
+
 {% endhighlight %}
+
 
 
 
