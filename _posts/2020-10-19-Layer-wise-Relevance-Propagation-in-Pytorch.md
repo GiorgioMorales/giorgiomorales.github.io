@@ -250,6 +250,17 @@ def newlayer(layer, g):
 
 ## Running the Function
 
+Now, we will load our trained model and will apply our LRP function to the first image of the dataset:
+
+{% highlight python %}
+# Create the model and load the weights 
+model = Hyper3DNetLite(img_shape=(1, 18, 25, 25), classes=3)
+model.load_state_dict(torch.load(filepath))
+
+# Set the model in evaluation mode 
+self.model.eval()
+LRP(model, from_numpy(trainx[0]).float().to("cpu"), device="cpu")
+
 
 
 
