@@ -170,7 +170,7 @@ Note that we are applying two reshaping operations before the 4th and 17th layer
 Now we calculate the relevance of the last layer. We will do this by simply taking the greatest value of the last activation. In this example, we are working with a multi-class classification problem, so, taking in mind that the last fully-connected layer has as many neurons/units as classes we have, each value of the last activation vector is related to the confidence that the corresponding unit represents the correct class (e.g. if the resulting A[-1] vector has three elements and the second one is the greatest, it means that the network predicted that the input image corresponds to the second class). We will assume that the classification of the network is correct and we will mask the A[-1] vector conserving only the greatest value, as we will show below. The intuition behind this is that we will propagate the relevance backward asking "which parts of the image are responsible for the activation of the $i$-th output unit" or "which parts of the image are more relevant when the network classifies it as the $i$-th class". Therefore, continuing with our function we have:
 
 {% highlight python %}
-	# LRP_individual function continuation...
+    # LRP_individual function continuation...
     # Get the relevance of the last layer using the highest classification score of the top layer
     T = A[-1].cpu().detach().numpy().tolist()[0]
     index = T.index(max(T))
@@ -203,11 +203,11 @@ Notice that in the case of CNNs, it is not convenient to express the last equati
 
 $$R_j = a_j [\nabla\sum_k z_k(a) \dot s_k]_{j},$$ 
 
-Thus, we start propagating the relevance of the last layer as following:
+Thus, we start propagating the relevance of the last layer as follows:
 
 {% highlight python %}
-	# LRP_individual function continuation...
-	# Propagation procedure from the top-layer towards the lower layers
+    # LRP_individual function continuation...
+    # Propagation procedure from the top-layer towards the lower layers
     for layer in range(0, L)[::-1]:
 
         if isinstance(layers[layer], torch.nn.Conv2d) or isinstance(layers[layer], torch.nn.Conv3d) \
