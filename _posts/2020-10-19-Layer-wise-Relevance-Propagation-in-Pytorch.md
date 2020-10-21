@@ -201,7 +201,7 @@ $$R_j = a_j \sum_k \rho(w_{jk}) \cdot s_k,$$
 
 Notice that in the case of CNNs, it is not convenient to express the last equation in terms of the weights $w_{jk}$ so, instead, we will use a gradient computation as follows:
 
-$$R_j = a_j \nabla[\sum_k z_k(a) \dot s_k]_{j},$$ 
+$$R_j = a_j [\nabla\sum_k z_k(a) \dot s_k]_{j},$$ 
 
 Thus, we start propagating the relevance of the last layer as following:
 
