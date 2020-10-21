@@ -281,7 +281,7 @@ fig.colorbar(im, cax=cbar_ax)
 
 The result is shown below:
 
-| ![figure]({{ site.baseurl }}/images/gammapositive.png){:height="70%" width="70%" .center-image} |
+| ![figure]({{ site.baseurl }}/images/gammapositive.png) |
 
 As it can be seen, the 6th and 8th input channels (spectral bands 33 and 68, respectively) contain the most relevant pixels for the obtained classification result. One way to verify that the propagation is correct is to verify the conservative property; that is, $\sum_j R_j = \sum_k R_k$. For example we can use the debugger before going out the $\texttt{LRP_individual}$ function and verify the sum of the relevance values of each of the layers:
 
