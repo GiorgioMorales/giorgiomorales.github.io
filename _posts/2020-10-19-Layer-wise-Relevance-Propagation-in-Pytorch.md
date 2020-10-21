@@ -293,4 +293,4 @@ print(np.sum(R[11].data.numpy()[0, 0, 0, :, :]))  # Sum of relevances of layer 1
 ...
 {% endhighlight %}
 
-These values are not expected to be the same, due to the fact that we are altering the original weights using the LRP-$\gamma$ rule and that the derivation is not exact, but they should be very similar. 
+In reality, these values are not expected to be the same, due to the fact that we are altering the original weights using the LRP-$\gamma$ rule and that the derivation is not exact, but they should be very similar. 
