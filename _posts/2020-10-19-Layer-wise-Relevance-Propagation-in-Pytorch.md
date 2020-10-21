@@ -197,11 +197,11 @@ where $\rho(\theta)$ is a function that transforms the weights and biases $\thet
 
 Now we would like to effiiently implement the previous propagation generic rule and to do that we will use the method suggested by [Montavon et. al (2019)](https://link.springer.com/chapter/10.1007%2F978-3-030-28954-6_10). First, let us denote the denominator of the previous equation as $z_k$; then, the element-wise division of the relevance of the next layer and the denominator is noted as $s_k=R_k/z_k$. We could rewrite the equation of the generic rule as: 
 
-$$R_j = a_j \sum_k \rho(w_{jk}) \dot s_k} R_k,$$ 
+$$R_j = a_j \sum_k \rho(w_{jk}) \dot s_k,$$ 
 
 Notice that in the case of CNNs, it is not convenient to express the last equation in terms of the weights $w_{jk}$ so, instead, we will use a gradient computation as follows:
 
-$$R_j = a_j \nabla[ \sum_k z_k(a) \dot s_k} R_k]_j,$$ 
+$$R_j = a_j \nabla[\sum_k z_k(a) \dot s_k]_{j},$$ 
 
 Thus, we start propagating the relevance of the last layer as following:
 
