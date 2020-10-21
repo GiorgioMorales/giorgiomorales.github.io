@@ -236,7 +236,21 @@ Thus, we start propagating the relevance of the last layer:
                 R[layer] = reshape(R[layer], (R[layer].shape[0], 16, int(R[layer].shape[1] / 16), 								   R[layer].shape[2], R[layer].shape[3]))
         else:
             R[layer] = R[layer + 1]
+
+
+def newlayer(layer, g):
+    """Clone a layer and pass its parameters through the function g."""
+    layer = copy.deepcopy(layer)
+    layer.weight = torch.nn.Parameter(g(layer.weight))
+    layer.bias = torch.nn.Parameter(g(layer.bias))
+    return layer
 {% endhighlight %}
+
+
+
+## Running the Function
+
+
 
 
 
