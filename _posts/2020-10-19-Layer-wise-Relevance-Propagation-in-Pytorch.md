@@ -271,7 +271,7 @@ fig, axs = plt.subplots(3, 6)
 count = 0
 for i in range(3):
     for j in range(6):
-        im = axs[i, j].imshow(R[0].data.numpy()[0, 0, count, :, :], vmin=minv, vmax=maxv)
+        im = axs[i, j].imshow(Rel.data.numpy()[0, 0, count, :, :], vmin=minv, vmax=maxv)
         count += 1
 fig.subplots_adjust(right=0.8)
 cbar_ax = fig.add_axes([0.85, 0.15, 0.05, 0.7])
