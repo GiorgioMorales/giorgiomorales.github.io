@@ -264,7 +264,7 @@ model.load_state_dict(torch.load(filepath))
 self.model.eval()
 Rel = LRP(model, from_numpy(trainx[0]).float().to("cpu"), device="cpu")
 
-# Plot the relevance
+# Plot the relevance for each channel
 minv = np.min(np.min(np.min(R[0].data.numpy(), axis=3), axis=3), axis=2)  # Get the minimum relevance 
 maxv = np.max(np.max(np.max(R[0].data.numpy(), axis=3), axis=3), axis=2)  # Get the maximum relevance
 fig, axs = plt.subplots(3, 6)
@@ -279,9 +279,20 @@ fig.colorbar(im, cax=cbar_ax)
 
 {% endhighlight %}
 
+The result is shown below:
 
+| ![figure]({{ site.baseurl }}/images/gammapositive.png){:height="70%" width="70%" .center-image} |
 
+As it can be seen, the 6th and 8th input channels (spectral bands 33 and 68, respectively) contain the most relevant pixels for the obtained classification result. One way to verify that the propagation is correct is to verify the conservative property; that is, $\sum_j R_j = \sum_k R_k$. For example we can use the debugger before going out the $\texttt{LRP_individual}$ function and verify the sum of the relevance values of each of the layers:
 
+{% highlight python %}
+print(np.sum(R[18].data.numpy()[0, 0, 0, :, :]))  # Sum of relevances of layer 19
+print(np.sum(R[17].data.numpy()[0, 0, 0, :, :]))  # Sum of relevances of layer 18
+print(np.sum(R[15].data.numpy()[0, 0, 0, :, :]))  # Sum of relevances of layer 16
+print(np.sum(R[11].data.numpy()[0, 0, 0, :, :]))  # Sum of relevances of layer 12
+...
+{% endhighlight %}
 
+These values are not expected to be the same, due to the fact that we are altering the original weights using the LRP-$\gamma$ rule and that the derivation is not exact, but it should be very similar. 
 
 IN CONSTRUCTION...
