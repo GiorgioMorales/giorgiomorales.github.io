@@ -260,6 +260,7 @@ model.load_state_dict(torch.load(filepath))
 # Set the model in evaluation mode 
 self.model.eval()
 LRP(model, from_numpy(trainx[0]).float().to("cpu"), device="cpu")
+{% endhighlight %}
 
 
 
