@@ -286,10 +286,10 @@ The result is shown below:
 As it can be seen, the 6th and 8th input channels (spectral bands 33 and 68, respectively) contain the most relevant pixels for the obtained classification result. One way to verify that the propagation is correct is to verify the conservative property; that is, $\sum_j R_j = \sum_k R_k$. For example we can use the debugger before going out the $\texttt{LRP_individual}$ function and verify the sum of the relevance values of each of the layers:
 
 {% highlight python %}
-print(np.sum(R[18].data.numpy()[0, 0, 0, :, :]))  # Sum of relevances of layer 19
-print(np.sum(R[17].data.numpy()[0, 0, 0, :, :]))  # Sum of relevances of layer 18
-print(np.sum(R[15].data.numpy()[0, 0, 0, :, :]))  # Sum of relevances of layer 16
-print(np.sum(R[11].data.numpy()[0, 0, 0, :, :]))  # Sum of relevances of layer 12
+print(np.sum(R[18].data.numpy()))  # Sum of relevances of layer 19
+print(np.sum(R[17].data.numpy()))  # Sum of relevances of layer 18
+print(np.sum(R[15].data.numpy()))  # Sum of relevances of layer 16
+print(np.sum(R[11].data.numpy()))  # Sum of relevances of layer 12
 ...
 {% endhighlight %}
 
