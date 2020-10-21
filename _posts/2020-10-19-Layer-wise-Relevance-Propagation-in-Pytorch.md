@@ -40,11 +40,13 @@ temp = np.zeros((train_x.shape[0], train_x.shape[1], train_x.shape[2], nbands))
 for nb in range(0, nbands):
 	temp[:, :, :, nb] = train_x[:, :, :, indexes[nb]]
 train_x = temp.astype(np.float32)
-# Apply Band normalization
+# Apply Band normalization (std = 1)
 for n in range(train_x.shape[3]):
-	train_x[:, :, :, n] = (train_x[:, :, :, n] - np.mean(train_x[:, :, :, n])) / 
+	train_x[:, :, :, n] = (train_x[:, :, :, n]) / 
     					  (np.std(train_x[:, :, :, n]))
 {% endhighlight %}
+
+Note that we are not working with normal RGB images and the range of values of each input channel is different, so we are transforming the data in a way that each channel has a standard deviation of 1. Furthermore, we want to make sure that all the input values are positive so that we can apply the same propagation rules we will apply to the following convolution layers (which we consider that will always receive positive values).   
 
 ## Network architecture
 
@@ -168,6 +170,7 @@ Note that we are applying two reshaping operations before the 4th and 17th layer
 Now we calculate the relevance of the last layer. We will do this by simply taking the greatest value of the last activation. In this example, we are working with a multi-class classification problem, so, taking in mind that the last fully-connected layer has as many neurons/units as classes we have, each value of the last activation vector is related to the confidence that the corresponding unit represents the correct class (e.g. if the resulting A[-1] vector has three elements and the second one is the greatest, it means that the network predicted that the input image corresponds to the second class). We will assume that the classification of the network is correct and we will mask the A[-1] vector conserving only the greatest value, as we will show below. The intuition behind this is that we will propagate the relevance backward asking "which parts of the image are responsible for the activation of the $i$-th output unit" or "which parts of the image are more relevant when the network classifies it as the $i$-th class". Therefore, continuing with our function we have:
 
 {% highlight python %}
+	# LRP_individual function continuation...
     # Get the relevance of the last layer using the highest classification score of the top layer
     T = A[-1].cpu().detach().numpy().tolist()[0]
     index = T.index(max(T))
@@ -190,6 +193,45 @@ The previous one is the most basic propagation rule known as the **LRP-0 rule**.
 
 $$R_j = \sum_k \frac{a_j \rho(w_{jk})}{\epsilon + \sum_{0,j} a_j\rho(w_{jk})} R_k,$$
 
-where $\rho(\theta)$ is a function that transforms the weights and biases $\theta$ of the lower layer. Using this template, we are able to define other propagation rules that overcome the limitations of the LRP-0 rule (which are affected by noisy or contradictory decisions), such as the epsilon rule (**LRP-$\epsilon$**), where $\rho(\theta) = \theta$, and $\epsilon$ is a small positive term that absorbs weak and negative factors, producing less noisy results. Furthermore, we can use the gamma rule (**LRP-$\gamma$**), where $\rho(\theta) = \theta + \gamma\theta^+$, and $\theta^+=\texttt{max}(0,\theta)$, so that the $\gamma$ parameter controls how much importance the positive contributions have. In our case, we will consider $\epsilon = 0.25 * \texttt{sign}(\sum_{0,j} a_jw_{jk})$ and $\gamma=0.25$. Also, we will add a small factor, $1e-09$, to the denominator in order to avoid numeric inconsistencies.
+where $\rho(\theta)$ is a function that transforms the weights and biases $\theta$ of the lower layer. Using this template, we are able to define other propagation rules that overcome the limitations of the LRP-0 rule (which are affected by noisy or contradictory decisions), such as the gamma rule (**LRP-$\gamma$**), where $\rho(\theta) = \theta + \gamma\theta^+$, and $\theta^+=\texttt{max}(0,\theta)$, so that the $\gamma$ parameter controls how much importance the positive contributions have. Just for simplicity, we will use LRP-0 for the last two layers and LRP-$\gamma$ for the rest of the network, as we are mainly interested in the positive contributions. In our case, we will consider $\gamma=0.25$. Also, we will add a small factor, $1e-09$, to the denominator in order to avoid numeric inconsistencies. 
+
+Now we would like to effiiently implement the previous propagation generic rule and to do that we will use the method suggested by [Montavon et. al (2019)](https://link.springer.com/chapter/10.1007%2F978-3-030-28954-6_10). First, let us denote the denominator of the previous equation as $z_k$; then, the element-wise division of the relevance of the next layer and the denominator is noted as $s_k=R_k/z_k$. We could rewrite the equation of the generic rule as: 
+
+$$R_j = a_j \sum_k \rho(w_{jk}) \dot s_k} R_k,$$ 
+
+Thus, we start propagating the relevance of the last layer as following:
+
+{% highlight python %}
+	# LRP_individual function continuation...
+	# Propagation procedure from the top-layer towards the lower layers
+    for layer in range(0, L)[::-1]:
+
+        if isinstance(layers[layer], torch.nn.Conv2d) or isinstance(layers[layer], torch.nn.Conv3d) \
+                or isinstance(layers[layer], torch.nn.AvgPool2d) or isinstance(layers[layer], 							torch.nn.Linear):
+			
+            # Specifies the rho function that will be applied to the weights of the layer
+            if 0 < layer <= 13:  # Gamma rule (LRP-gamma)
+                rho = lambda p: p + 0.25 * p.clamp(min=0)
+            else:  # Basic rule (LRP-0)
+                rho = lambda p: p
+
+            A[layer] = A[layer].data.requires_grad_(True)
+            # Step 1: Transform the weights of the layer and passes the activation from the previous layer
+            z = newlayer(layers[layer], rho).forward(A[layer]) + 1e-9
+            # Step 2: Element-wise division between the relevance of the next layer and the denominator z
+            s = (R[layer + 1].to(device) / z).data
+            # Step 3: 
+            (z * s).sum().backward()
+            c = A[layer].grad  										   # step 3
+            R[layer] = (A[layer] * c).cpu().data  					   # step 4
+
+            if layer == 17:
+                R[layer] = reshape(R[layer], (R[layer].shape[0], R[layer].shape[1], 1, 1))
+            elif layer == 4:
+                R[layer] = reshape(R[layer], (R[layer].shape[0], 16, int(R[layer].shape[1] / 16), 								   R[layer].shape[2], R[layer].shape[3]))
+        else:
+            R[layer] = R[layer + 1]
+{% endhighlight %}
+
 
 IN CONSTRUCTION...
