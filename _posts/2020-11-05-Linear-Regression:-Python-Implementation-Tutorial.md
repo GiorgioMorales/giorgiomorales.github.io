@@ -290,3 +290,59 @@ ax.view_init(10,10)
 <img src="https://www.cs.montana.edu/~moralesluna/images/linear/fit3D.gif" width="500"/>
   
 
+## 3.2. Geometry of Multiple Regression
+
+What is the column space of a matrix?
+
+Take the matrix $A = \begin{bmatrix}
+1 & 2 \\
+0 & 3 \\
+5 & 6 \\
+\end{bmatrix}$. The column space of A is defined as the set of all possible linear combinations of its column vectors; that is, $col(A) = c_1 \begin{bmatrix}
+1\\
+0\\
+5\\
+\end{bmatrix} + c_2 \begin{bmatrix}
+2\\
+3\\
+6\\
+\end{bmatrix}$, where $c_1$ and $c_2$ are scalars.
+
+
+Let's look at our linear regression model once again:
+
+$$\hat{Y} = w_0X_0 + w_1X_1 + ... + w_nX_n. $$
+
+Then, we can say that the predicted vector $\hat{Y}$ lies in the column space of the augmented dataset $\tilde{D} = \begin{bmatrix}
+| & | & ... & |\\
+X_0 & X_1 & ... & X_n\\
+| & | & ... & |\\
+\end{bmatrix}$
+
+><div>
+<img src="https://www.cs.montana.edu/~moralesluna/images/linear/geometry.jpg" width="400"/>
+
+We want to minimize the residual vector error $\epsilon = Y - \hat{Y}$, which is orthogonal to the column space $col(\tilde{D})$. Note that $\epsilon$ is also orthogonal to each of the attributes $X_i$, so:
+
+$$X_i^T\epsilon = 0$$
+
+$$X_i^T(Y- \hat{Y}) = 0$$
+
+$$w_0X_i^TX_0 + w_1X_i^TX_1 + ... + w_nX_i^TX_n = X_i^TY$$
+
+This is called the **normal equation**. Given that we have ($d+1$) independant variables and ($d+1$) unknown weights, the problem can be solved.
+
+We can put all the normal equations in a matrix form:
+
+$$\begin{bmatrix}
+X_0^TX_0 & X_0^TX_1 & ... & X_0^TX_n\\
+X_1^TX_0 & X_1^TX_1 & ... & X_1^TX_n\\
+... & ... & ... & ...\\
+X_n^TX_0 & X_n^TX_1 & ... & X_n^TX_n\\
+\end{bmatrix} \tilde{\texttt{w}} = \tilde{D}^TY$$
+
+$$(\tilde{D}^T\tilde{D})\tilde{\texttt{w}} =\tilde{D}^TY $$
+
+$$\Rightarrow \tilde{\texttt{w}}= (\tilde{D}^T\tilde{D})^{-1}\tilde{D}^TY$$
+  
+  
