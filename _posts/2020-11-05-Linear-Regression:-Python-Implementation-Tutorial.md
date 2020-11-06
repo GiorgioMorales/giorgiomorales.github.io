@@ -466,4 +466,20 @@ print(Delta)
 [[ 1.00000000e+00 -2.16422835e-16  5.93091449e-17]
  [-2.16422835e-16  1.00000000e+00  1.75973941e-17]
  [ 5.93091449e-17  1.75973941e-17  1.00000000e+00]]
-{% endhighlight %} 
+{% endhighlight %}
+  
+  Finally, we have everything we need to use the equation $\hat{Y} = Q((\Delta)^{-1}Q^TY)$:
+  
+  {% highlight python %}
+# Estimated parameter vector
+Yt = Q.dot(np.linalg.inv(Delta)).dot(Q.T.dot(Y))
+print("Printing the first 10 estimated values of Yt: ")
+print(Yt[:10])
+  
+>>
+Printing the first 10 estimated values of Yt: 
+[0.2008197  0.21726327 0.18876922 0.28686622 0.20904148 0.31096719
+ 0.24192861 0.25397909 0.25837218 0.26220088]
+{% endhighlight %}
+  
+  
