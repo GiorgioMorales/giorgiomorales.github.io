@@ -430,12 +430,12 @@ $$\hat{Y} = Q((\Delta)^{-1}Q^TY)$$
 
 Pseudocode:
 
-{% highlight python %}
+```
 1. Dt <- (1  D)  # Augment the dataset
 2. {Q, R} = QR-factorization(Dt)
 3. Calculate Delta^-1
 4. Yt = Q (Delta^-1 . Q^T . Y)
-{% endhighlight %} 
+```
 
 ## 3.5. Multiple Regression Algorithm: Example
 
