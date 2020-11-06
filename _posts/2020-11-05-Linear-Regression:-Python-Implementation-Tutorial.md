@@ -1,10 +1,6 @@
 ---
 published: true
 ---
-## A New Post
-
-# Linear Regression
-
 ## 1. Introduction
 
 Given a set of $n$ **independet variables**: $X_1, X_2, ..., X_n$ and a real-valued **dependant variable** $Y$ (or response variable), the goal of the linear regression problem is to find a **regression function** $f$ such that:
@@ -70,3 +66,41 @@ $$\sum_{i=1}^n x_iy_i - (\mu_Y \sum_{i=1}^n x_i - w \cdot \mu_X \sum_{i=1}^n x_i
 $$w = \frac{\sum_{i=1}^n (x_i - \mu_X)(y_i - \mu_Y)}{\sum_{i=1}^n(x_i - \mu_X)^2} = \frac{\sigma_{XY}}{\sigma_{X}^2} $$
 
 where $\sigma_{XY}$ is the covariance between $X$ and $Y$, and $\sigma_{X}^2$ is the variance of $X$.
+
+## 2.1. Univariate Regression Example
+
+Since we just found a way to estimate the coefficients $w$ and $b$ for the univariate regression problem, let's get our hands dirty with an example. 
+
+For this, we will use the **Iris dataset**. Specifically, we will try to estimate the width of the petal ($Y$) given only the length of the petal ($X$).
+
+First, let's load the dataset:
+
+{% highlight python %}
+import seaborn as sns
+iris = sns.load_dataset('iris')
+iris.head()
+
+>>
+sepal_length	sepal_width	petal_length	petal_width	species
+0	5.1	3.5	1.4	0.2	setosa
+1	4.9	3.0	1.4	0.2	setosa
+2	4.7	3.2	1.3	0.2	setosa
+3	4.6	3.1	1.5	0.2	setosa
+4	5.0	3.6	1.4	0.2	setosa
+{% endhighlight %}
+
+Now, we will separate the $X$ and $Y$ variables:
+
+{% highlight python %}
+X = iris['petal_length']
+Y = iris['petal_width']
+
+print('Shape of the independent variable: ' + str(X.shape))
+print('Shape of the dependant variable: ' + str(Y.shape))
+
+>> 
+Shape of the independent variable: (150,)
+Shape of the dependant variable: (150,)
+{% endhighlight %}
+
+
