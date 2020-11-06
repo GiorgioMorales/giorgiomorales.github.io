@@ -2,7 +2,6 @@
 published: true
 ---
 ## 1. Introduction
-
 Given a set of $n$ **independet variables**: $X_1, X_2, ..., X_n$ and a real-valued **dependant variable** $Y$ (or response variable), the goal of the linear regression problem is to find a **regression function** $f$ such that:
 
  $$Y = f(X_1, X_2, ..., X_n) + \epsilon = f(X) + \epsilon$$
