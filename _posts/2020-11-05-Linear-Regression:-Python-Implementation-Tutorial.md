@@ -222,5 +222,46 @@ ax.scatter3D(X1, X2, Y)
 
   ><div>
 <img src="https://www.cs.montana.edu/~moralesluna/images/linear/irisgif.gif" width="500"/>
+  
+  
+  We can construct now the augmented matrix $\tilde{D}$ including the extra attribute $X_0$ as a column of $1$s:
+  
+{% highlight python %}
+# Create column of ones
+Ones = np.ones((len(X1),))
+# Stack the three columns to form Dtilde
+Dt = np.vstack((Ones, X1, X2)).T
+print("Showing the first 5 points of Dt:")
+print(Dt[:5])
+  
+>>
+Showing the first 5 points of Dt:
+[[1.  5.1 1.4]
+ [1.  4.9 1.4]
+ [1.  4.7 1.3]
+ [1.  4.6 1.5]
+ [1.  5.  1.4]]
+{% endhighlight %} 
 
+  Having prepared our dataset, we can estimate the parameter vector using the equation: $\tilde{\texttt{w}}= (\tilde{D}^T\tilde{D})^{-1}\tilde{D}^TY$:
+  
+{% highlight python %}
+# Calculate the regression coefficients
+wt =  np.linalg.inv(Dt.T.dot(Dt)).dot(Dt.T.dot(Y))
+
+print("Regression coefficients:")
+print(wt)
+
+# Print estimated response variable
+Yt = Dt.dot(wt)
+print("Printing the first 10 estimated values of Yt: ")
+print(Yt[:10])
+  
+>>
+Regression coefficients:
+[-0.00899597 -0.08221782  0.44937611]
+Printing the first 10 estimated values of Yt: 
+[0.2008197  0.21726327 0.18876922 0.28686622 0.20904148 0.31096719
+ 0.24192861 0.25397909 0.25837218 0.26220088]
+{% endhighlight %} 
 
