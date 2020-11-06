@@ -313,11 +313,13 @@ Let's look at our linear regression model once again:
 
 $$\hat{Y} = w_0X_0 + w_1X_1 + ... + w_nX_n. $$
 
-Then, we can say that the predicted vector $\hat{Y}$ lies in the column space of the augmented dataset $\tilde{D} = \begin{bmatrix}
+Then, we can say that the predicted vector $\hat{Y}$ lies in the column space of the augmented dataset 
+
+$$\tilde{D} = \begin{bmatrix}
 | & | & ... & |\\
 X_0 & X_1 & ... & X_n\\
 | & | & ... & |\\
-\end{bmatrix}$
+\end{bmatrix}$$
 
 ><div>
 <img src="https://www.cs.montana.edu/~moralesluna/images/linear/geometry.jpg" width="400"/>
@@ -346,7 +348,7 @@ $$(\tilde{D}^T\tilde{D})\tilde{\texttt{w}} =\tilde{D}^TY $$
 $$\Rightarrow \tilde{\texttt{w}}= (\tilde{D}^T\tilde{D})^{-1}\tilde{D}^TY$$
   
   
-  ## 3.3. QR-Factorization
+## 3.3. QR-Factorization
 
 The attribute vectors are not necessarily orthogonoal. To obtain the projected vector $\hat{Y}$ we need to construct and orthogonal basis for $col(\tilde{D})$. 
 
@@ -365,7 +367,7 @@ $$ U_2 = X_2 - p_{20}\cdot U_0 - p_{21}\cdot U_1$$
 
 $$U_d = X_n - p_{n0}\cdot U_0 - p_{n1}\cdot U_1 - ... - p_{n,n-1}\cdot U_{n-1}$$
 
-where $p_{ji} = proj_{U_i}(X_j) = \frac{X_j^TU_i}{||U_i||^2}$ represents the scalar projection of $X_j$ onto the basis vector $U_i$.
+where $p_{ji} = proj_{U_i}(X_j) = \frac{X_j^TU_i}{\|\|U_i\|\|^2}$ represents the scalar projection of $X_j$ onto the basis vector $U_i$.
 
 Now we can rearrange the previous set of equations:
 
