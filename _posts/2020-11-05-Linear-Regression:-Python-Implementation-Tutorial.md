@@ -115,7 +115,7 @@ plt.ylabel("Petal width")
 
 ><div>
 <img src="https://www.cs.montana.edu/~moralesluna/images/linear/irispetal.png" width="500"/>
-</div>
+
 
 Now, let{s use the expressions for $w$ and $b$ that we found after least squares minimizatoin:
 
