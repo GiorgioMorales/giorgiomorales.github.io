@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 ## A New Post
 
@@ -70,4 +70,3 @@ $$\sum_{i=1}^n x_iy_i - (\mu_Y \sum_{i=1}^n x_i - w \cdot \mu_X \sum_{i=1}^n x_i
 $$w = \frac{\sum_{i=1}^n (x_i - \mu_X)(y_i - \mu_Y)}{\sum_{i=1}^n(x_i - \mu_X)^2} = \frac{\sigma_{XY}}{\sigma_{X}^2} $$
 
 where $\sigma_{XY}$ is the covariance between $X$ and $Y$, and $\sigma_{X}^2$ is the variance of $X$.
-
