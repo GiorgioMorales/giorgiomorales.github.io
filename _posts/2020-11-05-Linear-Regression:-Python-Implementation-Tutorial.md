@@ -164,5 +164,42 @@ plt.xlabel("Petal length")
 plt.ylabel("Petal width")
 {% endhighlight %} 
 
+  ><div>
+<img src="https://www.cs.montana.edu/~moralesluna/images/linear/univariate.png" width="500"/>
+  
+  ## 3 Multiple Regression 
+
+Now we consider the case where each data point of the training set $D$ contains $n$ attributes: 
+
+$$\hat{y}_i = b + w_1x_{i1} + w_2x_{i2} + ... + w_nx_{in} = \beta + \texttt{w}^T \texttt{x}_i$$
+
+Let $b=w_0$ and $x_{i0}=1$, then:
+
+$$\hat{y}_i =  w_0x_{i0} + w_1x_{i1} + w_2x_{i2} + ... + w_nx_{in} = \tilde{\texttt{w}}^T \tilde{\texttt{x}}_i$$
+
+Since $i = 1, 2, 3, ..., N$, we can summarize the $N$ equations in just one:
+
+$$\hat{Y} = \tilde{D} \tilde{\texttt{w}},$$
+
+where $\hat{Y}=(\hat{y_1}, \hat{y_2}, ..., \hat{y_n})^T$ and $\tilde{D}$ is the augmented training data sample that includes the artificial constant attribute $X_0$.
+
+**Goal**: To find the best hyperplane defined by $\tilde{\texttt{w}}$ that minimizes the sum of squared errors:
+
+$$\min_{\tilde{\texttt{w}}} SSE = \sum_{i=1}^n \epsilon_i^2 = ||Y - \hat{Y}||^2$$
+
+$$=YY^T - 2Y\hat{Y} + \hat{Y}^T\hat{Y}$$
+
+$$=YY^T - 2\tilde{\texttt{w}}(\tilde{D}^TY) + \tilde{\texttt{w}}^T(\tilde{D}^T\tilde{D})\tilde{\texttt{w}}.$$
+
+Similar to what we have done previously, we need to differentiate $SSE$ w.r.t $\tilde{\texttt{w}}$ and set the result to 0:
+
+$$\frac{\partial}{\partial \tilde{\texttt{w}}}SSE = - 2(\tilde{D}^TY) + 2(\tilde{D}^T\tilde{D})\tilde{\texttt{w}}= 0$$
+
+$$\Rightarrow \tilde{\texttt{w}}= (\tilde{D}^T\tilde{D})^{-1}\tilde{D}^TY$
+
+Let's replace $\tilde{\texttt{w}}$ in $\hat{Y} = \tilde{D} \tilde{\texttt{w}}$:
+
+$$\hat{Y} = \tilde{D}(\tilde{D}^T\tilde{D})^{-1}\tilde{D}^TY = H Y$$
+
 
 
