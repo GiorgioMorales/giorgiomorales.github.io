@@ -200,6 +200,27 @@ $$\Rightarrow \tilde{\texttt{w}}= (\tilde{D}^T\tilde{D})^{-1}\tilde{D}^TY$
 Let's replace $\tilde{\texttt{w}}$ in $\hat{Y} = \tilde{D} \tilde{\texttt{w}}$:
 
 $$\hat{Y} = \tilde{D}(\tilde{D}^T\tilde{D})^{-1}\tilde{D}^TY = H Y$$
+  
+## 3.1. Multivariate Regression: Example
 
+This time we will use two independent variables from the Iris dataset: Sepal length ($X_1$) and Petal length ($X_2$). Using these variables we will estimate the response variable Petal width ($Y$).
+  
+{% highlight python %}
+X1 = iris['sepal_length']
+X2 = iris['petal_length']
+Y = iris['petal_width']
+
+print('Shape of the first independent variable: ' + str(X1.shape))
+print('Shape of the second independent variable: ' + str(X2.shape))
+print('Shape of the dependant variable: ' + str(Y.shape))
+
+# Plot the variables
+fig = plt.figure()
+ax = plt.axes(projection='3d')
+ax.scatter3D(X1, X2, Y)
+{% endhighlight %} 
+
+  ><div>
+<img src="https://www.cs.montana.edu/~moralesluna/images/linear/irisgif.gif" width="500"/>
 
 
