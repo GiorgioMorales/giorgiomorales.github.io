@@ -103,4 +103,48 @@ Shape of the independent variable: (150,)
 Shape of the dependant variable: (150,)
 {% endhighlight %}
 
+For the sake of visualization, let's plot this set of points:
+
+{% highlight python %}
+import matplotlib.pyplot as plt
+
+plt.scatter(X, Y)
+plt.xlabel("Petal length")
+plt.ylabel("Petal width")
+{% endhighlight %}
+
+><div>
+<img src="https://www.cs.montana.edu/~moralesluna/images/linear/irispetal.png" width="500"/>
+</div>
+
+Now, let{s use the expressions for $w$ and $b$ that we found after least squares minimizatoin:
+
+$$b = \mu_Y - w \cdot \mu_X$$
+
+$$w = \frac{\sigma_{XY}}{\sigma_{X}^2} $$
+
+{% highlight python %}
+import numpy as np
+
+# Get number of samples
+N = len(X)
+
+# Calculate means
+u_x = np.mean(X)
+u_y = np.mean(Y)
+
+# Calculate variance an covariance
+varx = np.var(X)
+varxy = np.sum((X - u_x) * (Y - u_y)) / N
+
+# Calculate parameters
+w = varxy / varx
+b = u_y - w * u_x
+
+print("Parameter w = " + str(w))
+print("Parameter b = " + str(b))  
+{% endhighlight %}
+
+
+
 
