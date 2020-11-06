@@ -166,7 +166,7 @@ plt.ylabel("Petal width")
   ><div>
 <img src="https://www.cs.montana.edu/~moralesluna/images/linear/univariate.png" width="500"/>
   
-  ## 3 Multiple Regression 
+## 3 Multiple Regression 
 
 Now we consider the case where each data point of the training set $D$ contains $n$ attributes: 
 
@@ -285,7 +285,7 @@ ax.plot_surface(X1s, X2s, ys, alpha=0.3)
 ax.view_init(10,10)
 {% endhighlight %} 
   
-    ><div>
+><div>
 <img src="https://www.cs.montana.edu/~moralesluna/images/linear/fit3D.gif" width="500"/>
   
 
