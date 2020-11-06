@@ -346,3 +346,97 @@ $$(\tilde{D}^T\tilde{D})\tilde{\texttt{w}} =\tilde{D}^TY $$
 $$\Rightarrow \tilde{\texttt{w}}= (\tilde{D}^T\tilde{D})^{-1}\tilde{D}^TY$$
   
   
+  ## 3.3. QR-Factorization
+
+The attribute vectors are not necessarily orthogonoal. To obtain the projected vector $\hat{Y}$ we need to construct and orthogonal basis for $col(\tilde{D})$. 
+
+><div>
+<img src="https://www.cs.montana.edu/~moralesluna/images/linear/projec.jpg" width="400"/>
+
+We can construct a set of orthogonal basis vectors $U_1, U_2, ..., U_n$ for $col(\tilde{D})$ using the *Gram-Schmidt orthogonalization* method:
+
+$$ U_0 = X_0$$
+
+$$ U_1 = X_1 - p_{10}\cdot U_0$$
+
+$$ U_2 = X_2 - p_{20}\cdot U_0 - p_{21}\cdot U_1$$
+
+...
+
+$$U_d = X_n - p_{n0}\cdot U_0 - p_{n1}\cdot U_1 - ... - p_{n,n-1}\cdot U_{n-1}$$
+
+where $p_{ji} = proj_{U_i}(X_j) = \frac{X_j^TU_i}{||U_i||^2}$ represents the scalar projection of $X_j$ onto the basis vector $U_i$.
+
+Now we can rearrange the previous set of equations:
+
+$$ X_0 = U_0$$
+
+$$ X_1 = p_{10}\cdot U_0 + U_1$$
+
+$$ X_2 = p_{20}\cdot U_0 + p_{21}\cdot U_1 + U_2$$
+
+...
+
+$$X_d = p_{n0}\cdot U_0 + p_{n1}\cdot U_1 - ... + p_{n,n-1}\cdot U_{n-1} + U_n$$
+
+We can also combine all the equations in a matrix form, such that:
+
+$$\tilde{D}=QR,$$ 
+
+where:
+
+$$Q = \begin{bmatrix}
+| & | & ... & |\\
+U_0 & U_1 & ... & U_n\\
+| & | & ... & |\\
+\end{bmatrix}$$
+
+and:
+
+$$R = \begin{bmatrix}
+1 & p_{10} & p_{20} & ... & p_{n0}\\
+0 & 1 & p_{21} & ... & p_{n1}\\
+0 & 0 & 1 & ... & p_{n2}\\
+... & ... & ... & ... & ...\\
+0 & 0 & 0 & ... & 1\\
+\end{bmatrix}$$
+
+Finally, the estimated response variable $\hat{Y}$ can be expressed as the sum of the projections of the observed response variable $Y$ onto each one of the vectors of the new orthogonal basis:  
+
+$$Y = proj_{U_0}(Y)\cdot U_0 + proj_{U_1}(Y)\cdot U_1 +  ... + proj_{U_n}(Y)\cdot U_n$$
+  
+  ## 3.4. Multiple Regression Algorithm
+
+**Note:** (Squared norms)
+
+$$Q^TQ = \Delta = \begin{bmatrix}
+||U_0||^2 & 0 & 0 & ... & 0\\
+0 & ||U_1||^2 & 0 & ... & 0\\
+0 & 0 & ||U_2||^2 & ... & 0\\
+... & ... & ... & ... & ...\\
+0 & 0 & 0 & ... & ||U_n||^2\\
+\end{bmatrix}$$ 
+
+In order to solve the regression problem, we can simply use the expression we previously found and replace it using our new basis taking into account that $\tilde{D} = QR$:
+
+$$\tilde{\texttt{w}}= (\tilde{D}^T\tilde{D})^{-1}\tilde{D}^TY$$
+
+$$R\tilde{\texttt{w}}= (\Delta)^{-1}Q^TY$$
+
+Then, given that $\hat{Y} = \tilde{D} \tilde{\texttt{w}}$, we have:
+
+$$\hat{Y} = Q((\Delta)^{-1}Q^TY)$$
+
+
+Pseudocode:
+
+```
+1. Dt <- (1  D)  # Augment the dataset
+2. {Q, R} = QR-factorization(Dt)
+3. Calculate Delta^-1
+4. Yt = Q (Delta^-1 . Q^T . Y)
+```
+
+
+
+
