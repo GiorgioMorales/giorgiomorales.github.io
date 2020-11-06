@@ -264,4 +264,29 @@ Printing the first 10 estimated values of Yt:
 [0.2008197  0.21726327 0.18876922 0.28686622 0.20904148 0.31096719
  0.24192861 0.25397909 0.25837218 0.26220088]
 {% endhighlight %} 
+  
+  Then, the fitted hyperplane can be expressed as:
+
+$$\hat{Y} = -0.0089 - 0.082 X_1 + 0.449 X_2$$
+
+Finally, let's plot the regression function:
+  
+{% highlight python %}
+# Range of petal and sepal lengths
+X1s, X2s = np.meshgrid(range(10), range(10))
+
+# Apply the linear regression model
+ys = -0.0089 - 0.082 * X1s + 0.449 * X2s
+
+# Plot the dataset and the hyperplane
+fig = plt.figure()
+ax = plt.axes(projection='3d')
+ax.scatter3D(X1, X2, Y)
+ax.plot_surface(X1s, X2s, ys, alpha=0.3)
+ax.view_init(10,10)
+{% endhighlight %} 
+  
+    ><div>
+<img src="https://www.cs.montana.edu/~moralesluna/images/linear/fit3D.gif" width="500"/>
+  
 
