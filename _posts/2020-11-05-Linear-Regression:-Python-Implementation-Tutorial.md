@@ -485,8 +485,6 @@ Printing the first 10 estimated values of Yt:
 <div>
 <img src="https://camo.githubusercontent.com/52feade06f2fecbf006889a904d221e6a730c194/68747470733a2f2f636f6c61622e72657365617263682e676f6f676c652e636f6d2f6173736574732f636f6c61622d62616467652e737667"/>
  
- [Google Colab Notebook]( https://colab.research.google.com/github/GiorgioMorales/LinearRegression/blob/main/Presentation_Linear_Regression.ipynb)
+[Google Colab Notebook]( https://colab.research.google.com/github/GiorgioMorales/LinearRegression/blob/main/Presentation_Linear_Regression.ipynb)
   
 Source: _Mohammed J. Zaki, Wagner Meira, Jr., Data Mining and Machine Learning: Fundamental Concepts and Algorithms, 2nd Edition, Cambridge University Press, March 2020. ISBN: 978-1108473989._
-  
-  
