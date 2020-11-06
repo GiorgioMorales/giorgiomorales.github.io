@@ -442,5 +442,28 @@ Pseudocode:
 Let's repeat the same problem we saw before but now let's apply the QR-factorization and geometric approach.
 
 First, we will perform the QR-factorization using the ```Dt``` variable we used before to store our augmented dataset.
+         
+{% highlight python %}
+# QR-factorization
+Q, R = np.linalg.qr(Dt)
 
+print('Shape of matrix Q: ' + str(Q.shape))
+print('Shape of matrix R: ' + str(R.shape))
+         
+>>
+Shape of matrix Q: (150, 3)
+Shape of matrix R: (3, 3)
+{% endhighlight %} 
 
+Now we can calculate $\Delta$ using $Q$:
+  
+{% highlight python %}
+# Calculate Delta
+Delta = Q.T.dot(Q)
+print(Delta)
+         
+>>
+[[ 1.00000000e+00 -2.16422835e-16  5.93091449e-17]
+ [-2.16422835e-16  1.00000000e+00  1.75973941e-17]
+ [ 5.93091449e-17  1.75973941e-17  1.00000000e+00]]
+{% endhighlight %} 
