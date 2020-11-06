@@ -27,7 +27,6 @@ where:
 
 ><div>
 <img src="https://www.cs.montana.edu/~moralesluna/images/linear/plane.jpg" width="500"/>
-</div>
 
 In practice, the parameters $\beta$ and $\omega$ are **unkown**, so the idea is to estimate them from a training set $D$ consisting of $N$ points $x_i \in \mathbb{R}^n$. Let $b$ denote the estimated value of the bias $\beta$, and $\texttt{w}=(w_1, w_2, ..., w_n)^T$ denote the estimated value of the vector $\omega$; then, the estimated dependant variable given a test point $\texttt{x}=(x_1, x_2, ..., x_n)^T$ can be written as:
 
@@ -142,9 +141,28 @@ w = varxy / varx
 b = u_y - w * u_x
 
 print("Parameter w = " + str(w))
-print("Parameter b = " + str(b))  
+print("Parameter b = " + str(b)) 
+  
+>> 
+Parameter w = 0.41575541635241137
+Parameter b = -0.3630755213190291
 {% endhighlight %}
+  
+Once that we obtained our estimated parameters, we can take any test point and estimate its corresponding response variable. Thus, we will plot the estimated petal widths for a range of petal length values between 0 and 8.
+  
+{% highlight python %}
+# Range of petal lengths
+xs = range(0, 8)
 
+# Apply the linear regression model
+ys = w * xs + b
+
+# Plot the regression function
+plt.scatter(X, Y)
+plt.plot(xs, ys)
+plt.xlabel("Petal length")
+plt.ylabel("Petal width")
+{% endhighlight %} 
 
 
 
