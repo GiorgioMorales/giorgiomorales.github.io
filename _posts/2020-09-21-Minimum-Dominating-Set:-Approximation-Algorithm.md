@@ -1,5 +1,5 @@
 ---
-published: true
+published: false
 ---
 The Minimum Dominating Set problem is: Given a graph, find the smallest subset of the vertices such that each remaining vertex has a neighbor in the selected subset. Find an approximation algorithm for the Minimum Dominating Set problem.
 
