@@ -1,5 +1,5 @@
 ---
-published: true
+published: false
 ---
 Suppose we have $p$ machines and $n$ jobs. Each job has a time it takes to complete $t_j$ (i.e.  processing time).  Let $A_m$ denote the jobs assigned to machine $m$.  This means that machine $m$ will operate for: $T_m = \sum_{ j \in A_m}t_j$.  The goal is to assign all jobs to machines in such a way as to minimize: $max_mT_m$.
   
