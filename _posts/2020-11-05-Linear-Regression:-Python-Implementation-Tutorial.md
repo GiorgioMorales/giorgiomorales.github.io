@@ -194,7 +194,7 @@ Similar to what we have done previously, we need to differentiate $SSE$ w.r.t $\
 
 $$\frac{\partial}{\partial \tilde{\texttt{w}}}SSE = - 2(\tilde{D}^TY) + 2(\tilde{D}^T\tilde{D})\tilde{\texttt{w}}= 0$$
 
-$$\Rightarrow \tilde{\texttt{w}}= (\tilde{D}^T\tilde{D})^{-1}\tilde{D}^TY$
+$$\Rightarrow \tilde{\texttt{w}}= (\tilde{D}^T\tilde{D})^{-1}\tilde{D}^TY$$
 
 Let's replace $\tilde{\texttt{w}}$ in $\hat{Y} = \tilde{D} \tilde{\texttt{w}}$:
 
