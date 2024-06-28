@@ -55,8 +55,8 @@ education:
     date_start: 2022-01-01
     date_end: 2025-05-15
     summary: |
-      Supervised by [Dr. John Sheppard](https://www.cs.montana.edu/sheppard/). 
-      Member of the Numerical Intelligent Systems Laboratory (NISL).
+      - Supervised by Dr. John Sheppard. 
+      - Member of the Numerical Intelligent Systems Laboratory (NISL).
 
   - area: Graduate Certificate in Artificial Intelligence
     institution: Montana State University
@@ -89,6 +89,9 @@ education:
     date_end: 2015-12-31
     summary: |
       GPA: 3.5/4.0
+    button:
+      text: 'B.Sc. Thesis'
+      url: 'https://renati.sunedu.gob.pe/handle/sunedu/3500202'
       
 work:
   - position: Director of Cloud Infrastructure
