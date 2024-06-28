@@ -149,7 +149,7 @@ skills:
       - name: Cooking
         description: ''
         percent: 80
-        icon: custom/researchgate
+        icon: assets/media/icons/custom/researchgate
 
 languages:
   - name: English
