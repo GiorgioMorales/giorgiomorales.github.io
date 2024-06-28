@@ -164,31 +164,48 @@ languages:
 #   Only `title`, `awarder`, and `date` are required.
 #   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
 awards:
-  - title: Neural Networks and Deep Learning
-    url: https://www.coursera.org/learn/neural-networks-deep-learning
-    date: '2023-11-25'
-    awarder: Coursera
-    icon: coursera
+  - title: Cobleigh Endowment (2023, 2024)
+    url: https://raw.githubusercontent.com/GiorgioMorales/GiorgioMorales/main/CV/cobleigh2024.jpg
+    date: '2024-05-20'
+    awarder: Norm Asbjornson College of Engineering 
+    icon: custom/cap
     summary: |
-      I studied the foundational concept of neural networks and deep learning. By the end, I was familiar with the significant technological trends driving the rise of deep learning; build, train, and apply fully connected deep neural networks; implement efficient (vectorized) neural networks; identify key parameters in a neural network’s architecture; and apply deep learning to your own applications.
-  - title: Blockchain Fundamentals
-    url: https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals
-    date: '2023-07-01'
-    awarder: edX
-    icon: edx
+      Scholarship for students of the Norm Asbjornson College of Engineering.
+  - title: Graduate Professional Advancement Grant (2023, 2024)
+    url: https://github.com/GiorgioMorales/GiorgioMorales/blob/main/CV/PAGaward2024.pdf
+    date: '2024-05-01'
+    awarder: Montana State University - Graduate School
+    icon: custom/cap
     summary: |
-      Learned:
-      - Synthesize your own blockchain solutions
-      - Gain an in-depth understanding of the specific mechanics of Bitcoin
-      - Understand Bitcoin’s real-life applications and learn how to attack and destroy Bitcoin, Ethereum, smart contracts and Dapps, and alternatives to Bitcoin’s Proof-of-Work consensus algorithm
-  - title: 'Object-Oriented Programming in R'
-    url: https://www.datacamp.com/courses/object-oriented-programming-with-s3-and-r6-in-r
-    certificate_url: https://www.datacamp.com
-    date: '2023-01-21'
-    awarder: datacamp
-    icon: datacamp
+      Travel grant for MSU graduate students to conduct oral presentations at professional conferences.
+  - title: IEEE CIS Travel Grant (2023)
+    url: https://github.com/GiorgioMorales/GiorgioMorales/blob/main/CV/Travel%20grant%20IEEE%20CIS%202023.pdf
+    date: '2023-06-01'
+    awarder: IEEE - Computational Intelligence Society
+    icon: custom/cap
     summary: |
-      Object-oriented programming (OOP) lets you specify relationships between functions and the objects that they can act on, helping you manage complexity in your code. This is an intermediate level course, providing an introduction to OOP, using the S3 and R6 systems. S3 is a great day-to-day R programming tool that simplifies some of the functions that you write. R6 is especially useful for industry-specific analyses, working with web APIs, and building GUIs.
+      Travel grant for a student presenting at the IJCNN 2023.
+  - title: Chunzi "Chris" Zhang
+    url: https://wetlands.msuextension.org/news/22905/
+    date: '2023-04-01'
+    awarder: Montana State University
+    icon: custom/cap
+    summary: |
+      Award for International Graduate Excellence in Research.
+  - title: William V. Benjamin (2021, 2022)
+    url: https://github.com/GiorgioMorales/GiorgioMorales/blob/main/CV/Benjamin2022.png
+    date: '2022-04-01'
+    awarder: Norm Asbjornson College of Engineering
+    icon: custom/cap
+    summary: |
+      Scholarship for students of the Norm Asbjornson College of Engineering.
+  - title: Southern Peru - ProUNI
+    url: https://www.inictel-uni.edu.pe/inictel/?p=1215
+    date: '2019-07-05'
+    awarder: National Engineering University (Lima, Peru)
+    icon: custom/cap
+    summary: |
+      raduate scholarship from the National University of Engineering.
 ---
 
 ## About Me
