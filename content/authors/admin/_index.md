@@ -133,7 +133,7 @@ skills:
       - name: Scientific writing
         description: ''
         percent: 40
-        icon: circle-stack
+        icon: pencil
   - name: Hobbies
     color: '#eeac02'
     color_border: '#f0bf23'
@@ -145,11 +145,11 @@ skills:
       - name: Playing Guitar
         description: ''
         percent: 100
-        icon: hero/musical-note
+        icon: assets/media/icons/custom/guitar-solid
       - name: Cooking
         description: ''
         percent: 80
-        icon: assets/media/icons/custom/researchgate
+        icon: assets/media/icons/custom/bowl-food-solid
 
 languages:
   - name: English
@@ -198,6 +198,7 @@ awards:
     url: hero/academic-cap
     date: '2019-07-05'
     awarder: National Engineering University (Lima, Peru)
+    icon: assets/media/icons/custom/cap
 
     summary: |
       raduate scholarship from the National University of Engineering.
