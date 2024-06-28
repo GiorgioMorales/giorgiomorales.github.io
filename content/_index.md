@@ -18,6 +18,7 @@ sections:
       button:
         text: Download Résumé 
         url: https://www.cs.montana.edu/users/moralesluna/docs/Giorgio_Morales_Resume.pdf
+      
       button:    
         text: Download Academic CV 
         url: https://www.cs.montana.edu/users/moralesluna/docs/Giorgio_Morales_Academic_CV.pdf
@@ -39,8 +40,10 @@ sections:
       subtitle: ''
       text: |-
         
-        I apply a range of qualitative and quantitative methods to comprehensively investigate the role of science and technology in the economy.
-        
+        My current research focuses on developin a symbolic regression method that leverages the advantages of deep learning techniques (e.g., LLMs) and genetic algorithms to distill experimental data into analytical equations that serve as causal explanations for the observable world. The aim is to offer an alternative to the use of black-box models and an avenue for the automated discovery of explanatory and causal models from observed data.
+
+        I am alsoworking on uncertainty quantification and adaptive Learning techniques for epistemic uncertainty minimization.
+
         Please reach out to collaborate 😃
     design:
       columns: '1'
