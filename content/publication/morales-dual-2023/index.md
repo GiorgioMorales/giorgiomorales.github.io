@@ -10,15 +10,9 @@ publication_types:
 publication: '*IEEE Transactions on Neural Networks and Learning Systems*'
 doi: 10.1109/TNNLS.2023.3339470
 tags:
-- Artificial neural networks
-- Bayes methods
+- Regression neural networks
 - Companion networks
-- Computational modeling
-- Data models
 - deep regression
-- Estimation
-- prediction intervals (PIs)
-- Training
-- Uncertainty
+- Prediction Intervals
 - uncertainty quantification
 ---

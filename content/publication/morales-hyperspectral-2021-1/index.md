@@ -32,10 +32,11 @@ abstract: 'Hyperspectral imaging systems are becoming widely used due to their i
   image datasets. Additionally, we used the original hyperspectral data cube to simulate
   the process of using actual filters in a multispectral imager.'
 tags:
-- band selection
-- hyperspectral classification
-- hyperspectral feature extraction
-- multispectral classification
+- Hyperspectral imaging
+- Multispectral imaging
+- Band selection
+- Convolutional neural networks
+- Feature extraction
 links:
 - name: URL
   url: https://www.mdpi.com/2072-4292/13/18/3649

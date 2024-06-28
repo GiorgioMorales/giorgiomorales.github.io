@@ -28,16 +28,10 @@ abstract: The parameters estimation of a system using indirect measurements over
   over union metric 75.88% in precision and 64.69% in sensitivity.
 tags:
 - Acoustic Wave Equation
-- Convolution
-- Decoding
+- Convolution NNs
 - Deep Learning
-- Encoder-Decoder
-- Finite-Difference Method
 - Inverse problems
-- Mathematical model
-- Shape
-- Training
-- Two dimensional displays
+
 links:
 - name: URL
   url: https://ieeexplore.ieee.org/document/8853566

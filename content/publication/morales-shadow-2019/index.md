@@ -28,4 +28,5 @@ tags:
 - Generative Adversarial Networks
 - Satellite imagery
 - Shadow removal
+- Reote sensing
 ---

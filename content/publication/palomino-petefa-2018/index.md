@@ -26,17 +26,10 @@ abstract: 'Providing timely information through remote sensing tools to the farm
   tool that provides information through a computer or mobile device to the farmers
   or the INIA.'
 tags:
-- Agriculture
+- Precision Agriculture
 - Geographic information systems
-- PostGIS
 - Remote sensing
 - satellite image
-- Satellites
-- Software
-- Soil
-- Tools
-- UAV
-- yellow corn
 links:
 - name: URL
   url: https://ieeexplore.ieee.org/abstract/document/8526414

@@ -30,7 +30,10 @@ abstract: In Precision Agriculture, the utilization of management zones (MZs) th
   membership are associated with terrain characteristics that either facilitate or
   impede fertilizer runoff, such as terrain slope or topographic aspect.
 tags:
-- Computer Science - Machine Learning
+- Precision Agriculture
+- Management Zones
+- Response Curve
+- Counterfactual Analysis
 links:
 - name: URL
   url: http://arxiv.org/abs/2403.10730

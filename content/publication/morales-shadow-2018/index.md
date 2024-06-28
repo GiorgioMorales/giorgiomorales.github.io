@@ -25,17 +25,11 @@ abstract: Detecting shadows in high-resolution satellite images is a challenging
   The results achieve an accuracy of 95.85% and a Kappa coefficient of 91.76%, which
   is superior to the compared methods.
 tags:
-- Decoding
 - end-to-end learning
 - Generative adversarial networks
-- Generative Adversarial Networks
-- Generators
-- Measurement
 - satellite image
-- Satellites
+- Remote sensing
 - Shadow detection
-- Support vector machines
-- Training
 links:
 - name: URL
   url: https://ieeexplore.ieee.org/document/8526416

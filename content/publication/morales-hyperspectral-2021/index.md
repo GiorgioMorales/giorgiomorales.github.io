@@ -30,13 +30,11 @@ abstract: 'In recent years, Hyperspectral Imaging (HSI) has become a powerful so
   of using actual filters in a multispectral imager. We show that our method produces
   more suitable results for a multispectral sensor design.'
 tags:
+- Hyperspectral imaging
+- Multispectral imaging
+- Band selection
 - Convolutional neural networks
 - Feature extraction
-- Information entropy
-- Information filters
-- Object recognition
-- Redundancy
-- Reliability
 links:
 - name: URL
   url: https://ieeexplore.ieee.org/document/9533700

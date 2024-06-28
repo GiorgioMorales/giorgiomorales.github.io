@@ -32,4 +32,7 @@ abstract: 'In recent years, the use of remotely sensed and on-ground observation
   multiple linear regression, standard multiple linear regression, random forest,
   an ensemble of feedforward networks using AdaBoost, a stacked autoencoder, and two
   other CNN architectures.'
+tags:
+- Precision Agriculture
+- Deep learning
 ---

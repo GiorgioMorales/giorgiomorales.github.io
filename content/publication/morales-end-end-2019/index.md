@@ -25,15 +25,9 @@ abstract: 'Segmenting clouds in high-resolution satellite images is an arduous a
   methods.'
 tags:
 - Cloud segmentation
-- Convolution
 - end-to-end learning
-- Feature extraction
 - Image segmentation
-- Measurement
 - Remote sensing
-- satellite image
-- Satellites
-- Training
 links:
 - name: URL
   url: https://ieeexplore.ieee.org/document/8853549

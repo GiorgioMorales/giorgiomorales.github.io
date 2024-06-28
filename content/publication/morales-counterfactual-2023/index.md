@@ -29,15 +29,8 @@ abstract: Response curves exhibit the magnitude of the response of a sensitive s
   responsivity of passive features depends on the terrain characteristics of each
   field.
 tags:
-- Counterfactual explanations
-- Crops
+- Response Curve
+- Counterfactual Analysis
 - deep regression
 - explainable machine learning
-- Machine learning
-- Mathematical models
-- Neural networks
-- Production
-- response curves
-- Shape
-- Training data
 ---

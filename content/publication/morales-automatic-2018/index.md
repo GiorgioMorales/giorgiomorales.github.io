@@ -31,7 +31,7 @@ abstract: 'One of the most important ecosystems in the Amazon rainforest is the 
   only to detect full-grown isolated Mauritia flexuosa palms, but also young palms
   or palms partially covered by other types of vegetation.'
 tags:
-- textitMauritia flexuosa
+- Mauritia flexuosa
 - convolutional neural network
 - end-to-end learning
 - forest inventory

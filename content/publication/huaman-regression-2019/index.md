@@ -35,17 +35,9 @@ abstract: Nowadays, it is frequent to monitor large crop areas using high-precis
   the smallest differences occur for the linear model in the interpolation interval,
   while the exponential model has a high accuracy near the upper limit of NDVI.
 tags:
-- Biomedical imaging
-- Cameras
-- Color
-- image resolution
-- Image resolution
-- Instruments
-- minimum square error
-- Monitoring
-- multispectral imagery
+- Remote Sensing
+- Multispectral Imagery
 - Regression
-- uncertainty
 - Uncertainty
 links:
 - name: URL

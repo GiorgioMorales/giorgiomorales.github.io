@@ -24,8 +24,9 @@ abstract: Symbolic regression (SR) methods attempt to learn mathematical express
   results demonstrate that this method learns skeleton expressions matching the underlying
   functions and outperforms two GP-based and two neural SR methods.
 tags:
-- Computer Science - Artificial Intelligence
-- Computer Science - Machine Learning
+- Symbolic regression
+- Transformers
+- Knowledge discovery
 links:
 - name: URL
   url: http://arxiv.org/abs/2406.17834
