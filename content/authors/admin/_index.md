@@ -138,7 +138,7 @@ skills:
     color: '#eeac02'
     color_border: '#f0bf23'
     items:
-      - name: Hiking
+      - name: Music
         description: ''
         percent: 60
         icon: person-simple-walk
@@ -154,10 +154,10 @@ skills:
 languages:
   - name: English
     percent: 100
-  - name: Chinese
-    percent: 75
-  - name: Portuguese
-    percent: 25
+  - name: Spanish
+    percent: 100
+  - name: Italian
+    percent: 50
 
 # Awards.
 #   Add/remove as many awards below as you like.
@@ -196,14 +196,14 @@ awards:
     url: https://github.com/GiorgioMorales/GiorgioMorales/blob/main/CV/Benjamin2022.png
     date: '2022-04-01'
     awarder: Norm Asbjornson College of Engineering
-    icon: custom/cap
+    icon: custom/cap.svg
     summary: |
       Scholarship for students of the Norm Asbjornson College of Engineering.
   - title: Southern Peru - ProUNI
     url: https://www.inictel-uni.edu.pe/inictel/?p=1215
     date: '2019-07-05'
     awarder: National Engineering University (Lima, Peru)
-    icon: custom/cap
+    icon: graduation-cap
     summary: |
       raduate scholarship from the National University of Engineering.
 ---
