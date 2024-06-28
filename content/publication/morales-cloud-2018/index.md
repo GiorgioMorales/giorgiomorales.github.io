@@ -1,0 +1,31 @@
+---
+title: Cloud Detection in High-Resolution Multispectral Satellite Imagery Using Deep
+  Learning
+authors:
+- Giorgio Morales
+- Samuel G. Huamán
+- Joel Telles
+date: '2018-01-01'
+publishDate: '2024-06-28T19:23:08.361878Z'
+publication_types:
+- paper-conference
+publication: '*Artificial Neural Networks and Machine Learning – ICANN 2018*'
+doi: 10.1007/978-3-030-01424-7_28
+abstract: 'Cloud detection in high-resolution satellite images is a critical step
+  for many remote sensing applications, but also a challenge, as such images have
+  limited spectral bands. The contribution of this paper is twofold: We present a
+  dataset called CloudPeru as well as a methodology for cloud detection in multispectral
+  satellite images (approximately 2.8 meters per pixel) using deep learning. We prove
+  that an agile Convolutional Neural Network (CNN) is able to distinguish between
+  non-clouds and different types of clouds, including thin and very small ones, and
+  achieve a classification accuracy of 99.94%. Each image is subdivided into superpixels
+  by the SLICO algorithm, which are then processed by the trained CNN. Finally, we
+  obtain the cloud mask by applying a threshold of 0.5 on the probability map. The
+  results are compared with manually annotated images, showing a Kappa coefficient
+  of 0.944, which is higher than that of compared methods.'
+tags:
+- Cloud detection
+- Convolutional neural networks
+- Deep learning
+- High-resolution
+---
