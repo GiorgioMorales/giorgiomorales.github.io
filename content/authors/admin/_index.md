@@ -122,15 +122,15 @@ work:
 skills:
   - name: Technical Skills
     items:
-      - name: Python
+      - name: Python, Matlab, Java
         description: ''
         percent: 80
         icon: code-bracket
-      - name: Data Science
+      - name: Machine Learning, Data Science
         description: ''
         percent: 100
         icon: chart-bar
-      - name: SQL
+      - name: Scientific writing
         description: ''
         percent: 40
         icon: circle-stack
@@ -138,18 +138,18 @@ skills:
     color: '#eeac02'
     color_border: '#f0bf23'
     items:
-      - name: Music
+      - name: Listening to Music
         description: ''
         percent: 60
         icon: hero/musical-note
-      - name: Guitar
+      - name: Playing Guitar
         description: ''
         percent: 100
         icon: hero/musical-note
       - name: Cooking
         description: ''
         percent: 80
-        icon: <i class="fa-solid fa-graduation-cap"></i>
+        icon: custom/researchgate
 
 languages:
   - name: English
