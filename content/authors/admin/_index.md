@@ -50,19 +50,30 @@ interests:
   - Symbolic Regression
 
 education:
-  - area: PhD in Computer Science
+  - area: Ph.D., Computer Science
     institution: Montana State University
-    date_start: 2016-01-01
-    date_end: 2020-12-31
+    date_start: 2022-01-01
+    date_end: 2025-05-15
     summary: |
       Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
     button:
       text: 'Read Thesis'
       url: 'https://example.com'
-  - area: MEng Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    date_start: 2016-01-01
-    date_end: 2020-12-31
+  - area: Graduate Certificate in Artificial Intelligence
+    institution: Montana State University
+    date_start: 2020-01-01
+    date_end: 2023-12-12
+    summary: |
+      GPA: 3.4/4.0
+      
+      Courses included:
+      - lorem ipsum dolor sit amet, consectetur adipiscing elit
+      - lorem ipsum dolor sit amet, consectetur adipiscing elit
+      - lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - area: M.Sc. Computer Science
+    institution: Montana State University
+    date_start: 2019-08-01
+    date_end: 2021-12-31
     summary: |
       GPA: 3.8/4.0
 
@@ -181,4 +192,4 @@ awards:
 
 ## About Me
 
-Chien Shiung Wu is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+I am a PhD candidate (ABD) in computer science at Montana State University and a current member of the Numerical Intelligent Systems Laboratory (NISL). I hold a BS in mechatronic engineering from the National University of Engineering, Peru, and an MS in computer science from Montana State University, USA. My research interests are Deep Learning, Explainable Machine Learning, Computer Vision, and Precision Agriculture.
