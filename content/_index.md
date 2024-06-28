@@ -1,6 +1,6 @@
 ---
 # Leave the homepage title empty to use the site title
-title: ""
+title: "GiorgioML"
 date: 2022-10-24
 type: landing
 
@@ -16,8 +16,10 @@ sections:
       text: ""
       # Show a call-to-action button under your biography? (optional)
       button:
-        text: Download CV
-        url: uploads/resume.pdf
+        text: Download Résumé 
+        url: https://www.cs.montana.edu/users/moralesluna/docs/Giorgio_Morales_Resume.pdf
+        text: Download Academic CV 
+        url: https://www.cs.montana.edu/users/moralesluna/docs/Giorgio_Morales_Academic_CV.pdf
     design:
       css_class: dark
       background:
