@@ -7,7 +7,7 @@ date: '2024-06-01'
 publishDate: '2024-06-28T19:23:08.317271Z'
 publication_types:
 - paper-conference
-publication: '*Machine Learning and Knowledge Discovery in Databases*'
+publication: '*ECML PKDD 2024. European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases*'
 abstract: Symbolic regression (SR) methods attempt to learn mathematical expressions
   that approximate the behavior of an observed system. However, when dealing with
   multivariate systems, they often fail to identify the functional form that explains
