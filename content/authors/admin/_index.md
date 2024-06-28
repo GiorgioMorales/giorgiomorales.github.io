@@ -203,7 +203,7 @@ awards:
     url: hero/academic-cap
     date: '2019-07-05'
     awarder: National Engineering University (Lima, Peru)
-    icon: camera
+    icon: coursera
 
     summary: |
       raduate scholarship from the National University of Engineering.
