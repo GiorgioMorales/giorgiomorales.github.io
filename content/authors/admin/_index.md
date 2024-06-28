@@ -48,6 +48,7 @@ interests:
   - Artificial Intelligence
   - Explainable Machine Learning
   - Symbolic Regression
+  - Uncertainty Quantification
 
 education:
   - area: Ph.D., Computer Science
@@ -149,7 +150,7 @@ skills:
       - name: Cooking
         description: ''
         percent: 80
-        icon: assets/media/icons/custom/researchgate
+        icon: custom/researchgate
 
 languages:
   - name: English
