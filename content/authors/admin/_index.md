@@ -55,28 +55,34 @@ education:
     date_start: 2022-01-01
     date_end: 2025-05-15
     summary: |
-      Supervised by [Dr. John Sheppard](https://www.cs.montana.edu/sheppard/). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
-    button:
-      text: 'Read Thesis'
-      url: 'https://example.com'
+      Supervised by [Dr. John Sheppard](https://www.cs.montana.edu/sheppard/). 
+      Member of the Numerical Intelligent Systems Laboratory (NISL).
+
   - area: Graduate Certificate in Artificial Intelligence
     institution: Montana State University
     date_start: 2020-01-01
     date_end: 2023-12-12
     summary: |
-      GPA: 3.97/4.0
+      GPA: 4.0/4.0
       
       Courses included:
-      - lorem ipsum dolor sit amet, consectetur adipiscing 
+      - CSCI 546: Advanced Artificial Intelligence
+      - CSCI 446: Artificial Intelligence
+      - M 508: 	Math of Machine Learning
+      - CSCI 547: Machine Learning
+      - CSCI 548: Reasoning Under Uncertainty
+      - CSCI 550: Advanced Data Mining
+      - CSCI 594: Clustering Techniques
+
   - area: M.Sc., Computer Science
     institution: Montana State University
     date_start: 2019-08-01
     date_end: 2021-12-31
     summary: |
       GPA: 3.97/4.0
-
-      Courses included:
-      - lorem ipsum dolor sit amet, consectetur adipiscing
+    button:
+      text: 'M.Sc. Thesis'
+      url: 'https://scholarworks.montana.edu/items/8028e1b5-ea6c-4070-bc94-c86519405830'
   - area: B.Sc., Mechatronics Engineering
     institution: National University of Engineering (Lima, Peru)
     date_start: 2010-08-01
@@ -84,10 +90,6 @@ education:
     summary: |
       GPA: 3.5/4.0
       
-      Courses included:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
 work:
   - position: Director of Cloud Infrastructure
     company_name: GenCoin
