@@ -107,9 +107,9 @@ work:
       - lorem ipsum dolor sit amet, consectetur adipiscing elit
       - lorem ipsum dolor sit amet, consectetur adipiscing elit
   - position: Backend Software Engineer
-    company_name: X
-    company_url: ''
-    company_logo: ''
+    company_name: National Institute of Research and Training for Telecommunications (INICTEL-UNI)
+    company_url: 'https://www.inictel-uni.edu.pe/inictel/'
+    company_logo: custom/inictel
     date_start: 2016-01-01
     date_end: 2020-12-31
     summary: |
