@@ -218,16 +218,16 @@ Thus, we start propagating the relevance of the last layer:
 # LRP_individual function continuation...
     # Propagation procedure from the top-layer towards the lower layers
     for layer in range(0, L)[::-1]:
-
+    
         if isinstance(layers[layer], torch.nn.Conv2d) or isinstance(layers[layer], torch.nn.Conv3d) \
                 or isinstance(layers[layer], torch.nn.AvgPool2d) or isinstance(layers[layer], 							torch.nn.Linear):
-			
+            
             # Specifies the rho function that will be applied to the weights of the layer
             if 0 < layer <= 13:  # Gamma rule (LRP-gamma)
                 rho = lambda p: p + 0.25 * p.clamp(min=0)
             else:  # Basic rule (LRP-0)
                 rho = lambda p: p
-
+    
             A[layer] = A[layer].data.requires_grad_(True)
             # Step 1: Transform the weights of the layer and executes a forward pass
             z = newlayer(layers[layer], rho).forward(A[layer]) + 1e-9
@@ -248,9 +248,7 @@ Thus, we start propagating the relevance of the last layer:
     
     # Return the relevance of the input layer
     return R[0]
-```
     
-
 
 def newlayer(layer, g):
     """Clone a layer and pass its parameters through the function g."""
@@ -258,7 +256,7 @@ def newlayer(layer, g):
     layer.weight = torch.nn.Parameter(g(layer.weight))
     layer.bias = torch.nn.Parameter(g(layer.bias))
     return layer
-{% endhighlight %}
+```
 
 
 
@@ -266,7 +264,7 @@ def newlayer(layer, g):
 
 Now, we will load our trained model and will apply our LRP function to the first image of the dataset:
 
-{% highlight python %}
+```python
 # Create the model and load the weights 
 model = Hyper3DNetLite(img_shape=(1, 18, 25, 25), classes=3)
 model.load_state_dict(torch.load(filepath))
@@ -287,8 +285,7 @@ for i in range(3):
 fig.subplots_adjust(right=0.8)
 cbar_ax = fig.add_axes([0.85, 0.15, 0.05, 0.7])
 fig.colorbar(im, cax=cbar_ax)
-
-{% endhighlight %}
+```
 
 The result is shown below:
 
@@ -296,13 +293,13 @@ The result is shown below:
 
 As it can be seen, the 6th and 8th input channels (spectral bands 33 and 68, respectively) contain the most relevant pixels for the obtained classification result. One way to verify that the propagation is correct is to verify the conservative property; that is, $\sum_j R_j = \sum_k R_k$. For example we can use the debugger before going out the $\texttt{LRP_individual}$ function and verify the sum of the relevance values of each of the layers:
 
-{% highlight python %}
+```python
 print(np.sum(R[18].data.numpy()))  # Sum of relevances of layer 19
 print(np.sum(R[17].data.numpy()))  # Sum of relevances of layer 18
 print(np.sum(R[15].data.numpy()))  # Sum of relevances of layer 16
 print(np.sum(R[11].data.numpy()))  # Sum of relevances of layer 12
 ...
-{% endhighlight %}
+```
 
 In reality, these values are not expected to be the same, due to the fact that we are altering the original weights using the LRP-$\gamma$ rule and that the derivation is not exact, but they should be very similar. 
 
