@@ -1,14 +1,13 @@
 ---
-title: ✅ Manage your projects
-summary: Easily manage your projects - create ideation mind maps, Gantt charts, todo lists, and more!
-date: 2023-10-23
+title: Layer-wise Relevance Propagation in PyTorch
+summary: Layer-wise Relevance Propagation in PyTorch
+date: 2020-10-19
 authors:
   - admin
 tags:
-  - Hugo Blox
-  - Markdown
-image:
-  caption: 'Image credit: [**Unsplash**](https://unsplash.com)'
+  - Blog
+  - LRP
+  - Python tutorial
 ---
 
 Being able to interpret a classifier's decision has become crucial lately. This ability allows us not only to ensure that a Convolutional Neural Network -for example- has learned the patterns that we expected, but also to discover patterns that were not obvious at first glance. Most of the works related to Layer-wise Relevance Propagation (LRP) so far have been applied to image classification tasks; in that case, we are interested in finding the pixel positions that were more relevant for a given classification result. For example, the following image highlights the most relevant pixels to obtain a prediction of the class "cat":
@@ -27,7 +26,7 @@ In this post, I will provide a specific example of the use of LRP applied to mut
 
 As stated before, we will use a hyperspectral image dataset, which means that each image (or "datacube") consists of several channels (or "spectral bands"). Specifically, the dimension of this dataset is of $25\times25\times300$. Luckily, I have nicely formatted the dataset as a ".h5" file so that we do not need to worry about reading complicated "tif" or "bip" formats. Furthermore, given that in a HSI datacube consecutive bands are very similar and that we do not need that level of detail, we will average pairs of consecutive pairs of bands in order to reduce the computational burden and use 150 bands instead of 300 (which is interpreted as reducing the spectral resolution from 2.12nm to 4.24nm).
 
-{% highlight python %}
+```python
 hdf5_file = h5py.File('weed_dataset_w25.hdf5', "r")
 train_x = np.array(hdf5_file["train_img"][...]).astype(np.float32)
 train_y = np.array(hdf5_file["train_labels"][...])
@@ -39,11 +38,11 @@ train_x = img2
 trainx = np.reshape(trainx, (trainx.shape[0], trainx.shape[1], trainx.shape[2], trainx.shape[3], 1))
 # Permute according to Pytorch's order
 trainx = trainx.transpose((0, 4, 3, 1, 2))
-{% endhighlight %}
+```
 
 Finally, we will select a subset of 18 salient bands from the whole spectrum. How did we come up with these band indexes? I will probably explain it in a future post/paper. Stay tuned!
 
-{% highlight python %}
+```python
 indexes = [0, 1, 3, 11, 23, 33, 50, 68, 76, 82, 106, 128, 132, 136, 139, 143, 144, 146]
 # Select bands from original image
 temp = np.zeros((train_x.shape[0], train_x.shape[1], train_x.shape[2], nbands))
@@ -54,7 +53,7 @@ train_x = temp.astype(np.float32)
 for n in range(train_x.shape[3]):
 	train_x[:, :, :, n] = (train_x[:, :, :, n]) / 
     					  (np.std(train_x[:, :, :, n]))
-{% endhighlight %}
+```
 
 Note that we are not working with normal RGB images and the range of values of each input channel is different, so we are transforming the data in a way that each channel has a standard deviation of 1. Furthermore, we want to make sure that all the input values are positive so that we can apply the same propagation rules we will apply to the following convolution layers (which we consider that will always receive positive values).   
 
@@ -62,7 +61,7 @@ Note that we are not working with normal RGB images and the range of values of e
 
 The network used in this work is called Hypr3DNetLite as it is proposed as a reduced version of the [Hyper3DNet network](https://doi.org/10.1117/1.JRS.14.036519), which is a 3D-2D CNN architecture specifically designed to solve HSI classification problems using a reduced number of trainable parameters. Here you have the network written in Pytorch. Note that every convolutional layer is followed by a ReLU rectifier and that I am not using Batch Normalization layers in order to ensure that every convolution layer outputs positive values.
 
-{% highlight python %}
+```python
 from abc import ABC
 
 import torch.nn as nn
@@ -119,11 +118,11 @@ class Hyper3DNetLite(nn.Module, ABC):
         else:
             x = self.fc1(x)
         return x
-{% endhighlight %}
+```
 
 Here you have a summary of the network architecture:
 
-{% highlight python %}
+```python
 ----------------------------------------------------------------
         Layer (type)               Output Shape         Param #
 ================================================================
@@ -149,7 +148,7 @@ Here you have a summary of the network architecture:
 Total params: 195,411
 Trainable params: 195,411
 Non-trainable params: 0
-{% endhighlight %}
+```
 
 ## LRP function
 
@@ -157,7 +156,7 @@ Now we are ready to start writing our LRP function. It will take as arguments th
 
 The first step is to extract the layers from our model. In the previous section, we used $\texttt{nn.Sequential}$ layers to combine the convolutional and ReLU layers, and to simplify the structure of the Hyper3DNetLite class; however, here we will only take into account those layers that have useful weights and biases, so we will ignore the $\texttt{nn.Sequential}$ modules. Once we extracted all the useful modules from our trained network, we will propagate the input data $X$ hrough the network as follows:
 
-{% highlight python %}
+```python
 def LRP_individual(model, X, device):
     # Get the list of layers of the network
     layers = [module for module in model.modules() if not isinstance(module, torch.nn.Sequential)][1:]
@@ -173,13 +172,13 @@ def LRP_individual(model, X, device):
             A[layer] = reshape(A[layer], (A[layer].shape[0], A[layer].shape[1]))
 
         A[layer + 1] = layers[layer].forward(A[layer])
-{% endhighlight %}
+```
 
 Note that we are applying two reshaping operations before the 4th and 17th layers. This corresponds to the reshaping operation we applied in the $\texttt{Hyper3DNetLite.forward()}$ method of the previous section (this allows to reshape from 4-D to 3-D tensors, and from 3-D to 1-D tensors, respectively). 
 
 Now we calculate the relevance of the last layer. We will do this by simply taking the greatest value of the last activation. In this example, we are working with a multi-class classification problem, so, taking in mind that the last fully-connected layer has as many neurons/units as classes we have, each value of the last activation vector is related to the confidence that the corresponding unit represents the correct class (e.g. if the resulting A[-1] vector has three elements and the second one is the greatest, it means that the network predicted that the input image corresponds to the second class). We will assume that the classification of the network is correct and we will mask the A[-1] vector conserving only the greatest value, as we will show below. The intuition behind this is that we will propagate the relevance backward asking "which parts of the image are responsible for the activation of the $i$-th output unit" or "which parts of the image are more relevant when the network classifies it as the $i$-th class". Therefore, continuing with our function we have:
 
-{% highlight python %}
+```python
     # LRP_individual function continuation...
     # Get the relevance of the last layer using the highest classification score of the top layer
     T = A[-1].cpu().detach().numpy().tolist()[0]
@@ -189,7 +188,7 @@ Now we calculate the relevance of the last layer. We will do this by simply taki
     T = torch.FloatTensor(T)
     # Create the list of relevances with (L + 1) elements and assign the value of the last one 
     R = [None] * L + [(A[-1].cpu() * T).data + 1e-6]
-{% endhighlight %}
+```
 
 The next step is to propagate the relevance distribution of our last layer through the network. Before doing it, let's discuss how to use the propagation rules. First, we should recall that the relevance is conservative, which means that the sum of values of the relevance matrix of a layer should be the same as that of the relevance matrix of the following layer: $\sum_j R_j = \sum_k R_k$, where $j$ represents the indexes of the neurons/units of the first layer and $k$ represents the indexes of the neurons/units of the following layer. Then, the relevance flow can be described by the following equation:
 
