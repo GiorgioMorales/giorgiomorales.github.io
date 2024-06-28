@@ -203,7 +203,7 @@ awards:
     url: https://www.inictel-uni.edu.pe/inictel/?p=1215
     date: '2019-07-05'
     awarder: National Engineering University (Lima, Peru)
-    icon: graduation-cap
+    icon: <i class="fa-solid fa-graduation-cap"></i>
     summary: |
       raduate scholarship from the National University of Engineering.
 ---
