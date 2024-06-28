@@ -146,11 +146,11 @@ skills:
       - name: Playing Guitar
         description: ''
         percent: 100
-        icon: assets/media/icons/custom/guitar-solid
+        icon: custom/guitar-solid
       - name: Cooking
         description: ''
         percent: 80
-        icon: custom/researchgate
+        icon: custom/bowl-food-solid
 
 languages:
   - name: English
@@ -181,6 +181,7 @@ awards:
     url: https://github.com/GiorgioMorales/GiorgioMorales/blob/main/CV/Travel%20grant%20IEEE%20CIS%202023.pdf
     date: '2023-06-01'
     awarder: IEEE - Computational Intelligence Society
+    icon: academicons/ieee
     summary: |
       Travel grant for a student presenting at the IJCNN 2023.
   - title: Chunzi "Chris" Zhang
@@ -196,13 +197,13 @@ awards:
     summary: |
       Scholarship for students of the Norm Asbjornson College of Engineering.
   - title: Southern Peru - ProUNI
-    url: hero/academic-cap
+    url: https://www.inictel-uni.edu.pe/inictel/?p=1215
     date: '2019-07-05'
     awarder: National Engineering University (Lima, Peru)
-    icon: assets/media/icons/custom/cap
+    icon: custom/cap
 
     summary: |
-      raduate scholarship from the National University of Engineering.
+      Graduate scholarship from the National University of Engineering.
 ---
 
 ## About Me
