@@ -55,7 +55,7 @@ education:
     date_start: 2022-01-01
     date_end: 2025-05-15
     summary: |
-      Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
+      Supervised by [Dr. John Sheppard](https://www.cs.montana.edu/sheppard/). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
     button:
       text: 'Read Thesis'
       url: 'https://example.com'
@@ -64,29 +64,25 @@ education:
     date_start: 2020-01-01
     date_end: 2023-12-12
     summary: |
-      GPA: 3.4/4.0
+      GPA: 3.97/4.0
       
       Courses included:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - area: M.Sc. Computer Science
+      - lorem ipsum dolor sit amet, consectetur adipiscing 
+  - area: M.Sc., Computer Science
     institution: Montana State University
     date_start: 2019-08-01
     date_end: 2021-12-31
     summary: |
-      GPA: 3.8/4.0
+      GPA: 3.97/4.0
 
       Courses included:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - area: BSc Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    date_start: 2016-01-01
-    date_end: 2020-12-31
+      - lorem ipsum dolor sit amet, consectetur adipiscing
+  - area: B.Sc., Mechatronics Engineering
+    institution: National University of Engineering (Lima, Peru)
+    date_start: 2010-08-01
+    date_end: 2015-12-31
     summary: |
-      GPA: 3.4/4.0
+      GPA: 3.5/4.0
       
       Courses included:
       - lorem ipsum dolor sit amet, consectetur adipiscing elit
