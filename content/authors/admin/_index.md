@@ -1,13 +1,13 @@
 ---
 # Display name
-title: 吳健雄
+title: Giorgio Morales
 
 # Name pronunciation (optional)
-name_pronunciation: Chien Shiung Wu
+name_pronunciation: 
 
 # Full name (for SEO)
-first_name: Shiung Wu
-last_name: Chien
+first_name: Giorgio Luigi
+last_name: Morales Luna
 
 # Status emoji
 status:
@@ -20,40 +20,38 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Chief Scientist
+role: PhD Candidate
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: OpenAI
-    url: https://openai.com/
+  - name: Montana State University
+    url: https://www.cs.montana.edu/users/moralesluna/
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: at-symbol
-    url: 'mailto:your-email@example.com'
+    url: 'giorgiomorales@ieee.org'
     label: E-mail Me
-  - icon: brands/x
-    url: https://twitter.com/GetResearchDev
-  - icon: brands/instagram
-    url: https://www.instagram.com/
   - icon: brands/github
-    url: https://github.com/gcushen
+    url: https://github.com/GiorgioMorales
   - icon: brands/linkedin
-    url: https://www.linkedin.com/
+    url: https://www.linkedin.com/in/giorgio-morales/
+  - icon: custom/researchgate
+    url: https://www.researchgate.net/profile/Giorgio-Morales
   - icon: academicons/google-scholar
-    url: https://scholar.google.com/
+    url: https://scholar.google.es/citations?user=Nxia-8gAAAAJ&hl=es
   - icon: academicons/orcid
-    url: https://orcid.org/
+    url: https://orcid.org/0000-0003-2911-8558
 
 interests:
   - Artificial Intelligence
-  - Computational Linguistics
-  - Information Retrieval
+  - Explainable Machine Learning
+  - Symbolic Regression
 
 education:
-  - area: PhD Artificial Intelligence
-    institution: Stanford University
+  - area: PhD in Computer Science
+    institution: Montana State University
     date_start: 2016-01-01
     date_end: 2020-12-31
     summary: |
