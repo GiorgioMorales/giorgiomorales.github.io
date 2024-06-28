@@ -141,15 +141,15 @@ skills:
       - name: Music
         description: ''
         percent: 60
-        icon: person-simple-walk
-      - name: Cats
+        icon: hero/musical-note
+      - name: Guitar
         description: ''
         percent: 100
-        icon: cat
-      - name: Photography
+        icon: hero/musical-note
+      - name: Cooking
         description: ''
         percent: 80
-        icon: camera
+        icon: <i class="fa-solid fa-graduation-cap"></i>
 
 languages:
   - name: English
