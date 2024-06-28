@@ -215,8 +215,8 @@ $$R_j = a_j [\nabla\sum_k z_k(a) \cdot s_k]_{j},$$
 
 Thus, we start propagating the relevance of the last layer:
 
-{% highlight python %}
-    # LRP_individual function continuation...
+```python
+# LRP_individual function continuation...
     # Propagation procedure from the top-layer towards the lower layers
     for layer in range(0, L)[::-1]:
 
@@ -249,6 +249,8 @@ Thus, we start propagating the relevance of the last layer:
     
     # Return the relevance of the input layer
     return R[0]
+```
+    
 
 
 def newlayer(layer, g):
