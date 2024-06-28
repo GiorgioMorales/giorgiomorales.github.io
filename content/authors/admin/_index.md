@@ -182,7 +182,7 @@ awards:
     url: https://github.com/GiorgioMorales/GiorgioMorales/blob/main/CV/Travel%20grant%20IEEE%20CIS%202023.pdf
     date: '2023-06-01'
     awarder: IEEE - Computational Intelligence Society
-    icon: custom/cap
+    icon: ieee
     summary: |
       Travel grant for a student presenting at the IJCNN 2023.
   - title: Chunzi "Chris" Zhang
