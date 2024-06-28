@@ -95,28 +95,38 @@ education:
       url: 'https://renati.sunedu.gob.pe/handle/sunedu/3500202'
       
 work:
-  - position: Director of Cloud Infrastructure
-    company_name: GenCoin
-    company_url: ''
+  - position: Graduate Research Assistant
+    company_name: Montana State University
+    company_url: 'https://www.cs.montana.edu/'
     company_logo: ''
-    date_start: 2021-01-01
-    date_end: ''
+    date_start: 2019-07-01
+    date_end: 2020-12-31
     summary: |2-
-      Responsibilities include:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - position: Backend Software Engineer
+      - Part of the Analysis Engine of the On-Field Precision Experiment (OFPE) Framework project.
+      - Published 8 journal and conference papers related to prediction and optimization in Precision Agriculture as well as uncertainty quantification and explainable machine learning.
+      - Developed a web application in Flask to demonstrate the functionality of the prediction and optimization tools.
+  - position: Graduate Teaching Assistant
+    company_name: Montana State University
+    company_url: 'https://www.cs.montana.edu/'
+    company_logo: ''
+    date_start: 2019-07-01
+    date_end: 2020-12-31
+    summary: |2-
+      - CSCI 447 - Machine Learning (Fall 2020).
+      - CSCI 432 - Advanced Algorithm Topics (Fall 2020).
+      - CSCI 232 - Data Structures and Algorithms (Spring 2020).
+      - CSCI 132 - Basic Data Structures and Algorithms (Fall 2019 and Summer 2020).
+  - position: Computer Vision Researcher
     company_name: National Institute of Research and Training for Telecommunications (INICTEL-UNI)
     company_url: 'https://www.inictel-uni.edu.pe/inictel/'
-    company_logo: custom/inictel
-    date_start: 2016-01-01
-    date_end: 2020-12-31
+    company_logo: ''
+    date_start: 2014-11-01
+    date_end: 2019-07-20
     summary: |
-      Responsibilities include:
-      - Migrated infrastructure to a new data center
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
+      - Published 11 conference and journal papers, and 1 B.Sc. thesis related to computer vision and remote sensing.
+      - Developed software to detect Mauritia Flexuosa palms in the Amazon using aerial images and drones. The project allowed the expansion of the monitored area by 200% and reduced the expedition costs by 500%.
+      - Developed software to segment clouds and shadows for the Space Agency of Peru (CONIDA) in high-resolution multispectral satellite images. The solution reduced the processing times by 1000%.
+      - Led small teams and worked in multidisciplinary environments.
 
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
