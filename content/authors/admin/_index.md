@@ -181,7 +181,6 @@ awards:
     url: https://github.com/GiorgioMorales/GiorgioMorales/blob/main/CV/Travel%20grant%20IEEE%20CIS%202023.pdf
     date: '2023-06-01'
     awarder: IEEE - Computational Intelligence Society
-    icon: academicons/ieee
     summary: |
       Travel grant for a student presenting at the IJCNN 2023.
   - title: Chunzi "Chris" Zhang
@@ -200,7 +199,6 @@ awards:
     url: https://www.inictel-uni.edu.pe/inictel/?p=1215
     date: '2019-07-05'
     awarder: National Engineering University (Lima, Peru)
-    icon: custom/cap
 
     summary: |
       Graduate scholarship from the National University of Engineering.
