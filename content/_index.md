@@ -18,6 +18,7 @@ sections:
       button:
         text: Download Résumé 
         url: https://www.cs.montana.edu/users/moralesluna/docs/Giorgio_Morales_Resume.pdf
+      button:    
         text: Download Academic CV 
         url: https://www.cs.montana.edu/users/moralesluna/docs/Giorgio_Morales_Academic_CV.pdf
     design:
