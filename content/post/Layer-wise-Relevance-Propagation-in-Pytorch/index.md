@@ -1,6 +1,6 @@
 ---
-title: Layer-wise Relevance Propagation in PyTorch
-summary: Layer-wise Relevance Propagation in PyTorch
+title: Blog post: Layer-wise Relevance Propagation in PyTorch
+summary: Layer-wise Relevance Propagation Tutorial in PyTorch
 date: 2020-10-19
 authors:
   - admin
