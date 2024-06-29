@@ -14,10 +14,10 @@ abstract: 'Accurate uncertainty quantification is necessary to enhance the relia
 featured: true
 
 tags:
+- Prediction Intervals
 - Regression neural networks
 - Companion networks
 - deep regression
-- Prediction Intervals
 - uncertainty quantification
 
 
