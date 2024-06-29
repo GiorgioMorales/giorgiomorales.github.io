@@ -10,6 +10,10 @@ tags:
   - Python tutorial
 ---
 
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/GiorgioMorales/LinearRegression/blob/main/Presentation_Linear_Regression.ipynb)
+
+
 ## 1. Introduction
 
 Given a set of $n$ **independet variables**: $X_1, X_2, ..., X_n$ and a real-valued **dependant variable** $Y$ (or response variable), the goal of the linear regression problem is to find a **regression function** $f$ such that:
