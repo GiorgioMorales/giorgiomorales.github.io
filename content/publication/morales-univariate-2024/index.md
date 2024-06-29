@@ -54,7 +54,7 @@ url_source: 'https://colab.research.google.com/github/NISL-MSU/MultiSetSR/blob/m
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
 image:
-  caption: 'An example of a Multi-set skeleton prediction (MSSP) problem using the Multi-set Transformer'
+  caption: 'Image Credits: ECML PKDD'
   focal_point: ""
   preview_only: false
 
