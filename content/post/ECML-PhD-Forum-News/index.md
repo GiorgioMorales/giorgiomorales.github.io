@@ -7,6 +7,7 @@ authors:
 tags:
   - News
   - Conferences
+  - ECML-PKDD
 ---
 
 I will be presenting my dissertation proposal, titled "Decomposable Symbolic Regression Using 
