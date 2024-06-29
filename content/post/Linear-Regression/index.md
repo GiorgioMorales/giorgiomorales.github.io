@@ -23,7 +23,7 @@ where $\epsilon$ is the error term, which is independent of $X$, and accounts fo
 The regression function $f$ can be expressed based on the multivariate
 random variable $X$ and its parameters as follows:
 
-$$ f(X) = \beta + \omega_1X_1 + \omega_2X_2 + \... + \omega_nX_n = \beta + \sum\_{i=1}\^{n}\omega_iX_i = \beta + \omega\^T X $$
+$$ f(X) = \beta + \omega_1X_1 + \omega_2X_2 + ... + \omega_nX_n = \beta + \sum_{i=1}^{n}\omega_iX_i = \beta + \omega^T X $$
 
 where:
 
