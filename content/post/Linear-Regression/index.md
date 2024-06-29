@@ -212,7 +212,7 @@ $$\hat{y}_i = w_0x_{i0} + w_1x_{i1} + w_2x_{i2} + ... + w_nx_{in} = \tilde{\text
 Since $i = 1, 2, 3, ..., N$, we can summarize the $N$ equations in just
 one:
 
-$$\hat{Y} = \tilde{D} \tilde{\texttt{w}}$$,
+$$\hat{Y} = \tilde{D} \tilde{\texttt{w}},$$
 
 where $\hat{Y}=(\hat{y_1}, \hat{y_2}, ..., \hat{y_n})^T$ and $\tilde{D}$
 is the augmented training data sample that includes the artificial
@@ -225,7 +225,7 @@ $$\min_{\tilde{\texttt{w}}} SSE = \sum_{i=1}^n \epsilon_i^2 = ||Y - \hat{Y}||^2$
 
 $$=YY^T - 2Y\hat{Y} + \hat{Y}^T\hat{Y}$$
 
-$$=YY^T - 2\tilde{\texttt{w}}(\tilde{D}^TY) + \tilde{\texttt{w}}^T(\tilde{D}^T\tilde{D})\tilde{\texttt{w}}$$.
+$$=YY^T - 2\tilde{\texttt{w}}(\tilde{D}^TY) + \tilde{\texttt{w}}^T(\tilde{D}^T\tilde{D})\tilde{\texttt{w}}.$$
 
 Similar to what we have done previously, we need to differentiate $SSE$
 w.r.t $\tilde{\texttt{w}}$ and set the result to 0:
@@ -355,7 +355,7 @@ where $c_1$ and $c_2$ are scalars.
 
 let's look at our linear regression model once again:
 
-$$\hat{Y} = w_0X_0 + w_1X_1 + \... + w_nX_n $$.
+$$\hat{Y} = w_0X_0 + w_1X_1 + \... + w_nX_n. $$
 
 Then, we can say that the predicted vector $\hat{Y}$ lies in the column
 space of the augmented dataset
@@ -381,7 +381,12 @@ solved.
 
 We can put all the normal equations in a matrix form:
 
-$$\begin{bmatrix} X_0^TX_0 & X_0^TX_1 & ... & X_0^TX_n\ X_1^TX_0 & X_1^TX_1 & ... & X_1^TX_n\ ... & ... & ... & ...\ X_n^TX_0 & X_n^TX_1 & ... & X_n^TX_n\ \end{bmatrix} \tilde{\texttt{w}} = \tilde{D}^TY$$
+$$\begin{bmatrix}
+X_0^TX_0 & X_0^TX_1 & ... & X_0^TX_n\\
+X_1^TX_0 & X_1^TX_1 & ... & X_1^TX_n\\
+... & ... & ... & ...\\
+X_n^TX_0 & X_n^TX_1 & ... & X_n^TX_n\\
+\end{bmatrix} \tilde{\texttt{w}} = \tilde{D}^TY$$
 
 $$(\tilde{D}\^T\tilde{D})\tilde{\texttt{w}} =\tilde{D}\^TY \$$
 
@@ -401,11 +406,11 @@ $col(\tilde{D})$.
 We can construct a set of orthogonal basis vectors $U_1, U_2, ..., U_n$
 for $col(\tilde{D})$ using the *Gram-Schmidt orthogonalization* method:
 
-$$ U_0 = X_0\$$
+$$ U_0 = X_0$$
 
-$$ U_1 = X_1 - p\_{10}\cdot U_0\$$
+$$ U_1 = X_1 - p_{10}\cdot U_0$$
 
-$$ U_2 = X_2 - p\_{20}\cdot U_0 - p\_{21}\cdot U_1\$$
+$$ U_2 = X_2 - p_{20}\cdot U_0 - p_{21}\cdot U_1$$
 
 $$\dots$$
 
@@ -418,9 +423,9 @@ Now we can rearrange the previous set of equations:
 
 $$ X_0 = U_0 $$
 
-$$ X_1 = p\_{10}\cdot U_0 + U_1\$$
+$$ X_1 = p_{10}\cdot U_0 + U_1$$
 
-$$ X_2 = p\_{20}\cdot U_0 + p\_{21}\cdot U_1 + U_2\$$
+$$ X_2 = p_{20}\cdot U_0 + p\_{21}\cdot U_1 + U_2$$
 
 $$\dots$$
 
@@ -432,11 +437,11 @@ $$\tilde{D}=QR$$,
 
 where:
 
-$$Q = \begin{bmatrix} | & | & ... & |\ U_0 & U_1 & ... & U_n\ | & | & ... & |\ \end{bmatrix}$$
+$$Q = \begin{bmatrix} | & | & ... & | U_0 & U_1 & ... & U_n\ | & | & ... & | \end{bmatrix}$$
 
 and:
 
-$$R = \begin{bmatrix} 1 & p_{10} & p_{20} & ... & p_{n0}\ 0 & 1 & p_{21} & ... & p_{n1}\ 0 & 0 & 1 & ... & p_{n2}\ ... & ... & ... & ... & ...\ 0 & 0 & 0 & ... & 1\ \end{bmatrix}$$
+$$R = \begin{bmatrix} 1 & p_{10} & p_{20} & ... & p_{n0}\ 0 & 1 & p_{21} & ... & p_{n1} 0 & 0 & 1 & ... & p_{n2} ... & ... & ... & ... & ... 0 & 0 & 0 & ... & 1 \end{bmatrix}$$
 
 Finally, the estimated response variable $\hat{Y}$ can be expressed as
 the sum of the projections of the observed response variable $Y$ onto
@@ -448,7 +453,7 @@ $$Y = proj_{U_0}(Y)\cdot U_0 + proj_{U_1}(Y)\cdot U_1 + ... + proj_{U_n}(Y)\cdot
 
 **Note:** (Squared norms)
 
-$$Q^TQ = \Delta = \begin{bmatrix} ||U_0||^2 & 0 & 0 & ... & 0\ 0 & ||U_1||^2 & 0 & ... & 0\ 0 & 0 & ||U_2||^2 & ... & 0\ ... & ... & ... & ... & ...\ 0 & 0 & 0 & ... & ||U_n||^2\ \end{bmatrix}$$
+$$Q^TQ = \Delta = \begin{bmatrix} ||U_0||^2 & 0 & 0 & ... & 0\ 0 & ||U_1||^2 & 0 & ... & 0\ 0 & 0 & ||U_2||^2 & ... & 0 ... & ... & ... & ... & ... 0 & 0 & 0 & ... & ||U_n||^2 \end{bmatrix}$$
 
 In order to solve the regression problem, we can simply use the
 expression we previously found and replace it using our new basis taking
