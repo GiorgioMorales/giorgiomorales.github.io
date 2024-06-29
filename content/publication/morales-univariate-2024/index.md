@@ -72,14 +72,10 @@ projects:
 #   E.g. `slides: "example"` references `content/slides/example/index.md`.
 #   Otherwise, set `slides: ""`.
 slides: example
----
-
-# (This work is driven by the results in my [previous paper]&#40;/publication/conference-paper/&#41; on LLMs.)
-
+# This work is driven by the results in my [previous paper]&#40;/publication/conference-paper/&#41; on LLMs.
 # ({{% callout note %}})
-# (Create your slides in Markdown - click the *Slides* button to check out the example.)
+# (Create your slides in Markdown - click the *Slides* button to check out the example.
 # ({{% /callout %}})
-
-# (Add the publication's **full text** or **supplementary notes** here. You can use rich formatting such as including [code, math, and images]&#40;https://docs.hugoblox.com/content/writing-markdown-latex/&#41;.)
-
+# Add the publication's **full text** or **supplementary notes** here. You can use rich formatting such as including [code, math, and images]&#40;https://docs.hugoblox.com/content/writing-markdown-latex/&#41;.
 ---
+
