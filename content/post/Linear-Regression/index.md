@@ -474,7 +474,13 @@ $$Y = proj_{U_0}(Y)\cdot U_0 + proj_{U_1}(Y)\cdot U_1 + ... + proj_{U_n}(Y)\cdot
 
 **Note:** (Squared norms)
 
-$$Q^TQ = \Delta = \begin{bmatrix} ||U_0||^2 & 0 & 0 & ... & 0\ 0 & ||U_1||^2 & 0 & ... & 0\ 0 & 0 & ||U_2||^2 & ... & 0 ... & ... & ... & ... & ... 0 & 0 & 0 & ... & ||U_n||^2 \end{bmatrix}$$
+$$Q^TQ = \Delta = \begin{bmatrix}
+||U_0||^2 & 0 & 0 & ... & 0\\
+0 & ||U_1||^2 & 0 & ... & 0\\
+0 & 0 & ||U_2||^2 & ... & 0\\
+... & ... & ... & ... & ...\\
+0 & 0 & 0 & ... & ||U_n||^2\\
+\end{bmatrix}$$
 
 In order to solve the regression problem, we can simply use the
 expression we previously found and replace it using our new basis taking
