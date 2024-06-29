@@ -44,13 +44,10 @@ url_code: 'https://github.com/NISL-MSU/MultiSetSR'
 url_dataset: 'https://huggingface.co/datasets/AnonymousGM/MultiSetTransformerData'
 url_source: 'https://colab.research.google.com/github/NISL-MSU/MultiSetSR/blob/master/DemoMSSP.ipynb'
 
-[//]: # (url_poster: '#')
-
-[//]: # (url_project: '')
-
-[//]: # (url_slides: '')
-
-[//]: # (url_video: '#')
+# (url_poster: '#')
+# (url_project: '')
+# (url_slides: '')
+# (url_video: '#')
 
 
 
@@ -77,14 +74,12 @@ projects:
 slides: example
 ---
 
-[//]: # (This work is driven by the results in my [previous paper]&#40;/publication/conference-paper/&#41; on LLMs.)
+# (This work is driven by the results in my [previous paper]&#40;/publication/conference-paper/&#41; on LLMs.)
 
-[//]: # ({{% callout note %}})
+# ({{% callout note %}})
+# (Create your slides in Markdown - click the *Slides* button to check out the example.)
+# ({{% /callout %}})
 
-[//]: # (Create your slides in Markdown - click the *Slides* button to check out the example.)
-
-[//]: # ({{% /callout %}})
-
-[//]: # (Add the publication's **full text** or **supplementary notes** here. You can use rich formatting such as including [code, math, and images]&#40;https://docs.hugoblox.com/content/writing-markdown-latex/&#41;.)
+# (Add the publication's **full text** or **supplementary notes** here. You can use rich formatting such as including [code, math, and images]&#40;https://docs.hugoblox.com/content/writing-markdown-latex/&#41;.)
 
 ---
