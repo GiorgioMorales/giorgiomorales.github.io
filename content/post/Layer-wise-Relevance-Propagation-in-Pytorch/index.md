@@ -12,7 +12,7 @@ tags:
 
 Being able to interpret a classifier's decision has become crucial lately. This ability allows us not only to ensure that a Convolutional Neural Network -for example- has learned the patterns that we expected, but also to discover patterns that were not obvious at first glance. Most of the works related to Layer-wise Relevance Propagation (LRP) so far have been applied to image classification tasks; in that case, we are interested in finding the pixel positions that were more relevant for a given classification result. For example, the following image highlights the most relevant pixels to obtain a prediction of the class "cat":
 
-![figure](catLRP.jpg)
+<img src="catLRP.jpg" alt="figure" width="70%">
 *Figure 1: Relevance is backpropagated from the top layer down to the input, where $\{R_p\}$ denotes the pixel-wise relevance scores, that can be visualized as a heatmap. Source: [Montavon et. al (2016)](https://doi.org/10.1016/j.patcog.2016.11.008)*
 &nbsp;
 &nbsp;
@@ -290,7 +290,7 @@ The result is shown below:
 
 ![figure](gammapositive.png)
 
-As it can be seen, the 6th and 8th input channels (spectral bands 33 and 68, respectively) contain the most relevant pixels for the obtained classification result. One way to verify that the propagation is correct is to verify the conservative property; that is, $\sum_j R_j = \sum_k R_k$. For example we can use the debugger before going out the $\texttt{LRPindividual}$ function and verify the sum of the relevance values of each of the layers:
+As it can be seen, the 6th and 8th input channels (spectral bands 33 and 68, respectively) contain the most relevant pixels for the obtained classification result. One way to verify that the propagation is correct is to verify the conservative property; that is, $\sum_j R_j = \sum_k R_k$. For example we can use the debugger before going out the $\texttt{LRP\_individual}$ function and verify the sum of the relevance values of each of the layers:
 
 ```python
 print(np.sum(R[18].data.numpy()))  # Sum of relevances of layer 19
