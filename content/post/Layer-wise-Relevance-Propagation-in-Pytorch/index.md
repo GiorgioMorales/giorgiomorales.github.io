@@ -12,9 +12,10 @@ tags:
 
 Being able to interpret a classifier's decision has become crucial lately. This ability allows us not only to ensure that a Convolutional Neural Network -for example- has learned the patterns that we expected, but also to discover patterns that were not obvious at first glance. Most of the works related to Layer-wise Relevance Propagation (LRP) so far have been applied to image classification tasks; in that case, we are interested in finding the pixel positions that were more relevant for a given classification result. For example, the following image highlights the most relevant pixels to obtain a prediction of the class "cat":
 
-<div style="text-align: center;">
+<div style="display: flex; justify-content: center;">
     <img src="catLRP.jpg" alt="figure" width="70%">
 </div>
+
 *Figure 1: Relevance is backpropagated from the top layer down to the input, where $\{R_p\}$ denotes the pixel-wise relevance scores, that can be visualized as a heatmap. Source: [Montavon et. al (2016)](https://doi.org/10.1016/j.patcog.2016.11.008)*
 &nbsp;
 &nbsp;
