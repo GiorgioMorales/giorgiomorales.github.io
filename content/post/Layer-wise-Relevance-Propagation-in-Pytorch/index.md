@@ -153,7 +153,7 @@ Non-trainable params: 0
 
 Now we are ready to start writing our LRP function. It will take as arguments the trained model (here I'm assuming that we already trained the network), the individual datacube we want to analyze, and a string that denotes the type of device we are using. This section is based on the [implementation](http://heatmapping.org/tutorial/) of the "Layer-Wise Relevance Propagation: An Overview" paper by [Montavon et. al (2019)](https://link.springer.com/chapter/10.1007%2F978-3-030-28954-6_10) with some modifications so that we can use our own Hyper3DNetLite network.
 
-The first step is to extract the layers from our model. In the previous section, we used $\text{nn.Sequential}$ layers to combine the convolutional and ReLU layers, and to simplify the structure of the Hyper3DNetLite class; however, here we will only take into account those layers that have useful weights and biases, so we will ignore the $\text{nn.Sequential}$ modules. Once we extracted all the useful modules from our trained network, we will propagate the input data $X$ hrough the network as follows:
+The first step is to extract the layers from our model. In the previous section, we used $\texttt{nn.Sequential}$ layers to combine the convolutional and ReLU layers, and to simplify the structure of the Hyper3DNetLite class; however, here we will only take into account those layers that have useful weights and biases, so we will ignore the $\texttt{nn.Sequential}$ modules. Once we extracted all the useful modules from our trained network, we will propagate the input data $X$ hrough the network as follows:
 
 ```python
 def LRP_individual(model, X, device):
@@ -173,7 +173,7 @@ def LRP_individual(model, X, device):
         A[layer + 1] = layers[layer].forward(A[layer])
 ```
 
-Note that we are applying two reshaping operations before the 4th and 17th layers. This corresponds to the reshaping operation we applied in the $\text{Hyper3DNetLite.forward()}$ method of the previous section (this allows to reshape from 4-D to 3-D tensors, and from 3-D to 1-D tensors, respectively). 
+Note that we are applying two reshaping operations before the 4th and 17th layers. This corresponds to the reshaping operation we applied in the $\texttt{Hyper3DNetLite.forward()}$ method of the previous section (this allows to reshape from 4-D to 3-D tensors, and from 3-D to 1-D tensors, respectively). 
 
 Now we calculate the relevance of the last layer. We will do this by simply taking the greatest value of the last activation. In this example, we are working with a multi-class classification problem, so, taking in mind that the last fully-connected layer has as many neurons/units as classes we have, each value of the last activation vector is related to the confidence that the corresponding unit represents the correct class (e.g. if the resulting A[-1] vector has three elements and the second one is the greatest, it means that the network predicted that the input image corresponds to the second class). We will assume that the classification of the network is correct and we will mask the A[-1] vector conserving only the greatest value, as we will show below. The intuition behind this is that we will propagate the relevance backward asking "which parts of the image are responsible for the activation of the $i$-th output unit" or "which parts of the image are more relevant when the network classifies it as the $i$-th class". Therefore, continuing with our function we have:
 
@@ -193,7 +193,7 @@ The next step is to propagate the relevance distribution of our last layer throu
 
 $$R_j = \sum_k \frac{z_{jk}}{\sum_j z_{jk}} R_k,$$ 
 
-where $z_{jk}$ represents how much the neuron/unit $j$ contributed to make neuron/unit $k$ relevant. Considering that, in our network (where each convolution layer is followed by a ReLU rectifier), the relation between the activation of the units $j$ and $k$ of consecutive layers is as follows: $a_k = \text{max}(0, \sum_{0,j}a_jw_k)$, then we may consider that the relevance is distributed proportionally to the contribution of each input to the neuron activation as follows: 
+where $z_{jk}$ represents how much the neuron/unit $j$ contributed to make neuron/unit $k$ relevant. Considering that, in our network (where each convolution layer is followed by a ReLU rectifier), the relation between the activation of the units $j$ and $k$ of consecutive layers is as follows: $a_k = \texttt{max}(0, \sum_{0,j}a_jw_k)$, then we may consider that the relevance is distributed proportionally to the contribution of each input to the neuron activation as follows: 
 
 $$R_j = \sum_k \frac{a_jw_{jk}}{\sum_{0,j} a_jw_{jk}} R_k.$$
 
@@ -201,7 +201,7 @@ The previous one is the most basic propagation rule known as the **LRP-0 rule**.
 
 $$R_j = \sum_k \frac{a_j \rho(w_{jk})}{\epsilon + \sum_{0,j} a_j\rho(w_{jk})} R_k,$$
 
-where $\rho(\theta)$ is a function that transforms the weights and biases $\theta$ of the lower layer. Using this template, we are able to define other propagation rules that overcome the limitations of the LRP-0 rule (which are affected by noisy or contradictory decisions), such as the gamma rule (**LRP-$\gamma$**), where $\rho(\theta) = \theta + \gamma\theta^+$, and $\theta^+=\text{max}(0,\theta)$, so that the $\gamma$ parameter controls how much importance the positive contributions have. Just for simplicity, we will use LRP-0 for the last two layers and LRP-$\gamma$ for the rest of the network, as we are mainly interested in the positive contributions. In our case, we will consider $\gamma=0.25$. Also, we will add a small factor, $1e-09$, to the denominator in order to avoid numeric inconsistencies. 
+where $\rho(\theta)$ is a function that transforms the weights and biases $\theta$ of the lower layer. Using this template, we are able to define other propagation rules that overcome the limitations of the LRP-0 rule (which are affected by noisy or contradictory decisions), such as the gamma rule (**LRP-$\gamma$**), where $\rho(\theta) = \theta + \gamma\theta^+$, and $\theta^+=\texttt{max}(0,\theta)$, so that the $\gamma$ parameter controls how much importance the positive contributions have. Just for simplicity, we will use LRP-0 for the last two layers and LRP-$\gamma$ for the rest of the network, as we are mainly interested in the positive contributions. In our case, we will consider $\gamma=0.25$. Also, we will add a small factor, $1e-09$, to the denominator in order to avoid numeric inconsistencies. 
 
 Now we would like to effiiently implement the previous propagation generic rule and to do that we will use the method suggested by [Montavon et. al (2019)](https://link.springer.com/chapter/10.1007%2F978-3-030-28954-6_10). First, let us denote the denominator of the previous equation as $z_k$; then, the element-wise division of the relevance of the next layer and the denominator is noted as $s_k=R_k/z_k$. We could rewrite the equation of the generic rule as: 
 
@@ -290,7 +290,7 @@ The result is shown below:
 
 ![figure](gammapositive.png)
 
-As it can be seen, the 6th and 8th input channels (spectral bands 33 and 68, respectively) contain the most relevant pixels for the obtained classification result. One way to verify that the propagation is correct is to verify the conservative property; that is, $\sum_j R_j = \sum_k R_k$. For example we can use the debugger before going out the $\text{LRP_individual}$ function and verify the sum of the relevance values of each of the layers:
+As it can be seen, the 6th and 8th input channels (spectral bands 33 and 68, respectively) contain the most relevant pixels for the obtained classification result. One way to verify that the propagation is correct is to verify the conservative property; that is, $\sum_j R_j = \sum_k R_k$. For example we can use the debugger before going out the $\texttt{LRPindividual}$ function and verify the sum of the relevance values of each of the layers:
 
 ```python
 print(np.sum(R[18].data.numpy()))  # Sum of relevances of layer 19
