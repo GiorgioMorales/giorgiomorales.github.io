@@ -1,5 +1,5 @@
 ---
-title: Blog post: Linear Regression in PyTorch
+title: Blog post - Linear Regression in PyTorch
 summary: Linear Regression Tutorial in PyTorch
 date: 2020-11-05
 authors:
