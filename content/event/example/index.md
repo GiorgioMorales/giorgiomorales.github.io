@@ -87,4 +87,4 @@ projects:
 
 ---
 
-This work is driven by the results presented in my [IJCNN 2023 paper]&#40;/publication/morales-counterfactual-2023 and my [IJCNN 2024 paper]&#40;/publication/morales-counterfactual-2024.
+This work is driven by the results presented in my [IJCNN 2023 paper](/publication/morales-counterfactual-2023) and my [IJCNN 2024 paper](/publication/morales-counterfactual-2024).
