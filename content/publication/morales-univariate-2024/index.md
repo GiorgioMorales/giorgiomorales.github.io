@@ -25,6 +25,7 @@ abstract: Symbolic regression (SR) methods attempt to learn mathematical express
   functions and outperforms two GP-based and two neural SR methods.
 tags:
 - Symbolic regression
+- XAI
 - Transformers
 - Knowledge discovery
 links:

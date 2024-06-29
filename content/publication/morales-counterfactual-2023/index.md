@@ -30,7 +30,7 @@ abstract: Response curves exhibit the magnitude of the response of a sensitive s
   field.
 tags:
 - Response Curve
-- Counterfactual Analysis
+- Counterfactual explanations
 - deep regression
-- explainable machine learning
+- XAI
 ---

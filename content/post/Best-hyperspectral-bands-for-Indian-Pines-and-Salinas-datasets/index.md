@@ -23,21 +23,21 @@ Though HSI systems capture rich spectral data, determination of the most relevan
 
 In our paper, we proposed a filter-based method called interband redundancy analysis (IBRA) that works as a preselection method to remove redundant bands and reduce the search space dramatically. Furthermore, we presented a two-step band selection method that first applies IBRA to obtain a reduced set of candidate bands and then selects the desired number of bands using a wrapper-based method called greedy spectral selection (GSS). 
 
-It is worth noting that IBRA considers that two bands are colinear (correlated) is the Variance Inflation Factor (VIF) is less than a threshold $$\theta$$. Thus, our IBRA-GSS selection method tests different threshold values ($$\theta \in [5, 12]$$) and selects the one that gives us the best separability results. The following table gives the number of preselected bands for the IP and SA datasets when using
-IBRA with a VIF threshold of 10 ($$\theta = 10$$); it also gives the average performance for four
-metrics and corresponding standard deviations (we applied $$5 \times 2$$ - fold stratified cross-validation to train and evaluate all networks) using a convolutional neural network classifier (called **Hyper3DNetLite**) when training on the full hyperspectral spectrum and only the preselected bands:
+It is worth noting that IBRA considers that two bands are colinear (correlated) is the Variance Inflation Factor (VIF) is less than a threshold $\theta$. Thus, our IBRA-GSS selection method tests different threshold values ($\theta \in [5, 12]$) and selects the one that gives us the best separability results. The following table gives the number of preselected bands for the IP and SA datasets when using
+IBRA with a VIF threshold of 10 ($\theta = 10$); it also gives the average performance for four
+metrics and corresponding standard deviations (we applied $5 \times 2$ - fold stratified cross-validation to train and evaluate all networks) using a convolutional neural network classifier (called **Hyper3DNetLite**) when training on the full hyperspectral spectrum and only the preselected bands:
 
 <div style="display: flex; justify-content: center;">
     <img src="tableIBRA.jpg" alt="figure" width="100%">
 </div>
 
-For the IP dataset, the best results were obtained using a VIF threshold of ten ($$\theta=10$$) and the wavelength of the selected bands were $$[498.3, 626.9, 706.2, 821.8, 1023.7]$$ nm. (i.e., with band indices $$[11, 25, 34, 39, 67]$$). The following table shows the performance using IBRA-GSS on the IP dataset in comparison to other band selection methods.
+For the IP dataset, the best results were obtained using a VIF threshold of ten ($\theta=10$) and the wavelength of the selected bands were $[498.3, 626.9, 706.2, 821.8, 1023.7]$ nm. (i.e., with band indices $[11, 25, 34, 39, 67]$). The following table shows the performance using IBRA-GSS on the IP dataset in comparison to other band selection methods.
 
 <div style="display: flex; justify-content: center;">
     <img src="IPselection.jpg" alt="figure" width="80%">
 </div>
 
-For the SA dataset, the best classification performance was obtained using a VIF threshold of $\theta=8$. The wavelength of the selected bands were $$[731.83, 950.54,1159.73, 1254.82, 2044.73]$$ (nm.), which correspond to the indices $$[37, 60, 82, 92, 175]$$ of the corrected SA dataset after discarding the 20 water absorption bands. The following table shows the performance using IBRA-GSS on the SA dataset in comparison to other band selection methods.
+For the SA dataset, the best classification performance was obtained using a VIF threshold of $\theta=8$. The wavelength of the selected bands were $[731.83, 950.54,1159.73, 1254.82, 2044.73]$ (nm.), which correspond to the indices $[37, 60, 82, 92, 175]$ of the corrected SA dataset after discarding the 20 water absorption bands. The following table shows the performance using IBRA-GSS on the SA dataset in comparison to other band selection methods.
 
 <div style="display: flex; justify-content: center;">
     <img src="SAselection.jpg" alt="figure" width="80%">
@@ -200,7 +200,7 @@ class Hyper3DNetLite(nn.Module, ABC):
         return x
 ```
 
-Finally, let's skip some steps and jump directly to the training and validation steps (again, the full implementation can be found in the Google Colab script). In the following code, note that we are normalizing (we apply z-score normalization) the training set using the $$\texttt{normalize()}$$ function; then, we apply the same transformation to the validation set using the $$\texttt{applynormalize()}$$ function, which uses the calculated mean and standard deviation values from the training set. Then, we create an object from the $$\texttt{CNNTrainer}$$ class, which contains the necessary methods to train ($$\texttt{trainFold()}$$), validate ($$\texttt{evaluateFold()}$$), and initialize a CNN model ($$\texttt{defineModel()}$$). Thus, in the following code **we train a Hyper3DNetLite model for the Indian Pines dataset** using a training set that selects the following spectral band indexes: [11, 25, 34, 39, 67], **which were selected by our IBRA-GSS band selection method**.   
+Finally, let's skip some steps and jump directly to the training and validation steps (again, the full implementation can be found in the Google Colab script). In the following code, note that we are normalizing (we apply z-score normalization) the training set using the $\texttt{normalize()}$ function; then, we apply the same transformation to the validation set using the $\texttt{applynormalize()}$ function, which uses the calculated mean and standard deviation values from the training set. Then, we create an object from the $\texttt{CNNTrainer}$ class, which contains the necessary methods to train ($\texttt{trainFold()}$), validate ($\texttt{evaluateFold()}$), and initialize a CNN model ($\texttt{defineModel()}$). Thus, in the following code **we train a Hyper3DNetLite model for the Indian Pines dataset** using a training set that selects the following spectral band indexes: [11, 25, 34, 39, 67], **which were selected by our IBRA-GSS band selection method**.   
 
 ```python
 indexes = [11, 25, 34, 39, 67]  # For SA: [37, 60, 82, 92, 175]
@@ -322,7 +322,7 @@ Recall = 0.9577183658032549
 F1 = 0.9585461002239718
 ```
 
-From these results, it is easy to see that our **IBRA-GSS method yields the best selection of bands for the Indian Pines dataset**. You can modify the code in Google Colab and use the SA dataset instead to verify that **IBRA-GSS yields the best selection of bands for the SA dataset as well**. In order to demonstrate that these improvements are statistically significant, we can perform $$5 \times 2$$ cross-validation, as we did in the tables shown in the previous section.
+From these results, it is easy to see that our **IBRA-GSS method yields the best selection of bands for the Indian Pines dataset**. You can modify the code in Google Colab and use the SA dataset instead to verify that **IBRA-GSS yields the best selection of bands for the SA dataset as well**. In order to demonstrate that these improvements are statistically significant, we can perform $5 \times 2$ cross-validation, as we did in the tables shown in the previous section.
 
 ## Citation
 

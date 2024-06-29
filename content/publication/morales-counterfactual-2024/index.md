@@ -33,7 +33,8 @@ tags:
 - Precision Agriculture
 - Management Zones
 - Response Curve
-- Counterfactual Analysis
+- Counterfactual explanations
+- XAI
 links:
 - name: URL
   url: http://arxiv.org/abs/2403.10730
