@@ -23,6 +23,9 @@ abstract: Symbolic regression (SR) methods attempt to learn mathematical express
   represent explanations of the function approximated by the regression NN. Experimental
   results demonstrate that this method learns skeleton expressions matching the underlying
   functions and outperforms two GP-based and two neural SR methods.
+
+featured: true
+
 tags:
 - Symbolic regression
 - XAI
@@ -31,4 +34,57 @@ tags:
 links:
 - name: URL
   url: http://arxiv.org/abs/2406.17834
+
+
+links:
+- name: Custom Link
+  url: http://arxiv.org/abs/2406.17834
+url_pdf: https://arxiv.org/pdf/2406.17834
+url_code: 'https://github.com/NISL-MSU/MultiSetSR'
+url_dataset: 'https://huggingface.co/datasets/AnonymousGM/MultiSetTransformerData'
+url_source: 'https://colab.research.google.com/github/NISL-MSU/MultiSetSR/blob/master/DemoMSSP.ipynb'
+
+[//]: # (url_poster: '#')
+
+[//]: # (url_project: '')
+
+[//]: # (url_slides: '')
+
+[//]: # (url_video: '#')
+
+
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder. 
+image:
+  caption: 'An example of a Multi-set skeleton prediction (MSSP) problem using the Multi-set Transformer'
+  focal_point: ""
+  preview_only: false
+
+# Associated Projects (optional).
+#   Associate this publication with one or more of your projects.
+#   Simply enter your project's folder or file name without extension.
+#   E.g. `internal-project` references `content/project/internal-project/index.md`.
+#   Otherwise, set `projects: []`.
+projects:
+- Dissertation-project
+
+# Slides (optional).
+#   Associate this publication with Markdown slides.
+#   Simply enter your slide deck's filename without extension.
+#   E.g. `slides: "example"` references `content/slides/example/index.md`.
+#   Otherwise, set `slides: ""`.
+slides: example
+---
+
+[//]: # (This work is driven by the results in my [previous paper]&#40;/publication/conference-paper/&#41; on LLMs.)
+
+[//]: # ({{% callout note %}})
+
+[//]: # (Create your slides in Markdown - click the *Slides* button to check out the example.)
+
+[//]: # ({{% /callout %}})
+
+[//]: # (Add the publication's **full text** or **supplementary notes** here. You can use rich formatting such as including [code, math, and images]&#40;https://docs.hugoblox.com/content/writing-markdown-latex/&#41;.)
+
 ---

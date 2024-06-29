@@ -253,7 +253,6 @@ val_X_selected = select(valX, indexes)
 ```
 ```
 >>
-
 Training model.....
 Accuracy = 96.9560975609756
 Precision = 0.9486142406432961
@@ -273,7 +272,6 @@ val_X_selected = select(valX, indexes)
 ```
 ```
 >>
-
 Training model.....
 Accuracy = 97.26829268292683
 Precision = 0.9606307317052267
@@ -294,7 +292,6 @@ val_X_selected = select(valX, indexes)
 ```
 ```
 >>
-
 Training model.....
 Accuracy = 96.58536585365853
 Precision = 0.9605385147207325
@@ -314,7 +311,6 @@ val_X_selected = select(valX, indexes)
 ```
 ```
 >>
-
 Training model.....
 Accuracy = 96.46829268292683
 Precision = 0.9612188059575583
