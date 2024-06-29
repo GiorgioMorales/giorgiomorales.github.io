@@ -346,12 +346,19 @@ ax.view_init(10,10)
 
 What is the column space of a matrix?
 
-Take the matrix
-$A = \begin{bmatrix} 1 & 2 \ 0 & 3 \ 5 & 6 \ \end{bmatrix}$. The
-column space of A is defined as the set of all possible linear
-combinations of its column vectors; that is,
-$col(A) = c_1 \begin{bmatrix} 1\ 0\ 5\ \end{bmatrix} + c_2 \begin{bmatrix} 2\ 3\ 6\ \end{bmatrix}$,
-where $c_1$ and $c_2$ are scalars.
+Take the matrix $A = \begin{bmatrix}
+1 & 2 \\
+0 & 3 \\
+5 & 6 \\
+\end{bmatrix}$. The column space of A is defined as the set of all possible linear combinations of its column vectors; that is, $col(A) = c_1 \begin{bmatrix}
+1\\
+0\\
+5\\
+\end{bmatrix} + c_2 \begin{bmatrix}
+2\\
+3\\
+6\\
+\end{bmatrix}$, where $c_1$ and $c_2$ are scalars.
 
 let's look at our linear regression model once again:
 
@@ -359,7 +366,11 @@ $$\hat{Y} = w_0X_0 + w_1X_1 + \... + w_nX_n. $$
 
 Then, we can say that the predicted vector $\hat{Y}$ lies in the column
 space of the augmented dataset
-$\tilde{D} = \begin{bmatrix} | & | & ... & |\ X_0 & X_1 & ... & X_n\ | & | & ... & |\ \end{bmatrix}$
+$\tilde{D} = \begin{bmatrix}
+| & | & ... & |\\
+X_0 & X_1 & ... & X_n\\
+| & | & ... & |\\
+\end{bmatrix}$
 
 <div>
 <img src="geometry.jpg" width="400"/>
@@ -388,7 +399,7 @@ X_1^TX_0 & X_1^TX_1 & ... & X_1^TX_n\\
 X_n^TX_0 & X_n^TX_1 & ... & X_n^TX_n\\
 \end{bmatrix} \tilde{\texttt{w}} = \tilde{D}^TY$$
 
-$$(\tilde{D}\^T\tilde{D})\tilde{\texttt{w}} =\tilde{D}\^TY \$$
+$$(\tilde{D}^T\tilde{D})\tilde{\texttt{w}} =\tilde{D}^TY $$
 
 $$\Rightarrow \tilde{\texttt{w}}= (\tilde{D}^T\tilde{D})^{-1}\tilde{D}^TY$$
 
@@ -433,15 +444,25 @@ $$X_d = p_{n0}\cdot U_0 + p_{n1}\cdot U_1 - ... + p_{n,n-1}\cdot U_{n-1} + U_n$$
 
 We can also combine all the equations in a matrix form, such that:
 
-$$\tilde{D}=QR$$,
+$$\tilde{D}=QR,$$
 
 where:
 
-$$Q = \begin{bmatrix} | & | & ... & | U_0 & U_1 & ... & U_n\ | & | & ... & | \end{bmatrix}$$
+$$Q = \begin{bmatrix}
+| & | & ... & |\\
+U_0 & U_1 & ... & U_n\\
+| & | & ... & |\\
+\end{bmatrix}$$
 
 and:
 
-$$R = \begin{bmatrix} 1 & p_{10} & p_{20} & ... & p_{n0}\ 0 & 1 & p_{21} & ... & p_{n1} 0 & 0 & 1 & ... & p_{n2} ... & ... & ... & ... & ... 0 & 0 & 0 & ... & 1 \end{bmatrix}$$
+$$R = \begin{bmatrix}
+1 & p_{10} & p_{20} & ... & p_{n0}\\
+0 & 1 & p_{21} & ... & p_{n1}\\
+0 & 0 & 1 & ... & p_{n2}\\
+... & ... & ... & ... & ...\\
+0 & 0 & 0 & ... & 1\\
+\end{bmatrix}$$
 
 Finally, the estimated response variable $\hat{Y}$ can be expressed as
 the sum of the projections of the observed response variable $Y$ onto
