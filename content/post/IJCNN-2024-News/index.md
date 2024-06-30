@@ -1,6 +1,6 @@
 ---
-title: I've got one paper accepted at IJCNN 2024 
-summary: One paper accepted at the International Joint Conference on Neural Networks 2024
+title: I've got a paper accepted at IJCNN 2024 
+summary: Paper accepted at the International Joint Conference on Neural Networks 2024
 date: 2024-03-25
 authors:
   - admin

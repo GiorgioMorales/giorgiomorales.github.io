@@ -1,6 +1,6 @@
 ---
-title: I've got one paper accepted at ECML PKDD 2024 
-summary: One paper accepted at the Research Track of the European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases 2024
+title: I've got a paper accepted at ECML PKDD 2024 
+summary: Paper accepted at the Research Track of the European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases 2024
 date: 2024-05-27
 authors:
   - admin

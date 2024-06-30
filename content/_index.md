@@ -14,14 +14,10 @@ sections:
       # Choose a user profile to display (a folder name within `content/authors/`)
       username: admin
       text: ""
-      # Show a call-to-action button under your biography? (optional)
-      button:
-        text: Download Résumé 
-        url: https://www.cs.montana.edu/users/moralesluna/docs/Giorgio_Morales_Resume.pdf
-      
+      # Show a call-to-action button under your biography? (optional)      
       button:    
-        text: Download Academic CV 
-        url: https://www.cs.montana.edu/users/moralesluna/docs/Giorgio_Morales_Academic_CV.pdf
+        text: Download Resume 
+        url: https://www.cs.montana.edu/users/moralesluna/docs/Giorgio_Morales_Resume.pdf
     design:
       css_class: dark
       background:
