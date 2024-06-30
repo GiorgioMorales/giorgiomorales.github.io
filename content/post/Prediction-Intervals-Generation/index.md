@@ -19,5 +19,4 @@ slides: PIs
  
 🚀 Ready to get started? Install the "PredictionIntervals" package using pip. Check our [Github repo](https://github.com/NISL-MSU/PredictionIntervals).
 
-<iframe src="<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQxCH0-gQnyCqsy9AtT4AjaKiAb7iRqICuPCmu-f38gzAtzXOA7h39w0C-UNV7c3A/embed?start=false&loop=false&delayms=3000" frameborder="0" width="1280" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>" 
-frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQxCH0-gQnyCqsy9AtT4AjaKiAb7iRqICuPCmu-f38gzAtzXOA7h39w0C-UNV7c3A/embed?start=false&loop=false&delayms=3000" frameborder="0" width="1280" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
