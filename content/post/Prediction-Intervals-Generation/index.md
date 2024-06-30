@@ -8,7 +8,7 @@ tags:
   - Blog
   - Uncertainty quantification
   - Python tutorial
-slides: PIs.pptx
+url_slides: https://giorgiomorales.github.io/uploads/PIs.ppt
 ---
 
 🔍 Are you looking to generate prediction intervals using neural networks? Our recent journal paper, 
