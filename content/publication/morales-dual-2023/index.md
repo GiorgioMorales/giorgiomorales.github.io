@@ -22,7 +22,7 @@ tags:
 
 
 links:
-- name: Custom Link
+- name: Arxiv
   url: https://ieeexplore.ieee.org/document/10365540
 url_pdf: 'https://arxiv.org/pdf/2212.06370'
 url_code: 'https://github.com/NISL-MSU/PredictionIntervals'

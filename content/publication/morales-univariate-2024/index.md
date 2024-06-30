@@ -37,7 +37,7 @@ links:
 
 
 links:
-- name: Custom Link
+- name: Arxiv
   url: http://arxiv.org/abs/2406.17834
 url_pdf: https://arxiv.org/pdf/2406.17834
 url_code: 'https://github.com/NISL-MSU/MultiSetSR'
