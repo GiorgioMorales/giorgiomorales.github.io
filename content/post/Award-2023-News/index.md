@@ -8,7 +8,7 @@ tags:
   - News
   - Awards
 
-featured:true
+featured: true
 
 image:
   caption: ''
