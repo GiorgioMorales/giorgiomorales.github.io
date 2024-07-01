@@ -17,7 +17,7 @@ sections:
       # Show a call-to-action button under your biography? (optional)      
       button:    
         text: Download Resume 
-        url: https://www.cs.montana.edu/users/moralesluna/docs/Giorgio_Morales_Resume.pdf
+        url: uploads/Giorgio_Morales_Resume.pdf
     design:
       css_class: dark
       background:

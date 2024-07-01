@@ -221,4 +221,4 @@ current member of the Numerical Intelligent Systems Laboratory (NISL).
 I hold a BS in mechatronic engineering from the National University of Engineering, Peru, 
 and an MS in computer science from Montana State University, USA. My research interests are 
 Deep Learning, Explainable Machine Learning, Computer Vision, and Precision Agriculture.
-For a complete Academic CV, please visit [here](https://www.cs.montana.edu/users/moralesluna/docs/Giorgio_Morales_Academic_CV.pdf). 
+For a complete Academic CV, please visit [here](uploads/Giorgio_Morales_Academic_CV.pdf). 
