@@ -36,6 +36,6 @@ tags:
 - Counterfactual explanations
 - XAI
 links:
-- name: URL
+- name: ARXIV
   url: http://arxiv.org/abs/2403.10730
 ---
