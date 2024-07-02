@@ -1,7 +1,7 @@
 ---
 title: My work was accepted for presentation at the ECML PKDD PhD Forum
 summary: My proposal "Decomposable Symbolic Regression Using Transformers and Neural Network-Assisted Genetic Algorithms" has been accepted for oral presentation
-date: 2024-06-08
+date: 2024-06-28
 authors:
   - admin
 tags:
