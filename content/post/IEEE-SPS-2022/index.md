@@ -1,6 +1,6 @@
 ---
 title: Blog Post - First Paper Essentials (Spanish) 
-summary: First Paper Essentials: Cómo escribir tu primer artículo científico
+summary: First Paper Essentials - Cómo escribir tu primer artículo científico
 date: 2022-07-09
 authors:
   - admin
