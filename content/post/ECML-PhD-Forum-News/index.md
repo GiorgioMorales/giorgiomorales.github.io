@@ -12,7 +12,7 @@ tags:
 
 I will be presenting my dissertation proposal, titled "Decomposable Symbolic Regression Using 
 Transformers and Neural Network-Assisted Genetic Algorithms," at the [European Conference on Machine Learning and 
-Principles and Practice of Knowledge Discovery in Databases 2024 PhD Forum](https://ecmlpkdd.org/2024/submissions-phd-forum/).
+Principles and Practice of Knowledge Discovery in Databases 2024 PhD Forum](https://ecmlpkdd.org/2024/program-accepted-phd-forum/).
 
 The purpose of the forum is to provide an environment for PhD students, at any stage of their doctoral 
 studies, to present their work and get constructive feedback from senior researchers in machine learning, 
