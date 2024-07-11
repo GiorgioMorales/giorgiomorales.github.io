@@ -51,7 +51,7 @@ interests:
   - Uncertainty Quantification
 
 education:
-  - area: Ph.D., Computer Science
+  - area: Ph.D. Candidate in Computer Science
     institution: Montana State University
     date_start: 2022-01-01
     date_end: 2025-05-15
