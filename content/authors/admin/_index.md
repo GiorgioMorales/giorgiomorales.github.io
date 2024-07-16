@@ -175,6 +175,12 @@ languages:
 #   Only `title`, `awarder`, and `date` are required.
 #   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
 awards:
+  - title: Seismic Monitoring and Analysis Challenge (2024)
+    url: https://giorgiomorales.github.io/post/ecml-challenge-2024-news/
+    date: '2024-07-16'
+    awarder:  European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases 
+    summary: |
+      Awarded first prize in this competition hosted at ECML PKDD 2024.
   - title: Cobleigh Endowment (2023, 2024)
     url: https://raw.githubusercontent.com/GiorgioMorales/GiorgioMorales/main/CV/cobleigh2024.jpg
     date: '2024-05-20'
