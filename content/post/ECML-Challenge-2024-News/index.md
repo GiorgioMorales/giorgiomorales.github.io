@@ -40,5 +40,5 @@ with a free conference registration and the honor of being a co-author on the ch
 Stay tuned for more updates!
 
 <div style="display: flex; justify-content: center;">
-    <img src="results.png" alt="figure" width="50%">
+    <img src="results.png" alt="figure" width="100%">
 </div>
