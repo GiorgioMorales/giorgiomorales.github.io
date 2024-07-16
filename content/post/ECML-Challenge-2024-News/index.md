@@ -25,7 +25,7 @@ links:
 🌟 Exciting News! 🌟
 
 I am thrilled to share that the [European Conference on Machine Learning and 
-Principles and Practice of Knowledge Discovery in Databases](https://ecmlpkdd.org/2024/program-discovery-challenge/) hosts several challenges in order to promote research and evaluate machine learning approaches in real-world applications.
+Principles and Practice of Knowledge Discovery in Databases](https://ecmlpkdd.org/2024/program-discovery-challenge/)
 is hosting some incredible challenges this year, and I had the amazing opportunity to participate in one of them!
 
 🚀 One of the standout competitions is the Seismic Monitoring and Analysis Challenge (SMAC):
