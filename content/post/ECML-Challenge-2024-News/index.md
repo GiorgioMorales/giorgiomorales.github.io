@@ -13,7 +13,7 @@ tags:
 featured: true
 
 image:
-  caption: ''
+  caption: 'Image Credits: SMAC organizers'
   focal_point: ""
   preview_only: false
 
