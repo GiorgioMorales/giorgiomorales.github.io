@@ -36,8 +36,8 @@ Essentially, there’s an underlying function $f$ that maps these variables to t
 
 Now, imagine we want to understand how each individual variable $x_i$ (like $x_1$, $x_2$, etc.) contributes to the output $y$.
 Instead of just looking at the whole function $f$, we break it down and focus on what we call "skeleton functions."
-These are simplified versions of the function where we replace specific numbers with placeholders (e.g. turning $3x^2 +e^{2x} -4)$ into something like $c_1\,x^2 + e^{c_2\, x} + c_3$). 
-In particular, $\kappa(\cdot)$ represent a skeleton function that replaces the numerical constants of a given symbolic expression by placeholders $c_i$.
+These are simplified versions of the function where we replace specific numbers with placeholders.
+These skeletons can be obtained using the skeleton function $\kappa(\cdot)$, which replaces the numerical constants of a given symbolic expression by placeholders $c_i$; e.g., $\kappa (3x^2 +e^{2x} -4) = c_1\,x^2 + e^{c_2\, x} + c_3$. 
 
 Our goal is to figure out these skeletons for each variable, $\hat{\mathbf{e}}(x_1),\dots, \hat{\mathbf{e}}(x_t)$, to better understand how each one affects the system’s response. 
 Next, we’ll walk through the steps our method uses to achieve this.
@@ -48,13 +48,9 @@ To approximate the function $f$ based on observed data, we use a regression mode
 
 We build a neural network (NN) regression model, denoted as $\hat{f}(\cdot; \boldsymbol{\theta}_{NN})$, where $\boldsymbol{\theta}_{NN}$ represents the network’s weights. The network learns to capture the relationship between the input $\textbf{X}$ and the targets $\textbf{y}$.
 
-For any given input $\textbf{x}_j$, the model estimates the target as 
-
-$$ \hat{y}_j = \hat{f}(\textbf{x}_j) $$.
-
+For any given input $\textbf{x}_j$, the model estimates the target as $ \hat{y}_j = \hat{f}(\textbf{x}_j) $.
 The network’s parameters $\boldsymbol{\theta}_{NN}$ are optimized by minimizing the mean squared error (MSE) between the predicted values and the actual target values:
-
-$$ \boldsymbol{\theta}_{NN}^* = \; \text{argmin}_{\boldsymbol{\theta}_{NN}} \ \frac{1}{{N_R}} \sum_{j=1}^{N_R} (\hat{y}_{j} - y_{j})^2 $$.
+$ \boldsymbol{\theta}_{NN}^* = \; \text{argmin}_{\boldsymbol{\theta}_{NN}} \ \frac{1}{{N_R}} \sum_{j=1}^{N_R} (\hat{y}_{j} - y_{j})^2 $.
 
 We chose a neural network for this task because of its ease of training and high accuracy, though other regression methods could also be used.
 
