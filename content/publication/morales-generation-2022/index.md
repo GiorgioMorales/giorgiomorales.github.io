@@ -35,6 +35,7 @@ abstract: Nitrogen fertilizer response (N-response) curves are tools used to sup
   also minimizing the overall fertilizer applied and the number of jumps between consecutive
   cells' nitrogen rates.
 
+links:
 - name: ResearchGate
   url: https://www.researchgate.net/publication/361894701_Generation_of_Site-specific_Nitrogen_Response_Curves_for_Winter_Wheat_using_Deep_Learning
 ---

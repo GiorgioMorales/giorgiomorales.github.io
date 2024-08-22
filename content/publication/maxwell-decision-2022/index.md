@@ -32,7 +32,7 @@ abstract: Empirically driven adaptive management in large-scale commodity crop p
   becomes the end point of industrialized agriculture that removes human decisions
   from agriculture.
 
-
+links:
 - name: ResearchGate
   url: https://www.researchgate.net/publication/361894831_Decision_Support_From_On-Field_Precision_Experiments
 ---

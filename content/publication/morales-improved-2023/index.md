@@ -36,6 +36,7 @@ tags:
 - Precision Agriculture
 - Deep learning
 
+links:
 - name: Open Access
   url: https://www.mdpi.com/1424-8220/23/1/489
 ---

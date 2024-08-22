@@ -39,6 +39,7 @@ abstract: Field-specific fertilizer rate optimization is known to be beneficial 
   groups to increase exploration of the search space, as well as enabling the ability
   to parallelize computation.
 
+links:
 - name: ResearchGate
   url: https://www.researchgate.net/publication/361894917_Optimizing_Nitrogen_Application_to_Maximize_Yield_and_Reduce_Environmental_Impact_in_Winter_Wheat_Production
 ---
