@@ -63,7 +63,7 @@ Imagine a function $y = \frac{x_1}{\log (x_1^2 + x_2)}$. If we focus on the rela
 As shown in Fig. 1, different fixed values of $x_2$ lead to different function behaviors. This variability can make it tricky for SSP solvers to generate a consistent functional form, as the expression might change depending on the fixed variables.
 
 <div style="display: flex; justify-content: center;">
-  <figure>
+  <figure style="text-align: center;">
     <img src="curves.jpg" alt="figure" width="80%">
     <figcaption>Figure 1: $x_1$ vs. $y$ curves when $x_2=4.45$, $0.2$, and $1.13$.</figcaption>
   </figure>
