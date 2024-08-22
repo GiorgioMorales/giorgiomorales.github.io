@@ -17,8 +17,6 @@ image:
   preview_only: false
 ---
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/NISL-MSU/MultiSetSR/blob/master/DemoMSSP.ipynb)
-
 In the realm of data-driven modeling, symbolic regression (SR) stands out as a powerful tool for discovering mathematical equations that describe underlying system behaviors.
 Unlike traditional methods, SR doesn't assume a specific model structure; instead, it explores a wide range of possible equations, making it both flexible and interpretable.
 But here's the catch: when dealing with complex, multivariate systems, SR often struggles to pinpoint the exact relationships between each independent variable and the system's response.
@@ -43,3 +41,27 @@ In particular, $\kappa(\cdot)$ represent a skeleton function that replaces the n
 
 Our goal is to figure out these skeletons for each variable, $\hat{\mathbf{e}}(x_1),\dots, \hat{\mathbf{e}}(x_t)$, to better understand how each one affects the system’s response. 
 Next, we’ll walk through the steps our method uses to achieve this.
+
+## Neural Network Training
+
+To approximate the function $f$ based on observed data, we use a regression model. Suppose we have a dataset $\textbf{X}= \{ \textbf{x}_1, \dots , \textbf{x}_{N_R} \}$ with $N_R$ samples, where each sample is represented as $\textbf{x}_j = \{ x_{j,1}, \dots, x_{j,t} \}$, and the corresponding target values are $\textbf{y}= \{ y_1, \dots , y_{N_R} \}$.
+
+We build a neural network (NN) regression model, denoted as $\hat{f}(\cdot; \boldsymbol{\theta}_{NN})$, where $\boldsymbol{\theta}_{NN}$ represents the network’s weights. The network learns to capture the relationship between the input $\textbf{X}$ and the targets $\textbf{y}$.
+
+For any given input $\textbf{x}_j$, the model estimates the target as 
+
+$$ \hat{y}_j = \hat{f}(\textbf{x}_j) $$.
+
+The network’s parameters $\boldsymbol{\theta}_{NN}$ are optimized by minimizing the mean squared error (MSE) between the predicted values and the actual target values:
+
+$$ \boldsymbol{\theta}_{NN}^* = \; \text{argmin}_{\boldsymbol{\theta}_{NN}} \ \frac{1}{{N_R}} \sum_{j=1}^{N_R} (\hat{y}_{j} - y_{j})^2 $$.
+
+We chose a neural network for this task because of its ease of training and high accuracy, though other regression methods could also be used.
+
+
+
+
+
+
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/NISL-MSU/MultiSetSR/blob/master/DemoMSSP.ipynb)
