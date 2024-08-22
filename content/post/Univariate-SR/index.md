@@ -1,7 +1,7 @@
 ---
 title: Blog post - Unraveling the Complexity of Multivariate Systems with Symbolic Regression
 summary: Explanation of our ECML-PKDD paper "Univariate Skeleton Prediction in Multivariate Systems Using Transformers"
-date: 2024-08-22
+date: 2024-08-23
 authors:
   - admin
 tags:
@@ -60,11 +60,12 @@ We chose a neural network for this task because of its ease of training and high
 In tackling the symbolic regression (SR) problem, we break it down into simpler, single-variable sub-problems. This approach is a twist on the Symbolic Skeleton Prediction (SSP) problem explored in other research. To illustrate why we deviate from traditional SSP, let's consider an example:
 
 Imagine a function $y = \frac{x_1}{\log (x_1^2 + x_2)}$. If we focus on the relationship between $x_1$ and $y$, while keeping $x_2$ constant, the behavior of the function can vary depending on the value of $x_2$. 
-As shown in Fig. 1, different fixed values of $x_2$ lead to different function behaviors. This variability can make it tricky for SSP solvers to generate a consistent functional form, as the expression might change depending on the fixed variables.
+As shown in Fig. 1, different fixed values of $x_2$ lead to different function behaviors. 
+This variability can make it tricky for SSP solvers to generate a consistent functional form.
 
 <div style="display: flex; justify-content: center;">
   <figure style="text-align: center;">
-    <img src="curves.jpg" alt="figure" width="80%">
+    <img src="curves.jpg" alt="figure" width="100%">
     <figcaption>Figure 1: $x_1$ vs. $y$ curves when $x_2=4.45$, $0.2$, and $1.13$.</figcaption>
   </figure>
 </div>
@@ -81,7 +82,7 @@ The key is that these functions should share a common symbolic skeleton, even if
 
 So, the MSSP problem involves processing the collection $\mathbf{D}$ to generate a skeleton $\hat{\mathbf{e}}(x_v)$ that approximates the true skeleton $\mathbf{e}(x_v)$. 
 
-
+...post in construction...
 
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/NISL-MSU/MultiSetSR/blob/master/DemoMSSP.ipynb)
