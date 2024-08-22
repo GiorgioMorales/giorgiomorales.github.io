@@ -31,4 +31,8 @@ abstract: Empirically driven adaptive management in large-scale commodity crop p
   algorithms that empower farmers to become more knowledgeable agroecologists, or
   becomes the end point of industrialized agriculture that removes human decisions
   from agriculture.
+
+
+- name: ResearchGate
+  url: https://www.researchgate.net/publication/361894831_Decision_Support_From_On-Field_Precision_Experiments
 ---

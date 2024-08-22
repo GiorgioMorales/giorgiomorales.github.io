@@ -55,7 +55,31 @@ $ \boldsymbol{\theta}_{NN}^* = \; \text{argmin}_{\boldsymbol{\theta}_{NN}} \ \fr
 We chose a neural network for this task because of its ease of training and high accuracy, though other regression methods could also be used.
 
 
+## Multi-Set Symbolic Skeleton Prediction
 
+In tackling the symbolic regression (SR) problem, we break it down into simpler, single-variable sub-problems. This approach is a twist on the Symbolic Skeleton Prediction (SSP) problem explored in other research. To illustrate why we deviate from traditional SSP, let's consider an example:
+
+Imagine a function $y = \frac{x_1}{\log (x_1^2 + x_2)}$. If we focus on the relationship between $x_1$ and $y$, while keeping $x_2$ constant, the behavior of the function can vary depending on the value of $x_2$. 
+As shown in Fig. 1, different fixed values of $x_2$ lead to different function behaviors. This variability can make it tricky for SSP solvers to generate a consistent functional form, as the expression might change depending on the fixed variables.
+
+<div style="display: flex; justify-content: center;">
+  <figure>
+    <img src="curves.jpg" alt="figure" width="80%">
+    <figcaption>Figure 1: $x_1$ vs. $y$ curves when $x_2=4.45$, $0.2$, and $1.13$.</figcaption>
+  </figure>
+</div>
+
+Moreover, fixing some variables might push the function into a space where its form is hard to recognize, especially if the range of the variable we're analyzing is limited. To improve SSP, we can introduce additional context by using multiple sets of input-response pairs, each created by fixing the non-analyzed variables to different values.
+
+The idea here is to process all these sets together to generate a skeleton that captures the common structure across all input sets. We call this problem **Multi-Set Symbolic Skeleton Prediction (MSSP)**.
+
+More formally, let's say we have a dataset with $N_R$ input-response pairs $( \mathbf{X}, \mathbf{y})$, where $\mathbf{X}$ represents the inputs, and $\mathbf{y}$ represents the responses. If we're interested in how the $v$-th variable $x_v$ relates to the response $y$, we create a collection of $N_S$ sets, denoted as $\mathbf{D} = {\mathbf{D}^{(1)}, \dots, \mathbf{D}^{(N_S)} }$. Each set $\mathbf{D}^{(s)}$ contains $n$ pairs $( \mathbf{X}_v^{(s)}, \mathbf{y}^{(s)} )$, where the non-analyzed variables are fixed at different values.
+
+These sets can be created either by sampling from the dataset or by generating new data points using a regression model if the dataset isn't large enough. Each set represents the relationship between $x_v$ and $y$ under different conditions. Although these relationships, denoted as $f^{(1)}(x_v),\dots, f^{(N_S)}(x_v)$, are derived from the same overall function $f(\mathbf{x})$, they differ due to the varying fixed values.
+
+The key is that these functions should share a common symbolic skeleton, even if their coefficients differ. Applying a skeleton function $\kappa(\cdot)$ to each $f^{(s)}(x_v)$ should give us the same target skeleton $\mathbf{e}(x_v)$, with placeholders for the constants.
+
+So, the MSSP problem involves processing the collection $\mathbf{D}$ to generate a skeleton $\hat{\mathbf{e}}(x_v)$ that approximates the true skeleton $\mathbf{e}(x_v)$. 
 
 
 

@@ -38,4 +38,7 @@ abstract: Field-specific fertilizer rate optimization is known to be beneficial 
   Algorithm (FEA) framework, which decomposes the variables into separate, overlapping
   groups to increase exploration of the search space, as well as enabling the ability
   to parallelize computation.
+
+- name: ResearchGate
+  url: https://www.researchgate.net/publication/361894917_Optimizing_Nitrogen_Application_to_Maximize_Yield_and_Reduce_Environmental_Impact_in_Winter_Wheat_Production
 ---

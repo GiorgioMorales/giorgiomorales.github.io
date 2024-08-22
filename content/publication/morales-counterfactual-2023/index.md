@@ -33,4 +33,10 @@ tags:
 - Counterfactual explanations
 - deep regression
 - XAI
+
+- name: Arxiv
+  url: https://arxiv.org/abs/2304.04063
+- name: IEEE
+  url: https://ieeexplore.ieee.org/document/10191746
+url_code: 'https://github.com/NISL-MSU/ResponsivityAnalysis'
 ---

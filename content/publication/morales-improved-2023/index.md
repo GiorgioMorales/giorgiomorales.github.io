@@ -35,4 +35,7 @@ abstract: 'In recent years, the use of remotely sensed and on-ground observation
 tags:
 - Precision Agriculture
 - Deep learning
+
+- name: Open Access
+  url: https://www.mdpi.com/1424-8220/23/1/489
 ---
