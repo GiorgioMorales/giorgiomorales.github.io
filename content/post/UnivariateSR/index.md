@@ -1,7 +1,7 @@
 ---
 title: Blog post - Unraveling the Complexity of Multivariate Systems with Symbolic Regression
 summary: Explanation of our ECML-PKDD paper "Univariate Skeleton Prediction in Multivariate Systems Using Transformers"
-date: 2024-09-23
+date: 2024-09-22
 authors:
   - admin
 tags:
