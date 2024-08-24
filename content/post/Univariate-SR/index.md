@@ -163,7 +163,7 @@ $\tilde{\mathbf{y}}^{(s)} = \hat{f}(\tilde{\mathbf{X}}^{(s)})$. The set $\tilde{
 
 In this example, we will predict the symbolic skeletons corresponding to each variable of a system whose underlying equation is one of the following:
 
-| <div style="width:%;">Eq.</div> | <div style="width:70%;">Underlying equation</div>                                                     | <div style="width:20%;">Domain range</div>                             |
+| <div style="width:%;">Eq.</div> | <div style="width:70%;">Underlying equation</div>                                                     | <div style="width:30%;">Domain range</div>                             |
 |---------------------------------|-------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
 | E1                              | $\frac{3.0375 x_1 x_2 + 5.5 \sin \left(\frac{9}{4} (x_1 - \frac{2}{3})(x_2 - \frac{2}{3})\right)}{5}$ | $[-5, 5]^2$                                                            |
 | E2                              | $5.5 + \left(1- \frac{x_1}{4}\right)^2 + \sqrt{x_2 + 10} \sin\left(\frac{x_3}{5}\right)$              | $[-10, 10]^2$                                                          |
@@ -216,6 +216,8 @@ regressor.get_skeletons()
 ```
 
 ```shell
+OUTPUT:
+
 ********************************
 Analyzing variable x0
 ********************************
