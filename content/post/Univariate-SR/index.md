@@ -28,7 +28,7 @@ Our method focuses on isolating and modeling these relationships individually, w
 You can find our paper "Univariate Skeleton Prediction in Multivariate Systems Using Transformers" [here](https://giorgiomorales.github.io/publication/morales-univariate-2024/).
 By leveraging a regression neural network and a novel Multi-Set Transformer model, we process synthetic data to identify these univariate skeletons. Our experimental results demonstrate that this approach not only improves the accuracy of the learned skeletons but also outperforms existing SR methods, including those based on genetic programming and deep learning.
 
-In this blog post, I'll walk you through the key ideas behind our method, its potential implications for SR, and how it pushes the boundaries of what we can achieve in explainable AI.
+In this blog post, I'll walk you through the key ideas behind our method and its potential implications for SR.
 
 # Multivariate Skeleton Prediction
 
@@ -163,6 +163,7 @@ $\tilde{\mathbf{y}}^{(s)} = \hat{f}(\tilde{\mathbf{X}}^{(s)})$. The set $\tilde{
 
 In this example, we will predict the symbolic skeletons corresponding to each variable of a system whose underlying equation is one of the following:
 
+<div style="width: 100%;">
 | Eq.  | Underlying equation | Domain range |
 |------|---------------------|--------------|
 | E1   | $$\frac{3.0375 x_1 x_2 + 5.5 \sin \left(\frac{9}{4} (x_1 - \frac{2}{3})(x_2 - \frac{2}{3})\right)}{5}$$ | $$[-5, 5]^2$$ |
@@ -178,7 +179,7 @@ In this example, we will predict the symbolic skeletons corresponding to each va
 | E11  | $$x_1 \log(x_2^4)$$ | $$[-5, 5]^2$$ |
 | E12  | $$1 + x_1 \sin\left(\frac{1}{x_2}\right)$$ | $$[-10, 10]^2$$ |
 | E13  | $$\sqrt{x_1}\log(x_2^2)$$ | $$x_1 \in [0, 20], x_2 \in [-5, 5]$$ |
-
+</div>
 
 To install our Python package, you can execute the following command in the terminal: `pip install git+https://github.com/NISL-MSU/MultiSetSR`.
 You can also try to execute this example yourself on Google Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/NISL-MSU/MultiSetSR/blob/master/DemoMSSP.ipynb)
