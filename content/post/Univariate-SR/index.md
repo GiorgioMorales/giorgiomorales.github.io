@@ -385,14 +385,16 @@ If we apply the skeleton function $\kappa$ to the underlying function $f$ for $x
 $\kappa(f, x_1) = \mathbf{e}(x_1) = c_1 \, \sin(x_1 + c_2)$, 
 $\kappa(f, x_2) = \mathbf{e}(x_2) = c_1 |x_2| + c_2$, and 
 $\kappa(f, x_3) = \mathbf{e}(x_3) = c_1\, \cos(c_2\, x_3^2 + c_3\,x_3) + c_4$, respectively.  
-Note that although the predicted skeleton for $x_1$, $\hat{\mathbf{e}}(x_1)=c_1\,\cos(c_2 + x_1) + c_3$ doe not coincide exactly with \mathbf{e}(x_1).
-However, a skeleton with a $\sin$ operator can be rewritten as $c_3 \, \cos(c_4 + x_1)$ (if $c_3 = -c_1$ and $c_4 = 90 - c_2$).
+Note that although the predicted skeleton for $x_1$, $\hat{\mathbf{e}}(x_1)=c_1\,\cos(c_2 + x_1) + c_3$, does not coincide exactly with $\mathbf{e}(x_1)$.
+However, a skeleton with a $\sin$ operator can be rewritten as $c_3 \, \cos(c_4 + x_1)$ (if $c_3 = -c_1$ and $c_4 = c_2 - 90$).
 Thus, we consider they express the same functional form, just using different coefficients.
 
 ## Conclusions
 
+Symbolic regression (SR) seeks to discover explicit mathematical equations that represent relationships in data, offering a transparent alternative to black-box models. This interpretability is crucial in fields like healthcare, finance, and scientific research, where understanding underlying mechanisms is essential for informed decision-making. SR also plays a vital role in scientific discovery by revealing fundamental laws and relationships governing natural phenomena.
 
+Objective: We aim to generate symbolic skeletons that describe the relationship between each variable and the system's response in a multivariate regression problem. To achieve this, we introduced the Multi-Set Skeleton Prediction (MSSP) problem and proposed a novel Multi-Set Transformer model, pre-trained on synthetic symbolic expressions. The multivariate SR problem is then approached as a sequence of MSSP problems using a black-box regression model.
 
-...post under construction...
+Interpretability: Our method serves as an interpretability tool, generating univariate symbolic skeletons that provide transparent insights into the relationships between variables and the system's response. More accurate skeletons lead to clearer interpretations, enhancing our understanding of how each variable influences the system.
 
-
+Limitation: Unlike other methods, our approach does not produce multivariate expressions. The focus is on accurately discerning the relationship between individual variables and the system's response. Future work will aim to use these univariate skeletons as building blocks to create multivariate expressions that approximate the entire system's behavior, with performance evaluated against observed data.
