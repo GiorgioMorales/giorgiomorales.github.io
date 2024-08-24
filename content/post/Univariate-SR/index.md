@@ -265,7 +265,8 @@ Selected skeleton: c*cos(c*x2**2 + c*x2 + c) + c
 
 These results coincide with the targe symbolic skeletons. 
 That is, if we apply the skeleton function $\kappa$ to the underlying function for $x_1$, $x_2$, and $x_3$, we would obtain:
-$\kappa(f, x_1) = $
+$\kappa(f, x_1) = \mathbf{e}(x_1) = c_1\, \tanh(c_2\,x_1) + c_3$, $\kappa(f, x_2) = \mathbf{e}(x_2) = c_1 |x_2| + c_2$, and 
+$\kappa(f, x_3) = \mathbf{e}(x_3) = c_1\, \cos(c_2\, x_3^2 + c_3\,x_3) + c_4$, respectively.  
 
 ...post under construction...
 
