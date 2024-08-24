@@ -25,7 +25,7 @@ That's where our research comes in.
 We developed a new approach to SR that generates univariate symbolic skeletons—abstract representations of mathematical expressions that capture the structural relationship between variables and responses.
 Our method focuses on isolating and modeling these relationships individually, which allows for a more accurate understanding of each variable's influence.
 
-You can find our paper "Univariate Skeleton Prediction in Multivariate Systems Using Transformers" [here](https://giorgiomorales.github.io/publication/morales-univariate-2024/).
+This post focuses on our paper "[Univariate Skeleton Prediction in Multivariate Systems Using Transformers](https://giorgiomorales.github.io/publication/morales-univariate-2024/)".
 By leveraging a regression neural network and a novel Multi-Set Transformer model, we process synthetic data to identify these univariate skeletons. Our experimental results demonstrate that this approach not only improves the accuracy of the learned skeletons but also outperforms existing SR methods, including those based on genetic programming and deep learning.
 
 In this blog post, I'll walk you through the key ideas behind our method and its potential implications for SR.
@@ -393,8 +393,10 @@ Thus, we consider they express the same functional form, just using different co
 
 Symbolic regression (SR) seeks to discover explicit mathematical equations that represent relationships in data, offering a transparent alternative to black-box models. This interpretability is crucial in fields like healthcare, finance, and scientific research, where understanding underlying mechanisms is essential for informed decision-making. SR also plays a vital role in scientific discovery by revealing fundamental laws and relationships governing natural phenomena.
 
-Objective: We aim to generate symbolic skeletons that describe the relationship between each variable and the system's response in a multivariate regression problem. To achieve this, we introduced the Multi-Set Skeleton Prediction (MSSP) problem and proposed a novel Multi-Set Transformer model, pre-trained on synthetic symbolic expressions. The multivariate SR problem is then approached as a sequence of MSSP problems using a black-box regression model.
+**Objective:** We aim to generate symbolic skeletons that describe the relationship between each variable and the system's response in a multivariate regression problem. To achieve this, we introduced the Multi-Set Skeleton Prediction (MSSP) problem and proposed a novel Multi-Set Transformer model, pre-trained on synthetic symbolic expressions. The multivariate SR problem is then approached as a sequence of MSSP problems using a black-box regression model.
 
-Interpretability: Our method serves as an interpretability tool, generating univariate symbolic skeletons that provide transparent insights into the relationships between variables and the system's response. More accurate skeletons lead to clearer interpretations, enhancing our understanding of how each variable influences the system.
+**Interpretability:** Our method serves as an interpretability tool, generating univariate symbolic skeletons that provide transparent insights into the relationships between variables and the system's response. More accurate skeletons lead to clearer interpretations, enhancing our understanding of how each variable influences the system.
 
-Limitation: Unlike other methods, our approach does not produce multivariate expressions. The focus is on accurately discerning the relationship between individual variables and the system's response. Future work will aim to use these univariate skeletons as building blocks to create multivariate expressions that approximate the entire system's behavior, with performance evaluated against observed data.
+**Limitation:** Unlike other methods, our approach does not produce multivariate expressions. 
+The focus is on accurately discerning the relationship between individual variables and the system's response. 
+Future work will aim to use these **univariate skeletons as building blocks** to create multivariate expressions that approximate the entire system's behavior, with performance evaluated against observed data.
