@@ -117,6 +117,7 @@ The full encoder, \(\Phi\), generates \(N_S\) individual encodings \(\mathbf{z}^
 Here, \(\rho(\cdot)\) is a pooling function, \(\boldsymbol{\theta}_e\) are the trainable weights, and \(\phi\) is a stack of \(\ell\) induced set attention blocks (ISABs) that encode the interactions within each input set in a permutation-invariant way.
 
 Figure 4 illustrates the simplified architecture of the Multi-Set Transformer. The decoder \(\psi\) generates sequences based on the representation \(\mathbf{Z}\) produced by \(\Phi\). The output sequence \(\hat{\mathbf{e}} = \{ \hat{e}_1, \dots, \hat{e}_{N_{out}} \}\) represents the skeleton as a sequence of indexed tokens in prefix notation. Each token is mapped to a numerical index using a predefined vocabulary of unique symbols.
+Note that $\boldsymbol{\Theta} = [\boldsymbol{\theta}_e, \boldsymbol{\theta}_d]$ contains the weights of the encoder and the decoder.
 
 For instance, the expression \(\frac{c}{x} e^{\frac{c}{\sqrt{x}}}\) is represented as `{mul, div, c, x, exp, div, c, square, x}` in prefix notation, which is then converted to a sequence of indices like `{"0, 14, 11, 2, 3, 12, 11, 2, 18, 3, 1"}` using the vocabulary.
 
@@ -144,13 +145,13 @@ $\mathcal{U} (x_v^{\min}, x_v^{\max})$, and the remaining variables sharing cons
 
 In real-world datasets, finding subsets where non-analyzed variables are fixed can be difficult or 
 result in small sets. To overcome this, we generate sets with the desired behavior and estimate 
-their responses using a trained regression model $\tilde{f}$. Our method then derives univariate skeletons 
+their responses using a trained regression model $\hat{f}$. Our method then derives univariate skeletons 
 from these sets, serving as explanations of the function approximated by the model, as shown in Fig. 5.
 
 <div style="display: flex; justify-content: center;">
   <figure style="text-align: center;">
     <img src=step2.jpg alt="figure" width="100%">
-    <figcaption>Figure 5: An example of a univariate symbolic skeleton prediction for variable $x_1$.</figcaption>
+    <figcaption>Figure 5: An example of a univariate symbolic skeleton prediction.</figcaption>
   </figure>
 </div>
 
