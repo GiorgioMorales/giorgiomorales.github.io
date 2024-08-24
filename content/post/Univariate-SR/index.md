@@ -159,7 +159,7 @@ The response for each set $\tilde{\mathbf{X}}^{(s)}$ is estimated as
 $\tilde{\mathbf{y}}^{(s)} = \hat{f}(\tilde{\mathbf{X}}^{(s)})$. The set $\tilde{\mathbf{D}}_v^{(s)} = (\tilde{\mathbf{X}}_v^{(s)}, \tilde{\mathbf{y}}^{(s)})$ is used to analyze the $v$-th variable. The collection of sets $\tilde{\mathbf{D}}_v = { \tilde{\mathbf{D}}_v^{(1)}, \dots, \tilde{\mathbf{D}}_v^{(N_S)} }$ is then fed into the pre-trained Multi-Set Transformer $g$ to estimate the skeleton for $x_v$ as $\tilde{\mathbf{e}}(x_v) = g(\tilde{\mathbf{D}}_v, \boldsymbol{\Theta})$. This process is repeated for all variables to obtain their symbolic skeletons.
 
 
-## Python Implementation
+## Example Using Pre-defined Datasets
 
 In this example, we will predict the symbolic skeletons corresponding to each variable of a system whose underlying equation is one of the following:
 
@@ -170,7 +170,7 @@ In this example, we will predict the symbolic skeletons corresponding to each va
 | E3                              | $\frac{1.5 e^{1.5 x_1} + 5 \cos(3 x_2)}{10}$                                                          | $[-5, 5]^2$                                                            |
 | E4                              | $\frac{(1- x_1)^2 + (1- x_3)^2 + 100 (x_2 - x_1^2)^2 + 100 (x_4 - x_3^2)^2}{10000}$                   | $[-5, 5]^4$                                                            |
 | E5                              | $\sin(x_1 + x_2 x_3) + \exp{(1.2  x_4)}$                                                              | $x_1 \in [-10, 10], x_2 \in [-5, 5], x_3 \in [-5, 5], x_4 \in [-3, 3]$ |
-| E6                              | $\tanh(x_1 / 2) + \text{abs}(x_2) \cos(x_3^2/5)$                                                      | x_2                                                                    |  \cos\left(\frac{x_3^2}{5}\right)$ | $[-10, 10]^3$ |
+| E6                              | $\tanh(x_1 / 2) + \text{abs}(x_2) \cos(x_3^2/5)$                                                      | $[-10, 10]^3$                                                                     |  \cos\left(\frac{x_3^2}{5}\right)$ | $[-10, 10]^3$ |
 | E7                              | $\frac{1 - x_2^2}{\sin(2 \pi x_1) + 1.5}$                                                             | $[-5, 5]^2$                                                            |
 | E8                              | $\frac{x_1^4}{x_1^4 + 1} + \frac{x_2^4}{x_2^4 + 1}$                                                   | $[-5, 5]^2$                                                            |
 | E9                              | $\log(2 x_2 + 1) - \log(4 x_1^2 + 1)$                                                                 | $[0, 5]^2$                                                             |
@@ -193,7 +193,7 @@ data_loader = DataLoader(name=datasetName)
 data = data_loader.dataset
 ```
 
-### Define NN and load weights
+### Define NN and Load Weights
 
 For this example, we have already trained a feedforward neural network on the generated dataset so we only load their corresponding weights.
 
@@ -266,9 +266,132 @@ Selected skeleton: c*cos(c*x2**2 + c*x2 + c) + c
 ```
 
 These results coincide with the targe symbolic skeletons. 
-That is, if we apply the skeleton function $\kappa$ to the underlying function for $x_1$, $x_2$, and $x_3$, we would obtain:
+That is, if we apply the skeleton function $\kappa$ to the underlying function $f$ for $x_1$, $x_2$, and $x_3$, we would obtain:
 $\kappa(f, x_1) = \mathbf{e}(x_1) = c_1\, \tanh(c_2\,x_1) + c_3$, $\kappa(f, x_2) = \mathbf{e}(x_2) = c_1 |x_2| + c_2$, and 
 $\kappa(f, x_3) = \mathbf{e}(x_3) = c_1\, \cos(c_2\, x_3^2 + c_3\,x_3) + c_4$, respectively.  
+
+
+
+## Example Using Custom Equations
+
+Here we will show how to use data generated from your own equations. Alternatively, you can bring your dataset (e.g., a CSV file) and load the matrix $X$ (explainable variables) and $Y$ (response variable).
+
+In this example, consider the simple equation $y = \frac{\sin(x_1 + 1.2 \, x_2) \, x_3^2}{2}$. Suppose that $x_1$ and $x_2$ are continuous variables and $x_3$ is discrete and can take 100 possible values ($x_1 \in [-10, 10]$, $x_2 \in [-5, 5]$, and $x_3 \in [-8, ... , 8]$)
+
+### Generate and Format Data
+
+```python
+np.random.seed(7)
+n = 10000
+# Generate data from the equation
+x1 = np.random.uniform(-10, 10, size=n)
+x2 = np.random.uniform(-5, 5, size=n)
+x3 = np.array([np.random.choice(np.linspace(-8, 8, 100)) for _ in range(n)])  # Example of discrete variable
+X = np.array([x1, x2, x3]).T
+Y = np.sin(x1 + 1.2 * x2) * (x3**2 / 2)  # Or load matrices X and Y from a CSV file
+
+# Format the dataset
+names = ['x0', 'x1', 'x2']  # Specify the names of the variables
+types = ['continuous', 'continuous', 'discrete']  # Specify if the variables are continuous or discrete
+dataset = InputData(X=X, Y=Y, names=names, types=types)
+```
+
+### Train a NN
+
+Unlike the previous example, we haven't trained a NN for this problem so let's train it now. If you're not satisfied with the validation MSE, you can try increasing the number of epochs or try a different architecture. By default, we use the `modelType='NN'`; if you need less complexity, try `modelType='NN2'`; or if you need more complexity, try `modelType='NN3'`.
+
+```python
+from EquationLearning.Trainer.TrainNNmodel import Trainer
+
+predictor = Trainer(dataset=dataset, modelType='NN')
+predictor.train(batch_size=128, epochs=3000, printProcess=False)
+# Save the model
+# predictor.model.saveModel(path)  # Specify your own path
+```
+
+```shell
+OUTPUT:
+
+*****************************************
+Start MLP training
+*****************************************
+100%|██████████| 3000/3000 [09:20<00:00,  5.35it/s]Val MSE: 0.07133777567923286
+```
+
+### Get Skeletons
+
+The following method will generate some candidate symbolic skeletons and select the most appropriate for each variable:
+
+```python
+regressor = MSSP(dataset=dataset, bb_model=predictor.model)
+regressor.get_skeletons()
+```
+
+```shell
+OUTPUT:
+
+********************************
+Analyzing variable x0
+********************************
+Predicted skeleton 1 for variable x0: c*cos(c + x0) + c
+Predicted skeleton 2 for variable x0: c*sin(c + x0) + c
+Predicted skeleton 3 for variable x0: c*cos(c*x0 + c) + c
+Predicted skeleton 4 for variable x0: c*cos(c*x0) + c
+Predicted skeleton 5 for variable x0: c*cos(x0) + c
+
+Choosing the best skeleton... (skeletons ordered based on number of nodes)
+	Skeleton: c*cos(x0) + c. Correlation: 0.9549434622348927. Expr: cos(x0)
+	Skeleton: c*cos(c + x0) + c. Correlation: 0.9998902707120207. Expr: cos(x0 - 5.968739)
+-----------------------------------------------------------
+Selected skeleton: c*cos(c + x0) + c
+
+********************************
+Analyzing variable x1
+********************************
+Predicted skeleton 1 for variable x1: c*sin(c*x1 + c) + c
+Predicted skeleton 2 for variable x1: c*cos(c*x1 + c) + c
+Predicted skeleton 3 for variable x1: c*sin(c + x1) + c
+Predicted skeleton 4 for variable x1: c*cos(c*x1) + c
+Predicted skeleton 5 for variable x1: c*cos(c + x1) + c
+
+Choosing the best skeleton... (skeletons ordered based on number of nodes)
+	Skeleton: c*sin(c + x1) + c. Correlation: 0.8109687552029223. Expr: sin(x1 - 5.021683)
+	Skeleton: c*cos(c*x1) + c. Correlation: 0.9437250798178028. Expr: cos(1.195566*x1)
+	Skeleton: c*cos(c + x1) + c. Correlation: 0.8109687552029744. Expr: cos(x1 + 5.973891)
+	Skeleton: c*sin(c*x1 + c) + c. Correlation: 0.9969592793660724. Expr: sin(1.19879*x1 + 1.25925)
+	Skeleton: c*cos(c*x1 + c) + c. Correlation: 0.9969591651624546. Expr: cos(1.19903*x1 - 0.311585)
+-----------------------------------------------------------
+Selected skeleton: c*sin(c*x1 + c) + c
+
+********************************
+Analyzing variable x2
+********************************
+Predicted skeleton 1 for variable x2: c*x2**2 + c
+Predicted skeleton 2 for variable x2: c*x2**2 + c*x2 + c
+Predicted skeleton 3 for variable x2: c*(c + x2)**2 + c
+Predicted skeleton 4 for variable x2: c*x2**2 + c*tanh(c*x2 + c) + c
+Predicted skeleton 5 for variable x2: c*x2**3 + c
+
+Choosing the best skeleton... (skeletons ordered based on number of nodes)
+	Skeleton: c*x2**2 + c. Correlation: 0.9997445507920887. Expr: x2**2
+-----------------------------------------------------------
+Selected skeleton: c*x2**2 + c
+
+[c*cos(c + x0) + c, c*sin(c*x1 + c) + c, c*x2**2 + c]
+```
+
+Again, these results coincide with the target symbolic skeletons. 
+If we apply the skeleton function $\kappa$ to the underlying function $f$ for $x_1$, $x_2$, and $x_3$, we would obtain:
+$\kappa(f, x_1) = \mathbf{e}(x_1) = c_1 \, \sin(x_1 + c_2)$, 
+$\kappa(f, x_2) = \mathbf{e}(x_2) = c_1 |x_2| + c_2$, and 
+$\kappa(f, x_3) = \mathbf{e}(x_3) = c_1\, \cos(c_2\, x_3^2 + c_3\,x_3) + c_4$, respectively.  
+Note that although the predicted skeleton for $x_1$, $\hat{\mathbf{e}}(x_1)=c_1\,\cos(c_2 + x_1) + c_3$ doe not coincide exactly with \mathbf{e}(x_1).
+However, a skeleton with a $\sin$ operator can be rewritten as $c_3 \, \cos(c_4 + x_1)$ (if $c_3 = -c_1$ and $c_4 = 90 - c_2$).
+Thus, we consider they express the same functional form, just using different coefficients.
+
+## Conclusions
+
+
 
 ...post under construction...
 
