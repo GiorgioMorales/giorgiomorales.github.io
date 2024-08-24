@@ -128,7 +128,7 @@ For instance, the expression \(\frac{c}{x} e^{\frac{c}{\sqrt{x}}}\) is represent
   </figure>
 </div>
 
-We train our model on a large dataset of artificially generated MSSP problems, aiming to reduce 
+We train our model on a [large dataset of artificially generated MSSP problems](https://huggingface.co/datasets/AnonymousGM/MultiSetTransformerData), aiming to reduce 
 discrepancies between predictions and target skeletons by minimizing cross-entropy loss. 
 The training dataset, consisting of expressions in prefix notation, is generated as explained in 
 Section B of the [Supplementary Materials](https://github.com/NISL-MSU/MultiSetSR/blob/master/Supplementary%20Material-ECML2024_Skeleton_prediction.pdf).
@@ -159,12 +159,55 @@ The response for each set $\tilde{\mathbf{X}}^{(s)}$ is estimated as
 $\tilde{\mathbf{y}}^{(s)} = \hat{f}(\tilde{\mathbf{X}}^{(s)})$. The set $\tilde{\mathbf{D}}_v^{(s)} = (\tilde{\mathbf{X}}_v^{(s)}, \tilde{\mathbf{y}}^{(s)})$ is used to analyze the $v$-th variable. The collection of sets $\tilde{\mathbf{D}}_v = { \tilde{\mathbf{D}}_v^{(1)}, \dots, \tilde{\mathbf{D}}_v^{(N_S)} }$ is then fed into the pre-trained Multi-Set Transformer $g$ to estimate the skeleton for $x_v$ as $\tilde{\mathbf{e}}(x_v) = g(\tilde{\mathbf{D}}_v, \boldsymbol{\Theta})$. This process is repeated for all variables to obtain their symbolic skeletons.
 
 
+## Python Implementation
+
+In this example, we will predict the symbolic skeletons corresponding to each variable of a system whose underlying equation is one of the following:
+
+| Eq. | Underlying equation________________________________________________________|
+|-----|------------------------|
+| E1  | $ (3.0375 x_1 x_2 + 5.5 \sin (9/4 (x_1 - 2/3)(x_2 - 2/3)))/5 $|
+| E2  | $ 5.5 + (1- x_1/4) ^ 2 + \sqrt{x_2 + 10} \sin( x_3/5)$|
+| E3  | $(1.5 e^{1.5  x_1} + 5 \cos(3 x_2)) / 10$|
+| E4  | $((1- x_1)^2 + (1- x_3) ^ 2 + 100 (x_2 - x_1 ^ 2) ^ 2 + 100 (x_4 - x_3 ^ 2) ^ 2)/10000$|
+| E5  | $\sin(x_1 + x_2 x_3) + \exp{(1.2  x_4)}$|
+| E6  | $\tanh(x_1 / 2) + \text{abs}(x_2) \cos(x_3^2/5)$|
+| E7  | $(1 - x_2^2) / (\sin(2 \pi \, x_1) + 1.5)$|
+| E8  | $x_1^4 / (x_1^4 + 1) + x_2^4 / (x_2^4 + 1)$|
+| E9  | $\log(2 x_2 + 1) - \log(4 x_1 ^ 2 + 1)$|
+| E10 | $\sin(x_1 \, e^{x_2})$|
+| E11 | $x_1 \, \log(x_2 ^ 4)$|
+| E12 | $1 + x_1 \, \sin(1 / x_2)$|
+| E13 | $\sqrt{x_1}\, \log(x_2 ^ 2)$|
+
+To install our Python package, you can execute the following command in the terminal: `pip install git+https://github.com/NISL-MSU/MultiSetSR`.
+You can also try to execute this example yourself on Google Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/NISL-MSU/MultiSetSR/blob/master/DemoMSSP.ipynb)
+
+For instance, if we select problem E6, we load it running the following:
+
+```python
+from EquationLearning.SymbolicRegressor.MSSP import *
+
+datasetName = 'E6'
+data_loader = DataLoader(name=datasetName)
+data = data_loader.dataset
+```
+
+### Define NN and load weights
+
+For this example, we have already trained a feedforward neural network on the generated dataset so we only load their corresponding weights.
+
+```python
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+root = get_project_root()
+folder = os.path.join(root, "EquationLearning//saved_models//saved_NNs//" + datasetName)
+filepath = folder + "//weights-NN-" + datasetName
+nn_model = NNModel(device=device, n_features=data.n_features, NNtype=data_loader.modelType)
+nn_model.loadModel(filepath)
+```
 
 
 
 
+...post under construction...
 
-...post in construction...
 
-
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/NISL-MSU/MultiSetSR/blob/master/DemoMSSP.ipynb)
