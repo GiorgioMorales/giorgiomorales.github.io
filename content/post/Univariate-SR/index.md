@@ -163,21 +163,22 @@ $\tilde{\mathbf{y}}^{(s)} = \hat{f}(\tilde{\mathbf{X}}^{(s)})$. The set $\tilde{
 
 In this example, we will predict the symbolic skeletons corresponding to each variable of a system whose underlying equation is one of the following:
 
-| Eq. | Underlying equation________________________________________________________|
-|-----|------------------------|
-| E1  | $ (3.0375 x_1 x_2 + 5.5 \sin (9/4 (x_1 - 2/3)(x_2 - 2/3)))/5 $|
-| E2  | $ 5.5 + (1- x_1/4) ^ 2 + \sqrt{x_2 + 10} \sin( x_3/5)$|
-| E3  | $(1.5 e^{1.5  x_1} + 5 \cos(3 x_2)) / 10$|
-| E4  | $((1- x_1)^2 + (1- x_3) ^ 2 + 100 (x_2 - x_1 ^ 2) ^ 2 + 100 (x_4 - x_3 ^ 2) ^ 2)/10000$|
-| E5  | $\sin(x_1 + x_2 x_3) + \exp{(1.2  x_4)}$|
-| E6  | $\tanh(x_1 / 2) + \text{abs}(x_2) \cos(x_3^2/5)$|
-| E7  | $(1 - x_2^2) / (\sin(2 \pi \, x_1) + 1.5)$|
-| E8  | $x_1^4 / (x_1^4 + 1) + x_2^4 / (x_2^4 + 1)$|
-| E9  | $\log(2 x_2 + 1) - \log(4 x_1 ^ 2 + 1)$|
-| E10 | $\sin(x_1 \, e^{x_2})$|
-| E11 | $x_1 \, \log(x_2 ^ 4)$|
-| E12 | $1 + x_1 \, \sin(1 / x_2)$|
-| E13 | $\sqrt{x_1}\, \log(x_2 ^ 2)$|
+| Eq.  | Underlying equation | Domain range |
+|------|---------------------|--------------|
+| E1   | $$\frac{3.0375 x_1 x_2 + 5.5 \sin \left(\frac{9}{4} (x_1 - \frac{2}{3})(x_2 - \frac{2}{3})\right)}{5}$$ | $$[-5, 5]^2$$ |
+| E2   | $$5.5 + \left(1- \frac{x_1}{4}\right)^2 + \sqrt{x_2 + 10} \sin\left(\frac{x_3}{5}\right)$$ | $$[-10, 10]^2$$ |
+| E3   | $$\frac{1.5 e^{1.5 x_1} + 5 \cos(3 x_2)}{10}$$ | $$[-5, 5]^2$$ |
+| E4   | $$\frac{(1- x_1)^2 + (1- x_3)^2 + 100 (x_2 - x_1^2)^2 + 100 (x_4 - x_3^2)^2}{10000}$$ | $$[-5, 5]^4$$ |
+| E5   | $$\sin(x_1 + x_2 x_3) + \exp{(1.2  x_4)}$$ | $$x_1 \in [-10, 10], x_2 \in [-5, 5], x_3 \in [-5, 5], x_4 \in [-3, 3]$$ |
+| E6   | $$\tanh\left(\frac{x_1}{2}\right) + |x_2|  \cos\left(\frac{x_3^2}{5}\right)$$ | $$[-10, 10]^3$$ |
+| E7   | $$\frac{1 - x_2^2}{\sin(2 \pi x_1) + 1.5}$$ | $$[-5, 5]^2$$ |
+| E8   | $$\frac{x_1^4}{x_1^4 + 1} + \frac{x_2^4}{x_2^4 + 1}$$ | $$[-5, 5]^2$$ |
+| E9   | $$\log(2 x_2 + 1) - \log(4 x_1^2 + 1)$$ | $$[0, 5]^2$$ |
+| E10  | $$\sin(x_1 e^{x_2})$$ | $$x_1 \in [-2, 2], x_2 \in [-4, 4]$$ |
+| E11  | $$x_1 \log(x_2^4)$$ | $$[-5, 5]^2$$ |
+| E12  | $$1 + x_1 \sin\left(\frac{1}{x_2}\right)$$ | $$[-10, 10]^2$$ |
+| E13  | $$\sqrt{x_1}\log(x_2^2)$$ | $$x_1 \in [0, 20], x_2 \in [-5, 5]$$ |
+
 
 To install our Python package, you can execute the following command in the terminal: `pip install git+https://github.com/NISL-MSU/MultiSetSR`.
 You can also try to execute this example yourself on Google Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/NISL-MSU/MultiSetSR/blob/master/DemoMSSP.ipynb)
