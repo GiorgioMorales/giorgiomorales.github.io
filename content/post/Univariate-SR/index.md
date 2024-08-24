@@ -207,8 +207,62 @@ nn_model = NNModel(device=device, n_features=data.n_features, NNtype=data_loader
 nn_model.loadModel(filepath)
 ```
 
+### Get Skeletons
 
+The following method will generate some candidate symbolic skeletons and select the most appropriate for each variable:
 
+```python
+regressor = MSSP(dataset=data, bb_model=nn_model)
+regressor.get_skeletons()
+```
+
+```
+********************************
+Analyzing variable x0
+********************************
+Predicted skeleton 1 for variable x0: c*tanh(c*x0) + c
+Predicted skeleton 2 for variable x0: c*tanh(c*x0 + c) + c
+Predicted skeleton 3 for variable x0: c + tanh(c*x0)
+Predicted skeleton 4 for variable x0: c + tanh(c*x0 + c)
+Predicted skeleton 5 for variable x0: c*sqrt(c*tanh(c*x0) + c) + c
+
+Choosing the best skeleton... (skeletons ordered based on number of nodes)
+	Skeleton: c + tanh(c*x0). Correlation: 0.9997416536770057. Expr: tanh(0.536603*x0)
+-----------------------------------------------------------
+Selected skeleton: c*tanh(c*x0) + c
+
+********************************
+Analyzing variable x1
+********************************
+Predicted skeleton 1 for variable x1: c*Abs(x1) + c
+Predicted skeleton 2 for variable x1: c*x1*tanh(c*x1) + c
+Predicted skeleton 3 for variable x1: c + x1*tanh(c*x1 + c)
+Predicted skeleton 4 for variable x1: c + x1*tanh(c*x1)
+Predicted skeleton 5 for variable x1: c*x1*tanh(c*x1 + c) + c
+
+Choosing the best skeleton... (skeletons ordered based on number of nodes)
+	Skeleton: c*Abs(x1) + c. Correlation: 0.9987919523613259. Expr: Abs(x1)
+-----------------------------------------------------------
+Selected skeleton: c*Abs(x1) + c
+
+********************************
+Analyzing variable x2
+********************************
+Predicted skeleton 1 for variable x2: c*cos(c*(c + x2)**2 + c) + c
+Predicted skeleton 2 for variable x2: c*cos(c*x2 + c) + c
+Predicted skeleton 3 for variable x2: c*(c*cos(c*x2 + c) + c)**3 + c
+Predicted skeleton 4 for variable x2: c*(c*cos(x2) + c)**3 + c
+Predicted skeleton 5 for variable x2: c*cos(c*(c + x2)**3 + c) + c
+
+Choosing the best skeleton... (skeletons ordered based on number of nodes)
+	Skeleton: c*cos(c*x2 + c) + c. Correlation: 0.45346070794917664. Expr: cos(2.419372*x2 - 6.283185)
+	Skeleton: c*cos(x2)**3 + c*cos(x2)**2 + c*cos(x2) + c. Correlation: 0.38832039013792896. Expr: -15.209976*cos(x2)**3 + cos(x2)**2 + 20.0*cos(x2)
+	Skeleton: c*cos(c*x2**2 + c*x2 + c) + c. Correlation: 0.9990666723733511. Expr: cos(0.199791*x2**2 - 0.001698*x2 + 0.016807)
+-----------------------------------------------------------
+Selected skeleton: c*cos(c*x2**2 + c*x2 + c) + c
+
+[c*tanh(c*x0) + c, c*Abs(x1) + c, c*cos(c*x2**2 + c*x2 + c) + c]
+```
 
 ...post under construction...
 
