@@ -127,6 +127,41 @@ For instance, the expression \(\frac{c}{x} e^{\frac{c}{\sqrt{x}}}\) is represent
   </figure>
 </div>
 
+We train our model on a large dataset of artificially generated MSSP problems, aiming to reduce 
+discrepancies between predictions and target skeletons by minimizing cross-entropy loss. 
+The training dataset, consisting of expressions in prefix notation, is generated as explained in 
+Section B of the [Supplementary Materials](https://github.com/NISL-MSU/MultiSetSR/blob/master/Supplementary%20Material-ECML2024_Skeleton_prediction.pdf).
+
+
+
+### Univariate Symbolic Skeleton Prediction
+
+When analyzing the $v$-th variable of the system, $x_v$, we create $N_S$ artificial sets 
+${\tilde{\mathbf{X}}^{(1)}, \dots, \tilde{\mathbf{X}}^{(N_S)}}$, where $x_v$ varies while the 
+other variables are fixed at random values. The $s$-th set $\tilde{\mathbf{X}}^{(s)}$ consists of 
+$n$ samples, with $x_v$ values sampled from a uniform distribution 
+$\mathcal{U} (x_v^{\min}, x_v^{\max})$, and the remaining variables sharing constant values across all samples.
+
+In real-world datasets, finding subsets where non-analyzed variables are fixed can be difficult or 
+result in small sets. To overcome this, we generate sets with the desired behavior and estimate 
+their responses using a trained regression model $\tilde{f}$. Our method then derives univariate skeletons 
+from these sets, serving as explanations of the function approximated by the model, as shown in Fig. 5.
+
+<div style="display: flex; justify-content: center;">
+  <figure style="text-align: center;">
+    <img src=step2.jpg alt="figure" width="100%">
+    <figcaption>Figure 5: An example of a univariate symbolic skeleton prediction for variable $x_1$.</figcaption>
+  </figure>
+</div>
+
+The response for each set $\tilde{\mathbf{X}}^{(s)}$ is estimated as 
+$\tilde{\mathbf{y}}^{(s)} = \hat{f}(\tilde{\mathbf{X}}^{(s)})$. The set $\tilde{\mathbf{D}}_v^{(s)} = (\tilde{\mathbf{X}}_v^{(s)}, \tilde{\mathbf{y}}^{(s)})$ is used to analyze the $v$-th variable. The collection of sets $\tilde{\mathbf{D}}_v = { \tilde{\mathbf{D}}_v^{(1)}, \dots, \tilde{\mathbf{D}}_v^{(N_S)} }$ is then fed into the pre-trained Multi-Set Transformer $g$ to estimate the skeleton for $x_v$ as $\tilde{\mathbf{e}}(x_v) = g(\tilde{\mathbf{D}}_v, \boldsymbol{\Theta})$. This process is repeated for all variables to obtain their symbolic skeletons.
+
+
+
+
+
+
 
 ...post in construction...
 
