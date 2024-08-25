@@ -402,3 +402,15 @@ Symbolic regression (SR) seeks to discover explicit mathematical equations that 
 **Limitation:** Unlike other methods, our approach does not produce multivariate expressions. 
 The focus is on accurately discerning the relationship between individual variables and the system's response. 
 Future work will aim to use these **univariate skeletons as building blocks** to create multivariate expressions that approximate the entire system's behavior, with performance evaluated against observed data.
+
+**Evaluation:** SR methods are often tested on benchmarks like the [Feynman SR Benchmark (FSRB)](https://www.science.org/doi/10.1126/sciadv.aay2631), 
+with performance compared using mean squared error (MSE) on a data subset. 
+However, minimizing prediction error doesn't always yield the true underlying function; 
+for example, $f(x)=\cos\left(-\frac{x}{10}\right)^2$ and $\hat{f}(x)=-0.0093x^2 + 0.9983$ both produce an 
+MSE below $4\times 10^{-5}$ for $x \in [-5, 5]$. 
+Check our paper to see how our method stacks up against other techniques, such as 
+[E2E (Kamienny et al., 2022)](https://papers.neurips.cc/paper_files/paper/2022/file/42eb37cdbefd7abae0835f4b67548c39-Paper-Conference.pdf), 
+[NeSymRes (Biggio et al., 2021)](https://proceedings.mlr.press/v139/biggio21a/biggio21a.pdf),
+[TaylorGP (He et al., 2022)](https://dl.acm.org/doi/abs/10.1145/3512290.3528757),
+and [PySR (Cranmer, 2020)](https://proceedings.neurips.cc/paper_files/paper/2020/file/c9f2f917078bd2db12f23c3b413d9cba-Paper.pdf), 
+in identifying functional forms. 
