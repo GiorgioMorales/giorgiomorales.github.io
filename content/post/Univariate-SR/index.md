@@ -143,7 +143,10 @@ When analyzing the $v$-th variable of the system, $x_v$, we create $N_S$ artific
 ${\tilde{\mathbf{X}}^{(1)}, \dots, \tilde{\mathbf{X}}^{(N_S)}}$, where $x_v$ varies while the 
 other variables are fixed at random values. The $s$-th set $\tilde{\mathbf{X}}^{(s)}$ consists of 
 $n$ samples, with $x_v$ values sampled from a uniform distribution 
-$\mathcal{U} (x_v^{\min}, x_v^{\max})$, and the remaining variables sharing constant values across all samples.
+$\mathcal{U} (x_v^{\min}, x_v^{\max})$, whose lower and upper bounds, $x_v^{\min}$ and $x_v^{\max}$, respectively, are calculated from the observed data.
+The values assigned to the remaining dimensions are sampled independently using similar uniform distributions; 
+however, the same value is shared across all samples  (i.e., $\tilde{\mathbf{x}}^{(s)}_{1,k} = \tilde{\mathbf{x}}^{(s)}_{2,k} = \dots = \tilde{\mathbf{x}}^{(s)}_{n,k}$, $\forall k\in[1, \dots, t]$ and $k \neq v$).
+
 
 In real-world datasets, finding subsets where non-analyzed variables are fixed can be difficult or 
 result in small sets. To overcome this, we generate sets with the desired behavior and estimate 
