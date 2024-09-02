@@ -37,8 +37,8 @@ links:
 
 
 links:
-- name: Arxiv
-  url: http://arxiv.org/abs/2406.17834
+- name: Springer
+  url: https://doi.org/10.1007/978-3-031-70371-3_7
 url_pdf: https://arxiv.org/pdf/2406.17834
 url_code: 'https://github.com/NISL-MSU/MultiSetSR'
 url_dataset: 'https://huggingface.co/datasets/AnonymousGM/MultiSetTransformerData'
