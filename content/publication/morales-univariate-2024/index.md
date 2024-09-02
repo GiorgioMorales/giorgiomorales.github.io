@@ -33,7 +33,7 @@ tags:
 - Knowledge discovery
 links:
 - name: URL
-  url: http://arxiv.org/abs/2406.17834
+  url: https://doi.org/10.1007/978-3-031-70371-3_7
 
 
 links:

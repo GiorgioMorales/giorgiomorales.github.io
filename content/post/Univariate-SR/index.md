@@ -145,7 +145,7 @@ other variables are fixed at random values. The $s$-th set $\tilde{\mathbf{X}}^{
 $n$ samples, with $x_v$ values sampled from a uniform distribution 
 $\mathcal{U} (x_v^{\min}, x_v^{\max})$, whose lower and upper bounds, $x_v^{\min}$ and $x_v^{\max}$, respectively, are calculated from the observed data.
 The values assigned to the remaining dimensions are sampled independently using similar uniform distributions; 
-however, the same value is shared across all samples  (i.e., $\tilde{\mathbf{x}}^{(s)}_{1,k} = \tilde{\mathbf{x}}^{(s)}_{2,k} = \dots = \tilde{\mathbf{x}}^{(s)}_{n,k}$, $\forall k\in[1, \dots, t]$ and $k \neq v$).
+however, the same value is shared across all samples (i.e., $\tilde{\mathbf{x}}^{(s)}_{1,k} = \tilde{\mathbf{x}}^{(s)}_{2,k} = \dots = \tilde{\mathbf{x}}^{(s)}_{n,k}$, $\forall k\in[1, \dots, t]$ and $k \neq v$).
 
 
 In real-world datasets, finding subsets where non-analyzed variables are fixed can be difficult or 
