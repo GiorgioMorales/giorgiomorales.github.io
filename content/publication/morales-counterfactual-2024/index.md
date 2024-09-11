@@ -10,7 +10,7 @@ publication_types:
 - paper-conference
 publication: '*2024 International Joint Conference on Neural Networks (IJCNN) (IJCNN
   2024)*'
-doi: 10.48550/arXiv.2403.10730
+doi: 10.1109/IJCNN60899.2024.10650046
 abstract: In Precision Agriculture, the utilization of management zones (MZs) that
   take into account within-field variability facilitates effective fertilizer management.
   This approach enables the optimization of nitrogen (N) rates to maximize crop yield
@@ -36,6 +36,6 @@ tags:
 - Counterfactual explanations
 - XAI
 links:
-- name: ARXIV
-  url: http://arxiv.org/abs/2403.10730
+- name: IEEE XPLORE
+  url: https://ieeexplore.ieee.org/document/10650046
 ---
