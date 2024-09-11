@@ -36,6 +36,6 @@ tags:
 - Counterfactual explanations
 - XAI
 links:
-- name: IEEE XPLORE
-  url: https://ieeexplore.ieee.org/document/10650046
+- name: ARXIV
+  url: http://arxiv.org/abs/2403.10730
 ---
