@@ -12,8 +12,8 @@ featured: true
 
 image:
   caption: 'Credits: MSU News Service'
-  focal_point: ""
-  preview_only: false
+  focal_point: "top-right"
+  preview_only: true
 
 links:
 - name: MSU News Service Link
