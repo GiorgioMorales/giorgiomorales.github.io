@@ -16,7 +16,7 @@ image:
   preview_only: false
 
 links:
-- name: MSU Graduate School Stories
+- name: MSU News Service Link
   url: https://www.montana.edu/news/23969
 ---
 
