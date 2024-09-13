@@ -79,13 +79,15 @@ Wrapping up a busy week at ECML PKDD 2024 in Vilnius! 🌍✨
 It was an honor to present and discuss our research at such a prestigious conference:
 
 🎤 Oral and poster presentations of our research track paper: "[Univariate Skeleton Prediction in Multivariate Systems Using Transformers](/publication/morales-univariate-2024)."
+
 📚 PhD Forum presentation: "[Decomposable Symbolic Regression Using Transformers and Neural Network-Assisted Genetic Algorithms](post/ecml-phd-forum-news/)."
+
 🏆 An invited presentation to showcase my winning solution at the [Seismic Monitoring and Analysis Challenge (SMAC) competition](post/ecml-challenge-2024-news/).
 
 Grateful for the opportunity to connect with brilliant minds and exchange ideas!
 
 
 <div style="position: relative; width: 100%; height: 0; padding-bottom: 58.52%;">
-  <iframe width="560" height="315" src="https://www.youtube.com/watch?v=i34yctvWGLA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/i34yctvWGLA?si=2IQ5EWx_O8nJavpM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
