@@ -63,7 +63,7 @@ $$\min_{\mathbf{\theta}} \frac{1}{2} \mathbb{E}_{p_{\text{data}}}[ ||\mathbf{s}_
 
 which, according to Eq. 1 in Song & Ermon (2019) [1], is equivalent to:
 
-$$ \mathbb{E}_{p_{\text{data}}}[ \tr(\nabla_{\mathbf{x}} \mathbf{s}_{\mathbf{\theta}} (\mathbf{x})) + \frac{1}{2} ||\mathbf{s}_{\mathbf{\theta}} (\mathbf{x})||_2^2  ].$$
+$$ \mathbb{E}_{p_{\text{data}}}[ \text{tr}(\nabla_{\mathbf{x}} \mathbf{s}_{\mathbf{\theta}} (\mathbf{x})) + \frac{1}{2} ||\mathbf{s}_{\mathbf{\theta}} (\mathbf{x})||_2^2  ].$$
 
 This equivalency between both optimization problems was not immediately clear to me, so I started reading more about it.
 It turns out that the proof can be found in the Appendix 1 of the
@@ -79,7 +79,11 @@ $$\frac{1}{2} \mathbb{E}_{p_{\text{data}}}[ ||\mathbf{s}_{\mathbf{\theta}}(\math
 From this, notice that the last term is not dependent on $\mathbf{\theta}$; thus, it can be ignored during optimization.
 The new optimization problem can be written as:
 
-$$\min_{\mathbf{\theta}} J = \min_{\mathbf{\theta}} \frac{1}{2} \mathbb{E}_{p_{\text{data}}}[||\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})||_2^2] - \mathbb{E}_{p_{\text{data}}}[\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})^{\top} \nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x})] = \min_{\mathbf{\theta}} \frac{1}{2} \mathbb{E}_{p_{\text{data}}}[||\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})||_2^2] - M.$$
+$$\min_{\mathbf{\theta}} J = \min_{\mathbf{\theta}} \frac{1}{2} \mathbb{E}_{p_{\text{data}}}[||\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})||_2^2] - \mathbb{E}_{p_{\text{data}}}[\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})^{\top} \nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x})]$$
+
+\begin{equation}
+\min_{\mathbf{\theta}} J = \min_{\mathbf{\theta}} \frac{1}{2} \mathbb{E}_{p_{\text{data}}}[||\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})||_2^2] - M.
+\end{equation}
 
 (...post in construction)
 
