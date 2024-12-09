@@ -10,7 +10,7 @@ tags:
   - GenAI
 ---
 
-I have recently started reading some **seminal generative modeling papers** thanks to the recommendation of **Mehdy Bennani** (PhD student at Université de Caen Normandie).
+I have recently started reading some **seminal generative modeling papers** thanks to the recommendation of Mehdy Bennani (PhD student at Université de Caen Normandie).
 Since this is a new research area for me, I am committed to studying these papers thoroughly to develop a solid understanding of the subject. 
 
 However, as is the case with any area in Machine Learning that has evolved progressively over the years, some equations, theorems, or concepts are presented with the assumption that the reader is already familiar with them. 
@@ -48,7 +48,7 @@ Thus, if we take the gradient w.r.t $\mathbf{x}$, we obtain:
 $$\nabla_{\mathbf{x}} \log p(\mathbf{x}; \beta) = \nabla_{\mathbf{x}} \log \tilde{p}(\mathbf{x}; \beta) - 0.$$
 
 By doing so, we removed the influence of the normalizing constant. 
-Thus, $\nabla_{\mathbf{x}} \log p(\mathbf{x})$ is known as the **Stein score** (or simply "score") function. 
+Hence, $\nabla_{\mathbf{x}} \log p(\mathbf{x})$ is known as the **Stein score** (or simply "score") function. 
 
 ## Score Matching
 
@@ -63,7 +63,7 @@ $$\frac{1}{2} \mathbb{E}_{p_{\text{data}}}[ ||\mathbf{s}_{\mathbf{\theta}} (\mat
 
 which, according to Eq. 1 in Song & Ermon (2019) [1], is equivalent to:
 
-$$ \mathbb{E}_{p_{\text{data}}}[ \tr(\https://jmlr.csail.mit.edu/papers/volume6/hyvarinen05a/old.pdf_{\mathbf{x}} \mathbf{s}_{\mathbf{\theta}} (\mathbf{x})) + \frac{1}{2} ||\mathbf{s}_{\mathbf{\theta}} (\mathbf{x})||_2^2  ].$$
+$$ \mathbb{E}_{p_{\text{data}}}[ \tr(\nabla_{\mathbf{x}} \mathbf{s}_{\mathbf{\theta}} (\mathbf{x})) + \frac{1}{2} ||\mathbf{s}_{\mathbf{\theta}} (\mathbf{x})||_2^2  ].$$
 
 This equivalency between both optimization problems was not immediately clear to me, so I started reading more about it.
 It turns out that the proof can be found in the Appendix 1 of the
