@@ -81,9 +81,11 @@ The new optimization problem can be written as:
 
 $$\min_{\mathbf{\theta}} J = \min_{\mathbf{\theta}} \frac{1}{2} \mathbb{E}_{p_{\text{data}}}[||\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})||_2^2] - \mathbb{E}_{p_{\text{data}}}[\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})^{\top} \nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x})]$$
 
+{{< math >}}
 \begin{equation}
 \min_{\mathbf{\theta}} J = \min_{\mathbf{\theta}} \frac{1}{2} \mathbb{E}_{p_{\text{data}}}[||\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})||_2^2] - M.
 \end{equation}
+{{< /math >}}
 
 (...post in construction)
 
@@ -91,7 +93,9 @@ $$\min_{\mathbf{\theta}} J = \min_{\mathbf{\theta}} \frac{1}{2} \mathbb{E}_{p_{\
 ## References
 
 [1] Y. Song and S. Ermon, “Generative modeling by estimating gradients of the data distribution,” in Proceedings of the 33rd International Conference on Neural Information Processing Systems (2019), pp. 11918–11930.
+
 [2] H. Aapo, “Estimation of non-normalized statistical models by score matching.” Journal of Machine Learning Research (2005), vol. 6, pp. 695-809.
+
 
 
 
