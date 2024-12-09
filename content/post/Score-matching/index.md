@@ -59,7 +59,7 @@ This task is known as _score matching_.
 
 In score matching, the objective is to minimize the difference:
 
-$$\frac{1}{2} \mathbb{E}_{p_{\text{data}}}[ ||\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) - \nabla_{\mathbf{x}} \log p_{\text{data}}(\mathbf{x}) ||_2^2],$$
+$$\min_{\mathbf{\theta}} \frac{1}{2} \mathbb{E}_{p_{\text{data}}}[ ||\mathbf{s}_{\mathbf{\theta}}(\mathbf{x}) - \nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x}) ||_2^2],$$
 
 which, according to Eq. 1 in Song & Ermon (2019) [1], is equivalent to:
 
@@ -70,7 +70,16 @@ It turns out that the proof can be found in the Appendix 1 of the
 "[Estimation of Non-Normalized Statistical Models by Score Matching](https://jmlr.csail.mit.edu/papers/volume6/hyvarinen05a/old.pdf)" paper by Aapo Hyvärinen (2005) [2].
 Nevertheless, this proof didn't seem intuitive enough so I decided to do it in a way I can understand:
 
+We begin by expanding the objective function:
 
+$$\frac{1}{2} \mathbb{E}_{p_{\text{data}}}[ (\mathbf{s}_{\mathbf{\theta}}(\mathbf{x}) - \nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x}))^{\top}(\mathbf{s}_{\mathbf{\theta}}(\mathbf{x}) - \nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x}))  ],$$
+
+$$\frac{1}{2} \mathbb{E}_{p_{\text{data}}}[ ||\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})||_2^2 - 2 \mathbf{s}_{\mathbf{\theta}}(\mathbf{x})^{\top} \nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x}) + ||\nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x})||_2^2 ]. $$
+
+From this, notice that the last term is not dependent on $\mathbf{\theta}$; thus, it can be ignored during optimization.
+The new optimization problem can be written as:
+
+$$\min_{\mathbf{\theta}} J = \min_{\mathbf{\theta}} \frac{1}{2} \mathbb{E}_{p_{\text{data}}}[||\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})||_2^2] - \mathbb{E}_{p_{\text{data}}}[\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})^{\top} \nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x})] = \min_{\mathbf{\theta}} \frac{1}{2} \mathbb{E}_{p_{\text{data}}}[||\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})||_2^2] - M.$$
 
 (...post in construction)
 
