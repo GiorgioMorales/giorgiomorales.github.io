@@ -1,7 +1,7 @@
 ---
 title: Blog post - Score matching for score estimation
 summary: Obtaining the proof for the score matching objective function 
-date: 2024-12-9
+date: 2024-12-09
 authors:
   - admin
 tags:
@@ -26,7 +26,7 @@ Rather than explaining the paper itself, I'll limit myself to describe what I di
 ## (Stein) Score
 
 Let's start with some notation. 
-We're given a dataset $\{ \mathbf{x}_i \in \mathrb{R}^D \}_{i=1}^N$ whose samples come from an _unknown_ data distribution $p_{\text{data}}(\mathbf{x})$.
+We're given a dataset $\{ \mathbf{x}_i \in \mathbb{R}^D \}_{i=1}^N$ whose samples come from an _unknown_ data distribution $p_{\text{data}}(\mathbf{x})$.
 
 Now, consider a general distribution $p(\mathbf{x})$.
 If this distribution was parametrized by a set of parameters $\beta$, we would express it as $p(\mathbf{x}; \beta)$.
@@ -45,25 +45,25 @@ $$\log p(\mathbf{x}; \beta) = \log \tilde{p}(\mathbf{x}; \beta) - \log Z_{\beta}
 Since $Z_{\beta}$ was integrated over all possible values of $\mathbf{x}$, it's independent of $\mathbf{x}$.
 Thus, if we take the gradient w.r.t $\mathbf{x}$, we obtain:
 
-$$\naba_{\mathbf{x}} \log p(\mathbf{x}; \beta) = \naba_{\mathbf{x}} \log \tilde{p}(\mathbf{x}; \beta) - 0.$$
+$$\nabla_{\mathbf{x}} \log p(\mathbf{x}; \beta) = \nabla_{\mathbf{x}} \log \tilde{p}(\mathbf{x}; \beta) - 0.$$
 
 By doing so, we removed the influence of the normalizing constant. 
-Thus, $\naba_{\mathbf{x}} \log p(\mathbf{x})$ is known as the **Stein score** (or simply "score") function. 
+Thus, $\nabla_{\mathbf{x}} \log p(\mathbf{x})$ is known as the **Stein score** (or simply "score") function. 
 
 ## Score Matching
 
 Let $\mathbf{s}_{\mathbf{\theta}}$ represent a _score network_; i.e., a neural network parameterized by $\mathbf{\theta}$.
 Instead of training a model to estimate $p_{\text{data}}(\mathbf{x})$ directly, the score network is trained to estimate the score of $p_{\text{data}}$; i.e., 
-$\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \approx \naba_{\mathbf{x}} \log p_{\text{data}}(\mathbf{x})$.
+$\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \approx \nabla_{\mathbf{x}} \log p_{\text{data}}(\mathbf{x})$.
 This task is known as _score matching_.
 
 In score matching, the objective is to minimize the difference:
 
-$$\frac{1}{2} \mathbb{E}_{p_{\text{data}}}[ ||\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) - \naba_{\mathbf{x}} \log p_{\text{data}}(\mathbf{x}) ||_2^2],$$
+$$\frac{1}{2} \mathbb{E}_{p_{\text{data}}}[ ||\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) - \nabla_{\mathbf{x}} \log p_{\text{data}}(\mathbf{x}) ||_2^2],$$
 
 which, according to Eq. 1 in Song & Ermon (2019) [1], is equivalent to:
 
-$$ \mathbb{E}_{p_{\text{data}}}[ \tr(\naba_{\mathbf{x}} \mathbf{s}_{\mathbf{\theta}} (\mathbf{x})) + \frac{1}{2} ||\mathbf{s}_{\mathbf{\theta}} (\mathbf{x})||_2^2  ].$$
+$$ \mathbb{E}_{p_{\text{data}}}[ \tr(\https://jmlr.csail.mit.edu/papers/volume6/hyvarinen05a/old.pdf_{\mathbf{x}} \mathbf{s}_{\mathbf{\theta}} (\mathbf{x})) + \frac{1}{2} ||\mathbf{s}_{\mathbf{\theta}} (\mathbf{x})||_2^2  ].$$
 
 This equivalency between both optimization problems was not immediately clear to me, so I started reading more about it.
 It turns out that the proof can be found in the Appendix 1 of the
