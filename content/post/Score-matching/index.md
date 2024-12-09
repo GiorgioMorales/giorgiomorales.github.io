@@ -79,11 +79,9 @@ $$\frac{1}{2} \mathbb{E}_{p_{\text{data}}}[ ||\mathbf{s}_{\mathbf{\theta}}(\math
 From this, notice that the last term is not dependent on $\mathbf{\theta}$; thus, it can be ignored during optimization.
 The new optimization problem can be written as:
 
-$$\min_{\mathbf{\theta}} J = \min_{\mathbf{\theta}} \frac{1}{2} \mathbb{E}_{p_{\text{data}}}[||\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})||_2^2] - \mathbb{E}_{p_{\text{data}}}[\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})^{\top} \nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x})]$$
+$$\min_{\mathbf{\theta}} J &= \min_{\mathbf{\theta}} \frac{1}{2} \mathbb{E}_{p_{\text{data}}}[||\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})||_2^2] - \mathbb{E}_{p_{\text{data}}}[\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})^{\top} \nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x})], \\ 
+ &= \min_{\mathbf{\theta}} \frac{1}{2} \mathbb{E}_{p_{\text{data}}}[||\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})||_2^2] - M.$$
 
-{{< math >}}
-\min_{\mathbf{\theta}} J = \min_{\mathbf{\theta}} \frac{1}{2} \mathbb{E}_{p_{\text{data}}}[||\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})||_2^2] - M.
-{{< /math >}}
 
 (...post in construction)
 
