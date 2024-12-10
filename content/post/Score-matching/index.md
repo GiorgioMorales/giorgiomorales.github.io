@@ -89,12 +89,17 @@ $$\min_{\mathbf{\theta}} J = \min_{\mathbf{\theta}} \frac{1}{2} \mathbb{E}_{p_{\
 {{% callout note %}}
  Before moving on, recall that we can transform the expectation of function $f(\mathbf{x})$ into an integral expression as follows:
 
- $\mathbb{E}_{p(\mathbf{x})} [f(\mathbf{x})] = \int f(\mathbf{x})p(\mathbf{x}) d\mathbf{x}.$
+ $$\mathbb{E}_{p(\mathbf{x})} [f(\mathbf{x})] = \int f(\mathbf{x})p(\mathbf{x}) d\mathbf{x}.$$
 {{% /callout %}}
 
 Applying the same idea to $\mathbf{M}$, we have:
 
 $$\mathbf{M} = \mathbb{E}_{p_{\text{data}}}[\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})^{\top} \nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x})] = \int \mathbf{s}_{\mathbf{\theta}} (\mathbf{x})) \cdot p_{\text{data}}(\mathbf{x}) \nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x}) $$
+
+{{% callout note %}}
+Recall that applying the gradient to the log of a function can be expanded as:
+$$\nabla_{\mathbf{x}} \log f(\mathbf{x}) = \frac{\nabla_{\mathbf{x}}}{f(\mathbf{x})}$$
+{{% /callout %}}
 
 (...post in construction)
 
