@@ -115,6 +115,7 @@ $$f(\mathbf{x}) \nabla_{\mathbf{x}} \log f(\mathbf{x}) = \nabla_{\mathbf{x}}f(\m
 Then, we can rewrite $\mathbf{M}$ as:
 
 <a name="EQ2"></a>
+
 $$\begin{equation}
 \mathbf{M} = \int \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \cdot \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x}) d\mathbf{x}.
 \end{equation}$$
@@ -125,7 +126,9 @@ If you have $y = u\, v$ and apply the derivative w.r.t. $x$ ($u$ and $v$ are fun
 $$ \frac{dy}{dx} = u \frac{dv}{dx} + v \frac{du}{dx}.$$
 Then, isolating $u \frac{dv}{dx}$ and integrating on both sides of the equation, we have:
 $$ \int u \frac{dv}{dx} dx = \int \frac{d(uv)}{dx} dx - \int v \frac{du}{dx}, $$
+
 <a name="EQ3"></a>
+
 $$ \begin{equation} 
 \int u v'\, dx = uv - \int v u'\, dx 
 \end{equation}$$
@@ -195,6 +198,7 @@ $$\int_{\mathbb{R}^D} (\nabla_{\mathbf{x}} \cdot (\mathbf{s}_{\mathbf{\theta}} (
 Therefore:
 
 <a name="EQ4"></a>
+
 $$\begin{equation}
 \int_{\mathbb{R}^D} \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \cdot \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x})\, d\mathbf{x} = - \int_{\mathbb{R}^D} (\nabla_{\mathbf{x}} \cdot \mathbf{s}_{\mathbf{\theta}}(\mathbf{x}))\, p_{\text{data}}(\mathbf{x})\, d\mathbf{x}.
 \end{equation}
@@ -203,6 +207,7 @@ $$
 Then, replacing [Eq. 4](#EQ4) in [Eq. 2](#EQ2) and transforming the integral to an expectation:
 
 <a name="EQ5"></a>
+
 $$\begin{equation}
 \begin{align*}
 \mathbf{M} &= - \int_{\mathbb{R}^D} (\nabla_{\mathbf{x}} \cdot \mathbf{s}_{\mathbf{\theta}}(\mathbf{x}))\, p_{\text{data}}(\mathbf{x})\, d\mathbf{x},\\
