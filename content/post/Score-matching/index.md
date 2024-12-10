@@ -142,14 +142,14 @@ For the sake of notation, let's call $\nabla_\mathbf{x} \cdot$ the divergence op
 
 Now, applying the gradient operator w.r.t. $\mathbf{x}$ to $\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \, p_{\text{data}}(\mathbf{x})$ (the product is also a vector field) and applying the product rule, we have:
 
-$$\nabla_\mathbf{x} \cdot (\mathbf{x}$ to $\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \, p_{\text{data}}(\mathbf{x})) =
+$$\mathbf{s}_{\mathbf{\theta}}(\mathbf{x}) \, p_{\text{data}}(\mathbf{x})) =
 (\nabla_{\mathbf{x}} \cdot \mathbf{s}_{\mathbf{\theta}}(\mathbf{x})) p_{\text{data}}(\mathbf{x}) +
 \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \cdot \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x}).$$
 
 Then, isolating $\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \cdot \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x})$:
 
-$$\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \cdot \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x}) =
-\nabla_\mathbf{x} \cdot (\mathbf{x}$ to $\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \, p_{\text{data}}(\mathbf{x})) -
+$$\mathbf{s}_{\mathbf{\theta}}(\mathbf{x}) \cdot \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x}) =
+  \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \, p_{\text{data}}(\mathbf{x})) -
 (\nabla_{\mathbf{x}} \cdot \mathbf{s}_{\mathbf{\theta}}(\mathbf{x})) p_{\text{data}}(\mathbf{x}).$$
 
 Here, we can integrate over the entire input space (i.e., $\mathbb{R}^D$):
