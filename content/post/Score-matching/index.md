@@ -88,6 +88,7 @@ or:
 [//]: # ([Eq. 1]&#40;#EQ1&#41;)
 
 <a name="EQ1"></a>
+
 $$\begin{equation}
 \min_{\mathbf{\theta}} J = \min_{\mathbf{\theta}} \frac{1}{2} \mathbb{E}_{p_{\text{data}}}[||\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})||_2^2] - \mathbf{M}.
 \end{equation}$$
@@ -146,7 +147,7 @@ $$\nabla_{\mathbf{x}} \cdot (\mathbf{s}_{\mathbf{\theta}}(\mathbf{x}) \, p_{\tex
 (\nabla_{\mathbf{x}} \cdot \mathbf{s}_{\mathbf{\theta}}(\mathbf{x}))\, p_{\text{data}}(\mathbf{x}) +
 \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \cdot \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x}).$$
 
-Then, isolating $\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \cdot \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x})$:
+Then, isolating $\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \cdot \nabla_{\mathbf{x}}\, p_{\text{data}}(\mathbf{x})$:
 
 $$\mathbf{s}_{\mathbf{\theta}}(\mathbf{x}) \cdot \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x}) =
   \nabla_{\mathbf{x}} \cdot (\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \, p_{\text{data}}(\mathbf{x})) -
@@ -219,7 +220,7 @@ $$\nabla_{\mathbf{x}} \cdot \mathbf{s}_{\mathbf{\theta}}(\mathbf{x}) = \text{tr}
 
 In conclusion, the optimization problem in [Eq. 1](#EQ1) can be expressed as:
 
-$$ \mathbb{E}_{p_{\text{data}}}[\frac{||\mathbf{s}_{\mathbf{\theta}} (\mathbf{x})||_2^2}{2} + \text{tr}(\nabla_{\mathbf{x}} \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}))  \; \tag*{$\blacksquare$}].$$
+$$ \mathbb{E}_{p_{\text{data}}}\left[\frac{||\mathbf{s}_{\mathbf{\theta}} (\mathbf{x})||_2^2}{2} + \text{tr}(\nabla_{\mathbf{x}} \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}))  \; \tag*{$\blacksquare$}\right].$$
 
 
 ## References
