@@ -115,7 +115,7 @@ Then, we can rewrite $\mathbf{M}$ as:
 
 <a name="EQ2"></a>
 $$\begin{equation}
-\mathbf{M} = \int \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x}) d\mathbf{x}.
+\mathbf{M} = \int \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \cdot \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x}) d\mathbf{x}.
 \end{equation}$$
 
 {{% callout note %}}
@@ -140,7 +140,17 @@ In particular, recall that if the gradient is applied to a vector field $\mathbf
 $$\nabla_\mathbf{x} \cdot \mathbf{r}(\mathbf{x}) = \sum_{i=1}^D \frac{\partial r_i(\mathbf{x})}{\partial x_i}.$$
 For the sake of notation, let's call $\nabla_\mathbf{x} \cdot$ the divergence operator. 
 
+Now, applying the gradient operator w.r.t. $\mathbf{x}$ to $\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \, p_{\text{data}}(\mathbf{x})$ (the product is also a vector field) and applying the product rule, we have:
 
+$$\nabla_\mathbf{x} \cdot (\mathbf{x}$ to $\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \, p_{\text{data}}(\mathbf{x})) =
+(\nabla_{\mathbf{x}} \cdot \mathbf{s}_{\mathbf{\theta}}(\mathbf{x})) p_{\text{data}}(\mathbf{x}) +
+\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \cdot \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x}).$$
+
+Then, isolating $\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \cdot \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x})$:
+
+$$\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \cdot \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x}) =
+\nabla_\mathbf{x} \cdot (\mathbf{x}$ to $\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \, p_{\text{data}}(\mathbf{x})) -
+(\nabla_{\mathbf{x}} \cdot \mathbf{s}_{\mathbf{\theta}}(\mathbf{x})) p_{\text{data}}(\mathbf{x}).$$
 
 
 
