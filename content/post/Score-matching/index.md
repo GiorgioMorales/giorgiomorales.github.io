@@ -111,8 +111,6 @@ $$f(\mathbf{x}) \nabla_{\mathbf{x}} \log f(\mathbf{x}) = \nabla_{\mathbf{x}}f(\m
 
 Then, we can rewrite $\mathbf{M}$ as:
 
-[//]: # ( [Eq. 2]&#40;#EQ2&#41;)
-
 <a name="EQ2"></a>
 $$\begin{equation}
 \mathbf{M} = \int \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \cdot \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x}) d\mathbf{x}.
@@ -155,9 +153,9 @@ $$\mathbf{s}_{\mathbf{\theta}}(\mathbf{x}) \cdot \nabla_{\mathbf{x}} p_{\text{da
 Here, we can integrate over the entire input space (i.e., $\mathbb{R}^D$):
 
 $$\begin{align*}
-\int_{\mathbb{R}^D} \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \cdot \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x}) d\mathbf{x} =
-&\int_{\mathbb{R}^D} (\nabla_{\mathbf{x}} \cdot (\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \, p_{\text{data}}(\mathbf{x}))) d\mathbf{x} - \\
-&\int_{\mathbb{R}^D} (\nabla_{\mathbf{x}} \cdot \mathbf{s}_{\mathbf{\theta}}(\mathbf{x}))\, p_{\text{data}}(\mathbf{x}) d\mathbf{x}.
+\int_{\mathbb{R}^D} \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \cdot \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x})\, d\mathbf{x} =
+&\int_{\mathbb{R}^D} \left(\nabla_{\mathbf{x}} \cdot (\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \, p_{\text{data}}(\mathbf{x})) \right)\, d\mathbf{x} - \\
+&\int_{\mathbb{R}^D} (\nabla_{\mathbf{x}} \cdot \mathbf{s}_{\mathbf{\theta}}(\mathbf{x}))\, p_{\text{data}}(\mathbf{x})\, d\mathbf{x}.
 \end{align*}
 $$
 
@@ -180,8 +178,30 @@ It may seem unclear why to bring this theorem here considering we're not dealing
 However, let's pretend we do for a minute. 
 The product $(\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \, p_{\text{data}}(\mathbf{x}))$ is a vector field whose flux 
 passes through a surface enclosing a volume that is given by $\mathbb{R}^D$.
-In this context, according to the divergence theorem, the sum of the divergences inside $\mathbb{R}^D$ (i.e., $\int_{\mathbb{R}^D} (\nabla_{\mathbf{x}} \cdot (\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \, p_{\text{data}}(\mathbf{x}))) d\mathbf{x}$) 
+In this context, according to the divergence theorem, the sum of the divergences inside $\mathbb{R}^D$ (i.e., $\int_{\mathbb{R}^D} \left( \nabla_{\mathbf{x}} \cdot (\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \, p_{\text{data}}(\mathbf{x})) \right) \, d\mathbf{x}$) 
 is equal to the outward flux that crosses the surface of the volume $\mathbb{R}^D$.
+Since the "volume" $\mathbb{R}^D$ is infinite, its surface is located at the boundary $||\mathbf{x} \rightarrow \infty||$.
+Then:
+
+$$\lim_{||\mathbf{x} \rightarrow \infty||} \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \, p_{\text{data}}(\mathbf{x}) = 0.$$
+
+In other words, the outward flux when $||\mathbf{x} \rightarrow \infty||$ is negligible, which implies that all divergences are cancelled inside $\mathbb{R}^D$ and 
+
+$$\int_{\mathbb{R}^D} (\nabla_{\mathbf{x}} \cdot (\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \, p_{\text{data}}(\mathbf{x}))) d\mathbf{x} = 0.$$
+
+Therefore:
+
+<a name="EQ4"></a>
+$$\begin{equation}
+\int_{\mathbb{R}^D} \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \cdot \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x})\, d\mathbf{x} = - \int_{\mathbb{R}^D} (\nabla_{\mathbf{x}} \cdot \mathbf{s}_{\mathbf{\theta}}(\mathbf{x}))\, p_{\text{data}}(\mathbf{x})\, d\mathbf{x}.
+\end{equation}
+$$
+
+Then, replacing [Eq. 4](#EQ4) in [Eq. 2](#EQ2):
+
+$$\begin{equation}
+\mathbf{M} = - \int_{\mathbb{R}^D} (\nabla_{\mathbf{x}} \cdot \mathbf{s}_{\mathbf{\theta}}(\mathbf{x}))\, p_{\text{data}}(\mathbf{x})\, d\mathbf{x}.
+\end{equation}$$
 
 (...post in construction)
 
