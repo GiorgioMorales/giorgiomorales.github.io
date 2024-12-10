@@ -142,38 +142,43 @@ For the sake of notation, let's call $\nabla_\mathbf{x} \cdot$ the divergence op
 
 Now, applying the gradient operator w.r.t. $\mathbf{x}$ to $\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \, p_{\text{data}}(\mathbf{x})$ (the product is also a vector field) and applying the product rule, we have:
 
-$$\mathbf{s}_{\mathbf{\theta}}(\mathbf{x}) \, p_{\text{data}}(\mathbf{x}) =
+$$\nabla_{\mathbf{x}} \cdot (\mathbf{s}_{\mathbf{\theta}}(\mathbf{x}) \, p_{\text{data}}(\mathbf{x})) =
 (\nabla_{\mathbf{x}} \cdot \mathbf{s}_{\mathbf{\theta}}(\mathbf{x}))\, p_{\text{data}}(\mathbf{x}) +
 \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \cdot \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x}).$$
 
 Then, isolating $\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \cdot \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x})$:
 
 $$\mathbf{s}_{\mathbf{\theta}}(\mathbf{x}) \cdot \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x}) =
-  \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \, p_{\text{data}}(\mathbf{x}) -
+  \nabla_{\mathbf{x}} \cdot (\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \, p_{\text{data}}(\mathbf{x})) -
 (\nabla_{\mathbf{x}} \cdot \mathbf{s}_{\mathbf{\theta}}(\mathbf{x}))\, p_{\text{data}}(\mathbf{x}).$$
 
 Here, we can integrate over the entire input space (i.e., $\mathbb{R}^D$):
 
 $$\int_{\mathbb{R}^D} \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \cdot \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x}) d\mathbf{x} =
-\int_{\mathbb{R}^D} \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \, p_{\text{data}}(\mathbf{x})d\mathbf{x} -
+\int_{\mathbb{R}^D} (\nabla_{\mathbf{x}} \cdot (\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \, p_{\text{data}}(\mathbf{x}))) d\mathbf{x} -
 \int_{\mathbb{R}^D} (\nabla_{\mathbf{x}} \cdot \mathbf{s}_{\mathbf{\theta}}(\mathbf{x}))\, p_{\text{data}}(\mathbf{x}) d\mathbf{x}.$$
 
-The first term of the right side of the equation, $\int_{\mathbb{R}^D} \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \, p_{\text{data}}(\mathbf{x})d\mathbf{x}$,
+The first term of the right side of the equation, $\int_{\mathbb{R}^D} (\nabla_{\mathbf{x}} \cdot (\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \, p_{\text{data}}(\mathbf{x}))) d\mathbf{x}$,
 has a particular structure in vector calculus.
 So, before moving on, let's talk about the divergence theorem:
 
 {{% callout note %}}
 **Divergence Theorem:** The flux of a vector field through a closed surface is equal to the volume integral of the 
 divergence of the field over the region enclosed by the surface:
-$$\int_{V} (\nabla \cdot \mathbf{F}) \, dV = \int_{\partial V} \mathbf{F} \cdot \mathbf{n} \, dS,$$
+$$\int_{V} (\nabla \cdot \mathbf{F}) \, dV = \int_{S} \mathbf{F} \cdot \mathbf{n} \, dS,$$
 where:
 * $V$ is the volume in $\mathbb{R}^D$,
-* $\partial V$ is the boundary of $V$,
+* $S$ is the boundary (or surface) of $V$,
 * $\mathbf{F}$ is a continuously differentiable vector field,
 * $\mathbf{n}$ is the outward-pointing unit normal vector on $\partial V$.
 {{% /callout %}}
 
-It may seem unclear why to bring this theorem here because we're not dealing with surfaces or volumes.
+It may seem unclear why to bring this theorem here considering we're not dealing with surfaces or volumes.
+However, let's pretend we do for a minute. 
+The product $(\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \, p_{\text{data}}(\mathbf{x}))$ is a vector field whose flux 
+passes through a surface enclosing a volume that is given by $\mathbb{R}^D$.
+In this context, according to the divergence theorem, the sum of the divergences inside $\mathbb{R}^D$ (i.e., $\int_{\mathbb{R}^D} (\nabla_{\mathbf{x}} \cdot (\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \, p_{\text{data}}(\mathbf{x}))) d\mathbf{x}$) 
+is equal to the outward flux that crosses the surface of the volume $\mathbb{R}^D$.
 
 (...post in construction)
 
