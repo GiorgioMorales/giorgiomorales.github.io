@@ -74,7 +74,7 @@ We begin by expanding the objective function:
 
 $$\frac{1}{2} \mathbb{E}_{p_{\text{data}}}[ (\mathbf{s}_{\mathbf{\theta}}(\mathbf{x}) - \nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x}))^{\top}(\mathbf{s}_{\mathbf{\theta}}(\mathbf{x}) - \nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x}))  ],$$
 
-$$\frac{1}{2} \mathbb{E}_{p_{\text{data}}}[ ||\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})||_2^2 - 2 \mathbf{s}_{\mathbf{\theta}}(\mathbf{x})^{\top} \nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x}) + ||\nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x})||_2^2 ]. $$
+$$\frac{1}{2} \mathbb{E}_{p_{\text{data}}}[ ||\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})||_2^2 - 2\, \mathbf{s}_{\mathbf{\theta}}(\mathbf{x})^{\top} \nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x}) + ||\nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x})||_2^2 ]. $$
 
 From this, notice that the last term is not dependent on $\mathbf{\theta}$; thus, it can be ignored during optimization.
 The new optimization problem can be written as:
@@ -89,7 +89,7 @@ $$\min_{\mathbf{\theta}} J = \min_{\mathbf{\theta}} \frac{1}{2} \mathbb{E}_{p_{\
 {{% callout note %}}
  Before moving on, recall that we can transform the expectation of function $f(\mathbf{x})$ into an integral expression as follows:
 
- $\mathbb{E}_{p(\mathbf{x})}}[f(\mathbf{x})] = \int f(\mathbf{x})p(\mathbf{x}) d\mathbf{x}.$
+ $\mathbb{E}_{p(\mathbf{x})} [f(\mathbf{x})] = \int f(\mathbf{x})p(\mathbf{x}) d\mathbf{x}.$
 {{% /callout %}}
 
 Applying the same idea to $\mathbf{M}$, we have:
