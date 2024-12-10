@@ -1,6 +1,6 @@
 ---
 title: I've got a paper accepted at AAAI 2025 
-summary: IEEE Transactions on Neural Networks and Learning Systems
+summary: Association for the Advancement of Artificial Intelligence (AAAI)
 date: 2024-12-10
 authors:
   - admin
