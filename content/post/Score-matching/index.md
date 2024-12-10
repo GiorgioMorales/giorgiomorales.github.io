@@ -152,6 +152,12 @@ $$\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \cdot \nabla_{\mathbf{x}} p_{\text{d
 \nabla_\mathbf{x} \cdot (\mathbf{x}$ to $\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \, p_{\text{data}}(\mathbf{x})) -
 (\nabla_{\mathbf{x}} \cdot \mathbf{s}_{\mathbf{\theta}}(\mathbf{x})) p_{\text{data}}(\mathbf{x}).$$
 
+Here, we can integrate over the entire input space (i.e., $\mathbb{R}^D$):
+
+$$\int_{\mathbb{R}^D} \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \cdot \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x}) =
+\int_{\mathbb{R}^D} \nabla_\mathbf{x} \cdot (\mathbf{x}$ to $\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \, p_{\text{data}}(\mathbf{x})) -
+\int_{\mathbb{R}^D} (\nabla_{\mathbf{x}} \cdot \mathbf{s}_{\mathbf{\theta}}(\mathbf{x})) p_{\text{data}}(\mathbf{x}).$$
+
 
 
 
