@@ -109,10 +109,14 @@ $$\nabla_{\mathbf{x}} \log f(\mathbf{x}) = \frac{\nabla_{\mathbf{x}}f(\mathbf{x}
 $$f(\mathbf{x}) \nabla_{\mathbf{x}} \log f(\mathbf{x}) = \nabla_{\mathbf{x}}f(\mathbf{x})$$
 {{% /callout %}}
 
-Then, we can rewrite $\mathbf{M}$ as [Eq. 2](#EQ2):
+Then, we can rewrite $\mathbf{M}$ as:
+
+[//]: # ( [Eq. 2]&#40;#EQ2&#41;)
 
 <a name="EQ2"></a>
-$$\mathbf{M} = \int \mathbf{s}_{\mathbf{\theta}} (\mathbf{x})) \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x}) d\mathbf{x}. $$
+$$\begin{equation}
+\mathbf{M} = \int \mathbf{s}_{\mathbf{\theta}} (\mathbf{x})) \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x}) d\mathbf{x}.
+\end{equation}$$
 
 {{% callout note %}}
 **Integration by Parts:**
@@ -120,8 +124,16 @@ If you have $y = u\, v$ and apply the derivative w.r.t. $x$ ($u$ and $v$ are fun
 $$ \frac{dy}{dx} = u \frac{dv}{dx} + v \frac{du}{dx}.$$
 Then, isolating $u \frac{dv}{dx}$ and integrating on both sides of the equation, we have:
 $$ \int u \frac{dv}{dx} dx = \int \frac{d(uv)}{dx} dx - \int v \frac{du}{dx}, $$
-$$ \int u v'\, dx = uv - \int v u'\, dx $$
+<a name="EQ3"></a>
+$$ \begin{equation} 
+\int u v'\, dx = uv - \int v u'\, dx 
+\end{equation}$$
 {{% /callout %}}
+
+Now, $\mathbf{M}$ looks like the left side of [Eq. 3](#EQ3), isn't it?
+To be more clear, consider that $u = \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}))$ and $v = p_{\text{data}}(\mathbf{x})$.
+Also, since $\mathbf{s}_{\mathbf{\theta}} (\mathbf{x})): \mathbb{R}^D \rightarrow \mathbb{R}^D$ and $p_{\text{data}}(\mathbf{x}): \mathbb{R}^n \rightarrow \mathbb{R}$, 
+we can treat them as a vector field and a scalar field, respectively.
 
 (...post in construction)
 
