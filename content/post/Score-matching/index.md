@@ -98,8 +98,13 @@ $$\mathbf{M} = \mathbb{E}_{p_{\text{data}}}[\mathbf{s}_{\mathbf{\theta}}(\mathbf
 
 {{% callout note %}}
 Recall that applying the gradient to the log of a function can be expanded as:
-$$\nabla_{\mathbf{x}} \log f(\mathbf{x}) = \frac{\nabla_{\mathbf{x}}}{f(\mathbf{x})}$$
+$$\nabla_{\mathbf{x}} \log f(\mathbf{x}) = \frac{\nabla_{\mathbf{x}}f(\mathbf{x})}{f(\mathbf{x})}$$
+$$f(\mathbf{x}) \nabla_{\mathbf{x}} \log f(\mathbf{x}) = \nabla_{\mathbf{x}}f(\mathbf{x})$$
 {{% /callout %}}
+
+Then, we can rewrite $\mathbf{M}$ as:
+
+$$$\mathbf{M}$ = \int \mathbf{s}_{\mathbf{\theta}} (\mathbf{x})) \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x})$$
 
 (...post in construction)
 
