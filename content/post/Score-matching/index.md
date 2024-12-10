@@ -134,12 +134,14 @@ Now, $\mathbf{M}$ looks like the left side of [Eq. 3](#EQ3), isn't it?
 To be more clear, consider that $u = \mathbf{s}_{\mathbf{\theta}} (\mathbf{x})$ and $v = p_{\text{data}}(\mathbf{x})$.
 That means we can express $\mathbf{M}$ as:
 
-$$ $\mathbf{M}$ = \int \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x}) d\mathbf{x} =
+$$ \mathbf{M} = \int \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x}) d\mathbf{x} =
 \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) p_{\mathbf{\theta}} (\mathbf{x}) - 
 \int p_{\text{data}}(\mathbf{x}) \nabla_{\mathbf{x}} \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) d\mathbf{x}.$$
 
-Also, since $\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}): \mathbb{R}^D \rightarrow \mathbb{R}^D$ and $p_{\text{data}}(\mathbf{x}): \mathbb{R}^n \rightarrow \mathbb{R}$, 
+Since $\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}): \mathbb{R}^D \rightarrow \mathbb{R}^D$ and $p_{\text{data}}(\mathbf{x}): \mathbb{R}^n \rightarrow \mathbb{R}$, 
 we can treat them as a vector field and a scalar field, respectively.
+This definition will help us to apply the gradient operator correctly.
+
 
 (...post in construction)
 
