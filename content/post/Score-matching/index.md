@@ -43,12 +43,12 @@ Instead of doing that, let's apply the $\log$ operation to the previous equation
 $$\log p(\mathbf{x}; \beta) = \log \tilde{p}(\mathbf{x}; \beta) - \log Z_{\beta}.$$
 
 Since $Z_{\beta}$ was integrated over all possible values of $\mathbf{x}$, it's independent of $\mathbf{x}$.
-Thus, if we take the gradient w.r.t $\mathbf{x}$, we obtain:
+Thus, if we take the gradient w.r.t. $\mathbf{x}$, we obtain:
 
 $$\nabla_{\mathbf{x}} \log p(\mathbf{x}; \beta) = \nabla_{\mathbf{x}} \log \tilde{p}(\mathbf{x}; \beta) - 0.$$
 
 By doing so, we removed the influence of the normalizing constant. 
-Hence, $\nabla_{\mathbf{x}} \log p(\mathbf{x})$ is known as the **Stein score** (or simply "score") function. 
+$\nabla_{\mathbf{x}} \log p(\mathbf{x})$ is known as the **Stein score** (or simply, "score") function. 
 
 ## Score Matching
 
@@ -81,7 +81,7 @@ The new optimization problem can be written as:
 
 $$\min_{\mathbf{\theta}} J = \min_{\mathbf{\theta}} \frac{1}{2} \mathbb{E}_{p_{\text{data}}}[||\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})||_2^2] - \mathbb{E}_{p_{\text{data}}}[\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})^{\top} \nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x})],$$
 
-or [(Eq. 1)](#EQ1): 
+or [Eq. 1](#EQ1): 
 
 <a name="EQ1"></a>
 $$\min_{\mathbf{\theta}} J = \min_{\mathbf{\theta}} \frac{1}{2} \mathbb{E}_{p_{\text{data}}}[||\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})||_2^2] - \mathbf{M}.$$
@@ -94,7 +94,10 @@ $$\min_{\mathbf{\theta}} J = \min_{\mathbf{\theta}} \frac{1}{2} \mathbb{E}_{p_{\
 
 Applying the same idea to $\mathbf{M}$, we have:
 
-$$\mathbf{M} = \mathbb{E}_{p_{\text{data}}}[\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})^{\top} \nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x})] = \int \mathbf{s}_{\mathbf{\theta}} (\mathbf{x})) \cdot p_{\text{data}}(\mathbf{x}) \nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x}) d\mathbf{x} $$
+$$\begin{align}
+\mathbf{M} &= \mathbb{E}_{p_{\text{data}}}[\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})^{\top} \nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x})] \\
+&= \int \mathbf{s}_{\mathbf{\theta}} (\mathbf{x})) \cdot p_{\text{data}}(\mathbf{x}) \nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x}) d\mathbf{x}
+\end{align}$$
 
 {{% callout note %}}
 Recall that applying the gradient to the log of a function can be expanded as:
@@ -102,10 +105,10 @@ $$\nabla_{\mathbf{x}} \log f(\mathbf{x}) = \frac{\nabla_{\mathbf{x}}f(\mathbf{x}
 $$f(\mathbf{x}) \nabla_{\mathbf{x}} \log f(\mathbf{x}) = \nabla_{\mathbf{x}}f(\mathbf{x})$$
 {{% /callout %}}
 
-Then, we can rewrite $\mathbf{M}$ as [(Eq. 2)](#EQ2):
+Then, we can rewrite $\mathbf{M}$ as [Eq. 2](#EQ2):
 
 <a name="EQ2"></a>
-$$\mathbf{M} = \int \mathbf{s}_{\mathbf{\theta}} (\mathbf{x})) \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x}) d\mathbf{x}$$
+$$\mathbf{M} = \int \mathbf{s}_{\mathbf{\theta}} (\mathbf{x})) \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x}) d\mathbf{x}. $$
 
 {{% callout note %}}
 **Integration by Parts:**
