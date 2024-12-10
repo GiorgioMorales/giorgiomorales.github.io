@@ -81,10 +81,14 @@ The new optimization problem can be written as:
 
 $$\min_{\mathbf{\theta}} J = \min_{\mathbf{\theta}} \frac{1}{2} \mathbb{E}_{p_{\text{data}}}[||\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})||_2^2] - \mathbb{E}_{p_{\text{data}}}[\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})^{\top} \nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x})],$$
 
-or [Eq. 1](#EQ1): 
+or:
+
+[//]: # ([Eq. 1]&#40;#EQ1&#41;)
 
 <a name="EQ1"></a>
-$$\min_{\mathbf{\theta}} J = \min_{\mathbf{\theta}} \frac{1}{2} \mathbb{E}_{p_{\text{data}}}[||\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})||_2^2] - \mathbf{M}.$$
+$$\begin{equation}
+\min_{\mathbf{\theta}} J = \min_{\mathbf{\theta}} \frac{1}{2} \mathbb{E}_{p_{\text{data}}}[||\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})||_2^2] - \mathbf{M}.
+\end{equation}$$
 
 {{% callout note %}}
  Before moving on, recall that we can transform the expectation of function $f(\mathbf{x})$ into an integral expression as follows:
@@ -94,10 +98,10 @@ $$\min_{\mathbf{\theta}} J = \min_{\mathbf{\theta}} \frac{1}{2} \mathbb{E}_{p_{\
 
 Applying the same idea to $\mathbf{M}$, we have:
 
-$$\begin{align}
+$$\begin{align*}
 \mathbf{M} &= \mathbb{E}_{p_{\text{data}}}[\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})^{\top} \nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x})] \\
 &= \int \mathbf{s}_{\mathbf{\theta}} (\mathbf{x})) \cdot p_{\text{data}}(\mathbf{x}) \nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x}) d\mathbf{x}
-\end{align}$$
+\end{align*}$$
 
 {{% callout note %}}
 Recall that applying the gradient to the log of a function can be expanded as:
