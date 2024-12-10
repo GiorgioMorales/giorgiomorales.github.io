@@ -8,6 +8,13 @@ tags:
   - Blog
   - Generative modeling
   - GenAI
+
+featured: true
+
+image:
+  caption: 'Image Credits: Meta AI'
+  focal_point: ""
+  preview_only: false
 ---
 
 I have recently started reading some **seminal generative modeling papers** thanks to the recommendation of Mehdy Bennani (PhD student at Université de Caen Normandie).
@@ -227,6 +234,8 @@ In conclusion, the optimization problem in [Eq. 1](#EQ1) can be expressed as:
 
 $$ \mathbb{E}_{p_{\text{data}}}\left[\frac{||\mathbf{s}_{\mathbf{\theta}} (\mathbf{x})||_2^2}{2} + \text{tr}(\nabla_{\mathbf{x}} \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}))  \; \tag*{$\blacksquare$}\right].$$
 
+
+The next paper I'll analyze will be "[Denoising Diffusion Probabilistic Models](https://proceedings.neurips.cc/paper/2020/hash/4c5bcfec8584af0d967f1ab10179ca4b-Abstract.html)" by Ho, Jain, and Abbeel (2020).  
 
 ## References
 
