@@ -154,9 +154,12 @@ $$\mathbf{s}_{\mathbf{\theta}}(\mathbf{x}) \cdot \nabla_{\mathbf{x}} p_{\text{da
 
 Here, we can integrate over the entire input space (i.e., $\mathbb{R}^D$):
 
-$$\int_{\mathbb{R}^D} \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \cdot \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x}) d\mathbf{x} =
-\int_{\mathbb{R}^D} (\nabla_{\mathbf{x}} \cdot (\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \, p_{\text{data}}(\mathbf{x}))) d\mathbf{x} -
-\int_{\mathbb{R}^D} (\nabla_{\mathbf{x}} \cdot \mathbf{s}_{\mathbf{\theta}}(\mathbf{x}))\, p_{\text{data}}(\mathbf{x}) d\mathbf{x}.$$
+$$\begin{align*}
+\int_{\mathbb{R}^D} \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \cdot \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x}) d\mathbf{x} =
+&\int_{\mathbb{R}^D} (\nabla_{\mathbf{x}} \cdot (\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \, p_{\text{data}}(\mathbf{x}))) d\mathbf{x} - \\
+&\int_{\mathbb{R}^D} (\nabla_{\mathbf{x}} \cdot \mathbf{s}_{\mathbf{\theta}}(\mathbf{x}))\, p_{\text{data}}(\mathbf{x}) d\mathbf{x}.
+\end{align*}
+$$
 
 The first term of the right side of the equation, $\int_{\mathbb{R}^D} (\nabla_{\mathbf{x}} \cdot (\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \, p_{\text{data}}(\mathbf{x}))) d\mathbf{x}$,
 has a particular structure in vector calculus.
