@@ -81,13 +81,14 @@ The new optimization problem can be written as:
 
 $$\min_{\mathbf{\theta}} J = \min_{\mathbf{\theta}} \frac{1}{2} \mathbb{E}_{p_{\text{data}}}[||\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})||_2^2] - \mathbb{E}_{p_{\text{data}}}[\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})^{\top} \nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x})],$$
 
-or: 
+or [Eq. 1](#EQ1): 
 
 <a name="EQ1"></a>
 $$\min_{\mathbf{\theta}} J = \min_{\mathbf{\theta}} \frac{1}{2} \mathbb{E}_{p_{\text{data}}}[||\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})||_2^2] - M.$$
 
-
-Take me to [Eq1](#EQ1)
+> [!IMPORTANT]
+> Before moving on, recall that we can transform the expectation of function $f(\mathbf{x})$ into an integral expression as follows:
+> $$\mathbb{E}_{p(\mathbf{x})}}[f(\mathbf{x})] = \int f(\mathbf{x})p(\mathbf{x}) d\mathbf{x}.$$
 
 (...post in construction)
 
