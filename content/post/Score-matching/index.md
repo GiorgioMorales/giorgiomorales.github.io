@@ -133,11 +133,11 @@ $$ \begin{equation}
 Now, $\mathbf{M}$ looks like the left side of [Eq. 3](#EQ3), isn't it?
 To be more clear, consider that $u = \mathbf{s}_{\mathbf{\theta}} (\mathbf{x})$ and $v = p_{\text{data}}(\mathbf{x})$.
 With that, let's repeat the "integration by parts" process I explained before but with the new expressions $u$ and $v$.
-But first, note that, since $\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}): \mathbb{R}^D \rightarrow \mathbb{R}^D$ and $p_{\text{data}}(\mathbf{x}): \mathbb{R}^n \rightarrow \mathbb{R}$, 
+But first, note that, since $\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}): \mathbb{R}^D \rightarrow \mathbb{R}^D$ and $p_{\text{data}}(\mathbf{x}): \mathbb{R}^D \rightarrow \mathbb{R}$, 
 we can treat them as a vector field and a scalar field, respectively.
 These definitions will help us to apply the gradient operator correctly.
 In particular, recall that if the gradient is applied to a vector field $\mathbf{r}(\mathbf{x}) = \{ r_1(\mathbf{x}), \dots, r_D(\mathbf{x}) \}$, we express it as:
-$\nabla_\mathbf{x} \cdot \mathbf{r}(\mathbf{x}) = \sum_{i=1}^D \frac{\partial r_i(\mathbf{x})}{\partial x_i}$.
+$$\nabla_\mathbf{x} \cdot \mathbf{r}(\mathbf{x}) = \sum_{i=1}^D \frac{\partial r_i(\mathbf{x})}{\partial x_i}.$$
 For the sake of notation, let's call $\nabla_\mathbf{x} \cdot$ the divergence operator. 
 
 
