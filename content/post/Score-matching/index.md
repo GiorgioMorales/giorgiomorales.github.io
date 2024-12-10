@@ -100,7 +100,7 @@ Applying the same idea to $\mathbf{M}$, we have:
 
 $$\begin{align*}
 \mathbf{M} &= \mathbb{E}_{p_{\text{data}}}[\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})^{\top} \nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x})] \\
-&= \int \mathbf{s}_{\mathbf{\theta}} (\mathbf{x})) \cdot p_{\text{data}}(\mathbf{x}) \nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x}) d\mathbf{x}
+&= \int \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \cdot p_{\text{data}}(\mathbf{x}) \nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x}) d\mathbf{x}
 \end{align*}$$
 
 {{% callout note %}}
@@ -115,7 +115,7 @@ Then, we can rewrite $\mathbf{M}$ as:
 
 <a name="EQ2"></a>
 $$\begin{equation}
-\mathbf{M} = \int \mathbf{s}_{\mathbf{\theta}} (\mathbf{x})) \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x}) d\mathbf{x}.
+\mathbf{M} = \int \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x}) d\mathbf{x}.
 \end{equation}$$
 
 {{% callout note %}}
@@ -131,8 +131,14 @@ $$ \begin{equation}
 {{% /callout %}}
 
 Now, $\mathbf{M}$ looks like the left side of [Eq. 3](#EQ3), isn't it?
-To be more clear, consider that $u = \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}))$ and $v = p_{\text{data}}(\mathbf{x})$.
-Also, since $\mathbf{s}_{\mathbf{\theta}} (\mathbf{x})): \mathbb{R}^D \rightarrow \mathbb{R}^D$ and $p_{\text{data}}(\mathbf{x}): \mathbb{R}^n \rightarrow \mathbb{R}$, 
+To be more clear, consider that $u = \mathbf{s}_{\mathbf{\theta}} (\mathbf{x})$ and $v = p_{\text{data}}(\mathbf{x})$.
+That means we can express $\mathbf{M}$ as:
+
+$$ $\mathbf{M}$ = \int \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x}) d\mathbf{x} =
+\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) p_{\mathbf{\theta}} (\mathbf{x}) - 
+\int p_{\text{data}}(\mathbf{x}) \nabla_{\mathbf{x}} \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}) d\mathbf{x}.$$
+
+Also, since $\mathbf{s}_{\mathbf{\theta}} (\mathbf{x}): \mathbb{R}^D \rightarrow \mathbb{R}^D$ and $p_{\text{data}}(\mathbf{x}): \mathbb{R}^n \rightarrow \mathbb{R}$, 
 we can treat them as a vector field and a scalar field, respectively.
 
 (...post in construction)
