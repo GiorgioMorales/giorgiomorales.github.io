@@ -63,7 +63,9 @@ $$\min_{\mathbf{\theta}} \frac{1}{2} \mathbb{E}_{p_{\text{data}}}[ ||\mathbf{s}_
 
 which, according to Eq. 1 in Song & Ermon (2019) [1], is equivalent to:
 
-$$ \mathbb{E}_{p_{\text{data}}}[ \text{tr}(\nabla_{\mathbf{x}} \mathbf{s}_{\mathbf{\theta}} (\mathbf{x})) + \frac{1}{2} ||\mathbf{s}_{\mathbf{\theta}} (\mathbf{x})||_2^2  ].$$
+$$ \mathbb{E}_{p_{\text{data}}}[ \text{tr}(\nabla_{\mathbf{x}} \mathbf{s}_{\mathbf{\theta}} (\mathbf{x})) + \frac{1}{2} ||\mathbf{s}_{\mathbf{\theta}} (\mathbf{x})||_2^2  ],$$
+
+where $\nabla_{\mathbf{x}}\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})$ denotes the Jacobian of $\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})$. 
 
 This equivalency between both optimization problems was not immediately clear to me, so I started reading more about it.
 It turns out that the proof can be found in the Appendix 1 of the
@@ -197,13 +199,27 @@ $$\begin{equation}
 \end{equation}
 $$
 
-Then, replacing [Eq. 4](#EQ4) in [Eq. 2](#EQ2):
+Then, replacing [Eq. 4](#EQ4) in [Eq. 2](#EQ2) and transforming the integral to an expectation:
 
+<a name="EQ5"></a>
 $$\begin{equation}
-\mathbf{M} = - \int_{\mathbb{R}^D} (\nabla_{\mathbf{x}} \cdot \mathbf{s}_{\mathbf{\theta}}(\mathbf{x}))\, p_{\text{data}}(\mathbf{x})\, d\mathbf{x}.
+\begin{align*}
+\mathbf{M} &= - \int_{\mathbb{R}^D} (\nabla_{\mathbf{x}} \cdot \mathbf{s}_{\mathbf{\theta}}(\mathbf{x}))\, p_{\text{data}}(\mathbf{x})\, d\mathbf{x},\\
+&= - \mathbb{E}_{p_{\text{data}}} [\nabla_{\mathbf{x}} \cdot \mathbf{s}_{\mathbf{\theta}}(\mathbf{x})].
+\end{align*}
 \end{equation}$$
 
-(...post in construction)
+And combining [Eq. 5](#EQ5) and [Eq. 1](#EQ1):
+
+$$J = \frac{1}{2} \mathbb{E}_{p_{\text{data}}}[||\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})||_2^2] + \mathbb{E}_{p_{\text{data}}} [\nabla_{\mathbf{x}} \cdot \mathbf{s}_{\mathbf{\theta}}(\mathbf{x})].$$
+
+In addition, by definition, the divergence of a vector field is the trace of its Jacobian matrix, so:
+
+$$\nabla_{\mathbf{x}} \cdot \mathbf{s}_{\mathbf{\theta}}(\mathbf{x}) = \text{tr}(\nabla_{\mathbf{x}}\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})).$$
+
+In conclusion, the optimization problem in [Eq. 1](#EQ1) can be expressed as:
+
+$$ \mathbb{E}_{p_{\text{data}}}[\frac{||\mathbf{s}_{\mathbf{\theta}} (\mathbf{x})||_2^2}{2} + \text{tr}(\nabla_{\mathbf{x}} \mathbf{s}_{\mathbf{\theta}} (\mathbf{x}))  \; \tag*{$\blacksquare$}].$$
 
 
 ## References
