@@ -94,7 +94,7 @@ $$\min_{\mathbf{\theta}} J = \min_{\mathbf{\theta}} \frac{1}{2} \mathbb{E}_{p_{\
 
 Applying the same idea to $\mathbf{M}$, we have:
 
-$$\mathbf{M} = \mathbb{E}_{p_{\text{data}}}[\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})^{\top} \nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x})] = \int \mathbf{s}_{\mathbf{\theta}} (\mathbf{x})) \cdot p_{\text{data}}(\mathbf{x}) \nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x}) $$
+$$\mathbf{M} = \mathbb{E}_{p_{\text{data}}}[\mathbf{s}_{\mathbf{\theta}}(\mathbf{x})^{\top} \nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x})] = \int \mathbf{s}_{\mathbf{\theta}} (\mathbf{x})) \cdot p_{\text{data}}(\mathbf{x}) \nabla_{\mathbf{x}}\log p_{\text{data}}(\mathbf{x}) d\mathbf{x} $$
 
 {{% callout note %}}
 Recall that applying the gradient to the log of a function can be expanded as:
@@ -102,9 +102,19 @@ $$\nabla_{\mathbf{x}} \log f(\mathbf{x}) = \frac{\nabla_{\mathbf{x}}f(\mathbf{x}
 $$f(\mathbf{x}) \nabla_{\mathbf{x}} \log f(\mathbf{x}) = \nabla_{\mathbf{x}}f(\mathbf{x})$$
 {{% /callout %}}
 
-Then, we can rewrite $\mathbf{M}$ as:
+Then, we can rewrite $\mathbf{M}$ as [(Eq. 2)](#EQ2):
 
-$$$\mathbf{M}$ = \int \mathbf{s}_{\mathbf{\theta}} (\mathbf{x})) \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x})$$
+<a name="EQ2"></a>
+$$\mathbf{M} = \int \mathbf{s}_{\mathbf{\theta}} (\mathbf{x})) \nabla_{\mathbf{x}} p_{\text{data}}(\mathbf{x}) d\mathbf{x}$$
+
+{{% callout note %}}
+**Integration by Parts:**
+If you have $y = u\, v$ and apply the derivative w.r.t. $x$ ($u$ and $v$ are functions of $x$), you obtain:
+$$ \frac{dy}{dx} = u \frac{dv}{dx} + v \frac{du}{dx}.$$
+Then, isolating $u \frac{dv}{dx}$ and integrating on both sides of the equation, we have:
+$$ \int u \frac{dv}{dx} dx = \int \frac{d(uv)}{dx} dx - \int v \frac{du}{dx}, $$
+$$ \int u v'\, dx = uv - \int v u'\, dx $$
+{{% /callout %}}
 
 (...post in construction)
 
