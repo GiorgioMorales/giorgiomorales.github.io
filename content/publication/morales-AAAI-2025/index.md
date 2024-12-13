@@ -4,7 +4,7 @@ authors:
 - Giorgio Morales
 - John W. Sheppard
 date: '2024-12-09'
-publishDate: '2025-02-25T19:23:08.310824Z'
+publishDate: '2024-12-09T19:23:08.310824Z'
 publication_types:
 - paper-conference
 publication: '*The 39th Annual AAAI Conference on Artificial Intelligence*'
