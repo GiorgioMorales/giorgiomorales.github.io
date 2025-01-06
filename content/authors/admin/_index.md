@@ -95,12 +95,20 @@ education:
       url: 'https://renati.sunedu.gob.pe/handle/sunedu/3500202'
       
 work:
+  - position: Postdoctoral Research Fellow
+    company_name: Université de Caen Normandie
+    company_url: 'https://www.greyc.fr/en/home/'
+    company_logo: ''
+    date_start: 2025-06-01
+    date_end: Present
+    summary: |2-
+      - Developing uncertainty quantification techniques for generative AI models to aid in neutrino physics simulations.
   - position: Graduate Research Assistant
     company_name: Montana State University
     company_url: 'https://www.cs.montana.edu/'
     company_logo: ''
-    date_start: 2019-07-01
-    date_end: 2020-12-31
+    date_start: 2021-01-01
+    date_end: 2024-12-31
     summary: |2-
       - Part of the Analysis Engine of the On-Field Precision Experiment (OFPE) Framework project.
       - Published 8 journal and conference papers related to prediction and optimization in Precision Agriculture as well as uncertainty quantification and explainable machine learning.
