@@ -100,7 +100,6 @@ work:
     company_url: 'https://www.greyc.fr/en/home/'
     company_logo: ''
     date_start: 2025-06-01
-    date_end: Present
     summary: |2-
       - Developing uncertainty quantification techniques for generative AI models to aid in neutrino physics simulations.
   - position: Graduate Research Assistant
