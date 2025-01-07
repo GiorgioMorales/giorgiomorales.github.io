@@ -274,10 +274,16 @@ Replacing $M$ in $L$ and rearranging the log operations:
 
 $$\begin{equation*}
 \begin{align*}
-L = &\mathbb{E}_q [- \log \frac{p(\mathbf{x}_T)}{q(\mathbf{x}_{T} | \mathbf{x}_0)} - \\
+L = &\underbrace{\mathbb{E}_q [- \log \frac{p(\mathbf{x}_T)}{q(\mathbf{x}_{T} | \mathbf{x}_0)}}_S - \\
 &\sum_{t > 1} \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\mathbf{x}_{t-1} | \mathbf{x}_{t}, \mathbf{x}_0)} \\
 &-\log p_{\theta} (\mathbf{x}_0 | \mathbf{x}_1) ].
 \end{align*}
+\end{equation*}$$
+
+Considering the LTE, we can rewrite the expectation in $S$ as:
+
+$$\begin{equation*}
+L = \mathbb{E}_q \left[ \mathbb{E}_{q(\mathbf{x}_0 | \mathbf{x}_T)} \left[- \log \frac{p(\mathbf{x}_T)}{q(\mathbf{x}_{T} | \mathbf{x}_0)} \right]\right]
 \end{equation*}$$
 
 Post in progress...
