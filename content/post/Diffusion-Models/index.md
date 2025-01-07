@@ -254,7 +254,7 @@ $$\begin{equation*}
 \begin{align*}
 L = &\mathbb{E}_q [- \log p(\mathbf{x}_T) - \\
 &\underbrace{\sum_{t > 1} \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\mathbf{x}_{t-1} | \mathbf{x}_{t}, \mathbf{x}_0)} \frac{q(\mathbf{x}_{t - 1}| \mathbf{x}_0)}{q(\mathbf{x}_{t} | \mathbf{x}_0)}}_M \\
-&-\log \frac{p_{\theta} (\mathbf{x}_0 | \mathbf{x}_1)}{q(\mathbf{x}_1 | \mathbf{x}_0)} \right].
+&-\log \frac{p_{\theta} (\mathbf{x}_0 | \mathbf{x}_1)}{q(\mathbf{x}_1 | \mathbf{x}_0)} ].
 \end{align*}
 \end{equation*}$$
 
@@ -267,6 +267,16 @@ M &= \sum_{t > 1} \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\ma
 &= \sum_{t > 1} \left( \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\mathbf{x}_{t-1} | \mathbf{x}_{t}, \mathbf{x}_0)} \right) + (\log q(\mathbf{x}_{1}| \mathbf{x}_0) - \log q(\mathbf{x}_{2} | \mathbf{x}_0)) \\
 &+ (\log q(\mathbf{x}_{2}| \mathbf{x}_0) - \log q(\mathbf{x}_{3} | \mathbf{x}_0)) + \dots + (\log q(\mathbf{x}_{T-1}| \mathbf{x}_0) - \log q(\mathbf{x}_{T} | \mathbf{x}_0))
 &= \sum_{t > 1} \left( \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\mathbf{x}_{t-1} | \mathbf{x}_{t}, \mathbf{x}_0)} \right) + \log q(\mathbf{x}_{1}| \mathbf{x}_0) - \log q(\mathbf{x}_{T} | \mathbf{x}_0)
+\end{align*}
+\end{equation*}$$
+
+Replacing $M$ in $L$ and rearranging the log operations:
+
+$$\begin{equation*}
+\begin{align*}
+L = &\mathbb{E}_q [- \log \frac{p(\mathbf{x}_T)}{q(\mathbf{x}_{T} | \mathbf{x}_0)} - \\
+&\sum_{t > 1} \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\mathbf{x}_{t-1} | \mathbf{x}_{t}, \mathbf{x}_0)} \\
+&-\log p_{\theta} (\mathbf{x}_0 | \mathbf{x}_1) ].
 \end{align*}
 \end{equation*}$$
 
