@@ -27,6 +27,7 @@ So, in fairness, I'll effectively be reviewing the ["Deep Unsupervised Learning 
 
 ## Diffusion Model
 
+For the sake of completeness, in this section, we just reproduce the definitions and notations given by Ho, Jain, and Abbeel (2020).
 A diffusion model is a latent variable model represented by [Eq. 1](#EQ1):
 
 <a name="EQ1"></a>
@@ -81,6 +82,19 @@ The framework is depicted in the figure below.
 
 ## Evidence Lower Bound (ELBO)
 
+The training of a diffusion model consists of optimizing the evidence (or variational) lower bound as follows:
+
+<a name="EQ6"></a>
+
+$$\begin{equation}
+\begin{align*}
+\mathbb{E}[- \log p_{\theta} (\mathbf{x}_0)] \leq &\mathbb{E}_q[- \log \frac{p_{\theta} (\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T} | \mathbf{x}_0)}] =
+& = \mathbb{E}_q[- \log p(\mathbf{x}_T) - \sum_{t \geq 1} \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\mathbf{x}_t | \mathbf{x}_{t-1})}] =: L. 
+\end{align*}
+\end{equation}$$
+
+But of course, the question is "Why?".
+So, in this section, we'll derive these expressions ourselves.
 
 ## References
 
