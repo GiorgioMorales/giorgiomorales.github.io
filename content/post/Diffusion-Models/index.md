@@ -218,13 +218,13 @@ We isolate the case when $t=1$ so that:
 <a name="EQ13"></a>
 
 $$\begin{equation}
-L = \mathbb{E}_q \left[- \log p(\mathbf{x}_T) - \sum_{t > 1} \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\mathbf{x}_t | \mathbf{x}_{t-1})} \\
+L = \mathbb{E}_q \left[- \log p(\mathbf{x}_T) - \sum_{t > 1} \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\mathbf{x}_t | \mathbf{x}_{t-1})} 
  -\log \frac{p_{\theta} (\mathbf{x}_0 | \mathbf{x}_1)}{q(\mathbf{x}_1 | \mathbf{x}_0)} \right].
 \end{equation}$$
 
 We want to reverse the terms in $q(\mathbf{x}_t | \mathbf{x}_{t-1})$; that is, instead of having a function of $\mathbf{x}_t$ conditioned on $\mathbf{x}_{t-1}$, we'd like 
 to have a function of $\mathbf{x}_{t-1}$ conditioned on $\mathbf{x}_t$.
-So, let's observe that because the forward process is a Markov chain, $\mathbf{x}_t$ depends only on $\mathbf{x}_{t-1}$.
+So, let's note that, because the forward process is a Markov chain, $\mathbf{x}_t$ depends only on $\mathbf{x}_{t-1}$.
 Thus, we can express the following:
 
 <a name="EQ14"></a>
@@ -236,7 +236,7 @@ q(\mathbf{x}_t | \mathbf{x}_{t-1}) = q(\mathbf{x}_t | \mathbf{x}_{t-1}, \mathbf{
 {{% callout note %}}
  Bayes' theorem using three variables:
 
- $$P(A | B, C) = \frac{P(A, B, C)}{P(B, C)} = \frac{P(B | A, C) P(A,C)}{P(B, C)}.$$
+ $$P(A | B, C) = \frac{P(A, B, C)}{P(B, C)} = \frac{P(B | A, C) P(A,C)}{P(B, C)}$$
  $$= \frac{P(B | A, C) P(A|C) P(C)}{P(B, C) P(C)} = \frac{P(B | A, C) P(A|C)}{P(B, C)}.$$
 {{% /callout %}}
 
@@ -245,17 +245,30 @@ Then, rewriting [Eq. 14](#EQ14) using Bayes' theorem, we get:
 <a name="EQ15"></a>
 
 $$\begin{equation}
-q(\mathbf{x}_t | \mathbf{x}_{t-1}) = q(\mathbf{x}_t | \mathbf{x}_{t-1}, \mathbf{x}_0) = \frac{q(\mathbf{x}_{t-1} | \mathbf{x}_{t}, \mathbf{x}_0) q(\mathbf{x}_{t} | \mathbf{x}_0) }{ q(\mathbf{x}_{t - 1}, \mathbf{x}_0)}.
+q(\mathbf{x}_t | \mathbf{x}_{t-1}) = q(\mathbf{x}_t | \mathbf{x}_{t-1}, \mathbf{x}_0) = \frac{q(\mathbf{x}_{t-1} | \mathbf{x}_{t}, \mathbf{x}_0) q(\mathbf{x}_{t} | \mathbf{x}_0) }{ q(\mathbf{x}_{t - 1}| \mathbf{x}_0)}.
 \end{equation}$$
 
 Combining [Eq. 15](#EQ15) and [Eq. 13](#EQ13), we get:
 
-$$\begin{equation}
+$$\begin{equation*}
 \begin{align*}
-L = \mathbb{E}_q [  ].
+L = &\mathbb{E}_q [- \log p(\mathbf{x}_T) - \\
+&\underbrace{\sum_{t > 1} \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\mathbf{x}_{t-1} | \mathbf{x}_{t}, \mathbf{x}_0)} \frac{q(\mathbf{x}_{t - 1}| \mathbf{x}_0)}{q(\mathbf{x}_{t} | \mathbf{x}_0)}}_M \\
+&-\log \frac{p_{\theta} (\mathbf{x}_0 | \mathbf{x}_1)}{q(\mathbf{x}_1 | \mathbf{x}_0)} \right].
 \end{align*}
-\end{equation}$$
+\end{equation*}$$
 
+From the previous, we simplify $M$:
+
+$$\begin{equation*}
+\begin{align*}
+M &= \sum_{t > 1} \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\mathbf{x}_{t-1} | \mathbf{x}_{t}, \mathbf{x}_0)} \frac{q(\mathbf{x}_{t - 1}| \mathbf{x}_0)}{q(\mathbf{x}_{t} | \mathbf{x}_0)} \\
+&= \sum_{t > 1} \left( \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\mathbf{x}_{t-1} | \mathbf{x}_{t}, \mathbf{x}_0)} + \log q(\mathbf{x}_{t - 1}| \mathbf{x}_0) - \log q(\mathbf{x}_{t} | \mathbf{x}_0) \right) \\
+&= \sum_{t > 1} \left( \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\mathbf{x}_{t-1} | \mathbf{x}_{t}, \mathbf{x}_0)} \right) + (\log q(\mathbf{x}_{1}| \mathbf{x}_0) - \log q(\mathbf{x}_{2} | \mathbf{x}_0)) \\
+&+ (\log q(\mathbf{x}_{2}| \mathbf{x}_0) - \log q(\mathbf{x}_{3} | \mathbf{x}_0)) + \dots + (\log q(\mathbf{x}_{T-1}| \mathbf{x}_0) - \log q(\mathbf{x}_{T} | \mathbf{x}_0))
+&= \sum_{t > 1} \left( \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\mathbf{x}_{t-1} | \mathbf{x}_{t}, \mathbf{x}_0)} \right) + \log q(\mathbf{x}_{1}| \mathbf{x}_0) - \log q(\mathbf{x}_{T} | \mathbf{x}_0)
+\end{align*}
+\end{equation*}$$
 
 Post in progress...
 
