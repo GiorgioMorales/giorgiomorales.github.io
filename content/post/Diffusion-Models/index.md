@@ -221,6 +221,21 @@ $$\begin{equation}
 q(\mathbf{x}_t | \mathbf{x}_{t-1}) = q(\mathbf{x}_t | \mathbf{x}_{t-1}, \mathbf{x}_0).
 \end{equation}$$
 
+{{% callout note %}}
+ Bayes' theorem using three variables:
+
+ $$P(A | B, C) = \frac{P(A, B, C)}{P(B, C)} = \frac{P(B | A, C) P(A,C)}{P(B, C)}.$$
+ $$P(A | B, C) = \frac{P(B | A, C) P(A|C) P(C)}{P(B, C) P(C)} = \frac{P(B | A, C) P(A|C)}{P(B, C)}.$$
+{{% /callout %}}
+
+Then, rewriting [Eq. 13](#EQ13) using Bayes' theorem, we get:
+
+<a name="EQ14"></a>
+
+$$\begin{equation}
+q(\mathbf{x}_t | \mathbf{x}_{t-1}) = q(\mathbf{x}_t | \mathbf{x}_{t-1}, \mathbf{x}_0) = \frac{q(\mathbf{x}_{t-1} | \mathbf{x}_{t}, \mathbf{x}_0) q(\mathbf{x}_{t} | \mathbf{x}_0) }{ \mathbf{x}_{t - 1}, \mathbf{x}_0}.
+\end{equation}$$
+
 
 Post in progress...
 
