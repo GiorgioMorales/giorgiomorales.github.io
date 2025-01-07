@@ -88,8 +88,8 @@ The training of a diffusion model consists of optimizing the evidence (or variat
 
 $$\begin{equation}
 \begin{align*}
-\mathbb{E}[- \log p_{\theta} (\mathbf{x}_0)] \leq &\mathbb{E}_q[- \log \frac{p_{\theta} (\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T} | \mathbf{x}_0)}], \\
-& = \mathbb{E}_q[- \log p(\mathbf{x}_T) - \sum_{t \geq 1} \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\mathbf{x}_t | \mathbf{x}_{t-1})}] =: L. 
+\mathbb{E}[- \log p_{\theta} (\mathbf{x}_0)] &\leq \mathbb{E}_q \left[- \log \frac{p_{\theta} (\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T} | \mathbf{x}_0)} \right], \\
+& = \mathbb{E}_q \left[- \log p(\mathbf{x}_T) - \sum_{t \geq 1} \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\mathbf{x}_t | \mathbf{x}_{t-1})} \right] =: L. 
 \end{align*}
 \end{equation}$$
 
@@ -164,7 +164,16 @@ Applying LTE to [Eq. 10](#EQ10) and denoting $q(\mathbf{x}_0, \mathbf{x}_{1:T}) 
 
 $$\begin{equation}
 \mathbb{E}[-\log p_{\theta} (\mathbf{x}_0)]
-\leq \mathbb{E}_q \left[\log \frac{p_{\theta}(\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T}|\mathbf{x}_0)}\right].
+\leq \mathbb{E}_q \left[\log \frac{p_{\theta}(\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T}|\mathbf{x}_0)}\right],
+\end{equation}$$
+
+which demonstrates the first inequality of [Eq. 6](#EQ1) $\square$.
+
+$$\begin{equation}
+\begin{align*}
+\mathbb{E}[- \log p_{\theta} (\mathbf{x}_0)] \leq &\mathbb{E}_q \left[- \log \frac{p_{\theta} (\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T} | \mathbf{x}_0)} \right], \\
+& = \mathbb{E}_q \left[- \log p(\mathbf{x}_T) - \sum_{t \geq 1} \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\mathbf{x}_t | \mathbf{x}_{t-1})} \right] =: L. 
+\end{align*}
 \end{equation}$$
 
 Post in progress...
