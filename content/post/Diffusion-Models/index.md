@@ -160,7 +160,7 @@ $$\begin{equation}
  $$\mathbb{E}_{p(B)}[\mathbb{E}_{q(A|B)}[f(A, B)]] \geq \mathbb{E}_{q(A,B)}[f(A, B)].$$
 {{% /callout %}}
 
-Applying LTE to [Eq. 10](#EQ10) and denoting $q(\mathbf{x}_0, \mathbf{x}_{1:T}) = q(\mathbf{x}_{0:T})$ and $\mathbb{E}_{q(\mathbf{x}_{0:T}|\mathbf{x}_0)} [\dots] = \mathbb{E}_{q}$, we obtain:
+Applying LTE to [Eq. 10](#EQ10) and denoting $q(\mathbf{x}_0, \mathbf{x}_{1:T}) = q(\mathbf{x}_{0:T})$ and $\mathbb{E}_{q(\mathbf{x}_{0:T}|\mathbf{x}_0)} [\dots] = \mathbb{E}_{q}[\dots]$, we obtain:
 
 $$\begin{equation}
 \mathbb{E}[-\log p_{\theta} (\mathbf{x}_0)]
