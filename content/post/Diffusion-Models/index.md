@@ -189,6 +189,15 @@ $$\begin{equation*}
 which demonstrates the second part of [Eq. 6](#EQ6) $\square$.
 
 
+## Loss Function Expansion
+
+In Eq. 5 of [1], the loss function $L$ is further reduced as:
+
+<a name="EQ11"></a>
+
+$$\begin{equation}
+L = \mathbb{E}_q \left[ \underbrace{ D{\text{KL}} (q(\mathbf{x}_T | \mathbf{x}_0)) || p(\mathbf{x}_T))}_{L_T} + \sum_{t>1} D{\text{KL}} ( q(\mathbf{x}_{t-1} | \mathbf{x}_t, \mathbf{x}_0) || p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t) ) - \log p_{\theta}(\mathbf{x}_0 | \mathbf{x}_1) \right]
+\end{equation}$$
 
 Post in progress...
 
