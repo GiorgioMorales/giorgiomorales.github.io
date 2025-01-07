@@ -184,8 +184,11 @@ Then, by splitting the log of divisions into subtractions and writing the log of
 <a name="EQ11"></a>
 
 $$\begin{equation}
-\mathbb{E}_q \left[- \log \frac{p_{\theta} (\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T} | \mathbf{x}_0)} \right]
-= \mathbb{E}_q \left[- \log p(\mathbf{x}_T) - \sum_{t \geq 1} \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\mathbf{x}_t | \mathbf{x}_{t-1})} \right],
+\begin{align*}
+\mathbb{E}_q \left[- \log \frac{p_{\theta} (\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T} | \mathbf{x}_0)} \right]&
+=\\ 
+&\mathbb{E}_q \left[- \log p(\mathbf{x}_T) - \sum_{t \geq 1} \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\mathbf{x}_t | \mathbf{x}_{t-1})} \right],
+\end{align*}
 \end{equation}$$
 
 which demonstrates the second part of [Eq. 6](#EQ6) $\square$.
@@ -210,12 +213,21 @@ It turns out that the proof of this is given in [2] and in Appendix A of [1].
 However, I'll take a more detailed approach.
 
 We start from [Eq. 11](#EQ11).
+We isolate the case when $t=1$ so that:
+
+<a name="EQ13"></a>
+
+$$\begin{equation}
+L = \mathbb{E}_q \left[- \log p(\mathbf{x}_T) - \sum_{t > 1} \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\mathbf{x}_t | \mathbf{x}_{t-1})} \\
+ -\log \frac{p_{\theta} (\mathbf{x}_0 | \mathbf{x}_1)}{q(\mathbf{x}_1 | \mathbf{x}_0)} \right].
+\end{equation}$$
+
 We want to reverse the terms in $q(\mathbf{x}_t | \mathbf{x}_{t-1})$; that is, instead of having a function of $\mathbf{x}_t$ conditioned on $\mathbf{x}_{t-1}$, we'd like 
 to have a function of $\mathbf{x}_{t-1}$ conditioned on $\mathbf{x}_t$.
 So, let's observe that because the forward process is a Markov chain, $\mathbf{x}_t$ depends only on $\mathbf{x}_{t-1}$.
 Thus, we can express the following:
 
-<a name="EQ13"></a>
+<a name="EQ14"></a>
 
 $$\begin{equation}
 q(\mathbf{x}_t | \mathbf{x}_{t-1}) = q(\mathbf{x}_t | \mathbf{x}_{t-1}, \mathbf{x}_0).
@@ -228,12 +240,20 @@ q(\mathbf{x}_t | \mathbf{x}_{t-1}) = q(\mathbf{x}_t | \mathbf{x}_{t-1}, \mathbf{
  $$P(A | B, C) = \frac{P(B | A, C) P(A|C) P(C)}{P(B, C) P(C)} = \frac{P(B | A, C) P(A|C)}{P(B, C)}.$$
 {{% /callout %}}
 
-Then, rewriting [Eq. 13](#EQ13) using Bayes' theorem, we get:
+Then, rewriting [Eq. 14](#EQ14) using Bayes' theorem, we get:
 
-<a name="EQ14"></a>
+<a name="EQ15"></a>
 
 $$\begin{equation}
 q(\mathbf{x}_t | \mathbf{x}_{t-1}) = q(\mathbf{x}_t | \mathbf{x}_{t-1}, \mathbf{x}_0) = \frac{q(\mathbf{x}_{t-1} | \mathbf{x}_{t}, \mathbf{x}_0) q(\mathbf{x}_{t} | \mathbf{x}_0) }{ \mathbf{x}_{t - 1}, \mathbf{x}_0}.
+\end{equation}$$
+
+Combining [Eq. 15](#EQ15) and [Eq. 13](#EQ13), we get:
+
+$$\begin{equation}
+\begin{align*}
+L = \mathbb{E}_q [  ].
+\end{align*}
 \end{equation}$$
 
 
