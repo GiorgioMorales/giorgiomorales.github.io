@@ -95,7 +95,8 @@ $$\begin{equation}
 
 But of course, the question is "Why?".
 So, in this section, we'll derive these expressions ourselves.
-We begin by applying the logarithm to [Eq. 1](#EQ1), and multiplying and dividing the right side by $q(\mathbf{x}_{1:T}|\mathbf{x}_0)$:
+We begin by applying the logarithm to [Eq. 1](#EQ1).
+Then, multiply and divide the right-hand side by $q(\mathbf{x}_{1:T}|\mathbf{x}_0)$:
 
 <a name="EQ7"></a>
 
@@ -141,11 +142,32 @@ Therefore:
 $$\begin{equation*}
 -\log p_{\theta} (\mathbf{x}_0)
 \leq \mathbb{E}_{q(\mathbf{x}_{1:T}|\mathbf{x}_0)} \left[\log \frac{p_{\theta}(\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T}|\mathbf{x}_0)}\right].
-. 
 \end{equation*}$$
 
+This is close to first part of the expression we want to demonstrate. 
+Now let's apply the expectation over the true data distribution $p_{data}(\mathbf{x}_0)$ to both sides of [Eq. 9](#EQ9):
 
-Post in progress
+<a name="EQ10"></a>
+
+$$\begin{equation}
+\mathbb{E}[-\log p_{\theta} (\mathbf{x}_0)]
+\leq \mathbb{E}_{p_{data}(\mathbf{x}_0)} [\mathbb{E}_{q(\mathbf{x}_{1:T}|\mathbf{x}_0)} \left[\log \frac{p_{\theta}(\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T}|\mathbf{x}_0)}\right]].
+\end{equation}$$
+
+{{% callout note %}}
+ **Law of total expectation (LTE)**:
+
+ $$mathbb{E}_{p(B)}[mathbb{E}_{q(A|B)}[f(A, B)]] \geq mathbb{E}_{q(A,B)}[f(A, B)].$$
+{{% /callout %}}
+
+Applying LTE to [Eq. 10](#EQ10) and denoting $q(\mathbf{x}_0, \mathbf{x}_{1:T}) = q(\mathbf{x}_{0:T})$ and $\mathbb{E}_{q(\mathbf{x}_{0:T}|\mathbf{x}_0)} [\dots] = \mathbb{E}_{q}$, we obtain:
+
+$$\begin{equation}
+\mathbb{E}[-\log p_{\theta} (\mathbf{x}_0)]
+\leq \mathbb{E}_q \left[\log \frac{p_{\theta}(\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T}|\mathbf{x}_0)}\right].
+\end{equation}$$
+
+Post in progress...
 
 ## References
 
