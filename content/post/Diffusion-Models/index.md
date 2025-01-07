@@ -199,9 +199,9 @@ In Eq. 5 of [1], the loss function $L$ is further reduced as:
 
 $$\begin{equation}
 \begin{align*}
-L = \mathbb{E}_q \left[ &\underbrace{ D_{\text{KL}} (q(\mathbf{x}_T | \mathbf{x}_0)) || p(\mathbf{x}_T))}_{L_T} + \\
+L = \mathbb{E}_q [ &\underbrace{ D_{\text{KL}} (q(\mathbf{x}_T | \mathbf{x}_0)) || p(\mathbf{x}_T))}_{L_T} + \\
 &\sum_{t>1} \underbrace{D_{\text{KL}} ( q(\mathbf{x}_{t-1} | \mathbf{x}_t, \mathbf{x}_0) || p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t) )}_{L_{t-1}} - \\
-&\underbrace{\log p_{\theta}(\mathbf{x}_0 | \mathbf{x}_1)}_{L_0} \right].
+&\underbrace{\log p_{\theta}(\mathbf{x}_0 | \mathbf{x}_1)}_{L_0} ].
 \end{align*}
 \end{equation}$$
 
@@ -210,6 +210,17 @@ It turns out that the proof of this is given in [2] and in Appendix A of [1].
 However, I'll take a more detailed approach.
 
 We start from [Eq. 11](#EQ11).
+We want to reverse the terms in $q(\mathbf{x}_t | \mathbf{x}_{t-1})$; that is, instead of having a function of $\mathbf{x}_t$ conditioned on $\mathbf{x}_{t-1}$, we'd like 
+to have a function of $\mathbf{x}_{t-1}$ conditioned on $\mathbf{x}_t$.
+So, let's observe that because the forward process is a Markov chain, $\mathbf{x}_t$ depends only on $\mathbf{x}_{t-1}$.
+Thus, we can express the following:
+
+<a name="EQ13"></a>
+
+$$\begin{equation}
+q(\mathbf{x}_t | \mathbf{x}_{t-1}) = q(\mathbf{x}_t | \mathbf{x}_{t-1}, \mathbf{x}_0).
+\end{equation}$$
+
 
 Post in progress...
 
