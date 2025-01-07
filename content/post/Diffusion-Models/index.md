@@ -167,14 +167,23 @@ $$\begin{equation}
 \leq \mathbb{E}_q \left[\log \frac{p_{\theta}(\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T}|\mathbf{x}_0)}\right],
 \end{equation}$$
 
-which demonstrates the first inequality of [Eq. 6](#EQ1) $\square$.
+which demonstrates the first inequality of [Eq. 6](#EQ6) $\square$.
 
-$$\begin{equation}
-\begin{align*}
-\mathbb{E}[- \log p_{\theta} (\mathbf{x}_0)] \leq &\mathbb{E}_q \left[- \log \frac{p_{\theta} (\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T} | \mathbf{x}_0)} \right], \\
-& = \mathbb{E}_q \left[- \log p(\mathbf{x}_T) - \sum_{t \geq 1} \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\mathbf{x}_t | \mathbf{x}_{t-1})} \right] =: L. 
-\end{align*}
-\end{equation}$$
+---
+
+Now, we need to prove the second part of [Eq. 6](#EQ6), which for the sake of readibility is reproduced here:
+
+$$\begin{equation*}
+\mathbb{E}_q \left[- \log \frac{p_{\theta} (\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T} | \mathbf{x}_0)} \right]
+= \mathbb{E}_q \left[- \log p(\mathbf{x}_T) - \sum_{t \geq 1} \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\mathbf{x}_t | \mathbf{x}_{t-1})} \right].
+\end{equation*}$$
+
+We start by replacing $p_{\theta} (\mathbf{x}_{0:T})$ and $q(\mathbf{x}_{1:T} | \mathbf{x}_0)$ using [Eq. 2](#EQ2) and [Eq. 4](#EQ4), respectively:
+
+$$\begin{equation*}
+\mathbb{E}_q \left[- \log \frac{p_{\theta} (\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T} | \mathbf{x}_0)} \right]
+= \mathbb{E}_q \left[- \log \left( \frac{ p(\mathbf{x}_T) \prod_{t=1}^T p_{\theta}(\mathbf{x}_{t-1} | \mathbf{x}_t)}{ \prod_{t=1}^T q( \mathbf{x}_t | \mathbf{x}_{t-1}) } \right) \right].
+\end{equation*}$$
 
 Post in progress...
 
