@@ -272,18 +272,45 @@ M &= \sum_{t > 1} \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\ma
 
 Replacing $M$ in $L$ and rearranging the log operations:
 
-$$\begin{equation*}
+<a name="EQ16"></a>
+
+$$\begin{equation}
 \begin{align*}
 L = &\underbrace{\mathbb{E}_q [- \log \frac{p(\mathbf{x}_T)}{q(\mathbf{x}_{T} | \mathbf{x}_0)}}_S - \\
 &\sum_{t > 1} \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\mathbf{x}_{t-1} | \mathbf{x}_{t}, \mathbf{x}_0)} \\
 &-\log p_{\theta} (\mathbf{x}_0 | \mathbf{x}_1) ].
 \end{align*}
-\end{equation*}$$
+\end{equation}$$
 
 Considering the LTE, we can rewrite the expectation in $S$ as:
 
 $$\begin{equation*}
-S = \mathbb{E}_q \left[ \mathbb{E}_{q(\mathbf{x}_0 | \mathbf{x}_T)} \left[- \log \frac{p(\mathbf{x}_T)}{q(\mathbf{x}_{T} | \mathbf{x}_0)} \right]\right]
+\begin{align*}
+S &= \mathbb{E}_q \left[ \mathbb{E}_{q(\mathbf{x}_T | \mathbf{x}_0)} \left[- \log \frac{p(\mathbf{x}_T)}{q(\mathbf{x}_{T} | \mathbf{x}_0)} \right]\right]\\
+& = \mathbb{E}_q \left[ \mathbb{E}_{q(\mathbf{x}_T | \mathbf{x}_0)} \left[ \log \frac{q(\mathbf{x}_{T} | \mathbf{x}_0)}{p(\mathbf{x}_T)} \right]\right]
+\end{align*}
+\end{equation*}$$
+
+{{% callout note %}}
+ **Kullback-Leibler (KL) divergence**: Between distributions $A$ and $B$.
+
+ $$D_{\text{KL}}(A||B) = \mathbb{E}_A \left[ \log \frac{A}{B} \right].$$
+{{% /callout %}}
+
+Therefore, $S$ is expressed in terms of a KL divergence:
+
+$$\begin{equation*}
+S = \mathbb{E}_q \left[ D_{\text{KL}}(q(\mathbf{x}_T | \mathbf{x}_0) ||p(\mathbf{x}_T) ) \right].
+\end{equation*}$$
+
+We can apply the same idea to the remaining elements in [Eq. 16](#EQ16) to obtain:
+
+$$\begin{equation*}
+\begin{align*}
+L = \mathbb{E}_q [ &\underbrace{ D_{\text{KL}} (q(\mathbf{x}_T | \mathbf{x}_0)) || p(\mathbf{x}_T))}_{L_T} + \\
+&\sum_{t>1} \underbrace{D_{\text{KL}} ( q(\mathbf{x}_{t-1} | \mathbf{x}_t, \mathbf{x}_0) || p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t) )}_{L_{t-1}} - \\
+&\underbrace{\log p_{\theta}(\mathbf{x}_0 | \mathbf{x}_1)}_{L_0} ] \square.
+\end{align*}
 \end{equation*}$$
 
 Post in progress...
