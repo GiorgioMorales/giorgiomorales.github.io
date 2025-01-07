@@ -181,10 +181,12 @@ $$\begin{equation*}
 
 Then, by splitting the log of divisions into subtractions and writing the log of multiplications as a sum, we get:
 
-$$\begin{equation*}
+<a name="EQ11"></a>
+
+$$\begin{equation}
 \mathbb{E}_q \left[- \log \frac{p_{\theta} (\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T} | \mathbf{x}_0)} \right]
 = \mathbb{E}_q \left[- \log p(\mathbf{x}_T) - \sum_{t \geq 1} \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\mathbf{x}_t | \mathbf{x}_{t-1})} \right],
-\end{equation*}$$
+\end{equation}$$
 
 which demonstrates the second part of [Eq. 6](#EQ6) $\square$.
 
@@ -193,15 +195,21 @@ which demonstrates the second part of [Eq. 6](#EQ6) $\square$.
 
 In Eq. 5 of [1], the loss function $L$ is further reduced as:
 
-<a name="EQ11"></a>
+<a name="EQ12"></a>
 
 $$\begin{equation}
 \begin{align*}
-L = \mathbb{E}_q \left[ &\underbrace{ D_{\text{KL}} (q(\mathbf{x}_T | \mathbf{x}_0)) || p(\mathbf{x}_T))}_{L_T} + \\
+L = \mathbb{E}_q [ &\underbrace{ D_{\text{KL}} (q(\mathbf{x}_T | \mathbf{x}_0)) || p(\mathbf{x}_T))}_{L_T} + \\
 &\sum_{t>1} \underbrace{D_{\text{KL}} ( q(\mathbf{x}_{t-1} | \mathbf{x}_t, \mathbf{x}_0) || p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t) )}_{L_{t-1}} - \\
-&\underbrace{\log p_{\theta}(\mathbf{x}_0 | \mathbf{x}_1)}_{L_0} \right].
+&\underbrace{\log p_{\theta}(\mathbf{x}_0 | \mathbf{x}_1)}_{L_0} ].
 \nd{align*}
 \end{equation}$$
+
+In this section, we'll derive the expression given in [Eq. 12](#EQ12).
+It turns out that the proof of this is given in [2] and in Appendix A of [1].
+However, I'll take a more detailed approach.
+
+We start from [Eq. 11](#EQ11).
 
 Post in progress...
 
