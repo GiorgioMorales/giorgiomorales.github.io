@@ -237,7 +237,7 @@ q(\mathbf{x}_t | \mathbf{x}_{t-1}) = q(\mathbf{x}_t | \mathbf{x}_{t-1}, \mathbf{
  Bayes' theorem using three variables:
 
  $$P(A | B, C) = \frac{P(A, B, C)}{P(B, C)} = \frac{P(B | A, C) P(A,C)}{P(B, C)}.$$
- $$P(A | B, C) = \frac{P(B | A, C) P(A|C) P(C)}{P(B, C) P(C)} = \frac{P(B | A, C) P(A|C)}{P(B, C)}.$$
+ $$= \frac{P(B | A, C) P(A|C) P(C)}{P(B, C) P(C)} = \frac{P(B | A, C) P(A|C)}{P(B, C)}.$$
 {{% /callout %}}
 
 Then, rewriting [Eq. 14](#EQ14) using Bayes' theorem, we get:
