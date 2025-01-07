@@ -185,9 +185,8 @@ Then, by splitting the log of divisions into subtractions and writing the log of
 
 $$\begin{equation}
 \begin{align*}
-\mathbb{E}_q \left[- \log &\frac{p_{\theta} (\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T} | \mathbf{x}_0)} \right]
-=\\ 
-&\mathbb{E}_q \left[- \log p(\mathbf{x}_T) - \sum_{t \geq 1} \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\mathbf{x}_t | \mathbf{x}_{t-1})} \right],
+\mathbb{E}_q \left[- \log &\frac{p_{\theta} (\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T} | \mathbf{x}_0)} \right] \\ 
+&= \mathbb{E}_q \left[- \log p(\mathbf{x}_T) - \sum_{t \geq 1} \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\mathbf{x}_t | \mathbf{x}_{t-1})} \right],
 \end{align*}
 \end{equation}$$
 
@@ -265,7 +264,8 @@ $$\begin{equation*}
 M &= \sum_{t > 1} \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\mathbf{x}_{t-1} | \mathbf{x}_{t}, \mathbf{x}_0)} \frac{q(\mathbf{x}_{t - 1}| \mathbf{x}_0)}{q(\mathbf{x}_{t} | \mathbf{x}_0)} \\
 &= \sum_{t > 1} \left( \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\mathbf{x}_{t-1} | \mathbf{x}_{t}, \mathbf{x}_0)} + \log q(\mathbf{x}_{t - 1}| \mathbf{x}_0) - \log q(\mathbf{x}_{t} | \mathbf{x}_0) \right) \\
 &= \sum_{t > 1} \left( \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\mathbf{x}_{t-1} | \mathbf{x}_{t}, \mathbf{x}_0)} \right) + (\log q(\mathbf{x}_{1}| \mathbf{x}_0) - \log q(\mathbf{x}_{2} | \mathbf{x}_0)) \\
-&+ (\log q(\mathbf{x}_{2}| \mathbf{x}_0) - \log q(\mathbf{x}_{3} | \mathbf{x}_0)) + \dots + (\log q(\mathbf{x}_{T-1}| \mathbf{x}_0) - \log q(\mathbf{x}_{T} | \mathbf{x}_0))
+&\;\;+ (\log q(\mathbf{x}_{2}| \mathbf{x}_0) - \log q(\mathbf{x}_{3} | \mathbf{x}_0)) \\
+&\;\;+ \dots + (\log q(\mathbf{x}_{T-1}| \mathbf{x}_0) - \log q(\mathbf{x}_{T} | \mathbf{x}_0)) \\
 &= \sum_{t > 1} \left( \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\mathbf{x}_{t-1} | \mathbf{x}_{t}, \mathbf{x}_0)} \right) + \log q(\mathbf{x}_{1}| \mathbf{x}_0) - \log q(\mathbf{x}_{T} | \mathbf{x}_0)
 \end{align*}
 \end{equation*}$$
