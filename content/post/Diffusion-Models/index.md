@@ -76,7 +76,7 @@ The framework is depicted in the figure below.
 <div style="display: flex; justify-content: center;">
   <figure style="text-align: center;">
     <img src=graph.jpg alt="figure" width="100%">
-    <figcaption>Directed graphical model.</figcaption>
+    <figcaption>Directed graphical model [1].</figcaption>
   </figure>
 </div>
 
@@ -88,13 +88,48 @@ The training of a diffusion model consists of optimizing the evidence (or variat
 
 $$\begin{equation}
 \begin{align*}
-\mathbb{E}[- \log p_{\theta} (\mathbf{x}_0)] \leq &\mathbb{E}_q[- \log \frac{p_{\theta} (\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T} | \mathbf{x}_0)}] =
+\mathbb{E}[- \log p_{\theta} (\mathbf{x}_0)] \leq &\mathbb{E}_q[- \log \frac{p_{\theta} (\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T} | \mathbf{x}_0)}], \\
 & = \mathbb{E}_q[- \log p(\mathbf{x}_T) - \sum_{t \geq 1} \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\mathbf{x}_t | \mathbf{x}_{t-1})}] =: L. 
 \end{align*}
 \end{equation}$$
 
 But of course, the question is "Why?".
 So, in this section, we'll derive these expressions ourselves.
+We begin by applying the logarithm to [Eq. 1](#EQ1), and multiplying and dividing the right side by $q(\mathbf{x}_{1:T}|\mathbf{x}_0)$:
+
+<a name="EQ7"></a>
+
+$$\begin{equation}
+\begin{align*}
+\log p_{\theta} (\mathbf{x}_0) &= \log \int p_{\theta}(\mathbf{x}_{0:T}) d\, \mathbf{x}_{1:T}, \\
+ &= \log \int \frac{p_{\theta}(\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T}|\mathbf{x}_0)} q(\mathbf{x}_{1:T}|\mathbf{x}_0) d\, \mathbf{x}_{1:T}. 
+\end{align*}
+\end{equation}$$
+
+{{% callout note %}}
+ Recall that we can transform the expectation of function $f(\mathbf{x})$ into an integral expression as follows:
+
+ $$\mathbb{E}_{p(\mathbf{x})} [f(\mathbf{x})] = \int f(\mathbf{x})p(\mathbf{x}) d\mathbf{x}.$$
+{{% /callout %}}
+
+Thus, we can take [Eq. 7](#EQ7) and write it as:
+
+<a name="EQ8"></a>
+
+$$\begin{equation}
+\log p_{\theta} (\mathbf{x}_0) = \mathbb{E}_{q(\mathbf{x}_{1:T}|\mathbf{x}_0)} \left[\frac{p_{\theta}(\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T}|\mathbf{x}_0)}\right].
+\end{equation}$$
+
+
+{{% callout note %}}
+ We'll use Jensen's inequality, which states that given a concave function $f$ and a random variable $x$, the following holds:
+
+ $$f(\mathbb{E}[x]) >= \mathbb{E}[f(x)].$$
+{{% /callout %}}
+
+
+
+Post in progress
 
 ## References
 
