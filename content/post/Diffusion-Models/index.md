@@ -196,7 +196,11 @@ In Eq. 5 of [1], the loss function $L$ is further reduced as:
 <a name="EQ11"></a>
 
 $$\begin{equation}
-L = \mathbb{E}_q \left[ \underbrace{ D{\text{KL}} (q(\mathbf{x}_T | \mathbf{x}_0)) || p(\mathbf{x}_T))}_{L_T} + \sum_{t>1} \underbrace{D{\text{KL}} ( q(\mathbf{x}_{t-1} | \mathbf{x}_t, \mathbf{x}_0) || p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t) )}_{L_{t-1}} - \underbrace{\log p_{\theta}(\mathbf{x}_0 | \mathbf{x}_1)}_{L_0} \right]
+\begin{align*}
+L = \mathbb{E}_q \left[ &\underbrace{ D_{\text{KL}} (q(\mathbf{x}_T | \mathbf{x}_0)) || p(\mathbf{x}_T))}_{L_T} + \\
+&\sum_{t>1} \underbrace{D_{\text{KL}} ( q(\mathbf{x}_{t-1} | \mathbf{x}_t, \mathbf{x}_0) || p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t) )}_{L_{t-1}} - \\
+&\underbrace{\log p_{\theta}(\mathbf{x}_0 | \mathbf{x}_1)}_{L_0} \right].
+\nd{align*}
 \end{equation}$$
 
 Post in progress...
