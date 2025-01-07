@@ -292,7 +292,7 @@ S &= \mathbb{E}_q \left[ \mathbb{E}_{q(\mathbf{x}_T | \mathbf{x}_0)} \left[- \lo
 \end{equation*}$$
 
 {{% callout note %}}
- **Kullback-Leibler (KL) divergence**: Between distributions $A$ and $B$.
+ **Kullback-Leibler (KL) divergence**: For distributions $A$ and $B$.
 
  $$D_{\text{KL}}(A||B) = \mathbb{E}_A \left[ \log \frac{A}{B} \right].$$
 {{% /callout %}}
