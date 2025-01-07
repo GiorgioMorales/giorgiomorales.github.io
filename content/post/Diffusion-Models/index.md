@@ -117,16 +117,32 @@ Thus, we can take [Eq. 7](#EQ7) and write it as:
 <a name="EQ8"></a>
 
 $$\begin{equation}
-\log p_{\theta} (\mathbf{x}_0) = \mathbb{E}_{q(\mathbf{x}_{1:T}|\mathbf{x}_0)} \left[\frac{p_{\theta}(\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T}|\mathbf{x}_0)}\right].
+\log p_{\theta} (\mathbf{x}_0) = \log \mathbb{E}_{q(\mathbf{x}_{1:T}|\mathbf{x}_0)} \left[\frac{p_{\theta}(\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T}|\mathbf{x}_0)}\right].
 \end{equation}$$
-
 
 {{% callout note %}}
  We'll use Jensen's inequality, which states that given a concave function $f$ and a random variable $x$, the following holds:
 
- $$f(\mathbb{E}[x]) >= \mathbb{E}[f(x)].$$
+ $$f(\mathbb{E}[x]) \geq \mathbb{E}[f(x)].$$
 {{% /callout %}}
 
+Applying Jensen's inequality to the right-hand side of [Eq. 8](#EQ8), we have:
+
+$$\begin{equation*}
+\log \mathbb{E}_{q(\mathbf{x}_{1:T}|\mathbf{x}_0)} \left[\frac{p_{\theta}(\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T}|\mathbf{x}_0)}\right] = 
+\geq \mathbb{E}_{q(\mathbf{x}_{1:T}|\mathbf{x}_0)} \left[\log \frac{p_{\theta}(\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T}|\mathbf{x}_0)}\right].
+. 
+\end{equation*}$$
+
+Therefore:
+
+<a name="EQ9"></a>
+
+$$\begin{equation*}
+-\log p_{\theta} (\mathbf{x}_0)
+\leq \mathbb{E}_{q(\mathbf{x}_{1:T}|\mathbf{x}_0)} \left[\log \frac{p_{\theta}(\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T}|\mathbf{x}_0)}\right].
+. 
+\end{equation*}$$
 
 
 Post in progress
