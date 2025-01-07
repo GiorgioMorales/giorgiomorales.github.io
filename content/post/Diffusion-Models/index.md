@@ -185,8 +185,8 @@ Then, by splitting the log of divisions into subtractions and writing the log of
 
 $$\begin{equation}
 \begin{align*}
-\mathbb{E}_q \left[- \log &\frac{p_{\theta} (\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T} | \mathbf{x}_0)} \right] \\ 
-&= \mathbb{E}_q \left[- \log p(\mathbf{x}_T) - \sum_{t \geq 1} \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\mathbf{x}_t | \mathbf{x}_{t-1})} \right],
+\mathbb{E}_q [- \log &\frac{p_{\theta} (\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T} | \mathbf{x}_0)} ] \\ 
+&= \mathbb{E}_q [- \log p(\mathbf{x}_T) - \sum_{t \geq 1} \log \frac{p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t)}{q(\mathbf{x}_t | \mathbf{x}_{t-1})} ],
 \end{align*}
 \end{equation}$$
 
