@@ -51,7 +51,7 @@ where $p(\mathbf{x}_T) = \mathcal{N}(\mathbf{x}_T; \mathbf{0}, \mathbf{I})$ and:
 <a name="EQ3"></a>
 
 $$\begin{equation}
-p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t) = \mathcal{N}(\mathbf{x}_{t-1}; \mathbf{\mu}_{\theta}(\mathbf{x}_t), \Sigma_{\theta}(\mathbf{x}_t), t).
+p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t) = \mathcal{N}(\mathbf{x}_{t-1}; \boldsymbol{\mu}_{\theta}(\mathbf{x}_t), \Sigma_{\theta}(\mathbf{x}_t), t).
 \end{equation}$$
 
 On the other hand, the **forward (or difussion) process**, $q(\mathbf{x}_{1:T} | \mathbf{x}_0)$, consists of a known Markov chain 
@@ -315,8 +315,8 @@ L = \mathbb{E}_q [ &\underbrace{ D_{\text{KL}} (q(\mathbf{x}_T | \mathbf{x}_0)) 
 
 ## Mean and Variance of the Forward Process
 
-Now, we will derive the expressions for $q(\mathbf{x}_t | \mathbf{x}_0) = \mathcal{N}(\mathbf{x}_t; \mathbf{\mu}_t, \mathbf{\Sigma}_t)$ 
-and $q(\mathbf{x}_{t-1} |\mathbf{x}_t, \mathbf{x}_0)= \mathcal{N}(\mathbf{x}_t; \tilde{\mathbf{\mu}}_t, \tilde{\mathbf{\beta}}_t \mathbf{I})$.
+Now, we will derive the expressions for $q(\mathbf{x}_t | \mathbf{x}_0) = \mathcal{N}(\mathbf{x}_t; \boldsymbol{\mu}_t, \mathbf{\Sigma}_t)$ 
+and $q(\mathbf{x}_{t-1} |\mathbf{x}_t, \mathbf{x}_0)= \mathcal{N}(\mathbf{x}_t; \tilde{\boldsymbol{\mu}}_t, \tilde{\mathbf{\beta}}_t \mathbf{I})$.
 
 We have parameterized $q(\mathbf{x}_t | \mathbf{x}_{t-1})$ in [Eq. 5](#EQ5) as a normal distribution dependent on $\beta_t$.
 Using the Markov property, the mean at $\mathbf{x}_t$ is a product of all the scaling terms up to $t$:
@@ -325,7 +325,7 @@ Using the Markov property, the mean at $\mathbf{x}_t$ is a product of all the sc
 
 $$\begin{equation}
 \begin{align*}
-\mathbf{\mu}_t &= \sqrt{(1-\beta_t)(1-\beta_{t-1})\dots (1-\beta_{1})} \mathbf{x}_0 \\
+\boldsymbol{\mu}_t &= \sqrt{(1-\beta_t)(1-\beta_{t-1})\dots (1-\beta_{1})} \mathbf{x}_0 \\
 &= \sqrt{\prod_{s=1}^t(1-\beta_s)} \mathbf{x}_0 = \sqrt{\bar{\alpha}_t)} \mathbf{x}_0.
 \end{align*}
 \end{equation}$$
