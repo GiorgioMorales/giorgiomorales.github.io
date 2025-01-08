@@ -323,8 +323,8 @@ Using the Markov property, the mean at $\mathbf{x}_t$ is a product of all the sc
 
 $$\begin{equation}
 \begin{align*}
-\mathbb{E}[\mathbf{x}_t | \mathbf{x}_0] = \sqr{(1-\beta_t)(1-\beta_{t-1})\dots (1-\beta_{1})} \mathbf{x}_0
-&= = \sqr{\prod_{s=1}^t(1-\beta_s)} \mathbf{x}_0 = \sqr{\bar{\alpha}_t)} \mathbf{x}_0.
+\mathbb{E}[\mathbf{x}_t | \mathbf{x}_0] = \sqrt{(1-\beta_t)(1-\beta_{t-1})\dots (1-\beta_{1})} \mathbf{x}_0 \\
+&= = \sqrt{\prod_{s=1}^t(1-\beta_s)} \mathbf{x}_0 = \sqrt{\bar{\alpha}_t)} \mathbf{x}_0.
 \end{align*}
 \end{equation}$$
 
