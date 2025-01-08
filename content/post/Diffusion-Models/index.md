@@ -315,7 +315,7 @@ L = \mathbb{E}_q [ &\underbrace{ D_{\text{KL}} (q(\mathbf{x}_T | \mathbf{x}_0)) 
 
 ## Mean and Variance of the Forward Process
 
-Now, we will derive the expressions for $q(\mathbf{x}_t | \mathbf{x}_0) = \mathcal{N}(\mathbf{x}_t; \mathbf{\mu}_t, \mathbf{\sigma}_t)$ 
+Now, we will derive the expressions for $q(\mathbf{x}_t | \mathbf{x}_0) = \mathcal{N}(\mathbf{x}_t; \mathbf{\mu}_t, \mathbf{\Sigma}_t)$ 
 and $q(\mathbf{x}_{t-1} |\mathbf{x}_t, \mathbf{x}_0)= \mathcal{N}(\mathbf{x}_t; \tilde{\mathbf{\mu}}_t, \tilde{\mathbf{\beta}}_t \mathbf{I})$.
 
 We have parameterized $q(\mathbf{x}_t | \mathbf{x}_{t-1})$ in [Eq. 5](#EQ5) as a normal distribution dependent on $\beta_t$.
@@ -323,7 +323,7 @@ Using the Markov property, the mean at $\mathbf{x}_t$ is a product of all the sc
 
 $$\begin{equation}
 \begin{align*}
-\mathbb{E}[\mathbf{x}_t | \mathbf{x}_0] = \sqrt{(1-\beta_t)(1-\beta_{t-1})\dots (1-\beta_{1})} \mathbf{x}_0 \\
+\mathbf{\mu}_t = \sqrt{(1-\beta_t)(1-\beta_{t-1})\dots (1-\beta_{1})} \mathbf{x}_0 \\
 &= = \sqrt{\prod_{s=1}^t(1-\beta_s)} \mathbf{x}_0 = \sqrt{\bar{\alpha}_t)} \mathbf{x}_0.
 \end{align*}
 \end{equation}$$
@@ -331,12 +331,20 @@ $$\begin{equation}
 {{% callout note %}}
 Note that the variance is unaffected by constant scaling factors and that independent noise terms add their variances
 
- $Var(c\,A) = c^2 Var(A)$ and $Var(A+B) = Var(A) + Var(B)$.
+ $Var(c\,A) = c^2 Var(A)$ and 
+ 
+$Var(A+B) = Var(A) + Var(B)$.
 {{% /callout %}}
 
-Therefore:
+Considering that, due to the assumed normal distribution, $\mathbf{x}_t$ can be expressed as 
+$\mathbf{x}_t = \sqrt{1-\beta_t} $\mathbf{x}_{t-1} + \epsilon_t$. Where $\epsilon_t \sim \mathcal{N}(0, \beta_t \mathbf{I})$ Therefore:
 
-
+$$\begin{equation}
+\begin{align*}
+\mathbf{\Sigma}_t = Var(\sqrt{1 - \beta_t} \mathbf{x}_{t-1} + \epsilon_t | \mathbf{x}_0) \\
+&= = \sqrt{\prod_{s=1}^t(1-\beta_s)} \mathbf{x}_0 = \sqrt{\bar{\alpha}_t)} \mathbf{x}_0.
+\end{align*}
+\end{equation}$$
 
 
 
