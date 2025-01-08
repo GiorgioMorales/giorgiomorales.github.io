@@ -373,7 +373,7 @@ $$\begin{equation}
 From [Eq. 17](#EQ17) and [Eq. 18](#EQ18), we obtain a new expression for $q(\mathbf{x}_t | \mathbf{x}_0)$:
 
 $$\begin{equation}
-q(\mathbf{x}_t | \mathbf{x}_0) = \mathcal{N}\left (\mathbf{x}_t; \sqrt{\bar{\alpha}_t)} \mathbf{x}_0, (1 - \bar{\alpha}_t) \mathbf{I} \right).
+q(\mathbf{x}_t | \mathbf{x}_0) = \mathcal{N}\left (\mathbf{x}_t; \sqrt{\bar{\alpha}_t} \mathbf{x}_0, (1 - \bar{\alpha}_t) \mathbf{I} \right).
 \end{equation}$$
 
 ---
