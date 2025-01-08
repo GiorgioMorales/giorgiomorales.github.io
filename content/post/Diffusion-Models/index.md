@@ -321,10 +321,12 @@ and $q(\mathbf{x}_{t-1} |\mathbf{x}_t, \mathbf{x}_0)= \mathcal{N}(\mathbf{x}_t; 
 We have parameterized $q(\mathbf{x}_t | \mathbf{x}_{t-1})$ in [Eq. 5](#EQ5) as a normal distribution dependent on $\beta_t$.
 Using the Markov property, the mean at $\mathbf{x}_t$ is a product of all the scaling terms up to $t$:
 
+<a name="EQ17"></a>
+
 $$\begin{equation}
 \begin{align*}
-\mathbf{\mu}_t = \sqrt{(1-\beta_t)(1-\beta_{t-1})\dots (1-\beta_{1})} \mathbf{x}_0 \\
-&= = \sqrt{\prod_{s=1}^t(1-\beta_s)} \mathbf{x}_0 = \sqrt{\bar{\alpha}_t)} \mathbf{x}_0.
+\mathbf{\mu}_t &= \sqrt{(1-\beta_t)(1-\beta_{t-1})\dots (1-\beta_{1})} \mathbf{x}_0 \\
+&= \sqrt{\prod_{s=1}^t(1-\beta_s)} \mathbf{x}_0 = \sqrt{\bar{\alpha}_t)} \mathbf{x}_0.
 \end{align*}
 \end{equation}$$
 
@@ -339,15 +341,22 @@ $Var(A+B) = Var(A) + Var(B)$.
 Considering that, due to the assumed normal distribution, $\mathbf{x}_t$ can be expressed as 
 $\mathbf{x}_t = \sqrt{1-\beta_t} $\mathbf{x}_{t-1} + \epsilon_t$. Where $\epsilon_t \sim \mathcal{N}(0, \beta_t \mathbf{I})$ Therefore:
 
-$$\begin{equation}
+$$\begin{equation*}
 \begin{align*}
-\mathbf{\Sigma}_t = Var(\sqrt{1 - \beta_t} \mathbf{x}_{t-1} + \epsilon_t | \mathbf{x}_0) \\
-&= = \sqrt{\prod_{s=1}^t(1-\beta_s)} \mathbf{x}_0 = \sqrt{\bar{\alpha}_t)} \mathbf{x}_0.
+\mathbf{\Sigma}_t &= Var(\sqrt{1 - \beta_t} \mathbf{x}_{t-1} + \epsilon_t | \mathbf{x}_0) \\
+&= (1 - \beta_t) Var(\mathbf{x}_{t-1} | \mathbf{x}_{0}) + \beta_t \mathbf{I}.
 \end{align*}
-\end{equation}$$
+\end{equation*}$$
 
-
-
+Using recursion and expanding the expression:
+(1 - \beta_t) [ ] + \beta_t \mathbf{I}.
+$$\begin{equation*}
+\begin{align*}
+\mathbf{\Sigma}_t &= (1 - \beta_t) [ (1 - \beta_{t-1}) \mathbf{\Sigma}_{t-2} + \beta_t \mathbf{I}. ] + \beta_t \mathbf{I}, \\
+&= (1 - \beta_t)(1 - \beta_{t-1}) \mathbf{\Sigma}_{t-2} + \underbrace{\beta_{t-1} (1 - \beta_t) - (1 - \beta_t) \mathbf{I} + \mathbf{I}}_{\mathbf{I} - (1 - \beta_t)(1 - \beta_{t-1})},
+\end{align*}
+\end{equation*}$$
+    
 
 Post in progress...
 
