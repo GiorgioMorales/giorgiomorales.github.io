@@ -326,7 +326,7 @@ Using the Markov property, the mean at $\mathbf{x}_t$ is a product of all the sc
 $$\begin{equation}
 \begin{align*}
 \boldsymbol{\mu}_t &= \sqrt{(1-\beta_t)(1-\beta_{t-1})\dots (1-\beta_{1})} \mathbf{x}_0 \\
-&= \sqrt{\prod_{s=1}^t(1-\beta_s)} \mathbf{x}_0 = \sqrt{\bar{\alpha}_t)} \mathbf{x}_0.
+&= \sqrt{\prod_{s=1}^t(1-\beta_s)} \mathbf{x}_0 = \sqrt{\bar{\alpha}_t} \mathbf{x}_0.
 \end{align*}
 \end{equation}$$
 
@@ -373,7 +373,7 @@ $$\begin{equation}
 From [Eq. 17](#EQ17) and [Eq. 18](#EQ18), we obtain a new expression for $q(\mathbf{x}_t | \mathbf{x}_0)$:
 
 $$\begin{equation}
-q(\mathbf{x}_t | \mathbf{x}_0) = \mathcal{N}(\mathbf{x}_t; \sqrt{\bar{\alpha}_t)} \mathbf{x}_0, (1 - \bar{\alpha}_t)\mathbf{I}).
+q(\mathbf{x}_t | \mathbf{x}_0) = \mathcal{N}(\mathbf{x}_t; \sqrt{\bar{\alpha}_t)} \mathbf{x}_0, (1 - \bar{\alpha}_t \mathbf{I}).
 \end{equation}$$
 
 ---
