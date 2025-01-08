@@ -339,7 +339,8 @@ $Var(A+B) = Var(A) + Var(B)$.
 {{% /callout %}}
 
 Considering that, due to the assumed normal distribution, $\mathbf{x}_t$ can be expressed as 
-$\mathbf{x}_t = \sqrt{1-\beta_t} $\mathbf{x}_{t-1} + \epsilon_t$. Where $\epsilon_t \sim \mathcal{N}(0, \beta_t \mathbf{I})$ Therefore:
+$\mathbf{x}_t = \sqrt{1-\beta_t} \mathbf{x}_{t-1} + \epsilon_t$, where $\epsilon_t \sim \mathcal{N}(0, \beta_t \mathbf{I})$. 
+Therefore:
 
 $$\begin{equation*}
 \begin{align*}
@@ -349,7 +350,6 @@ $$\begin{equation*}
 \end{equation*}$$
 
 Using recursion and expanding the expression:
-(1 - \beta_t) [ ] + \beta_t \mathbf{I}.
 $$\begin{equation*}
 \begin{align*}
 \mathbf{\Sigma}_t &= (1 - \beta_t) [ (1 - \beta_{t-1}) \mathbf{\Sigma}_{t-2} + \beta_t \mathbf{I}. ] + \beta_t \mathbf{I}, \\
@@ -357,6 +357,29 @@ $$\begin{equation*}
 \end{align*}
 \end{equation*}$$
     
+Take into account that the generative process starts from $\mathbf{x}_{0}$, which is assumed to be a known (fixed) data point from the dataset.
+Thus, its variance is zero ($ \mathbf{\Sigma}_0 = 0$).
+Then, in general, we have:
+
+<a name="EQ18"></a>
+
+$$\begin{equation}
+\begin{align*}
+\mathbf{\Sigma}_t &= (\prod_{s=1}^t(1 - \beta_s)) \mathbf{\Sigma}_{0} + (1 - \prod_{s=1}^t(1 - \beta_s))\mathbf{I},\\
+\mathbf{\Sigma}_t &= (1 - \bar{\alpha}_t)\mathbf{I}.
+\end{align*}
+\end{equation}$$
+
+From [Eq. 17](#EQ17) and [Eq. 18](#EQ18), we obtain a new expression for $q(\mathbf{x}_t | \mathbf{x}_0)$:
+
+$$\begin{equation}
+q(\mathbf{x}_t | \mathbf{x}_0) = \mathcal{N}(\mathbf{x}_t; \sqrt{\bar{\alpha}_t)} \mathbf{x}_0, (1 - \bar{\alpha}_t)\mathbf{I}).
+\end{equation}$$
+
+---
+
+
+
 
 Post in progress...
 
