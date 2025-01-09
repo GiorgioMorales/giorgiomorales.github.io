@@ -454,15 +454,25 @@ $$\begin{equation*}
 Finally, we need to the determine the variance expression for $q(\mathbf{x}_{t-1} |\mathbf{x}_t, \mathbf{x}_0)$; i.e., \tilde{\mathbf{\beta}}_t \mathbf{I}.
 Replacing in [Eq. 20](#EQ20) what we know so far, we get the following:
 
-\tilde{\mathbf{\beta}}_t \mathbf{I}
 $$\begin{equation*}
 \begin{align*}
-\tilde{\mathbf{\beta}}_t \mathbf{I} &= (1 - \bar{\alpha}_{t-1}) \mathbf{I} - \sqrt{\alpha_t}(1 - \bar{\alpha}_{t-1})\mathbf{I} \frac{1}{(1 - \bar{\alpha}_t) \mathbf{I}} \sqrt{\alpha_t}(1 - \bar{\alpha}_{t-1})\mathbf{I},
+\tilde{\mathbf{\beta}}_t \mathbf{I} &= (1 - \bar{\alpha}_{t-1}) \mathbf{I} - \sqrt{\alpha_t}(1 - \bar{\alpha}_{t-1})\mathbf{I} \frac{1}{(1 - \bar{\alpha}_t) \mathbf{I}} \sqrt{\alpha_t}(1 - \bar{\alpha}_{t-1})\mathbf{I}, \\
+&= \frac{(1 - \bar{\alpha}_{t-1})(1 - \bar{\alpha}_{t}) - \alpha_t(1 - 2 \bar{\alpha}_{t-1} + \alpha^2_{t-1}) }{(1 - \bar{\alpha}_{t})}\mathbf{I}, \\
+&= \frac{ 1 - (1 + \alpha_t) \bar{\alpha}_{t-1} + \alpha_t \bar{\alpha}_{t-1}^2 - \alpha_t + 2\alpha_t \bar{\alpha}_{t-1} - \alpha_t \bar{\alpha}_{t-1} ^2 }{(1 - \bar{\alpha}_{t})}\mathbf{I}, \\
+&= \frac{1 - \alpha_t - (1 - \alpha_t) \bar{\alpha}_{t-1}}{(1 - \bar{\alpha}_{t})}\mathbf{I}, \\
 \end{align*}
 \end{equation*}$$
 
-    
-Post in progress...
+In conclusion:
+
+$$\begin{equation}
+\tilde{\mathbf{\beta}}_t \mathbf{I} = \frac{(1 - \bar{\alpha}_{t-1})} {(1 - \bar{\alpha}_{t})} \beta_t \mathbf{I}.
+\end{align*}
+\end{equation}$$
+
+
+The next paper I'll analyze is "[Score-Based Generative Modeling through Stochastic Differential Equations](https://openreview.net/forum?id=PxTIG12RRHS)" by Yang et al. (2021).  
+
 
 ## References
 
