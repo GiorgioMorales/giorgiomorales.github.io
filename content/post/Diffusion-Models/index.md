@@ -384,6 +384,8 @@ Now, we can continue deriving an expression for $q(\mathbf{x}_{t-1} |\mathbf{x}_
 To do this, we'll use $q(\mathbf{x}_t | \mathbf{x}_{t-1})$ and the expression we derived for $q(\mathbf{x}_t | \mathbf{x}_0)$ ([Eq. 19](#EQ19)).
 We know that both terms are Gaussian; thus, their joint distribution must be Gaussian too:
 
+<a name="EQ20"></a>
+
 $$\begin{equation}
 \begin{align*}
 &q(\mathbf{x}_t, \mathbf{x}_{t-1} | \mathbf{x}_0) = \\
@@ -406,9 +408,15 @@ C & (1 - \bar{\alpha}_{t-1}) \mathbf{I}
 
 where the covariance term $C$ would be determined by:
 
+<a name="EQ21"></a>
+
 $$\begin{equation}
 \begin{align*}
-C &= Cov(\mathbf{x}_t, \mathbf{x}_{t-1}) = \mathbb{E} [(\mathbf{x}_t - \underbrace{\mathbb{E}[\mathbf{x}_t]}_0)(\mathbf{x}_{t-1} - \underbrace{\mathbb{E}[\mathbf{x}_{t-1}]}_0)] 
+C = Cov(\mathbf{x}_t, \mathbf{x}_{t-1}) &=  \mathbb{E} [(\mathbf{x}_t - \underbrace{\mathbb{E}[\mathbf{x}_t]}_0)(\mathbf{x}_{t-1} - \underbrace{\mathbb{E}[\mathbf{x}_{t-1}]}_0)^{\top}] ,\\
+&= \mathbb{E} [ (\sqrt{\alpha_t} \mathbf{x}_{t-1} + \sqrt{\beta_t} \epsilon_t)(\mathbf{x}_{t-1})^{\top}],\\
+&= \mathbb{E} [ \sqrt{\alpha_t} \mathbf{x}_{t-1}\mathbf{x}_{t-1}^{\top}] + \underbrace{\mathbb{E} [\sqrt{\beta_t} \epsilon_t \mathbf{x}_{t-1})^{\top}]}_0,\\
+&= \sqrt{\alpha_t} \mathbb{E} [ \mathbf{x}_{t-1}\mathbf{x}_{t-1}^{\top}],\\
+&= \sqrt{\alpha_t} (1 - \bar{\alpha}_{t-1})\mathbf{I}.
 \end{align*}
 \end{equation}$$
 
