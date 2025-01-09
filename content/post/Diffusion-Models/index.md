@@ -431,7 +431,7 @@ Combining the previous with [Eq. 20](#EQ20) and [Eq. 21](#EQ21), we have:
 $$\begin{equation*}
 \begin{align*}
 \tilde{\boldsymbol{\mu}}_t &= \sqrt{\bar{\alpha}_{t-1}}\mathbf{x}_0 + \frac{\sqrt{\alpha_t} (1 - \bar{\alpha}_{t-1})\mathbf{I}}{(1 - \bar{\alpha}_{t})\mathbf{I}} (\mathbf{x}_t - \sqrt{\bar{\alpha}_t} \mathbf{x}_0),\\
-&= \underbrace{\frac{\sqrt{\bar{\alpha}_{t-1}} (1 - \bar{\alpha}_{t}) - \sqrt{\alpha_{t}}(1 - \bar{\alpha}_{t-1}) \sqrt{\bar{\alpha}_t}}{1 - \bar{\alpha}_t} \mathbf{x}_0}_H + \frac{\sqrt{\alpha_t} (1 - \bar{\alpha}_{t-1})}{(1 - \bar{\alpha}_{t})}
+&= \underbrace{\frac{\sqrt{\bar{\alpha}_{t-1}} (1 - \bar{\alpha}_{t}) - \sqrt{\alpha_{t}}(1 - \bar{\alpha}_{t-1}) \sqrt{\bar{\alpha}_t}}{1 - \bar{\alpha}_t} \mathbf{x}_0}_H + \frac{\sqrt{\alpha_t} (1 - \bar{\alpha}_{t-1})}{(1 - \bar{\alpha}_{t})} \mathbf{x}_t.
 \end{align*}
 \end{equation*}$$
 
@@ -448,12 +448,18 @@ H &= \sqrt{\bar{\alpha}_{t-1}} (\frac{1 - \bar{\alpha}_{t} - \sqrt{\alpha_{t}} (
 Replacing $H$ in $\tilde{\boldsymbol{\mu}}_t$, we obtain the mean expression we were looking for:
 
 $$\begin{equation*}
-\tilde{\boldsymbol{\mu}}_t = \sqrt{\bar{\alpha}_{t-1}} \frac{\beta_{t}}{1 - \bar{\alpha}_t} \mathbf{x}_0 + \frac{\sqrt{\alpha_t} (1 - \bar{\alpha}_{t-1})}{(1 - \bar{\alpha}_{t})}. 
+\tilde{\boldsymbol{\mu}}_t = \sqrt{\bar{\alpha}_{t-1}} \frac{\beta_{t}}{1 - \bar{\alpha}_t} \mathbf{x}_0 + \frac{\sqrt{\alpha_t} (1 - \bar{\alpha}_{t-1})}{(1 - \bar{\alpha}_{t})} \mathbf{x}_t. 
 \end{equation*}$$
 
 Finally, we need to the determine the variance expression for $q(\mathbf{x}_{t-1} |\mathbf{x}_t, \mathbf{x}_0)$; i.e., \tilde{\mathbf{\beta}}_t \mathbf{I}.
 Replacing in [Eq. 20](#EQ20) what we know so far, we get the following:
 
+\tilde{\mathbf{\beta}}_t \mathbf{I}
+$$\begin{equation*}
+\begin{align*}
+\tilde{\mathbf{\beta}}_t \mathbf{I} &= (1 - \bar{\alpha}_{t-1}) \mathbf{I} - \sqrt{\alpha_t}(1 - \bar{\alpha}_{t-1})\mathbf{I} \frac{1}{(1 - \bar{\alpha}_t) \mathbf{I}} \sqrt{\alpha_t}(1 - \bar{\alpha}_{t-1})\mathbf{I},
+\end{align*}
+\end{equation*}$$
 
     
 Post in progress...
