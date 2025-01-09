@@ -451,7 +451,7 @@ $$\begin{equation*}
 \tilde{\boldsymbol{\mu}}_t = \sqrt{\bar{\alpha}_{t-1}} \frac{\beta_{t}}{1 - \bar{\alpha}_t} \mathbf{x}_0 + \frac{\sqrt{\alpha_t} (1 - \bar{\alpha}_{t-1})}{(1 - \bar{\alpha}_{t})} \mathbf{x}_t. 
 \end{equation*}$$
 
-Finally, we need to the determine the variance expression for $q(\mathbf{x}_{t-1} |\mathbf{x}_t, \mathbf{x}_0)$; i.e., \tilde{\mathbf{\beta}}_t \mathbf{I}.
+Finally, we need to the determine the variance expression for $q(\mathbf{x}_{t-1} |\mathbf{x}_t, \mathbf{x}_0)$; i.e., $\tilde{\mathbf{\beta}}_t \mathbf{I}$.
 Replacing in [Eq. 20](#EQ20) what we know so far, we get the following:
 
 $$\begin{equation*}
