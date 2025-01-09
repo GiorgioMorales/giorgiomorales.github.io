@@ -372,11 +372,37 @@ $$\begin{equation}
 
 From [Eq. 17](#EQ17) and [Eq. 18](#EQ18), we obtain a new expression for $q(\mathbf{x}_t | \mathbf{x}_0)$:
 
+<a name="EQ19"></a>
+
 $$\begin{equation}
 q(\mathbf{x}_t | \mathbf{x}_0) = \mathcal{N}\left (\mathbf{x}_t; \sqrt{\bar{\alpha}_t} \mathbf{x}_0, (1 - \bar{\alpha}_t) \mathbf{I} \right).
 \end{equation}$$
 
 ---
+
+Now, we can continue deriving an expression for $q(\mathbf{x}_{t-1} |\mathbf{x}_t, \mathbf{x}_0)$.
+To do this, we'll use $q(\mathbf{x}_t | \mathbf{x}_{t-1})$ and the expression we derived for $q(\mathbf{x}_t | \mathbf{x}_0)$ ([Eq. 19](#EQ19)).
+We know that both terms are Gaussian; thus, their joint distribution must be Gaussian too:
+
+$$\begin{equation}
+q(\mathbf{x}_t, \mathbf{x}_{t-1} | \mathbf{x}_0) = \mathcal{N} \left( 
+\begin{bmatrix} 
+\mathbf{x}_t \\ 
+\mathbf{x}_{t-1} 
+\end{bmatrix}; 
+\begin{bmatrix} 
+\sqrt{\bar{\alpha}_t} \mathbf{x}_0 \\ 
+\sqrt{\bar{\alpha}_{t-1}} \mathbf{x}_0 
+\end{bmatrix}, 
+\begin{bmatrix} 
+(1 - \bar{\alpha}_t) \mathbf{I} & C \\ 
+C & (1 - \bar{\alpha}_{t-1}) \mathbf{I} 
+\end{bmatrix} 
+\right),
+\end{equation}$$
+
+where the covariance term $C$ would be determined by:
+
 
 
 
