@@ -51,7 +51,7 @@ where $p(\mathbf{x}_T) = \mathcal{N}(\mathbf{x}_T; \mathbf{0}, \mathbf{I})$ and:
 <a name="EQ3"></a>
 
 $$\begin{equation}
-p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t) = \mathcal{N}(\mathbf{x}_{t-1}; \boldsymbol{\mu}_{\theta}(\mathbf{x}_t), \Sigma_{\theta}(\mathbf{x}_t), t).
+p_{\theta} (\mathbf{x}_{t-1} | \mathbf{x}_t) = \mathcal{N}(\mathbf{x}_{t-1}; \boldsymbol{\mu}_{\theta}(\mathbf{x}_t, t), \Sigma_{\theta}(\mathbf{x}_t, t)).
 \end{equation}$$
 
 On the other hand, the **forward (or difussion) process**, $q(\mathbf{x}_{1:T} | \mathbf{x}_0)$, consists of a known Markov chain 
