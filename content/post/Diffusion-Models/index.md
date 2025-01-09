@@ -441,7 +441,7 @@ $$\begin{equation*}
 \begin{align*}
 H &= \sqrt{\bar{\alpha}_{t-1}} (\frac{1 - \bar{\alpha}_{t} - \sqrt{\alpha_{t}} (1 - \bar{\alpha}_{t-1}) \sqrt{\bar{\alpha}_t} }{1 - \bar{\alpha}_t}) \mathbf{x}_0,\\
 &= \sqrt{\bar{\alpha}_{t-1}} \frac{1 - \bar{\alpha}_{t} - \alpha_{t} + \bar{\alpha}_{t}}{1 - \bar{\alpha}_t}} \mathbf{x}_0,\\
-&= \sqrt{\bar{\alpha}_{t-1}} \frac{1 - {\alpha}_{t}}{1 - \bar{\alpha}_t}} \mathbf{x}_0 = \sqrt{\bar{\alpha}_{t-1} \frac{\beta_{t}}{1 - \bar{\alpha}_t}} \mathbf{x}_0.\\
+&= \sqrt{\bar{\alpha}_{t-1}} \frac{1 - {\alpha}_{t}}{1 - \bar{\alpha}_t}} \mathbf{x}_0 = \sqrt{\bar{\alpha}_{t-1}} \frac{\beta_{t}}{1 - \bar{\alpha}_t}} \mathbf{x}_0.
 \end{align*}
 \end{equation*}$$
 
