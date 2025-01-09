@@ -420,6 +420,37 @@ C = Cov(\mathbf{x}_t, \mathbf{x}_{t-1}) &=  \mathbb{E} [(\mathbf{x}_t - \underbr
 \end{align*}
 \end{equation}$$
 
+{{% callout note %}}
+General formula for the conditional distribution of a multivariate Gaussian:
+ 
+$p(x_A|x_B) = \mathcal{N}(x_B; \mu_B + C_{BA} C_{AA}^{-1} (x_A - \mu_A), \Sigma_B - C_{BA}C_{AA}^{-1}C_{AB})$.
+{{% /callout %}}
+
+Combining the previous with [Eq. 20](#EQ20) and [Eq. 21](#EQ21), we have:
+
+$$\begin{equation*}
+\begin{align*}
+\tilde{\boldsymbol{\mu}}_t &= \sqrt{\bar{\alpha}_{t-1}}\mathbf{x}_0 + \frac{\sqrt{\alpha_t} (1 - \bar{\alpha}_{t-1})\mathbf{I}}{(1 - \bar{\alpha}_{t})\mathbf{I}} (\mathbf{x}_t - \sqrt{\bar{\alpha}_t} \mathbf{x}_0),\\
+&= \underbrace{\frac{\sqrt{\bar{\alpha}_{t-1}} (1 - \bar{\alpha}_{t}) - \sqrt{\alpha_{t}}(1 - \bar{\alpha}_{t-1}) \sqrt{\bar{\alpha}_t}}{1 - \bar{\alpha}_t} \mathbf{x}_0}_H + \frac{\sqrt{\alpha_t} (1 - \bar{\alpha}_{t-1})}{(1 - \bar{\alpha}_{t})}
+\end{align*}
+\end{equation*}$$
+
+Let's simplify $H$:
+
+$$\begin{equation*}
+\begin{align*}
+H &= \sqrt{\bar{\alpha}_{t-1} (\frac{1 - \bar{\alpha}_{t} - \sqrt{\alpha_{t}} (1 - \bar{\alpha}_{t-1}) \sqrt{\bar{\alpha}_t} }{1 - \bar{\alpha}_t}) \mathbf{x}_0,\\
+&= \sqrt{\bar{\alpha}_{t-1} \frac{1 - \bar{\alpha}_{t} - \alpha_{t} + \bar{\alpha}_{t}}{1 - \bar{\alpha}_t}} \mathbf{x}_0,\\
+&= \sqrt{\bar{\alpha}_{t-1} \frac{1 - {\alpha}_{t}}{1 - \bar{\alpha}_t}} \mathbf{x}_0 = \sqrt{\bar{\alpha}_{t-1} \frac{\beta_{t}}{1 - \bar{\alpha}_t}} \mathbf{x}_0.\\
+\end{align*}
+\end{equation*}$$
+
+Replacing $H$ in $\tilde{\boldsymbol{\mu}}_t$, we obtain the mean expression we were looking for:
+
+$$\begin{equation*}
+\tilde{\boldsymbol{\mu}}_t = \sqrt{\bar{\alpha}_{t-1} \frac{\beta_{t}}{1 - \bar{\alpha}_t}} \mathbf{x}_0 + \frac{\sqrt{\alpha_t} (1 - \bar{\alpha}_{t-1})}{(1 - \bar{\alpha}_{t})}. 
+\end{equation*}$$
+
 
     
 Post in progress...
