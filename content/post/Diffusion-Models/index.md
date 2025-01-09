@@ -385,7 +385,9 @@ To do this, we'll use $q(\mathbf{x}_t | \mathbf{x}_{t-1})$ and the expression we
 We know that both terms are Gaussian; thus, their joint distribution must be Gaussian too:
 
 $$\begin{equation}
-q(\mathbf{x}_t, \mathbf{x}_{t-1} | \mathbf{x}_0) = \mathcal{N} \left( 
+\begin{align*}
+&q(\mathbf{x}_t, \mathbf{x}_{t-1} | \mathbf{x}_0) = \\
+&\mathcal{N} \left( 
 \begin{bmatrix} 
 \mathbf{x}_t \\ 
 \mathbf{x}_{t-1} 
@@ -399,11 +401,16 @@ q(\mathbf{x}_t, \mathbf{x}_{t-1} | \mathbf{x}_0) = \mathcal{N} \left(
 C & (1 - \bar{\alpha}_{t-1}) \mathbf{I} 
 \end{bmatrix} 
 \right),
+\end{align*}
 \end{equation}$$
 
 where the covariance term $C$ would be determined by:
 
-
+$$\begin{equation}
+\begin{align*}
+C &= Cov(\mathbf{x}_t, \mathbf{x}_{t-1}) = \mathbb{E} [(\mathbf{x}_t - \underbrace{\mathbb{E}[\mathbf{x}_t]}_0)(\mathbf{x}_{t-1} - \underbrace{\mathbb{E}[\mathbf{x}_{t-1}]}_0)] 
+\end{align*}
+\end{equation}$$
 
 
     
