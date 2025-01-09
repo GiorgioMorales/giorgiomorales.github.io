@@ -439,17 +439,20 @@ Let's simplify $H$:
 
 $$\begin{equation*}
 \begin{align*}
-H &= \sqrt{\bar{\alpha}_{t-1} (\frac{1 - \bar{\alpha}_{t} - \sqrt{\alpha_{t}} (1 - \bar{\alpha}_{t-1}) \sqrt{\bar{\alpha}_t} }{1 - \bar{\alpha}_t}) \mathbf{x}_0,\\
-&= \sqrt{\bar{\alpha}_{t-1} \frac{1 - \bar{\alpha}_{t} - \alpha_{t} + \bar{\alpha}_{t}}{1 - \bar{\alpha}_t}} \mathbf{x}_0,\\
-&= \sqrt{\bar{\alpha}_{t-1} \frac{1 - {\alpha}_{t}}{1 - \bar{\alpha}_t}} \mathbf{x}_0 = \sqrt{\bar{\alpha}_{t-1} \frac{\beta_{t}}{1 - \bar{\alpha}_t}} \mathbf{x}_0.\\
+H &= \sqrt{\bar{\alpha}_{t-1}} (\frac{1 - \bar{\alpha}_{t} - \sqrt{\alpha_{t}} (1 - \bar{\alpha}_{t-1}) \sqrt{\bar{\alpha}_t} }{1 - \bar{\alpha}_t}) \mathbf{x}_0,\\
+&= \sqrt{\bar{\alpha}_{t-1}} \frac{1 - \bar{\alpha}_{t} - \alpha_{t} + \bar{\alpha}_{t}}{1 - \bar{\alpha}_t}} \mathbf{x}_0,\\
+&= \sqrt{\bar{\alpha}_{t-1}} \frac{1 - {\alpha}_{t}}{1 - \bar{\alpha}_t}} \mathbf{x}_0 = \sqrt{\bar{\alpha}_{t-1} \frac{\beta_{t}}{1 - \bar{\alpha}_t}} \mathbf{x}_0.\\
 \end{align*}
 \end{equation*}$$
 
 Replacing $H$ in $\tilde{\boldsymbol{\mu}}_t$, we obtain the mean expression we were looking for:
 
 $$\begin{equation*}
-\tilde{\boldsymbol{\mu}}_t = \sqrt{\bar{\alpha}_{t-1} \frac{\beta_{t}}{1 - \bar{\alpha}_t}} \mathbf{x}_0 + \frac{\sqrt{\alpha_t} (1 - \bar{\alpha}_{t-1})}{(1 - \bar{\alpha}_{t})}. 
+\tilde{\boldsymbol{\mu}}_t = \sqrt{\bar{\alpha}_{t-1}} \frac{\beta_{t}}{1 - \bar{\alpha}_t} \mathbf{x}_0 + \frac{\sqrt{\alpha_t} (1 - \bar{\alpha}_{t-1})}{(1 - \bar{\alpha}_{t})}. 
 \end{equation*}$$
+
+Finally, we need to the determine the variance expression for $q(\mathbf{x}_{t-1} |\mathbf{x}_t, \mathbf{x}_0)$; i.e., \tilde{\mathbf{\beta}}_t \mathbf{I}.
+Replacing in [Eq. 20](#EQ20) what we know so far, we get the following:
 
 
     
