@@ -26,9 +26,9 @@ The paper was accepted at the AAAI Advancement of Artificial Intelligence 2025 c
 Download the poster ["here"](/publication/post/aaai-2025-presentation/AAAI-2025-Presentation).
 
 <div style="display: flex; justify-content: center;">
-    <img src="poster.jpg" alt="figure" width="100%">
+    <img src="presentation.jpeg" alt="figure" width="70%">
 </div>
 
 <div style="display: flex; justify-content: center;">
-    <img src="presentation.jpeg" alt="figure" width="50%">
+    <img src="poster.jpg" alt="figure" width="100%">
 </div>
