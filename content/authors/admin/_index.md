@@ -185,6 +185,7 @@ awards:
   - title: Seismic Monitoring and Analysis Challenge (2024)
     url: https://giorgiomorales.github.io/post/ecml-challenge-2024-news/
     date: '2024-07-16'
+    icon: ECML
     awarder:  European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases 
     summary: |
       Awarded first prize in this competition hosted at ECML PKDD 2024.
