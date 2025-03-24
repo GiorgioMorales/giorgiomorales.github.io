@@ -191,30 +191,35 @@ awards:
   - title: Cobleigh Endowment (2023, 2024)
     url: https://raw.githubusercontent.com/GiorgioMorales/GiorgioMorales/main/CV/cobleigh2024.jpg
     date: '2024-05-20'
+    icon: MSU
     awarder: Norm Asbjornson College of Engineering 
     summary: |
       Scholarship for students of the Norm Asbjornson College of Engineering.
   - title: Graduate Professional Advancement Grant (2023, 2024)
     url: https://github.com/GiorgioMorales/GiorgioMorales/blob/main/CV/PAGaward2024.pdf
     date: '2024-05-01'
+    icon: MSU
     awarder: Montana State University - Graduate School
     summary: |
       Travel grant for MSU graduate students to conduct oral presentations at professional conferences.
   - title: IEEE CIS Travel Grant (2023)
     url: https://github.com/GiorgioMorales/GiorgioMorales/blob/main/CV/Travel%20grant%20IEEE%20CIS%202023.pdf
     date: '2023-06-01'
+    icon: MSU
     awarder: IEEE - Computational Intelligence Society
     summary: |
       Travel grant for a student presenting at the IJCNN 2023.
   - title: Chunzi "Chris" Zhang
     url: https://wetlands.msuextension.org/news/22905/
     date: '2023-04-01'
+    icon: MSU
     awarder: Montana State University
     summary: |
       Award for International Graduate Excellence in Research.
   - title: William V. Benjamin (2021, 2022)
     url: https://github.com/GiorgioMorales/GiorgioMorales/blob/main/CV/Benjamin2022.png
     date: '2022-04-01'
+    icon: MSU
     awarder: Norm Asbjornson College of Engineering
     summary: |
       Scholarship for students of the Norm Asbjornson College of Engineering.

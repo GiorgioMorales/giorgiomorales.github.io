@@ -12,6 +12,18 @@ address:
   postcode: 
   country: France
 
+summary: 🎤 I will be presenting my dissertation work on Symbolic Regression at GREYC on April 3rd. 
+abstract: '📚 One of the goals of science is to discover laws that serve as causal explanations for the observable world. 
+Such discoveries may stem from distilling experimental data into analytical equations that allow interpretation of their underlying natural laws. 
+This process is known as equation learning or symbolic regression (SR). 
+Nevertheless, most SR methods prioritize minimizing prediction error over identifying the governing equations, often producing overly complex or inaccurate expressions. 
+To address this, in this talk, I present a decomposable SR method that generates interpretable multivariate expressions leveraging transformer models, genetic algorithms (GAs), and genetic programming (GP). 
+It first generates multiple univariate skeletons that capture the functional relationship between each variable and the system’s response. 
+These skeletons are systematically merged using evolutionary approaches, ensuring interpretability throughout the process. 
+The method was evaluated on problems with controlled and varying degrees of noise, demonstrating lower or comparable interpolation and extrapolation errors compared to two GP-based and two neural SR methods. 
+Unlike these methods, this approach consistently learned expressions that matched the original mathematical structure.
+'
+
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
@@ -75,14 +87,4 @@ projects:
 
 ---
 
-🎤 I will be presenting my dissertation work on Symbolic Regression at GREYC on April 3rd. 
-
-📚 One of the goals of science is to discover laws that serve as causal explanations for the observable world. 
-Such discoveries may stem from distilling experimental data into analytical equations that allow interpretation of their underlying natural laws. 
-This process is known as equation learning or symbolic regression (SR). 
-Nevertheless, most SR methods prioritize minimizing prediction error over identifying the governing equations, often producing overly complex or inaccurate expressions. 
-To address this, in this talk, I present a decomposable SR method that generates interpretable multivariate expressions leveraging transformer models, genetic algorithms (GAs), and genetic programming (GP). 
-It first generates multiple univariate skeletons that capture the functional relationship between each variable and the system’s response. 
-These skeletons are systematically merged using evolutionary approaches, ensuring interpretability throughout the process. 
-The method was evaluated on problems with controlled and varying degrees of noise, demonstrating lower or comparable interpolation and extrapolation errors compared to two GP-based and two neural SR methods. 
-Unlike these methods, this approach consistently learned expressions that matched the original mathematical structure.
+This presentation will discuss my dissertation work as a PhD student in Computer Science at Montana State University.

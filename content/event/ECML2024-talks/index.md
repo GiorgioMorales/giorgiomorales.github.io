@@ -12,6 +12,7 @@ address:
   postcode: 
   country: Lithuania
 
+summary: List of presentations I gave during ECML-PKDD 2024
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
