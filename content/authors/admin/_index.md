@@ -226,6 +226,7 @@ awards:
   - title: Southern Peru - ProUNI
     url: https://www.inictel-uni.edu.pe/inictel/?p=1215
     date: '2019-07-05'
+    icon: UNI
     awarder: National Engineering University (Lima, Peru)
 
     summary: |
