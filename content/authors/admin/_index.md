@@ -95,7 +95,7 @@ education:
       url: 'https://renati.sunedu.gob.pe/handle/sunedu/3500202'
       
 work:
-  - position: Postdoctoral Research Fellow
+  - position: Researcher
     company_name: Université de Caen Normandie
     company_url: 'https://www.greyc.fr/en/home/'
     company_logo: ''
@@ -115,7 +115,7 @@ work:
   - position: Graduate Teaching Assistant
     company_name: Montana State University
     company_url: 'https://www.cs.montana.edu/'
-    company_logo: ''
+    company_logo: 'brands/MSU'
     date_start: 2019-07-01
     date_end: 2020-12-31
     summary: |2-
