@@ -115,7 +115,7 @@ work:
   - position: Graduate Teaching Assistant
     company_name: Montana State University
     company_url: 'https://www.cs.montana.edu/'
-    company_logo: brands/MSU
+    company_logo: MSU
     date_start: 2019-07-01
     date_end: 2020-12-31
     summary: |2-
