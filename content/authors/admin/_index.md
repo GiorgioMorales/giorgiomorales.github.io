@@ -184,6 +184,13 @@ languages:
 #   Only `title`, `awarder`, and `date` are required.
 #   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
 awards:
+  - title: Everyday Hero of Research
+    url: https://www.montana.edu/research/celebrating_research.html
+    date: '2025-04-21'
+    icon: MSU
+    awarder: Office of Research and Economic Development 
+    summary: |
+      Award for students, staff, faculty, or administrators that support successful MSU research, creativity and innovation.
   - title: Seismic Monitoring and Analysis Challenge (2024)
     url: https://giorgiomorales.github.io/post/ecml-challenge-2024-news/
     date: '2024-07-16'
