@@ -215,7 +215,7 @@ awards:
   - title: IEEE CIS Travel Grant (2023)
     url: https://github.com/GiorgioMorales/GiorgioMorales/blob/main/CV/Travel%20grant%20IEEE%20CIS%202023.pdf
     date: '2023-06-01'
-    icon: MSU
+    icon: CIS
     awarder: IEEE - Computational Intelligence Society
     summary: |
       Travel grant for a student presenting at the IJCNN 2023.
