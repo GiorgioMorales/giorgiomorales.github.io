@@ -92,7 +92,7 @@ education:
       GPA: 3.5/4.0
     button:
       text: 'B.Sc. Thesis'
-      url: 'https://renati.sunedu.gob.pe/handle/sunedu/3500202'
+      url: 'https://renati.sunedu.gob.pe/handle/renati/1747018'
       
 work:
   - position: Researcher
