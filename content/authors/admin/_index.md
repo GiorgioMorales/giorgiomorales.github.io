@@ -109,8 +109,8 @@ work:
     date_start: 2021-01-01
     date_end: 2024-12-31
     summary: |2-
-      - Part of the Analysis Engine of the On-Field Precision Experiment (OFPE) Framework project.
-      - Published 8 journal and conference papers related to prediction and optimization in Precision Agriculture as well as uncertainty quantification and explainable machine learning.
+      - Part of the Data-Intensive Farm Management ([DIFM](https://difm.farm/)) project.
+      - Published 12 first-author journal and conference papers related to symbolic regression, prediction and optimization in Precision Agriculture, uncertainty quantification, and explainable machine learning.
       - Developed a web application in Flask to demonstrate the functionality of the prediction and optimization tools.
   - position: Graduate Teaching Assistant
     company_name: Montana State University
