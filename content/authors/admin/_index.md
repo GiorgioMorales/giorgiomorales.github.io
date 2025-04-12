@@ -249,5 +249,5 @@ My name is Giorgio L. Morales Luna. I am a PhD candidate (ABD) in computer scien
 current member of the Numerical Intelligent Systems Laboratory (NISL). 
 I hold a BS in mechatronic engineering from the National University of Engineering, Peru, 
 and an MS in computer science from Montana State University, USA. My research interests are 
-Deep Learning, Explainable Machine Learning, Computer Vision, and Precision Agriculture.
+Symbolic Regression, Explainable Machine Learning, and Uncertainty Quantification.
 For a complete Academic CV, please visit [here](uploads/Giorgio_Morales_Academic_CV.pdf). 
