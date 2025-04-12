@@ -36,9 +36,9 @@ sections:
       subtitle: ''
       text: |-
         
-        My current research focuses on Symbolic Regression, leveraging the advantages of deep learning techniques (e.g., LLMs) and genetic algorithms to distill experimental data into analytical equations that serve as causal explanations for the observable world. The aim is to offer an alternative to the use of black-box models and an avenue for the automated discovery of explanatory and causal models from observed data.
+        My current research focuses on Symbolic Regression, leveraging the advantages of deep learning techniques (e.g., transformer models) and evolutionary algorithms to distill experimental data into analytical equations that serve as causal explanations for the observable world. The aim is to offer an alternative to the use of black-box models and an avenue for the automated discovery of explanatory and causal models from observed data.
 
-        I am also working on uncertainty quantification and adaptive learning techniques for epistemic uncertainty minimization.
+        I am also working on uncertainty quantification and adaptive sampling techniques for epistemic uncertainty minimization.
 
         Please reach out to collaborate 😃
     design:
