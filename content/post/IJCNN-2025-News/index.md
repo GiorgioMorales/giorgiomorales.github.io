@@ -14,7 +14,7 @@ featured: true
 image:
   caption: 'Image Credits: IJCNN 2025'
   focal_point: ""
-  preview_only: true
+  preview_only: false
 ---
 
 My journal-to-conference (J2C) submission to IJCNN 2025 has been accepted and it will be presented in Rome in July 🇮🇹🏛️! 
