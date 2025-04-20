@@ -22,8 +22,8 @@ The J2C modality at IJCNN allows authors of recently published, high-impact jour
 their work at the conference, provided the paper was published within two years of the conference date 
 and appears in selected journals such as IEEE Transactions on Neural Networks and Learning Systems (TNNLS).
 
-🌟 My accepted work, titled ["Dual Accuracy-Quality-Driven Neural Network for Prediction Interval Generation,"](/publication/morales-dual-2023) 
-and accepted in IEEE TNNLS in 2023, 
+🌟 My work, titled ["Dual Accuracy-Quality-Driven Neural Network for Prediction Interval Generation,"](/publication/morales-dual-2023) 
+accepted in IEEE TNNLS in 2023, 
 introduces **DualAQD**, a training strategy for neural networks that not only produces point estimates of a 
 target variable but also generates high-quality prediction intervals (PIs). 
 These PIs capture both aleatoric (data-driven) and epistemic (model-based) uncertainties by training 
