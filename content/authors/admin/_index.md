@@ -185,7 +185,7 @@ languages:
 #   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
 awards:
   - title: Everyday Hero of Research
-    url: https://www.montana.edu/research/celebrating_research.html
+    url: https://giorgiomorales.github.io/post/hero-research-award-news/
     date: '2025-04-21'
     icon: MSU
     awarder: Office of Research and Economic Development 
