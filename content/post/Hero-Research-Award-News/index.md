@@ -1,5 +1,5 @@
 ---
-title: I received MSU's "Everyday Hero Award"
+title: I received MSU's "Everyday Hero of Research" Award
 summary:  I received this award during the "2025 Research Celebration - Celebrating Creativity" ceremony 
 date: 2025-04-21
 authors:
