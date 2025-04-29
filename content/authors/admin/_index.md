@@ -184,6 +184,13 @@ languages:
 #   Only `title`, `awarder`, and `date` are required.
 #   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
 awards:
+  - title: Outstanding PhD Researcher
+    url: https://giorgiomorales.github.io/post/outstanding-phd-researcher-award-news/
+    date: '2025-04-29'
+    icon: MSU
+    awarder: Gianforte School of Computing 
+    summary: |
+      The Gianforte School of Computing recognizes one PhD student for their outstanding research work each academic year.
   - title: Everyday Hero of Research
     url: https://giorgiomorales.github.io/post/hero-research-award-news/
     date: '2025-04-21'
