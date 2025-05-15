@@ -1,5 +1,5 @@
 ---
-title: I defended my PhD thesis!
+title: I defended my PhD thesis
 summary: I completed my graduate program and was awarded the PhD degree
 date: 2025-05-14
 authors:
@@ -11,7 +11,7 @@ tags:
 featured: true
 
 image:
-  caption: 'Image credits: Flor Vega'Castillo
+  caption: 'Image credits: Flor Vega Castillo'
   focal_point: ""
   preview_only: false
 
