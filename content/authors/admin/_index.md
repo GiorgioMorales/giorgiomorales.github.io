@@ -51,10 +51,10 @@ interests:
   - Uncertainty Quantification
 
 education:
-  - area: Ph.D. Candidate in Computer Science
+  - area: Ph.D. in Computer Science
     institution: Montana State University
     date_start: 2022-01-01
-    date_end: 2025-05-15
+    date_end: 2025-05-14
     summary: |
       - Supervised by Dr. John Sheppard. 
       - Member of the Numerical Intelligent Systems Laboratory (NISL).
