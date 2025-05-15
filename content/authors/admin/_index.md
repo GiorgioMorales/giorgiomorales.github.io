@@ -252,17 +252,8 @@ awards:
 
 ## About Me
 
-My name is Giorgio L. Morales Luna. I am a PhD candidate (ABD) in computer science at Montana State University and a 
-current member of the Numerical Intelligent Systems Laboratory (NISL). 
-I hold a BS in mechatronic engineering from the National University of Engineering, Peru, 
-and an MS in computer science from Montana State University, USA. My research interests are 
-Symbolic Regression, Explainable Machine Learning, and Uncertainty Quantification.
-
 My name is Giorgio L. Morales Luna. I am a researcher specializing in Symbolic Regression, Explainable and Interpretable Machine Learning, and Uncertainty Quantification. 
-My work focuses on developing methods that bridge predictive performance and scientific understanding, 
-enabling the discovery of interpretable models with robust uncertainty awareness.
-
-I earned his Ph.D. in Computer Science at Montana State University under the supervision of Dr. John Sheppard, 
+I earned a Ph.D. in Computer Science at Montana State University under the supervision of Dr. John Sheppard, 
 as a member of the Numerical Intelligent Systems Laboratory (NISL). 
 I hold an M.S. in Computer Science from Montana State University and a B.S. in Mechatronic Engineering from the 
 National University of Engineering in Peru.
