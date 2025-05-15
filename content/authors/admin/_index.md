@@ -25,7 +25,7 @@ role: PhD in Computer Science
 # Organizations/Affiliations to display in Biography blox
 organizations:
   - name: Montana State University
-    url: https://www.cs.montana.edu/users/moralesluna/
+    url: https://www.cs.montana.edu/
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
