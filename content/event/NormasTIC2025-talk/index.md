@@ -2,7 +2,7 @@
 title: Managing Uncertainty in Regression Neural Networks - From Prediction Intervals to Adaptive Sampling
 
 event: DAC Axis Day on Causality and Uncertainty Quantification
-event_url: https://www.normastic.fr/event/journee-de-laxe-dac-sur-la-causalite-et-la-quantification-dincertiture/
+event_url: https://www.normastic.fr/event/journee-de-laxe-dac-sur-la-causalite-et-la-quantification-dincertiture/#:~:text=rapidly%20evolving%20field.-,2%3A45%20p.m,-.%3A%20Giorgio%20Morales
 
 location: UNICAEN, Campus 2 (Room S3-351)
 address:
@@ -13,7 +13,22 @@ address:
   country: France
 
 summary: 🎤 I will be speaking at the upcoming Causality and Quantification of Uncertainties Day. 
-abstract: '📚 Understanding and managing uncertainty is a critical aspect of deploying regression neural network models in real-world scientific and engineering applications. This presentation introduces two novel contributions aimed at improving uncertainty quantification and guiding data acquisition under uncertainty. The first is DualAQD, a dual-network architecture for generating high-quality prediction intervals (PIs). DualAQD integrates a custom loss function that minimizes interval width while ensuring coverage constraints, striking a balance between tightness and reliability of uncertainty estimates. It consistently outperforms existing PI-generation techniques in both interval efficiency and prediction accuracy across diverse datasets. Building on DualAQD's uncertainty modeling, we present ASPINN, an adaptive sampling strategy designed for data-scarce environments where measurement collection is costly or constrained. ASPINN addresses this by focusing on epistemic uncertainty reduction in regression problems, using NN-generated PIs to guide adaptive data acquisition to strategically select new data points that most reduce model uncertainty. By incorporating a Gaussian Process surrogate to support batch sampling, ASPINN balances informativeness and diversity in acquisition decisions. Empirical evaluations show that ASPINN achieves faster convergence and greater uncertainty reduction compared to leading alternatives. Together, these methods offer a robust framework for uncertainty-aware learning in regression tasks.'
+abstract: '📚 Understanding and managing uncertainty is a critical aspect of deploying regression neural 
+network models in real-world scientific and engineering applications. This presentation introduces two 
+novel contributions aimed at improving uncertainty quantification and guiding data acquisition under 
+uncertainty. The first is DualAQD, a dual-network architecture for generating high-quality prediction 
+intervals (PIs). DualAQD integrates a custom loss function that minimizes interval width while ensuring 
+coverage constraints, striking a balance between tightness and reliability of uncertainty estimates. 
+It consistently outperforms existing PI-generation techniques in both interval efficiency and prediction 
+accuracy across diverse datasets. 
+Building on DualAQD uncertainty modeling, we present ASPINN, an adaptive sampling strategy designed for 
+data-scarce environments where measurement collection is costly or constrained. ASPINN addresses this 
+by focusing on epistemic uncertainty reduction in regression problems, using NN-generated PIs to guide 
+adaptive data acquisition to strategically select new data points that most reduce model uncertainty. 
+By incorporating a Gaussian Process surrogate to support batch sampling, ASPINN balances informativeness 
+and diversity in acquisition decisions. Empirical evaluations show that ASPINN achieves faster convergence 
+and greater uncertainty reduction compared to leading alternatives. Together, these methods offer a robust 
+framework for uncertainty-aware learning in regression tasks.'
 
 
 # Talk start and end times.
