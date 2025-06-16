@@ -38,7 +38,7 @@ date_end: '2025-06-268'
 all_day: false
 
 # Schedule page publish date (NOT talk date).
-# publishDate: '2017-01-01T00:00:00Z'
+publishDate: '2025-06-16T00:00:00Z'
 
 authors:
   - admin
