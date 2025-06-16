@@ -34,7 +34,7 @@ framework for uncertainty-aware learning in regression tasks.'
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
 date: '2025-06-26'
-date_end: '2025-06-268'
+date_end: '2025-06-26'
 all_day: false
 
 # Schedule page publish date (NOT talk date).
