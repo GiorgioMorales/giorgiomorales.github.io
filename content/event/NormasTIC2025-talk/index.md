@@ -2,7 +2,7 @@
 title: Managing Uncertainty in Regression Neural Networks: From Prediction Intervals to Adaptive Sampling
 
 event: DAC Axis Day on Causality and Uncertainty Quantification
-event_url: https://www.normastic.fr/event/journee-de-laxe-dac-sur-la-causalite-et-la-quantification-dincertiture/#:~:text=rapidly%20evolving%20field.-,2%3A45%20p.m,-.%3A%20Giorgio%20Morales
+event_url: https://www.normastic.fr/event/journee-de-laxe-dac-sur-la-causalite-et-la-quantification-dincertiture/
 
 location: UNICAEN, Campus 2 (Room S3-351)
 address:
