@@ -35,7 +35,7 @@ featured: true
 
 image:
   caption: 'Image credit: DIGICROP'
-  focal_point: BottomLeft
+  focal_point: Top
 
 #links:
 #  - icon: twitter
