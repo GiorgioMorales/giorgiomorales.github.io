@@ -85,12 +85,11 @@ education:
     date_end: 2021-12-31
     summary: |
       GPA: 3.97/4.0
-    button:
-      text: 'M.Sc. Thesis'
-      url: 'https://scholarworks.montana.edu/items/8028e1b5-ea6c-4070-bc94-c86519405830'
-    button:
-      text: 'MSc Diploma'
-      url: 'https://www.michaelsutter.com/ediploma?fn=diplomastatuscheck&key=0200000009529cdcbafe8e348778ad4e4c00ad073f44f863b9fc9b7a03d0fc084db249f9a11b626617371fbce0c37cafa29786bb51fbdf3aa0df4f113dd23e789c3523a8'
+    buttons:
+      - text: 'M.Sc. Thesis'
+        url: 'https://scholarworks.montana.edu/items/8028e1b5-ea6c-4070-bc94-c86519405830'
+      - text: 'MSc Diploma'
+        url: 'https://www.michaelsutter.com/ediploma?fn=diplomastatuscheck&key=0200000009529cdcbafe8e348778ad4e4c00ad073f44f863b9fc9b7a03d0fc084db249f9a11b626617371fbce0c37cafa29786bb51fbdf3aa0df4f113dd23e789c3523a8'
   - area: B.Sc., Mechatronics Engineering
     institution: National University of Engineering (Lima, Peru)
     date_start: 2010-08-01
