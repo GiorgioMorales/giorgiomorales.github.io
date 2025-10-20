@@ -63,7 +63,7 @@ education:
       url: 'https://www.michaelsutter.com/ediploma?fn=diplomastatuscheck&key=020000003f16cd00c43e91fd5ea9454cf4b729b70a8efb5eb9980cf50a520c625d7caf53e0f7327b091f5cda364f4cc85dc9e96c4b26eafffe82f65c1235994d7840d73a'
     buttons:
       - text: 'PhD Diploma'
-      url: 'https://www.michaelsutter.com/ediploma?fn=diplomastatuscheck&key=020000003f16cd00c43e91fd5ea9454cf4b729b70a8efb5eb9980cf50a520c625d7caf53e0f7327b091f5cda364f4cc85dc9e96c4b26eafffe82f65c1235994d7840d73a'
+        url: 'https://www.michaelsutter.com/ediploma?fn=diplomastatuscheck&key=020000003f16cd00c43e91fd5ea9454cf4b729b70a8efb5eb9980cf50a520c625d7caf53e0f7327b091f5cda364f4cc85dc9e96c4b26eafffe82f65c1235994d7840d73a'
       - text: 'Dissertation'
         url: 'https://www.cs.montana.edu/sheppard/theses/morales-phd.pdf'
 
@@ -92,7 +92,7 @@ education:
     buttons:
       - title: 'M.Sc. Thesis'
         url: 'https://scholarworks.montana.edu/items/8028e1b5-ea6c-4070-bc94-c86519405830'
-      - title: 'MSc Diploma'
+      - title: 'M.Sc. Diploma'
         url: 'https://www.michaelsutter.com/ediploma?fn=diplomastatuscheck&key=0200000009529cdcbafe8e348778ad4e4c00ad073f44f863b9fc9b7a03d0fc084db249f9a11b626617371fbce0c37cafa29786bb51fbdf3aa0df4f113dd23e789c3523a8'
   - area: B.Sc., Mechatronics Engineering
     institution: National University of Engineering (Lima, Peru)
