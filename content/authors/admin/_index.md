@@ -59,11 +59,8 @@ education:
       - Supervised by Dr. John Sheppard. 
       - Member of the Numerical Intelligent Systems Laboratory (NISL).
     button:
-      - text: 'PhD Diploma'
-        url: 'https://www.michaelsutter.com/ediploma?fn=diplomastatuscheck&key=020000003f16cd00c43e91fd5ea9454cf4b729b70a8efb5eb9980cf50a520c625d7caf53e0f7327b091f5cda364f4cc85dc9e96c4b26eafffe82f65c1235994d7840d73a'
-      - text: 'Dissertation'
-        url: 'https://www.cs.montana.edu/sheppard/theses/morales-phd.pdf'
-
+      text: 'PhD Diploma'
+      url: 'https://www.michaelsutter.com/ediploma?fn=diplomastatuscheck&key=020000003f16cd00c43e91fd5ea9454cf4b729b70a8efb5eb9980cf50a520c625d7caf53e0f7327b091f5cda364f4cc85dc9e96c4b26eafffe82f65c1235994d7840d73a'
   - area: Graduate Certificate in Artificial Intelligence
     institution: Montana State University
     date_start: 2020-01-01
