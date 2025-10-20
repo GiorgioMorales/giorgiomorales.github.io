@@ -58,6 +58,10 @@ education:
     summary: |
       - Supervised by Dr. John Sheppard. 
       - Member of the Numerical Intelligent Systems Laboratory (NISL).
+    button:
+      text: 'PhD Diploma'
+      url: 'https://www.michaelsutter.com/ediploma?fn=diplomastatuscheck&key=020000003f16cd00c43e91fd5ea9454cf4b729b70a8efb5eb9980cf50a520c625d7caf53e0f7327b091f5cda364f4cc85dc9e96c4b26eafffe82f65c1235994d7840d73a'
+  
 
   - area: Graduate Certificate in Artificial Intelligence
     institution: Montana State University
@@ -84,6 +88,9 @@ education:
     button:
       text: 'M.Sc. Thesis'
       url: 'https://scholarworks.montana.edu/items/8028e1b5-ea6c-4070-bc94-c86519405830'
+    button:
+      text: 'MSc Diploma'
+      url: 'https://www.michaelsutter.com/ediploma?fn=diplomastatuscheck&key=0200000009529cdcbafe8e348778ad4e4c00ad073f44f863b9fc9b7a03d0fc084db249f9a11b626617371fbce0c37cafa29786bb51fbdf3aa0df4f113dd23e789c3523a8'
   - area: B.Sc., Mechatronics Engineering
     institution: National University of Engineering (Lima, Peru)
     date_start: 2010-08-01
@@ -101,7 +108,7 @@ work:
     company_logo: ''
     date_start: 2025-06-01
     summary: |2-
-      - Developing uncertainty quantification techniques for generative AI models to aid in neutrino physics simulations.
+      - Developing ML-based neutrino oscillation parameter estimation techniques to aid in large neutrino physics simulations.
   - position: Graduate Research Assistant
     company_name: Montana State University
     company_url: 'https://www.cs.montana.edu/'
