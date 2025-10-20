@@ -112,7 +112,7 @@ work:
     date_start: 2021-01-01
     date_end: 2024-12-31
     summary: |2-
-      - Part of the Data-Intensive Farm Management ([DIFM](https://difm.farm/)) project.
+      - Part of the Data-Intensive Farm Management (DIFM) project.
       - Published 12 first-author journal and conference papers related to symbolic regression, prediction and optimization in Precision Agriculture, uncertainty quantification, and explainable machine learning.
       - Developed a web application in Flask to demonstrate the functionality of the prediction and optimization tools.
   - position: Graduate Teaching Assistant
