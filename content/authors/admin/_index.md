@@ -104,6 +104,7 @@ work:
     date_start: 2025-06-01
     summary: |2-
       - Developing ML-based neutrino oscillation parameter estimation techniques to aid in large neutrino physics simulations.
+      - Member of the GREYC Laboratory
   - position: Graduate Research Assistant
     company_name: Montana State University
     company_url: 'https://www.cs.montana.edu/'
