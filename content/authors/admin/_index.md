@@ -91,10 +91,10 @@ education:
     date_start: 2010-08-01
     date_end: 2015-12-31
     summary: |
-  GPA: 3.5/4.0
+      GPA: 3.5/4.0
     button:
-  text: 'B.Sc. Thesis'
-  url: 'https://renati.sunedu.gob.pe/handle/renati/1747018'
+      text: 'B.Sc. Thesis'
+      url: 'https://renati.sunedu.gob.pe/handle/renati/1747018'
       
 work:
   - position: Researcher
