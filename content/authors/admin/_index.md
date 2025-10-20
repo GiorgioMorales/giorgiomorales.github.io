@@ -87,19 +87,17 @@ education:
     summary: |
       GPA: 3.97/4.0
     button:
-      - title: 'M.Sc. Thesis'
-        url: 'https://scholarworks.montana.edu/items/8028e1b5-ea6c-4070-bc94-c86519405830'
-      - title: 'MSc Diploma'
-        url: 'https://www.michaelsutter.com/ediploma?fn=diplomastatuscheck&key=0200000009529cdcbafe8e348778ad4e4c00ad073f44f863b9fc9b7a03d0fc084db249f9a11b626617371fbce0c37cafa29786bb51fbdf3aa0df4f113dd23e789c3523a8'
+      text: 'M.Sc. Thesis'
+      url: 'https://scholarworks.montana.edu/items/8028e1b5-ea6c-4070-bc94-c86519405830'
   - area: B.Sc., Mechatronics Engineering
     institution: National University of Engineering (Lima, Peru)
     date_start: 2010-08-01
     date_end: 2015-12-31
     summary: |
-      GPA: 3.5/4.0
+  GPA: 3.5/4.0
     button:
-      text: 'B.Sc. Thesis'
-      url: 'https://renati.sunedu.gob.pe/handle/renati/1747018'
+  text: 'B.Sc. Thesis'
+  url: 'https://renati.sunedu.gob.pe/handle/renati/1747018'
       
 work:
   - position: Researcher
