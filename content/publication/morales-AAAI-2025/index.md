@@ -3,7 +3,7 @@ title: Adaptive Sampling to Reduce Epistemic Uncertainty Using Prediction Interv
 authors:
 - Giorgio Morales
 - John W. Sheppard
-date: '2024-12-09'
+date: '2025-02-10'
 publishDate: '2024-12-09T19:23:08.310824Z'
 publication_types:
 - paper-conference
