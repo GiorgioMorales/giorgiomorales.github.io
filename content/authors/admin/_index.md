@@ -97,7 +97,7 @@ education:
       url: 'https://renati.sunedu.gob.pe/handle/renati/1747018'
       
 work:
-  - position: Researcher
+  - position: Postdoctoral Researcher
     company_name: Université de Caen Normandie
     company_url: 'https://www.greyc.fr/en/home/'
     company_logo: ''
