@@ -79,10 +79,11 @@ projects:
 
 ---
 
-🌱 The School of Agricultural Engineering and Environment (ETSEAMN) at Universitat Politècnica de València (UPV) has
-invited me to deliver a seminar as part of the "Artificial Intelligence and Emerging Technologies" seminars.
+🌱 I've been invited by the School of Agricultural Engineering and Environment (ETSEAMN) at Universitat Politècnica de València (UPV) to deliver a seminar as part of the "Artificial Intelligence and Emerging Technologies" seminars.
 
 
-[![SINDy Examples](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/NISL-MSU/MultiSetSR/blob/master/DemoMSSP.ipynb)
+
+
+[![SINDy Examples](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1hA10q1uH6IQTrP9Fl4rM1oPMW6YX1j6o)
 
 
