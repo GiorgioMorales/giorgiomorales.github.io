@@ -18,8 +18,8 @@ abstract: 'Trustworthy AI: Equation Discovery and Uncertainty Quantification fro
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: '2025-11-04'
-date_end: '2025-11-04'
+date: '2025-10-04'
+date_end: '2025-10-04'
 all_day: true
 
 # Schedule page publish date (NOT talk date).
@@ -83,5 +83,6 @@ projects:
 invited me to deliver a seminar as part of the "Artificial Intelligence and Emerging Technologies" seminars.
 
 
+[![SINDy Examples](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/NISL-MSU/MultiSetSR/blob/master/DemoMSSP.ipynb)
 
 
