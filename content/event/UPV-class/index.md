@@ -94,7 +94,7 @@ domains where ensuring the reliability of AI-powered systems is critical.
 - **Part III**: Finally, we’ll explore a practical application in precision agriculture. 
 Here, we’ll discuss how to learn site-specific mathematical expressions that relate fertilizer rate and expected crop yield.
 
-The slides, including the Google Colab links, are available below:
+The slides, including the Google Colab links (in slides 15, 32, and 59), are available below:
 
 <div style="position: relative; width: 100%; height: 0; padding-bottom: 58.52%;">
   <iframe src="https://1drv.ms/p/c/c56982f783f2d4b4/IQRC38uNO3PyTKzUhKsYw2qSAdSl8mmt3_aud2heYDM24dM" frameborder="0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
