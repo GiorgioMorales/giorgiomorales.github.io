@@ -18,8 +18,8 @@ abstract: 'Trustworthy AI: Equation Discovery and Uncertainty Quantification fro
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: '2025-10-03T17:00:00Z'
-date_end: '2025-10-05T19:00:00Z'
+date: '2025-11-03T17:00:00Z'
+date_end: '2025-11-05T19:00:00Z'
 all_day: false
 
 # Schedule page publish date (NOT talk date).
