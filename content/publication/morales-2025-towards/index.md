@@ -17,6 +17,6 @@ tags:
 - GenAI
 links:
 - name: URL
-  url: https://openreview.net/forum?id=qTbJ1SiFrh
+  url: https://arxiv.org/abs/2511.10710
 
 ---

@@ -26,7 +26,7 @@ making top-tier AI conferences, such as NeurIPS, more accessible. I strongly bel
 democratizing participation, strengthening the European research community, and reducing our collective carbon 
 footprint by minimizing unnecessary transatlantic travel.
 
-🔗 Read the paper here: 
+🔗 Read the paper here: [https://arxiv.org/abs/2511.10710](https://arxiv.org/abs/2511.10710)
 
 🌟 Summary: Generative models are becoming increasingly prominent across diverse domains, yet their reliability remains 
 a major challenge. In this work, we formalize the problem of uncertainty quantification in generative model learning, 
