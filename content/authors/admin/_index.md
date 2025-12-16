@@ -1,6 +1,6 @@
 ---
 # Display name
-title: Giorgio Morales
+title: Giorgio L. Morales
 
 # Name pronunciation (optional)
 name_pronunciation: 
