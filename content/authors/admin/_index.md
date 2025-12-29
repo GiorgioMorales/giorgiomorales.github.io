@@ -60,7 +60,7 @@ education:
       - Member of the Numerical Intelligent Systems Laboratory (NISL).
     button:
       text: 'Dissertation'
-      url: 'https://www.cs.montana.edu/sheppard/theses/morales-phd.pdf'
+      url: 'https://scholarworks.montana.edu/items/5f8ade22-1113-4ed4-b674-8be60c385def'
   - area: Graduate Certificate in Artificial Intelligence
     institution: Montana State University
     date_start: 2020-01-01
