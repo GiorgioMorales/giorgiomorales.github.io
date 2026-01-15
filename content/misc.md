@@ -8,9 +8,9 @@ design:
   spacing: '5rem'
 
 sections:
-  - block: my-block
-    content:
-      title: 'My Visited Places'  # This is what $block.content.title looks for
+  - block: my-block      
+    content:             
+      title: 'Places I have Visited'
       text: |
         This is the description of my travels and hobbies.
 ---

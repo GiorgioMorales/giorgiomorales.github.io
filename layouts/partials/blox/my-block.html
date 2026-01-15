@@ -1,11 +1,20 @@
-{{ printf "%#v" .content }}
-{{/* layouts/partials/blox/my-block.html */}}
 {{ $block := . }}
-{{ $title := $block.content.title | default "Default Title" }}
+
+{{/* DEBUG SECTION: Remove this once it works */}}
+<div style="background: #f0f0f0; padding: 10px; border: 1px solid red; font-family: monospace;">
+  <strong>Debug Info:</strong><br>
+  All Data in Block: {{ printf "%#v" . }}<br>
+  Content Data: {{ printf "%#v" .content }}
+</div>
 
 <section class="my-block p-8">
-  <h2 class="text-2xl font-bold">{{ $title }}</h2>
-  <div class="content">
-    {{ $block.content.text | markdownify }}
-  </div>
+  {{/* Use 'with' to safely access content and avoid errors */}}
+  {{ with .content }}
+    <h2 class="text-2xl font-bold">{{ .title | default "No Title Found" }}</h2>
+    <div class="content">
+      {{ .text | markdownify | safeHTML }}
+    </div>
+  {{ else }}
+    <h2 class="text-2xl font-bold text-red-500">Error: Content key not found in YAML</h2>
+  {{ end }}
 </section>
