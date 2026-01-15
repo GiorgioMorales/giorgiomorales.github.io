@@ -5,21 +5,14 @@ type: landing
 
 design:
   # Section spacing
-  spacing: '5rem'
+  spacing: '2rem'
 
 sections:
-  - block: collection
-    content:
-      count: 15
-      title: Miscellaneous
-      text: This page is dedicated to keeping track of the places I have visited on Earth and sharing some of my favorite hobbies outside of my professional work.
-      filters:
-        folders:
-          - place
-    design:
-      view: article-grid
-      fill_image: false
-      columns: 3
+  - block: center-block      
+    content:             
+      title: 'Miscellaneous'
+      text: |
+        This page is dedicated to keeping track of the places I have visited on Earth and sharing some of my favorite hobbies outside of my professional work.
   - block: my-block      
     content:             
       title: 'Places I have Visited'

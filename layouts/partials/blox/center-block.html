@@ -1,20 +1,21 @@
 {{ $block := .wcBlock }}
 {{ $content := $block.content }}
 
-<section class="my-block p-8">
+<section class="center-block p-8">
   {{ if $content }}
     {{/* text-center: centers the title */}}
     {{/* mb-10: adds significant space below the title */}}
     {{/* text-4xl: makes it larger like a main section header */}}
-    <h2 class="text-left text-2xl font-bold mb-10">
+    <h2 class="text-center text-4xl font-bold mb-10">
       {{ $content.title | default "Places I have Visited" }}
     </h2>
 
-    {{/* mx-auto max-w-4xl: keeps the text/map from becoming too wide on big screens */}}
-    <div class="content mx-auto max-w-4xl">
+    {{/* Content Container: text-center centers the description and list items */}}
+    {{/* mx-auto max-w-4xl keeps the content from getting too wide on large screens */}}
+    <div class="content text-center mx-auto max-w-4xl">
       {{ $content.text | markdownify | safeHTML }}
     </div>
   {{ else }}
-    <p class="text-red-500">Error: Could not find content inside wcBlock.</p>
+    <p class="text-center text-red-500">Error: Could not find content inside wcBlock.</p>
   {{ end }}
 </section>
