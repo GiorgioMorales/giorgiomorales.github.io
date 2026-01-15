@@ -1,13 +1,9 @@
 ---
-title: Pandas
+title: Places I have Visited
 date: 2023-10-26
-external_link: https://github.com/pandas-dev/pandas
-tags:
-  - Hugo
-  - Wowchemy
-  - Markdown
+external_link: https://giorgiomorales.github.io/places
 ---
 
-Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures.
+This section tracks the places/regions I've visited in the world.
 
 <!--more-->
