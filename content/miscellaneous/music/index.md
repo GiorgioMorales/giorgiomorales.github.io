@@ -1,6 +1,6 @@
 ---
-title: Places I have Visited
-date: 2023-10-26
+title: Music I like/play
+date: 2026-01-14
 external_link: https://giorgiomorales.github.io/places
 ---
 

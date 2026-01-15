@@ -1,6 +1,6 @@
 ---
 title: Food I like/cook
-date: 2023-10-26
+date: 2026-01-13
 external_link: https://giorgiomorales.github.io/food
 ---
 
