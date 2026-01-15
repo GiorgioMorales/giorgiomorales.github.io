@@ -4,6 +4,6 @@ date: 2026-01-13
 external_link: https://giorgiomorales.github.io/food
 ---
 
-Some of the dishes I love the most and/or that I enjoy cooking
+Some of the dishes I love the most on my trips and/or that I enjoy cooking
 
 <!--more-->
