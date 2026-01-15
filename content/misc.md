@@ -1,16 +1,14 @@
 ---
-title: 'Projects'
+title: 'Miscellaneous'
 date: 2024-05-19
 type: landing
 
-design:
-  # Section spacing
-  spacing: '5rem'
-
-# Page sections
 sections:
   - block: my-block
     content:
-      title: My New Block
-      text: It works!
+      title: 'My Visited Places'  # This is what $block.content.title looks for
+      text: |
+        This is the description of my travels and hobbies.
+    design:
+      spacing: '5rem'
 ---
