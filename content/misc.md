@@ -13,6 +13,9 @@ sections:
       title: 'Miscellaneous'
       text: |
         This page is dedicated to keeping track of the places I have visited on Earth and sharing some of my favorite hobbies outside of my professional work.
+    design:
+      # Reduce padding for this specific section (Top Right Bottom Left)
+      spacing: '1rem 0 1rem 0'
   - block: my-block      
     content:             
       title: 'Places I have Visited'
