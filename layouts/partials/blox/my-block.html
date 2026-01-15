@@ -1,20 +1,15 @@
-{{ $block := . }}
-
-{{/* DEBUG SECTION: Remove this once it works */}}
-<div style="background: #f0f0f0; padding: 10px; border: 1px solid red; font-family: monospace;">
-  <strong>Debug Info:</strong><br>
-  All Data in Block: {{ printf "%#v" . }}<br>
-  Content Data: {{ printf "%#v" .content }}
-</div>
+{{/* Access the nested block data revealed by your debug info */}}
+{{ $block := .wcBlock }}
+{{ $content := $block.content }}
 
 <section class="my-block p-8">
-  {{/* Use 'with' to safely access content and avoid errors */}}
-  {{ with .content }}
-    <h2 class="text-2xl font-bold">{{ .title | default "No Title Found" }}</h2>
+  {{ if $content }}
+    <h2 class="text-2xl font-bold">{{ $content.title | default "Places I have Visited" }}</h2>
     <div class="content">
-      {{ .text | markdownify | safeHTML }}
+      {{/* 'safeHTML' is vital so your map script actually runs */}}
+      {{ $content.text | markdownify | safeHTML }}
     </div>
   {{ else }}
-    <h2 class="text-2xl font-bold text-red-500">Error: Content key not found in YAML</h2>
+    <p class="text-red-500">Error: Could not find content inside wcBlock.</p>
   {{ end }}
 </section>
