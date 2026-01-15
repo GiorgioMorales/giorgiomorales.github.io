@@ -1,12 +1,17 @@
-{{/* Access the nested block data revealed by your debug info */}}
 {{ $block := .wcBlock }}
 {{ $content := $block.content }}
 
 <section class="my-block p-8">
   {{ if $content }}
-    <h2 class="text-2xl font-bold">{{ $content.title | default "Places I have Visited" }}</h2>
-    <div class="content">
-      {{/* 'safeHTML' is vital so your map script actually runs */}}
+    {{/* text-center: centers the title */}}
+    {{/* mb-10: adds significant space below the title */}}
+    {{/* text-4xl: makes it larger like a main section header */}}
+    <h2 class="text-center text-4xl font-bold mb-10">
+      {{ $content.title | default "Places I have Visited" }}
+    </h2>
+
+    {{/* mx-auto max-w-4xl: keeps the text/map from becoming too wide on big screens */}}
+    <div class="content mx-auto max-w-4xl">
       {{ $content.text | markdownify | safeHTML }}
     </div>
   {{ else }}

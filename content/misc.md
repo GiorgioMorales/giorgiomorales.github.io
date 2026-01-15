@@ -12,5 +12,5 @@ sections:
     content:             
       title: 'Places I have Visited'
       text: |
-        This is the description of my travels and hobbies.
+        This page is dedicated to keeping track of the places I have visited on Earth and sharing some of my favorite hobbies outside of my professional work.
 ---
