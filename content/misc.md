@@ -4,7 +4,7 @@ date: 2024-05-19
 type: landing
 
 design:
-  spacing: "padding: 20px 0 20px 0"
+  spacing: '2rem'
 ---
 
 sections:
@@ -26,7 +26,7 @@ sections:
       text: |
         Beyond research and travel, I am passionate about:
         
-        * **Hobby 1:** Description of your hobby.
+        * **Hobby 1:** Playing guitar (blues/rock/rock n' roll).
         * **Hobby 2:** Description of your hobby.
         * **Photography:** I enjoy documenting my travels through a lens.
     design:
