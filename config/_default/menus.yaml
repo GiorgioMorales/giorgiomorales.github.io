@@ -22,6 +22,9 @@ main:
   - name: Blog
     url: /post
     weight: 15
+  - name: Miscellaneous
+    url: /misc
+    weight: 16
 #  - name: Projects
 #    url: projects/
 #    weight: 30
