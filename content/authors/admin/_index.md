@@ -20,12 +20,12 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: PhD in Computer Science
+role: AI Research Associate
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: Montana State University
-    url: https://www.cs.montana.edu/
+  - name: Aston University
+    url: https://www.aston.ac.uk/research/eps/acaira
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
@@ -97,11 +97,20 @@ education:
       url: 'https://renati.sunedu.gob.pe/handle/renati/1747018'
       
 work:
+  - position: Aston AI Fellow (Research Associate)
+    company_name: Aston University
+    company_url: 'https://www.aston.ac.uk/research/eps/acaira'
+    company_logo: ''
+    date_start: 2026-03-03
+    summary: |2-
+      - Aston AI Fellow (Research Associate) at the Aston Centre for Artificial Intelligence Research and Application (ACAIRA).
+      - Lead of the Project: "GUIDE: Guided Uncertainty-aware Interactive Discovery of Equations."
   - position: Postdoctoral Researcher
     company_name: Université de Caen Normandie
     company_url: 'https://www.greyc.fr/en/home/'
     company_logo: ''
-    date_start: 2025-06-01
+    date_start: 2025-01-06
+    date_end: 2026-02-20
     summary: |2-
       - Developing ML-based neutrino oscillation parameter estimation techniques to aid in large neutrino physics simulations.
       - Member of the GREYC Laboratory
