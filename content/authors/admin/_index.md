@@ -43,6 +43,8 @@ profiles:
     url: https://scholar.google.es/citations?user=Nxia-8gAAAAJ&hl=es
   - icon: academicons/orcid
     url: https://orcid.org/0000-0003-2911-8558
+  - icon: custom/aston
+    url: https://research.aston.ac.uk/en/persons/giorgio-morales/
 
 interests:
   - Artificial Intelligence
