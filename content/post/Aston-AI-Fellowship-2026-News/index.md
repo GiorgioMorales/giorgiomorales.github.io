@@ -38,6 +38,6 @@ And finally, just like William the Conqueror, we left Normandy, crossed the Engl
 <figure style="display: flex; flex-direction: column; align-items: center;">
     <img src="flags.png" alt="figure" width="90%">
     <figcaption style="text-align: center; margin-top: 5px; font-style: italic;">
-        I moved from Normandy, France to Birmingham, UK. Lef:.Normandy flag. Right: Royal Banner of England.
+        I moved from Normandy, France to Birmingham, UK. Left: Normandy flag. Right: Royal Banner of England.
     </figcaption>
 </figure>
