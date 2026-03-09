@@ -198,6 +198,13 @@ languages:
 #   Only `title`, `awarder`, and `date` are required.
 #   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
 awards:
+  - title: Aston AI Fellowship
+    url: https://giorgiomorales.github.io/post/aston-ai-fellowship-2026-news/
+    date: '2026-01-16'
+    icon: aston
+    awarder: Aston University 
+    summary: |
+      Three-year research fellowship given by Aston University. The fellowship supports high-impact AI solutions for global challenges.
   - title: Outstanding PhD Researcher
     url: https://giorgiomorales.github.io/post/outstanding-phd-researcher-award-news/
     date: '2025-04-29'
