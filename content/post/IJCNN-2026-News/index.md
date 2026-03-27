@@ -27,6 +27,7 @@ Our paper, "Neutrino Oscillation Parameter Estimation Using Structured Hierarchi
 - Experiments on simulated oscillation maps under Earth-matter conditions demonstrate that the proposed method is comparable to an MCMC baseline in estimation accuracy, with substantial improvements in computational cost (around 240× fewer FLOPs and 33× faster in average processing time). ⚡
 
 📖 Read the full paper here: https://arxiv.org/abs/2603.22342
+
 💻 GitHub repo here: https://github.com/GiorgioMorales/NuOscParam
 
 <div style="display: flex; justify-content: center;">
