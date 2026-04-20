@@ -8,7 +8,7 @@ tags:
   - News
   - Conferences
   - EUROMECH
-  ' Symbolic Regression
+  - Symbolic Regression
 
 featured: true
 
