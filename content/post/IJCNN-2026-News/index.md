@@ -1,36 +1,35 @@
 ---
-title: Presentation at Euromech Colloquium 662
-summary: Euromech Colloquium: "Physics-enhanced machine learning and data-driven nonlinear dynamics"
-date: 2026-04-20
+title: I've got a paper accepted at IJCNN 2026 
+summary: International Joint Conference on Neural Networks (IJCNN)
+date: 2026-03-24
 authors:
   - admin
 tags:
   - News
   - Conferences
-  - EUROMECH
-  ' Symbolic Regression
+  - IJCNN
 
 featured: true
 
 image:
-  caption: 'Image Credits: EUROMECH'
+  caption: 'Image Credits: WCCI 2026'
   focal_point: ""
   preview_only: true
 ---
 
-🚀 Heading back to Italy for the Euromech Colloquium 662!
+Last year, I learned a good deal about our ubiquitous little friends, the neutrinos. So, naturally, this is a 📢 Publication Alert! 
 
-I will be attending and presenting part of my research at the [Euromech Colloquium: "Physics-enhanced machine learning and data-driven nonlinear dynamics"](https://662.euromech.org/welcome-to-the-physics-enhanced-machine-learning-and-data-driven-nonlinear-dynamics/) in the beautiful Como, Italy.
+Our paper, "[Neutrino Oscillation Parameter Estimation Using Structured Hierarchical Transformers](publication/morales-neutrino-2026/)," coauthored with [Gregory Lehaut](https://scholar.google.com/citations?user=mS3cu1AAAAAJ&hl=fr), [Antonin Vacheret](https://inspirehep.net/authors/1023486), [Frederic Jurie](https://frederic-jurie.github.io/), and [Jalal Fadili](https://fadili.users.greyc.fr/Pub/bibtex/consult.php), from [Greyc](https://www.greyc.fr/) and [LPC Caen](https://www.lpc-caen.in2p3.fr/), has been accepted at the International Joint Conference on Neural Networks (IJCNN). This year, it is part of the [World Congress on Computational Intelligence (IEEE WCCI 2026)](https://attend.ieee.org/wcci-2026/), to be held in Maastricht, Netherlands, June 21-26, 2026. 🇳🇱
 
-The event, chaired by [Alice Cicirello](https://www.eng.cam.ac.uk/profiles/ac685) (University of Cambridge), brings together a fantastic European community working at the intersection of physics, mechanics, and AI. I’m really looking forward to getting involved in discussions on data-driven discovery.
+🔬 Key Insights:
+- We introduce a data-driven framework that reformulates atmospheric neutrino oscillation parameter inference as a supervised regression task over structured oscillation maps. 📊
+- We also introduce a neural network-based uncertainty quantification mechanism, Conformal DualAQD, that produces distribution-free prediction intervals with formal coverage guarantees. 🛡️
+- Experiments on simulated oscillation maps under Earth-matter conditions demonstrate that the proposed method is comparable to an MCMC baseline in estimation accuracy, with substantial improvements in computational cost (around 240× fewer FLOPs and 33× faster in average processing time). ⚡
 
-📊 My Presentation: "Discovering Non-Linear Equations Under Epistemic Uncertainty Using Transformer-Based Multi-Set Skeleton Prediction," co-authored with Dr. John Sheppard 📅 Date: April 29 🕒 Time: 1:30 PM
+📖 Read the full paper here: https://arxiv.org/abs/2603.22342
 
-🤝 Let’s Connect! If you are attending the colloquium or if your work involves symbolic regression, physics-informed ML, or their applications, I’d love to chat. Whether it's during a coffee break in Como or a virtual follow-up, let’s explore potential collaborations and ideas.
-
-Check out the full programme and book of abstracts here: 🔗https://662.euromech.org/tentative-programme/
+💻 GitHub repo here: https://github.com/GiorgioMorales/NuOscParam
 
 <div style="display: flex; justify-content: center;">
-    <img src="EUROMECH.png" alt="figure" width="100%">
+    <img src="IJCNN_acceptance.jpg" alt="figure" width="80%">
 </div>
-
