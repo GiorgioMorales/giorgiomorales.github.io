@@ -1,6 +1,6 @@
 ---
 title: Presentation at Euromech Colloquium 662
-summary: Euromech Colloquium: "Physics-enhanced machine learning and data-driven nonlinear dynamics"
+summary: Euromech Colloquium "Physics-enhanced machine learning and data-driven nonlinear dynamics"
 date: 2026-04-20
 authors:
   - admin
