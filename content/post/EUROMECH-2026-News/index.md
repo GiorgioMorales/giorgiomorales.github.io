@@ -15,7 +15,7 @@ featured: true
 image:
   caption: 'Image Credits: EUROMECH'
   focal_point: ""
-  preview_only: true
+  preview_only: false
 ---
 
 🚀 Heading back to Italy for the Euromech Colloquium 662!
