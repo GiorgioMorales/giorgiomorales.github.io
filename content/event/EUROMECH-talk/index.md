@@ -1,7 +1,7 @@
 ---
 title: Symbolic Regression Talk at EUROMECH Colloquium 662
 
-event: Euromech Colloquium: “Physics-enhanced machine learning and data-driven nonlinear dynamics” 
+event: Euromech Colloquium “Physics-enhanced machine learning and data-driven nonlinear dynamics” 
 event_url: https://662.euromech.org/welcome-to-the-physics-enhanced-machine-learning-and-data-driven-nonlinear-dynamics/
 
 location:
