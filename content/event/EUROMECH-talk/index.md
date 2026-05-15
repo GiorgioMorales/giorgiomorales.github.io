@@ -90,28 +90,28 @@ As a proof-of-concept, we demonstrate our pipeline on 1-D synthetic problems, wh
 </div>
 
 <figure style="display: flex; flex-direction: column; align-items: center;">
-    <img src="1.png" alt="figure" width="90%">
+    <img src="1.jpg" alt="figure" width="90%">
     <figcaption style="text-align: center; margin-top: 5px; font-style: italic;">
         Lake Como.
     </figcaption>
 </figure>
 
 <figure style="display: flex; flex-direction: column; align-items: center;">
-    <img src="2.png" alt="figure" width="90%">
+    <img src="2.jpg" alt="figure" width="90%">
     <figcaption style="text-align: center; margin-top: 5px; font-style: italic;">
         View from the conference room.
     </figcaption>
 </figure>
 
 <figure style="display: flex; flex-direction: column; align-items: center;">
-    <img src="3.png" alt="figure" width="90%">
+    <img src="3.jpg" alt="figure" width="90%">
     <figcaption style="text-align: center; margin-top: 5px; font-style: italic;">
         View from the conference room.
     </figcaption>
 </figure>
 
 <figure style="display: flex; flex-direction: column; align-items: center;">
-    <img src="2.png" alt="figure" width="90%">
+    <img src="4.jpg" alt="figure" width="90%">
     <figcaption style="text-align: center; margin-top: 5px; font-style: italic;">
         Presentation day.
     </figcaption>
