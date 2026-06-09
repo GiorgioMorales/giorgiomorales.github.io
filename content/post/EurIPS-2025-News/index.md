@@ -40,7 +40,7 @@ insights into model approximation uncertainty.
 
 
 <figure style="display: flex; flex-direction: column; align-items: center;">
-    <img src="CPH1.jpg" alt="figure" width="60%">
+    <img src="giorgio-morales-.jpg" alt="Giorgio Morales presenting at EurIPS" width="60%">
     <figcaption style="text-align: center; margin-top: 5px; font-style: italic;">
         Poster presentation. EIML@EurIPS 2025.
     </figcaption>
@@ -48,7 +48,7 @@ insights into model approximation uncertainty.
 
 
 <figure style="display: flex; flex-direction: column; align-items: center;">
-    <img src="CPH2.jpg" alt="figure" width="60%">
+    <img src="giorgio-morales-2.jpg" alt="Giorgio Morales in Copenhagen" width="60%">
     <figcaption style="text-align: center; margin-top: 5px; font-style: italic;">
         Nyhavn, Copenhagen.
     </figcaption>

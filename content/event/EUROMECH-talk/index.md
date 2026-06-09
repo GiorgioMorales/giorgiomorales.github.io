@@ -90,7 +90,7 @@ As a proof-of-concept, we demonstrate our pipeline on 1-D synthetic problems, wh
 </div>
 
 <figure style="display: flex; flex-direction: column; align-items: center;">
-    <img src="1.jpg" alt="figure" width="90%">
+    <img src="giorgio-morales-1.jpg" alt="Giorgio Morales in front of the mountains at Lake Como, Italy" width="90%">
     <figcaption style="text-align: center; margin-top: 5px; font-style: italic;">
         Lake Como.
     </figcaption>
@@ -111,7 +111,7 @@ As a proof-of-concept, we demonstrate our pipeline on 1-D synthetic problems, wh
 </figure>
 
 <figure style="display: flex; flex-direction: column; align-items: center;">
-    <img src="4.jpg" alt="figure" width="90%">
+    <img src="giorgio-morales-4.jpg" alt="Giorgio Morales presenting at EUROMECH" width="90%">
     <figcaption style="text-align: center; margin-top: 5px; font-style: italic;">
         Presentation day.
     </figcaption>

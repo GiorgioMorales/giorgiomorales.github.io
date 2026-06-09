@@ -39,9 +39,9 @@ We both graduated this semester; she earned her Master’s in Public Administrat
 To my wonderful parents, Sandra Luna Algazi and Jorge Morales De la Cruz I am forever grateful. They raised me to pursue my goals with determination and integrity, and their unconditional love and constant presence have been my greatest source of strength. Thanks to them, I’ve become the first PhD in our family. I know they’re proud of me, and I’m even more proud of them; this achievement belongs to all of us.
 
 <div style="display: flex; justify-content: center;">
-    <img src="PXL_20250514_180154278.PORTRAIT.jpg" alt="figure" width="100%">
+    <img src="giorgio-morales-2.jpg" alt="Giorgio Morales PhD" width="100%">
 </div>
 
 <div style="display: flex; justify-content: center;">
-    <img src="PXL_20250514_161621205.jpg" alt="figure" width="100%">
+    <img src="giorgio-morales-1.jpg" alt="Giorgio Morales PhD" width="100%">
 </div>
