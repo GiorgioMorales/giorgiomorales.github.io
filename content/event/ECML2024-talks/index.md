@@ -92,3 +92,34 @@ Grateful for the opportunity to connect with brilliant minds and exchange ideas!
   <iframe width="560" height="315" src="https://www.youtube.com/embed/i34yctvWGLA?si=2IQ5EWx_O8nJavpM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
+
+<figure style="display: flex; flex-direction: column; align-items: center;">
+    <img src="giorgio-morales-1.jpg" alt="Giorgio Morales presenting at ECML" width="60%">
+    <figcaption style="text-align: center; margin-top: 5px; font-style: italic;">
+        PhD Forum.
+    </figcaption>
+</figure>
+
+
+<figure style="display: flex; flex-direction: column; align-items: center;">
+    <img src="giorgio-morales-2.jpg" alt="Giorgio Morales presenting at ECML" width="60%">
+    <figcaption style="text-align: center; margin-top: 5px; font-style: italic;">
+        Discovery Challenge.
+    </figcaption>
+</figure>
+
+
+<figure style="display: flex; flex-direction: column; align-items: center;">
+    <img src="giorgio-morales-3.jpg" alt="Giorgio Morales presenting at ECML" width="60%">
+    <figcaption style="text-align: center; margin-top: 5px; font-style: italic;">
+        Research Track.
+    </figcaption>
+</figure>
+
+
+<figure style="display: flex; flex-direction: column; align-items: center;">
+    <img src="giorgio-morales-4.jpg" alt="Giorgio Morales presenting at ECML" width="60%">
+    <figcaption style="text-align: center; margin-top: 5px; font-style: italic;">
+        Research Track.
+    </figcaption>
+</figure>

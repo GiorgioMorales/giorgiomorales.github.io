@@ -88,13 +88,13 @@ It was a fantastic experience to discuss these projects and share insights on ho
 </div>
 
 <div style="display: flex; justify-content: center;">
-    <img src="event1.jpg" alt="figure" width="100%">
+    <img src="giorgio-morales-1.jpg" alt="Giorgio Morales at Mtech" width="100%">
 </div>
 
 <div style="display: flex; justify-content: center;">
-    <img src="event2.jpg" alt="figure" width="100%">
+    <img src="giorgio-morales-2.jpg" alt="Giorgio Morales at Mtech" width="100%">
 </div>
 
 <div style="display: flex; justify-content: center;">
-    <img src="event3.jpg" alt="figure" width="100%">
+    <img src="giorgio-morales-3.jpg" alt="Giorgio Morales at Mtech" width="100%">
 </div>
