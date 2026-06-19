@@ -79,7 +79,7 @@ projects:
 
 
 <figure style="display: flex; flex-direction: column; align-items: center;">
-    <img src="giorgio-morales-UCL.jpg" alt="Giorgio Morales presenting at an UCL workshop, Italy" width="90%">
+    <img src="giorgio-morales-UCL.png" alt="Giorgio Morales presenting at an UCL workshop" width="60%">
     <figcaption style="text-align: center; margin-top: 5px; font-style: italic;">
         Poster presentation @ UCL.
     </figcaption>
