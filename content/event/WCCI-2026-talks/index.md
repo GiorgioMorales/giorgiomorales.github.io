@@ -99,7 +99,7 @@ Looking forward to seeing how these collaborations and research directions conti
 </figure>
 
 <figure style="display: flex; flex-direction: column; align-items: center;">
-    <img src="ggiorgio-morales-wcci2.jpg" alt="Giorgio Morales presenting at WCCI" width="60%">
+    <img src="giorgio-morales-wcci2.jpg" alt="Giorgio Morales presenting at WCCI" width="60%">
     <figcaption style="text-align: center; margin-top: 5px; font-style: italic;">
         Presentation @ WCCI Main Track.
     </figcaption>
