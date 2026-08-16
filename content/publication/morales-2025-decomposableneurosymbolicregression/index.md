@@ -3,8 +3,8 @@ title: Decomposable Neural Symbolic Regression
 authors:
 - Giorgio Morales
 - John W. Sheppard
-date: '2026-14-08'
-publishDate: 2026-14-08T17:13:20.278345Z'
+date: '2026-08-14'
+publishDate: 2026-08-14T17:13:20.278345Z'
 publication_types:
 - manuscript
 publication: 'Transactions on Machine Learning Research (TMLR)'
