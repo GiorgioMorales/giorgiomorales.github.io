@@ -16,7 +16,7 @@ featured: true
 image:
   caption: 'Image Credits: TMLR'
   focal_point: ""
-  preview_only: true
+  preview_only: false
 ---
 
 I am very proud to share that my first TMLR publication has officially been accepted as a long paper!
