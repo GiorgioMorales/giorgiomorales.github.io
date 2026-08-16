@@ -1,5 +1,5 @@
 ---
-title: Decomposable Neuro Symbolic Regression
+title: Decomposable Neural Symbolic Regression
 authors:
 - Giorgio Morales
 - John W. Sheppard
