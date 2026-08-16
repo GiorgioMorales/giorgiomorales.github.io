@@ -26,6 +26,7 @@ Our 48-page work ("long paper," alright), titled "[Decomposable Neural Symbolic 
 We present an explainable symbolic regression (SR) method that distills a trained "opaque'' regression model (e.g., a neural network) into mathematical expressions that serve as explanations of its computed function. Unlike most SR methods, which prioritize minimizing prediction error over identifying the governing equations, often producing overly complex or inaccurate expressions, we present a decomposable SR method that generates interpretable multivariate expressions leveraging a Multi-Set Transformer model, genetic algorithms, and genetic programming. 
 
 📄 Read the [paper](https://giorgiomorales.github.io/publication/morales-2025-decomposableneurosymbolicregression/)
+
 💻 Read the [code](https://github.com/NISL-MSU/MultiSetSR)
 
 
@@ -37,7 +38,7 @@ We present an explainable symbolic regression (SR) method that distills a traine
 </figure>
 
 <figure style="display: flex; flex-direction: column; align-items: center;">
-    <img src="TMLR_paper.jpg" alt="Giorgio Morales TMLR abstract" width="60%">
+    <img src="TMLR_paper.jpg" alt="Giorgio Morales TMLR abstract" width="95%">
     <figcaption style="text-align: center; margin-top: 5px; font-style: italic;">
         TMLR Abstract.
     </figcaption>
