@@ -92,21 +92,21 @@ Further details regarding the seasonal school can be found here: https://www.ast
 
 
 <figure style="display: flex; flex-direction: column; align-items: center;">
-    <img src="giorgio-morales-ACM.png" alt="Giorgio Morales in the first discussion panel" width="90%">
+    <img src="giorgio morales-ACM.png" alt="Giorgio Morales in the first discussion panel" width="90%">
     <figcaption style="text-align: center; margin-top: 5px; font-style: italic;">
         First Discussion Panel (Photo: Honey Yadav).
     </figcaption>
 </figure>
 
 <figure style="display: flex; flex-direction: column; align-items: center;">
-    <img src="giorgio-morales-ACM2.png" alt="Giorgio Morales in the second discussion panel" width="90%">
+    <img src="giorgio morales-ACM.jpg" alt="Giorgio Morales in the second discussion panel" width="90%">
     <figcaption style="text-align: center; margin-top: 5px; font-style: italic;">
         Second Discussion Panel (Photo: Honey Yadav).
     </figcaption>
 </figure>
 
 <figure style="display: flex; flex-direction: column; align-items: center;">
-    <img src="giorgio-morales-ACM3.png" alt="Giorgio Morales in the first discussion panel" width="90%">
+    <img src="giorgio morales-ACM3.jpg" alt="Giorgio Morales in the first discussion panel" width="90%">
     <figcaption style="text-align: center; margin-top: 5px; font-style: italic;">
         First Discussion Panel (Photo: Dominic O'rume).
     </figcaption>
