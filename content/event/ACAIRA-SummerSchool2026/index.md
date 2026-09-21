@@ -1,5 +1,5 @@
 ---
-title: Symbolic Regression Talk at EUROMECH Colloquium 662
+title: Talks and Participation at the ACM Season School on Responsible AI
 
 event: ACM Europe Seasonal School on Responsible AI 
 event_url: https://www.aston.ac.uk/research/eps/acaira/events/summer-school-2026
