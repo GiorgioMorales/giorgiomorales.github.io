@@ -12,7 +12,7 @@ address:
   postcode: 
   country: UK
 
-summary: Presentation “Beyond Surrogates: Distilling Opaque Machine Learning Models into Interpretable Equations with Symbolic Regression.”
+summary: Presentation “Beyond Surrogates - Distilling Opaque Machine Learning Models into Interpretable Equations with Symbolic Regression.”
 abstract: While high-capacity opaque machine learning models excel at fitting complex non-linear relationships, their lack of interpretability restricts scientific insight and limits safe deployment in engineering contexts. To bridge this gap, symbolic regression can be used to distill trained opaque models into explicit mathematical equations. In this talk, I introduce SeTGAP, a neural symbolic regression framework that distills opaque models into concise and interpretable expressions without restricting equation discovery to predefined candidate libraries. SeTGAP employs a Multi-Set Transformer to uncover per-variable symbolic skeletons from the opaque model's predictions, followed by evolutionary techniques that systematically combine them into multivariate expressions. Finally, we will discuss how this distillation framework could naturally extend to non-linear dynamical system identification (i.e., distilling surrogates trained on dynamic state data into white-box equations), opening exciting avenues for collaboration..
 
 
