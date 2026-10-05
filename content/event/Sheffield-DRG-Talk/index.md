@@ -100,7 +100,7 @@ Many thanks to [Max Champneys](https://sheffield.ac.uk/mac/people/research-staff
 
 
 <figure style="display: flex; flex-direction: column; align-items: center;">
-    <img src="Sheffield.jpg" alt="Giorgio Morales in Sheffield" width="90%">
+    <img src="Sheffield.jpg" alt="Giorgio Morales in Sheffield" width="50%">
     <figcaption style="text-align: center; margin-top: 5px; font-style: italic;">
         Maida Vale.
     </figcaption>
