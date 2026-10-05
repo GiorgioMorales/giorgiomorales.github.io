@@ -1,6 +1,5 @@
 ---
-title: Talks and Participation at the ACM Season School on Responsible AI
-
+title: Presentation at the Dynamics Research Group @ The University of Sheffield
 event: Dynamics Research Group Seminar Series
 event_url: 
 
