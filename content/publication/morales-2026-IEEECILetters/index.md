@@ -3,7 +3,7 @@ title: Exhaustive Canonical Skeletons Generation - A Formal Dataset for Decompos
 authors:
 - Giorgio Morales, Aniko Ekart
 date: '2026-10-15'
-publishDate: '2026-10-15T07:13:20.268831Z'
+publishDate: '2026-10-15T07:12:20.268831Z'
 publication_types:
 - paper-journal
 publication: '*IEEE Computational Intelligence Letters (In review - Pre-print)*'
