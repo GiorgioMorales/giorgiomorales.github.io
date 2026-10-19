@@ -96,7 +96,7 @@ Thank you, [Alice Cicirello](https://sites.google.com/view/dvugroup/people/dr-al
 </figure>
 
 <figure style="display: flex; flex-direction: column; align-items: center;">
-    <img src="giorgio-morales_cambridge2.jpg" alt="Giorgio Morales in Cambridge" width="90%">
+    <img src="giorgio-morales_cambridge2.jpg" alt="Giorgio Morales in Cambridge" width="50%">
     <figcaption style="text-align: center; margin-top: 5px; font-style: italic;">
         Double pendulum settings.
     </figcaption>
