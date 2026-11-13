@@ -16,8 +16,8 @@ tags:
 - XAI
 - Knowledge discovery
 links:
-- name: arXiv
-  url: https://arxiv.org/abs/2610.20108
+- name: IEEE
+  url: https://ieeexplore.ieee.org/document/11793619
 
 url_pdf: 'https://arxiv.org/pdf/2610.20108'
 url_code: 'https://github.com/ACAIRA-Aston/SRSkeletons'
